@@ -1,0 +1,38 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+      
+    title:
+        label: '标题'
+        span: left
+        placeholder: '标题'
+
+    content:
+            type: Bohe\Seothing\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            mode: split
+    tag:
+            label: '标签'
+            type: text   
+            
+    abstract:
+            label: '摘要'
+            type: text       
+   
+    state:
+            label: '状态'
+            span: auto
+            type: switch
+    hot:
+            label: '热度'
+            type: text
+             
+
+
+           
+
+
+
+

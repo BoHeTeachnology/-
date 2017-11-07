@@ -1,0 +1,6 @@
+plugin:
+    name: 'bohe.date::lang.plugin.name'
+    description: 'bohe.date::lang.plugin.description'
+    author: yang
+    icon: oc-icon-adjust
+    homepage: ''

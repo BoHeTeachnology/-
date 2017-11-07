@@ -1,0 +1,6 @@
+plugin:
+    name: 'bohe.findcat::lang.plugin.name'
+    description: 'bohe.findcat::lang.plugin.description'
+    author: bohe
+    icon: oc-icon-adjust
+    homepage: ''

@@ -1,0 +1,11 @@
+title: '预约'
+modelClass: Bohe\Date\Models\Index
+list: $/bohe/date/models/index/columns.yaml
+recordUrl: 'bohe/date/index/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

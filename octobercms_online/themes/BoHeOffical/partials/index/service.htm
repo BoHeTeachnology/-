@@ -1,0 +1,122 @@
+
+  <div class="team" id="team">
+    <div class="container text-center" style="padding:0;margin:10px auto">
+      <h3 class="title">服务项目</h3>
+      <h3 class="title">Service items</h3>
+      <div class="team-info">
+{% for item in bohefindcat.posts %}
+<div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+  <a href={{'/serviceList/service/'~item.cat_id }}>
+    {% if item.featured_images.count %}
+   {% for image in item.featured_images %}
+     <img class="img-responsive" src="{{ image.path }}" alt="">
+
+   {% endfor %}
+   {% endif %}
+
+    <div class="captn">
+      <h4>{{item.name}}</h4>
+      <h5>{{item.title}}</h5>
+      <p>{{item.content}}</p>
+    </div>
+  </a>
+</div>
+
+
+{% endfor %}
+<div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+
+    <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem9.png'|theme }}" alt="">
+
+      <a href="/serviceList/service/" class="moreBtn shake" >
+        more&nbsp; >
+      </a>
+
+
+</div>
+
+         <!-- <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/1">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem1.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>洗牙</h4>
+              <h5>Scaling</h5>
+              <p>用超声波洁治器工作头的高速振动而去除牙龈上牙石、软垢、菌斑和部分色渍，以延迟菌斑和牙石再沉积。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/2">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem2.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>口腔检查</h4>
+              <h5>Qral Examination</h5>
+              <p>定期检查有助于使你的牙齿保持得更清洁、更持久，而且还能够防止出现疼痛等问题。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/3">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem3.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>种植牙</h4>
+              <h5>Oral Implantology</h5>
+              <p>修复口腔功能最理想的假牙，有“人类第三副牙齿”的美誉，与传统假牙相比，种植牙具备相当多的优势。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/4">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem4.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>儿童口腔</h4>
+              <h5>Children's Dentistry</h5>
+              <p>婴幼儿时期是牙病的高发期，龋齿、牙外伤、口腔不良习惯引起的牙齿错颌畸形、乳牙替换异常等都是婴幼儿期牙齿的多发病。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/5">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem5.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>拔牙</h4>
+              <h5>Tooth Extraction</h5>
+              <p>从严格意义上来说，牙齿拔除是一种手术，在局部麻醉的情况下去除了身体器官。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/6">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem6.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>正畸</h4>
+              <h5>Orthodontics</h5>
+              <p>采用智能控制移动，定位预测位置，并通过动画模拟效果，全方位、多角度、立体塑造牙齿美观和完美脸型。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/7">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem7.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>美白</h4>
+              <h5>Cosmetic Dentistry</h5>
+              <p>用含有特殊添加物的漂白剂在波长480-520nm之间的高强度蓝光的作用下加速分解，从而在较短的时间内改变牙齿颜色。</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-6 service-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+          <a href="/serviceList/service/1/category/8">
+            <img class="img-responsive" src="{{ 'assets/img/serviceItem/serviceItem8.png'|theme }}" alt="">
+            <div class="captn">
+              <h4>补牙</h4>
+              <h5>Tooth Filling</h5>
+              <p>薄荷牙医采用3M纳米树脂优质的材料来修补牙体缺损</p>
+            </div>
+          </a>
+        </div> -->
+
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>

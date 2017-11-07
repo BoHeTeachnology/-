@@ -1,0 +1,49 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    featured_images:
+        label: 'image'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    title:
+        label: '标题'
+        span: left
+        placeholder: '标题'
+    username:
+        label: '用户名称'
+        span: left
+        placeholder: '标题'
+    user_id:
+        label: '用户ID'
+        span: left
+        placeholder: '标题'
+    doc_id:
+        label: '医生ID'
+        span: left
+        placeholder: '标题'
+    great:
+        label: '点赞数'
+        span: left
+        placeholder: '标题'
+
+    content:
+        label: '内容'
+        type: Bohe\Ask\FormWidgets\BlogMarkdown
+        cssClass: field-slim blog-post-preview
+        mode: split  
+        
+    state:
+            label: '状态'
+  
+             
+
+
+           
+
+
+
+

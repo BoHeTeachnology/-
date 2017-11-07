@@ -1,0 +1,21 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: rainlab.blog::lang.category.name
+        searchable: true
+    title:
+        label: 'title'
+        placeholder: 'title'
+        span: left
+        searchable: true
+
+    post_count:
+        label: rainlab.blog::lang.category.posts
+        sortable: false
+    id:
+        label: 'id(for首页标签)'
+        searchable: true

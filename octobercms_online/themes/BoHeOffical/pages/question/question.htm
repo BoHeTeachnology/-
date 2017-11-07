@@ -1,0 +1,37 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/question"
+layout="main"
+description=""
+hidden="0"
+from="question"
+==
+<?php
+
+function onComfirmQuestion()
+{
+    $this['result'] = '我是返回的数据';
+}
+?>
+==
+<!-- 顶部背景图begin -->
+<div id="topBg">
+  {% set topContent={'title1':'名医解答给你专业的解决方案','title2':'Famous doctor answer to you ','title3':'Industry solutions','imgSrc':'qustionTopBg.png','position':'left'} %}
+
+{% partial 'viki/topBg' topContent=topContent %}
+</div>
+<!-- 顶部背景图end-->
+<!-- 面包屑导航begin -->
+<div id="breadNav">
+  {% set type =[{'title':'网站首页','isHref':'/'},{'title':'我要提问','isHref':'/question'}] %}
+  {% partial 'breadNav' types=type %}
+</div>
+<!-- 面包屑导航end -->
+
+<!-- 服务项目导航begin -->
+
+<div id="questionContent">
+
+  {% partial 'question/question' %}
+</div>
+
+<!-- 服务项目导航end -->

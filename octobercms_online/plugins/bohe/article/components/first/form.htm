@@ -1,0 +1,253 @@
+<div class="confirm-container bg-success hide">
+    <p>创建成功!</p>
+</div>
+
+{{ form_open() }}
+<form role="form"
+    data-request="{{ __SELF__ }}::onSave"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');"
+    data-request-redirect="/doctorindex">
+    <div class="layout-row min-size">
+    
+        <div
+            id="Form-outsideTabs"
+            class="form-tabless-fields ">
+            
+             照片
+{% component 'fileUploaderphoto' %}
+                <div
+    class="form-group  text-field span-left   "
+        data-field-name="name"
+        id="Form-field-Index-name-group"><label for="Form-field-Index-name">
+                姓名            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[name]"
+        id="Form-field-Index-name"
+        value=""
+        placeholder="请填写姓名"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>  
+                        <div
+    class="form-group  text-field span-left   "
+        data-field-name="name"
+        id="Form-field-Index-name-group"><label for="Form-field-Index-name">
+                性别           </label>
+        
+        
+        <!-- Text -->
+ <input type="radio" id="radio_1" name="Index[sex]" value="0" >
+<label for="radio_1">
+                    男         </label>
+                    
+<input type="radio" id="radio_2" name="Index[sex]" value="1" >
+<label for="radio_2">
+                    女         </label>
+                    </div> 
+                    
+                    
+                        <div
+    class="form-group  text-field span-left   "
+        data-field-name="age"
+        id="Form-field-Index-name-group"><label for="Form-field-Index-name">
+                年龄            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[age]"
+        id="Form-field-Index-name"
+        value=""
+        placeholder="请填写姓名"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div> 
+                        <div
+    class="form-group  text-field span-left   "
+        data-field-name="city"
+        id="Form-field-Index-name-group"><label for="Form-field-Index-name">
+                所在地            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[city]"
+        id="Form-field-Index-name"
+        value=""
+        placeholder="请填写姓名"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div> 
+         <div
+    class="form-group  text-field span-left   "
+        data-field-name="phone"
+        id="Form-field-Index-phone-group"><label for="Form-field-Index-phone">
+                手机            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[phone]"
+        id="Form-field-Index-phone"
+        value=""
+        placeholder=""
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>  
+        
+          <div
+    class="form-group  text-field span-full   "
+        data-field-name="institution"
+        id="Form-field-Index-institution-group"><label for="Form-field-Index-institution">
+                执业机构            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[institution]"
+        id="Form-field-Index-institution"
+        value=""
+        placeholder=""
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>    <div
+    class="form-group  text-field span-full   "
+        data-field-name="experience"
+        id="Form-field-Index-experience-group"><label for="Form-field-Index-experience">
+                背景            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[experience]"
+        id="Form-field-Index-experience"
+        value=""
+        placeholder=""
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>  
+
+<!-- Template for new files -->
+
+ 医师职业证书
+{% component 'fileUploaderone' %}
+ 医师资格证书
+{% component 'fileUploadertwo' %}
+专业技术资格证书
+{% component 'fileUploaderthree' %}
+   <div
+    class="form-group  text-field span-left   "
+        data-field-name="jobtitle"
+        id="Form-field-Index-jobtitle-group"><label for="Form-field-Index-jobtitle">
+                职位            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[jobtitle]"
+        id="Form-field-Index-jobtitle"
+        value=""
+        placeholder="请填写"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>    <div
+    class="form-group  text-field span-full   "
+        data-field-name="skilledin"
+        id="Form-field-Index-skilledin-group"><label for="Form-field-Index-skilledin">
+                擅长领域            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="Index[skilledin]"
+        id="Form-field-Index-skilledin"
+        value=""
+        placeholder=""
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>    <div
+    class="form-group  widget-field span-full   "
+        data-field-name="types"
+        id="Form-field-Index-types-group"><label for="Form-field-Index-types">
+                &nbsp;医生标签            </label>
+        
+        
+        <!-- Widget -->
+<div class="relation-widget" id="Relation-formTypes-types">
+              {% for ty in type %}
+     <div >
+                <input type="checkbox" id="checkbox_Form-field-Index-types_{{ty.id}}" name="Index[types][]" value="{{ty.id}}" 
+                {% for nowty in nowtype %}
+                      {% if ty.id ==nowty.type_id  %} checked="checked" {% endif %}
+                {% endfor %} 
+        >
+
+                <label for="checkbox_Form-field-Index-types_{{ty.id}}">
+                    {{ty.name}}               </label>
+                            </div>
+    {% endfor %} 
+
+
+<div class="tab-content layout-row">
+            <div
+            class="tab-pane active layout-cell"
+            id="secondarytab-1">
+                <div
+    class="form-group  textarea-field span-left   "
+        data-field-name="introduce"
+        id="Form-field-Index-introduce-group"><label for="Form-field-Index-introduce">
+                介绍            </label>
+        
+        
+        <!-- Textarea -->
+    <textarea
+        name="Index[introduce]"
+        id="Form-field-Index-introduce"
+        autocomplete="off"
+        class="form-control field-textarea size-large"
+        placeholder=""
+        >
+        </textarea></div>    
+
+
+</div>
+    </div></div>        </div>
+    </div>
+        </div>
+
+    </div>
+
+</div>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="保存..."
+                    class="btn btn-primary">
+                    保存                </button>
+                
+
+               
+            </div>
+        </div>
+
+
+
+</form>
+{{ form_close() }}

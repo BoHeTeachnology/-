@@ -1,0 +1,20 @@
+
+{% set serviceDetailList =serviceDetailList %}
+
+<div class="container serviceDetailContent" style="padding:0">
+  {% if serviceDetailList.featured_images[1] %}
+
+<div class="overBg" style="width:100%;max-height:400px;overflow:hidden;">
+  <img src="{{ serviceDetailList.featured_images[1].path }}" class="img-responsive" style="width:100%;background-size:contain" alt="" >
+</div>
+  {% endif %}
+<!-- <div class="titleArea">
+  <h4>{{ serviceDetailList.title }}</h4>
+  <p>{{ serviceDetailList.excerpt }} </p>
+</div> -->
+<div class="serviceDetailDes">
+
+  {{serviceDetailList.content_html|raw}}
+
+</div>
+</div>

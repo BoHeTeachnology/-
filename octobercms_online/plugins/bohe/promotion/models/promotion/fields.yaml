@@ -1,0 +1,38 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    featured_images:
+        label: 'image'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    
+    name:
+        label: '活动名称'
+        span: left
+        placeholder: '活动名称'
+    explain:
+        label: '活动内容'
+        type: textarea  
+    
+    
+    link:
+        label: '链接'
+    coupons:
+        label: '优惠券'
+        type: relation
+        
+    state:
+            label: '状态'
+            
+    
+
+
+           
+
+
+
+

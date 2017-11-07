@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/account.css">
+  <link rel="stylesheet" type="text/css" href="css/diyUpload.css">
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="css/z_user.css">
+  <script src="js/jquery-1.8.0.min.js"></script>
+  <script src="js/tabcomplete.min.js"></script>
+  <script src="js/livefilter.min.js"></script>
+  <script src="js/bootstrap-select.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/plupload/2.1.2/plupload.full.min.js"></script>
+    <script type="text/javascript" src="../js/qiniu.min.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                                <li><a href="javascript:;" data-href="add_info.html#User" id='info'>基础信息</a></li>
+                                <li><a href="javascript:;" data-href="add_past.html#User" id='past'>既往史</a></li>
+                                <li><a href="javascript:;" data-href="add_mouths.html#User" id='mouth'>口腔情况</a></li>
+                                <li><a href="javascript:;" data-href="add_tooth.html#User" id='pics'>牙位图</a></li>
+                                <li><a href="javascript:;" data-href="add_family.html#User" id='family'>关系成员</a></li>
+                                <li><a class="active" href="javascript:;" data-href="add_photo.html#User" id='photo'>影像资料</a></li>
+                            </ul>
+                        </div>
+                        <div class="time minWid1000">
+                            <div class="z_time_btn minWid1055">
+                                <div class="photo_topinputbox">    
+                                    <div class="input-box2"> 
+                                        <span class="desc_span">就诊时间：</span>
+                                        <input type="text" class="text-input layicons W100" id="J-xl" readonly="readonly" value="2016-12-32">
+                                    </div>
+                                    <div class="input-box2"> 
+                                        <span class="desc_span">上传人：</span>
+                                        <select class="select_case_top W90px" name="" id="">
+                                            <option value="">牙龈干牙龈干</option>
+                                            <option value="">拔牙</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-box2 widdiv widdiv_p"> 
+                                        <span class="desc_span">医生：</span>
+                                        <div class="col-sm-8" id="DocInputbox">
+                                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                                            <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                                            <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                                <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                                <label class="sr-only" for="input-bts-ex-5"></label>
+                                                <div class="search-box">
+                                                    <div class="input-group">
+                                                    <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1"/>
+                                                    </div>
+                                                </div>
+                                                <div class="list-to-filter">
+                                                        <ul class="list-unstyled" id="doctor_id">
+                                                            <li class="filter-item items" data-filter="请选择" data-value="">请选择</li>
+                                                            <li class="filter-item items" data-filter="整整整整整整整整" data-value="1">男医生（151015392929）</li>
+                                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                                            <li class="filter-item items" data-filter="11" data-value="5">22222</li>
+        
+                                                        </ul>
+                                                    <div class="no-search-results">
+                                                        <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="bts-ex-5" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-box2 zhensuo widdiv widdiv_p"> 
+                                        <span class="desc_span">诊所：</span>
+                                        <div class="col-sm-8" id="ClinkBox">
+                                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                                            <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                                            <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                                <span class="placeholder" id="ClinkVal" data-val="">请选择</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                                <label class="sr-only" for="input-bts-ex-5"></label>
+                                                <div class="search-box">
+                                                    <div class="input-group">
+                                                    <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1"/>
+                                                    </div>
+                                                </div>
+                                                <div class="list-to-filter">
+                                                        <ul class="list-unstyled" id="clinic_id">
+                                                             <li class="filter-item items" data-filter="请选择" data-value="">请选择</li>
+                                                            <li class="filter-item items" data-filter="整整整整整整整整" data-value="1">整整整整整整</li>
+                                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                                            <li class="filter-item items" data-filter="11" data-value="5">22222</li>
+                                                         </ul>
+                                                    <div class="no-search-results">
+                                                    <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="bts-ex-5" value="">
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <div class="input-box2"> 
+                                        <span class="desc_span">项目：</span>
+                                        <select class="select_case_top W90px" name="" id="">
+                                            <option value="">牙龈干牙龈干</option>
+                                            <option value="">拔牙</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <a href="#" class="default_inputbtn z_add_btn FloatR" id="add-but">添加</a>
+                            </div>
+                        </div>
+                        <div class="userContain overflowhidden" id="change">
+                            <div class="z_userContainMain minWid1055">
+                                <!-- 影像资料 -->
+                                <div class="containb_right minWid1000">
+                                    <div class="photo_main_container">
+                                        <dl>
+                                            <dt>
+                                                <a href="javascript:;"><img src="images/pic1.png" alt=""></a>
+                                                <label class="opBj">
+                                                    <p>就诊时间：2016-12-21</p>
+                                                    <p>诊所：鸡蛋饭加水淀粉</p>
+                                                    <p>项目：是打发士大夫</p>
+                                                    <p>医生：阿萨德飞洒发静安寺干涸</p>
+                                                    <p>上传人：挖掘规划局安慰</p>
+                                                    <p>备注：阿凡达积分特工和脚后跟耳机和人格二个人格二个</p>
+                                                </label>
+                                            </dt>
+                                            <dd><label>共30张</label><p><span class="pho_edit_btn"></span><span class="pho_delete_btn"></span></p></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <a href="javascript:;"><img src="images/pic1.png" alt=""></a>
+                                                <label class="opBj">
+                                                    <p>就诊时间：2016-12-21</p>
+                                                    <p>诊所：2016-12-21</p>
+                                                    <p>项目：2016-12-21</p>
+                                                    <p>医生：2016-12-21</p>
+                                                    <p>上传人：2016-12-21</p>
+                                                    <p>备注：</p>
+                                                </label>
+                                            </dt>
+                                            <dd><p><span class="pho_edit_btn"></span><span class="pho_delete_btn"></span></p></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <a href="javascript:;"><img src="images/pic1.png" alt=""></a>
+                                                <label class="opBj">
+                                                    <p>就诊时间：2016-12-21</p>
+                                                    <p>诊所：2016-12-21</p>
+                                                    <p>项目：2016-12-21</p>
+                                                    <p>医生：2016-12-21</p>
+                                                    <p>上传人：2016-12-21</p>
+                                                    <p>备注：</p>
+                                                </label>
+                                            </dt>
+                                            <dd><p><span class="pho_edit_btn"></span><span class="pho_delete_btn"></span></p></dd>
+                                        </dl>
+                                        <dl class="cursorAuto">
+                                            <dt>
+                                                <span><img src="images/pic1.png" alt=""></span>
+                                                <label class="opBj2">
+                                                    <b class="deleteLate">已删除</b>
+                                                </label>
+                                            </dt>
+                                            <dd><label>共30张</label></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <a href="javascript:;"><img src="images/pic1.png" alt=""></a>
+                                                <label class="opBj">
+                                                    <p>就诊时间：2016-12-21</p>
+                                                    <p>诊所：2016-12-21</p>
+                                                    <p>项目：2016-12-21</p>
+                                                    <p>医生：2016-12-21</p>
+                                                    <p>上传人：2016-12-21</p>
+                                                    <p>备注：</p>
+                                                </label>
+                                            </dt>
+                                            <dd><p><span class="pho_edit_btn"></span><span class="pho_delete_btn"></span></p></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>
+                                                <a href="javascript:;"><img src="images/pic1.png" alt=""></a>
+                                                <label class="opBj">
+                                                    <p>就诊时间：2016-12-21</p>
+                                                    <p>诊所：2016-12-21</p>
+                                                    <p>项目：2016-12-21</p>
+                                                    <p>医生：2016-12-21</p>
+                                                    <p>上传人：2016-12-21</p>
+                                                    <p>备注：</p>
+                                                </label>
+                                            </dt>
+                                            <dd><p><span class="pho_edit_btn"></span><span class="pho_delete_btn"></span></p></dd>
+                                        </dl>
+                                    </div>
+                                </div><!-- 影像资料结束 -->
+                            </div>  
+                            <div class="clear"></div>
+                        </div>
+                            
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+
+<div class="new-create-opcity" id="" style="">
+    <div class="new-create-bj photo_tip_creatbox" style="margin-top:-250px;">
+        <div class="new-create-box">
+            <h4 class="toph4" style="margin-bottom:10px"><b>新建</b><span class="close-x"></span></h4>
+            <div class="new-input">
+                <div class="photos_mainbox">
+                        <div class="file-main-box pic_file_pic" id="upFile_pics">
+                            <!-- <input type="button" value="上传文件" class="but-input"> -->
+                            <div class="upfile-box">
+                                <div class="parentFileBox">                         
+                                    <ul class="fileBoxUl">
+                                        <li id="fileBox" class="diyUploadHover">
+                                            <div class="viewThumb">
+                                                <img src="images/1.jpg" alt="">
+                                            </div>
+                                            <div class="diyCancel"></div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li id="fileBox" class="diyUploadHover">
+                                            <div class="viewThumb">
+                                                <img src="images/2.jpg" alt="">
+                                            </div>
+                                            <div class="diyCancel"></div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li id="fileBox" class="diyUploadHover">
+                                            <div class="viewThumb">
+                                                <img src="images/3.jpg" alt="">
+                                            </div>
+                                            <div class="diyCancel"></div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li id="fileBox" class="diyUploadHover">
+                                            <div class="viewThumb">
+                                                <img src="images/4.jpg" alt="">
+                                            </div>
+                                            <div class="diyCancel"></div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li id="fileBox" class="diyUploadHover">
+                                            <div class="viewThumb">
+                                                <img src="images/5.jpg" alt="">
+                                            </div>
+                                            <div class="diyCancel"></div>
+                                            <div class="clear"></div>
+                                        </li>
+                                        <li id="fileBox" class="diyUploadHover">
+                                            <div class="viewThumb">
+                                                <img src="images/6.jpg" alt="">
+                                            </div>
+                                            <div class="diyCancel"></div>
+                                            <div class="clear"></div>
+                                        </li>
+                                  </ul>
+
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="photo_inputbox">
+                    <div class="float_left Pr10">
+                        <span>请选择预约：</span>
+                        <input type="text" readonly class="W145px layicons">
+                    </div>
+                    <div class="float_left"> 
+                        <span class="W65">诊断项目：</span>
+                        <select class="select_case_top W90px" name="" id="">
+                            <option value="">牙龈干牙龈干</option>
+                            <option value="">拔牙</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="photo_inputbigbox">
+                    <div class="float_left Pr10 photo_inputbox_time"> 
+                        <span class="">就诊时间：</span>
+                        <input type="text" class="W175 layicons" readonly>
+                    </div>
+                    <div class="input-box2 widdiv widdiv_p"> 
+                        <span class="desc_span docdescspan">医生：</span>
+                        <div class="col-sm-8" id="DocInputbox">
+                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                            <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                            <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                                <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                <label class="sr-only" for="input-bts-ex-5"></label>
+                                <div class="search-box">
+                                    <div class="input-group">
+                                    <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1"/>
+                                    </div>
+                                </div>
+                                <div class="list-to-filter">
+                                        <ul class="list-unstyled" id="doctor_id">
+                                            <li class="filter-item items" data-filter="请选择" data-value="">请选择</li>
+                                            <li class="filter-item items" data-filter="整整整整整整整整" data-value="1">男医生（151015392929）</li>
+                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                            <li class="filter-item items" data-filter="11" data-value="5">22222</li>
+
+                                        </ul>
+                                    <div class="no-search-results">
+                                        <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="bts-ex-5" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box2 zhensuo widdiv widdiv_p"> 
+                        <span class="desc_span">诊所：</span>
+                        <div class="col-sm-8" id="ClinkBox">
+                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                            <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                            <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                <span class="placeholder" id="ClinkVal" data-val="">请选择</span>
+                                <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                <label class="sr-only" for="input-bts-ex-5"></label>
+                                <div class="search-box">
+                                    <div class="input-group">
+                                    <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1"/>
+                                    </div>
+                                </div>
+                                <div class="list-to-filter">
+                                        <ul class="list-unstyled" id="clinic_id">
+                                             <li class="filter-item items" data-filter="请选择" data-value="">请选择</li>
+                                            <li class="filter-item items" data-filter="整整整整整整整整" data-value="1">整整整整整整</li>
+                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                            <li class="filter-item items" data-filter="11" data-value="5">22222</li>
+                                         </ul>
+                                    <div class="no-search-results">
+                                    <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="bts-ex-5" value="">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="photo_inputbox">
+                    <span>备注：</span>
+                    <textarea class="photo_up_remark"></textarea>
+                    <div class="clear"></div>
+                </div>
+                <div class="photo_inputbox upfilebtnbox"> 
+                    <div id="container" class="file-main-box pic_file_pic2">
+                        <input id="pickfiles" type="button" value="上传图片" class="but-input uppic_btn">
+                        <!-- <div class="upfile-box">
+                            
+                            <div id="picUpfile1"></div>
+                        </div> -->
+                    </div>
+                    <label class="tip_wrong">图片建议尺寸：2:1</label>
+                    <div class="clear"></div>
+                </div>
+                  
+                <div class="new-creatbut-box" style="margin:0 auto;margin-top:10px;">
+                    <input type="button" class="but butgray" value="取 消" id="cancel-dialog">
+                    <input type="button" class="but butblue" value="确 定" id="confirm-but">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:14px;">该图册含有多张影像资料，删除后将全部清空！</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取消" id="cancel_btn">
+          <input type="button" class="but butblue" value="确定" id="confirm_btn">
+        </div>
+    </div>
+  </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:14px;">您是否要保存修改？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取消" id="no_save">
+          <input type="button" class="but butblue" value="确定" id="save_btn">
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="framemain_bj" style="display:none">
+    <div class="frameboxmain" id="frame"></div>
+    <div class="dialogbutnbox" id="bottom">
+        <ul>
+            <li class="prev" id="prev"></li>
+            <!-- <li class="img">移动</li> -->
+            <li class="next" id="next"></li>
+            <li class="close" id="closePic"></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+
+$('.userContain').height( $(window).height()-190 )
+$('.containb_right').css({'min-height': $(window).height()-192 })
+window.onresize=function(){
+    $('.userContain').height( $(window).height()-190 )
+    $('.containb_right').css({'min-height': $(window).height()-192 })
+}
+$(function(){
+  
+    picFun()
+
+})
+function picFun(){
+    var picsoBox =$('#upFile_pics'),
+        picLi = picsoBox.find('li'),
+        picLiImg = picsoBox.find('img'),
+        oFrame = $('#frame'),
+        bj = $('.framemain_bj'),
+        prev = $('#prev'),
+        next = $('#next'),
+        closePic = $('#closePic'),
+        iNow =  0;
+     // 相册展示
+    picLi.bind('click',function(){
+        bj.show();
+        oFrame.css({
+            display:'block',
+            top:$(this).offset().top,
+            left:$(this).offset().left,
+            width:$(this).outerWidth(true),
+            height:$(this).outerHeight(true),
+            opacity:0
+        });
+        oFrame.html('<img src="'+$(this).find('img').attr('src')+'"/>');
+        var oImg = oFrame.find('img'),
+            iWidth = 900,
+            iHeight = 500,
+            iLeft = $(window).width()/2- iWidth/2,
+            iTop = $(window).height()/2 -iHeight/2; 
+        play(oFrame, {opacity:1, left:iLeft, top:iTop, width:iWidth, height:iHeight});
+        window.onresize=function(){
+            oFrame.css({
+                'left':$(window).width()/2- iWidth/2,
+                'top':$(window).height()/2 -iHeight/2
+            })
+        }
+        iNow = $(this).index();
+    });
+
+     // 上一张 prev
+    prev.bind('click',function(){
+       iNow--;
+       console.log(iNow)
+       if(iNow <0) iNow = picLi.length-1;
+       oFrame.html('<img src="'+picLi.eq(iNow).find('img').attr('src')+'" width="100%" height="100%" />');
+    });
+     // 下一张 next
+    next.bind('click',function(){
+       iNow++;
+       console.log(iNow)
+       if(iNow > (picLi.length-1) ) iNow = 0;
+       oFrame.html('<img src="'+picLi.eq(iNow).find('img').attr('src')+'" width="100%" height="100%" />');
+    });
+     // 关闭
+    closePic.bind('click',function(){
+        play(oFrame, {
+                  opacity:0,
+                  left:picLiImg.eq(iNow).offset().left, 
+                  top:picLiImg.eq(iNow).offset().top,
+                  width:165,
+                  height:85
+        }, function(){
+            oFrame.hide();
+            oFrame.css({cursor:'auto'});
+            oFrame.unbind('mousedown');
+            bj.hide();
+        });
+    });
+    function play(selector,param,fn){
+       selector.animate(param,fn); 
+    } 
+}
+
+$(function(){
+    console.log("PPPPPPPPPPPPPPPPP")
+    var uploader = Qiniu.uploader({
+        runtimes: 'html5,flash,html4',      // 上传模式,依次退化
+        browse_button: 'pickfiles',         // 上传选择的点选按钮，**必需**
+        // 在初始化时，uptoken, uptoken_url, uptoken_func 三个参数中必须有一个被设置
+        // 切如果提供了多个，其优先级为 uptoken > uptoken_url > uptoken_func
+        // 其中 uptoken 是直接提供上传凭证，uptoken_url 是提供了获取上传凭证的地址，如果需要定制获取 uptoken 的过程则可以设置 uptoken_func
+        // uptoken : '<Your upload token>', // uptoken 是上传凭证，由其他程序生成
+        uptoken_url: '/qiniu_token/rest',         // Ajax 请求 uptoken 的 Url，**强烈建议设置**（服务端提供）
+        // uptoken_func: function(file){    // 在需要获取 uptoken 时，该方法会被调用
+        //    // do something
+        //    return uptoken;
+        // },
+        get_new_uptoken: false,             // 设置上传文件的时候是否每次都重新获取新的 uptoken
+        // downtoken_url: '/downtoken',
+        // Ajax请求downToken的Url，私有空间时使用,JS-SDK 将向该地址POST文件的key和domain,服务端返回的JSON必须包含`url`字段，`url`值为该文件的下载地址
+        // unique_names: true,              // 默认 false，key 为文件名。若开启该选项，JS-SDK 会为每个文件自动生成key（文件名）
+        // save_key: true,                  // 默认 false。若在服务端生成 uptoken 的上传策略中指定了 `sava_key`，则开启，SDK在前端将不对key进行任何处理
+        domain: 'http://xiaomaip.qiniudn.com/',     // bucket 域名，下载资源时用到，**必需**
+        container: 'container',             // 上传区域 DOM ID，默认是 browser_button 的父元素，
+        max_file_size: '100mb',             // 最大文件体积限制
+        flash_swf_url: 'path/of/plupload/Moxie.swf',  //引入 flash,相对路径
+        max_retries: 3,                     // 上传失败最大重试次数
+        dragdrop: true,                     // 开启可拖曳上传
+        drop_element: 'container',          // 拖曳上传区域元素的 ID，拖曳文件或文件夹后可触发上传
+        chunk_size: '4mb',                  // 分块上传时，每块的体积
+        auto_start: true,                   // 选择文件后自动上传，若关闭需要自己绑定事件触发上传,
+        //x_vars : {
+        //    自定义变量，参考http://developer.qiniu.com/docs/v6/api/overview/up/response/vars.html
+        //    'time' : function(up,file) {
+        //        var time = (new Date()).getTime();
+        // do something with 'time'
+        //        return time;
+        //    },
+        //    'size' : function(up,file) {
+        //        var size = file.size;
+        // do something with 'size'
+        //        return size;
+        //    }
+        //},
+        init: {
+            'FilesAdded': function(up, files) {
+                plupload.each(files, function(file) {
+                    // 文件添加进队列后,处理相关的事情
+                });
+            },
+            'BeforeUpload': function(up, file) {
+                // 每个文件上传前,处理相关的事情
+            },
+            'UploadProgress': function(up, file) {
+                // 每个文件上传时,处理相关的事情
+            },
+            'FileUploaded': function(up, file, info) {
+                // 每个文件上传成功后,处理相关的事情
+                // 其中 info 是文件上传成功后，服务端返回的json，形式如
+                // {
+                //    "hash": "Fh8xVqod2MQ1mocfI4S4KpRL6D98",
+                //    "key": "gogopher.jpg"
+                //  }
+                // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
+
+                // var domain = up.getOption('domain');
+                // var res = parseJSON(info);
+                // var sourceLink = domain + res.key; 获取上传成功后的文件的Url
+            },
+            'Error': function(up, err, errTip) {
+                //上传出错时,处理相关的事情
+            },
+            'UploadComplete': function() {
+                //队列文件处理完毕后,处理相关的事情
+            },
+            'Key': function(up, file) {
+                // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
+                // 该配置必须要在 unique_names: false , save_key: false 时才生效
+
+                var key = "";
+                // do something with key here
+                return key
+            }
+        }
+    });
+})
+
+
+
+
+</script>

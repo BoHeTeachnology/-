@@ -1,0 +1,41 @@
+
+[MonthEvents]
+
+==
+<?php
+function onStart()
+{
+    /** Add yellow highlight for current day */
+     // keys must be integers
+    $y = (int) date('Y');
+    $m = (int) date('m');
+    $d = (int) date('d');
+    
+    
+    $sundow = ( $d - (int) date('N'));
+    $satdow = $d + ( 6 - (int) date('N'));
+    
+    $highlightArray = range ( $sundow,$satdow);
+    
+    foreach ($highlightArray as $dow){
+    if ($dow>0)
+        $week[$dow] =['class' => 'yellow'];
+    }
+    
+    
+    
+     $this['MyDayProps'] = [
+        $y => [   // Year (must be integer)
+            $m =>$week
+        ] 
+    ];
+}
+?>
+==
+<style>
+      table.mycal { width: 1000px;}
+</style>
+
+<div style="padding:5px;">
+    {% component 'MonthEvents'  dayprops=MyDayProps %}
+</div>

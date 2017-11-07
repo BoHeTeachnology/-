@@ -1,0 +1,23 @@
+
+{% set vikiDetailList =vikiDetailList %}
+{% set viewNumber =viewNumber %}
+
+<div class="container-fluid vikiDetail">
+  {% if vikiDetailList.featured_images %}
+  {% for image in vikiDetailList.featured_images %}
+<div class="overBg" style="width:100%;max-height:400px;overflow:hidden;">
+<img src="{{ image.path }}" style="width:100%;margin-left:7%;margin-right:right" alt="" >
+</div>
+  {% endfor %}
+  {% endif %}
+<!-- <img src="{{'assets/img/1.jpg' |theme}}" alt=""> -->
+<div class="titleArea">
+  <h3>{{ vikiDetailList.title }}</h3>
+  <h3>{{ vikiDetailList.published_at }}</h3>
+  <h3><i class="icon-eye-open"></i>   {{viewNumber.visits}}</h3>
+</div>
+<div class="detailContent">
+  {{vikiDetailList.content_html|raw}}
+
+</div>
+</div>

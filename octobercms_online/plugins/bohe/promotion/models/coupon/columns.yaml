@@ -1,0 +1,26 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    
+    
+    name:
+        label: '优惠券名称'
+        span: left
+        placeholder: '优惠券名称'
+    explain:
+        label: '优惠券内容'
+    
+    
+    type:
+        label: '优惠券类型'
+    num:
+        label: '数值'  
+    levelvalue:
+        label: '消费满减值'     
+        
+    state:
+            label: '状态'
+    created_at:
+            label: '创建时间'        

@@ -1,0 +1,11 @@
+name: '诊所'
+modelClass: Bohe\Clinic\Models\Index
+form: $/bohe/clinic/models/index/fields.yaml
+defaultRedirect: bohe/clinic/index
+create:
+    redirect: 'bohe/clinic/index/update/:id'
+    redirectClose: bohe/clinic/index
+update:
+    redirect: bohe/clinic/index
+    redirectClose: bohe/clinic/index
+preview: {  }

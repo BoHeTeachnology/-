@@ -1,0 +1,54 @@
+<div class="userbaseData_right">
+
+  <div class="userData_row1">
+    <span>基本资料</span>
+    <span id='gouserAuth'>编辑资料</span>
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row2">
+    <p class="userData_row2_p">我的头像</p>
+
+    {% if theuser.avatar.count %}
+  <img  data-src="{{ theuser.avatar.filename }}" src="{{ theuser.avatar.path }}" alt="{{ theuser.avatar.description }}" />
+    {% endif %}
+ </div>
+ <div class="heght1"></div>
+
+ <div class="userData_row3 clearfix" data-field-name="name">
+   <span>姓名</span>
+   <span>{{theuser.name}}</span>
+ </div>
+ <div class="heght1"></div>
+
+
+ <div class="userData_row4 clearfix">
+   <span>性别</span>
+   <div class="userData_row_right">
+     <span class="W120" >
+      {{theuser.iu_gender=='male'?'男':'女'}}
+     </span>
+   </div>
+
+ </div>
+ <div class="heght1"></div>
+
+ <div class="userData_row5 clearfix">
+   <span>年龄</span>
+   <span>{{theuser.age}}</span>
+ </div>
+ <div class="heght1"></div>
+ <div class="userData_row6 clearfix">
+   <span>所在地</span>
+  <span>{{theuser.city}}</span>
+ </div>
+ <div class="heght1"></div>
+
+ <div class="userData_row7 clearfix">
+   <span>手机号</span>
+
+  <span>{{theuser.phone}}</span>
+ </div>
+ <div class="heght1"></div>
+
+</div>

@@ -1,0 +1,24 @@
+
+{% if not user %}
+
+    <div class="row">
+
+
+    </div>
+
+{% else %}
+{% if usertype=='doctor' %}
+	{% partial 'userandcalendat/createcalendar'  %}
+   {% partial 'userandcalendat/calendarshow'  %}
+   
+{% endif %}
+
+{% if usertype=='normaluser' %}
+   
+	
+	     {% partial 'userandcalendat/calendarshow'  %}
+	
+{% endif %}
+ 
+
+{% endif %}

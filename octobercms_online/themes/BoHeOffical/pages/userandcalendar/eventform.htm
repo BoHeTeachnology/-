@@ -1,0 +1,22 @@
+title = "My Events"
+url = "/cal/form"
+layout = "user"
+description = "Your very own place to add events to the calendar."
+is_hidden = 0
+
+[EventForm]
+[account]
+[session]
+allowpublish = 1
+ckeditor = 1
+bootstrapCDN = 0
+==
+{% if user %}
+{% if can('canupload') %}
+                {% component 'EventForm' %}
+{% else %}
+                <p>您无权限</p>
+{% endif %}
+{% else %}
+                <p>您没有登陆.</p>
+{% endif %}

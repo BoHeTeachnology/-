@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: bohe.article::lang.cat.create_category
+form: ~/plugins/bohe/article/models/cat/fields.yaml
+modelClass: Bohe\Article\Models\Cat
+defaultRedirect: bohe/article/cats
+
+create:
+    redirect: bohe/article/cats/update/:id
+    redirectClose: bohe/article/cats
+
+update:
+    redirect: bohe/article/cats
+    redirectClose: bohe/article/cats

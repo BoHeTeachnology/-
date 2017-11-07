@@ -1,0 +1,14 @@
+<script src="../plugins/edps/qrcode/assets/js/qr.min.js"></script>
+
+<canvas id="qr-code"></canvas>
+
+<script>
+    qr.canvas({
+        canvas: document.getElementById('qr-code'),
+        level:  "{{ dataToQrCode.level }}",        
+        foreground: "{{ dataToQrCode.foreground }}",
+        background: "{{ dataToQrCode.background }}",
+        size: "{{ dataToQrCode.size }}",
+        value: "{{ dataToQrCode.value }}"
+  	});
+</script>

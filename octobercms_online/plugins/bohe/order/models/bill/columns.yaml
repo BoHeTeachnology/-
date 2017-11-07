@@ -1,0 +1,38 @@
+columns:
+
+    id:
+        label: 'ID'
+        span: left
+        placeholder: '标题'
+
+    order_id:
+        label: '订单ID'
+        
+    wechat_order_id:
+        label: '微信订单ID'
+    username:
+        label: '用户姓名'
+    type:
+        label: '服务类型'
+    doctor_name:
+        label: '医生姓名'
+    clinic:
+        label: '诊所名称'
+    channel:
+        label: '渠道'
+    coupon_name:
+        label: '优惠券名称'
+    price:
+        label: '价格'
+    income:
+        label: '实际收入'
+    doc_income:
+        label: '医生分成'
+    clinic_income:
+        label: '诊所分成'
+    bohe_income:
+        label: '薄荷分成' 
+    pay_type:
+        label: '支付方式'
+    state:
+        label: '状态'  

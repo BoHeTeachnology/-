@@ -1,0 +1,11 @@
+name: '留言'
+modelClass: Bohe\Message\Models\Index
+form: $/bohe/message/models/index/fields.yaml
+defaultRedirect: bohe/message/index
+create:
+    redirect: 'bohe/message/index/update/:id'
+    redirectClose: bohe/message/index
+update:
+    redirect: bohe/message/index
+    redirectClose: bohe/message/index
+preview: {  }

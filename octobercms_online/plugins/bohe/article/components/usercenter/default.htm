@@ -1,0 +1,30 @@
+
+{% if not user %}
+
+    <div class="row">
+
+
+    </div>
+
+{% else %}
+{% if doctor=='doctoryes' %}dd
+	{% if dochaveone=='dochaveoneyes' %}ff
+	    {% partial 'userandcalendat/docindex'  %}
+	{% endif %}
+	{% if dochaveone=='dochaveoneno' %}ffff
+	   {% partial 'userandcalendat/docfirst'  %}
+	{% endif %}
+   
+{% endif %}
+
+{% if register=='registeryes' %}dd
+   	{% if registerhaveone=='registerhaveoneyes' %}dd
+	   {% partial 'userandcalendat/userindex'  %}
+	{% endif %}
+	{% if registerhaveone=='registerhaveoneno' %}dd
+	   {% partial 'userandcalendat/userfirst'  %}
+	{% endif %}
+{% endif %}
+ 
+
+{% endif %}

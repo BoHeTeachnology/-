@@ -1,0 +1,11 @@
+name: '预约'
+modelClass: Bohe\Date\Models\Index
+form: $/bohe/date/models/index/fields.yaml
+defaultRedirect: bohe/date/index
+create:
+    redirect: 'bohe/date/index/update/:id'
+    redirectClose: bohe/date/index
+update:
+    redirect: bohe/date/index
+    redirectClose: bohe/date/index
+preview: {  }

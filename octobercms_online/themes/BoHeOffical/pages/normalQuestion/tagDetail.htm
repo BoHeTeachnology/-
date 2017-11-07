@@ -1,0 +1,27 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/tagDetail/:tag?"
+layout="main"
+description=""
+hidden="0"
+from="doctorteam"
+
+[searcharticle]
+[tagarticle]
+[articledoctor]
+==
+
+<!-- 面包屑导航begin -->
+<div id="breadNav" style="margin-top:60px;">
+  {% set type =[{'title':'网站首页','isHref':'/'},{'title':'标签','isHref':'/'},{'title':'标签详情','isHref':'/'}] %}
+  {% partial 'breadNav' types=type %}
+</div>
+<!-- 面包屑导航end -->
+
+<!-- 常见问题区域  begin -->
+
+<div id="tagDetail">
+
+  {% partial 'normalQuestion/tagDetail' %}
+</div>
+
+<!-- 常见问题区域 end -->

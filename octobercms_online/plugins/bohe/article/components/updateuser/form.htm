@@ -1,0 +1,122 @@
+{% flash success %}
+    <div class="alert alert-success">{{ message }}</div>
+{% endflash %}
+{{ form_open() }}
+<form role="form" method="post"   name="User"
+    data-request="onSave"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');">
+
+
+ <div
+            id="Form-outsideTabs"
+            class="form-tabless-fields ">
+            
+             照片
+{% component 'fileUploaderavatar' %}
+                <div
+    class="form-group  text-field span-left   "
+        data-field-name="name"
+        id="Form-field-User-name-group"><label for="Form-field-User-name">
+                姓名            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="User[name]"
+        id="Form-field-User-name"
+        value="{{theuser.name}}"
+        placeholder="请填写姓名"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>  
+                        <div
+    class="form-group  text-field span-left   "
+        data-field-name="name"
+        id="Form-field-User-name-group"><label for="Form-field-User-name">
+                性别           </label>
+        
+        
+        <!-- Text -->
+ <input type="radio" id="radio_1" name="User[iu_gender]" value="male" {% if theuser.iu_gender =='male'  %} checked="checked" {% endif %}>
+<label for="radio_1">
+                    男         </label>
+                    
+<input type="radio" id="radio_2" name="User[iu_gender]" value="female" {% if theuser.iu_gender =='female'  %} checked="checked" {% endif %} >
+<label for="radio_2">
+                    女         </label>
+                    </div> 
+                    
+                    
+                        <div
+    class="form-group  text-field span-left   "
+        data-field-name="age"
+        id="Form-field-User-name-group"><label for="Form-field-User-name">
+                年龄            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="User[age]"
+        id="Form-field-User-name"
+        value="{{theuser.age}}"
+        placeholder="请填写姓名"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div> 
+                        <div
+    class="form-group  text-field span-left   "
+        data-field-name="city"
+        id="Form-field-User-name-group"><label for="Form-field-User-name">
+                所在地            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="User[city]"
+        id="Form-field-User-name"
+        value="{{theuser.city}}"
+        placeholder="请填写姓名"
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div> 
+         <div
+    class="form-group  text-field span-left   "
+        data-field-name="phone"
+        id="Form-field-User-phone-group"><label for="Form-field-User-phone">
+                手机            </label>
+        
+        
+        <!-- Text -->
+    <input
+        type="text"
+        name="User[phone]"
+        id="Form-field-User-phone"
+        value="{{theuser.phone}}"
+        placeholder=""
+        class="form-control"
+        autocomplete="off"
+        maxlength="255"            /></div>  
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="保存..."
+                    class="btn btn-primary">
+                    保存                </button>
+                
+
+               
+            </div>
+        </div>
+
+
+
+</form>
+{{ form_close() }}

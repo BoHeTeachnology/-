@@ -1,0 +1,6 @@
+plugin:
+    name: 'bohe.ask::lang.plugin.name'
+    description: 'bohe.ask::lang.plugin.description'
+    author: bohe
+    icon: oc-icon-adjust
+    homepage: ''

@@ -1,0 +1,118 @@
+<div class="userAccount_right">
+  <div class="userAccount_row1">
+    <span>账号和密码</span>
+  </div>
+  <div class="heght1"></div>
+
+
+  <div class="userAccount_row2 clearfix">
+    <span>我的薄荷号</span>
+    <span>bh123456</span>
+    <span>不可修改</span>
+  </div>
+  <div class="heght1"></div>
+
+
+  <div class="userAccount_row3 clearfix">
+    <span>密码</span>
+    <a href="javascript:void(0)" id="changePwd" >修改密码</a>
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userAccount_row4 clearfix">
+    <span>手机号</span>
+    <span>{{theuser.mobile}}</span>
+  </div>
+</div>
+
+
+<div id="changebgbox" style="width:305px;height:285px;display:none;background-color:#fff;position:relative;border-radius: 4px;">
+  <h4 style="position:absolute;right:10px;top:0;"><a id="change_bgclose" title="">&times;</a></h4>
+<div id="changebox">
+  <form class="" action="" method="post">
+    <span class="changeTitle">修改密码</span>
+
+    <div class="newsecret">
+      <label for="secret">请输入新密码</label>
+      <input type="password" id="change_secret" name="secret" value="" placeholder="不少于6位">
+    </div>
+    <div class="newagainsecret">
+      <label for="secret">再次输入新密码</label>
+      <input type="password" id="changeagain_secret" name="secret" value="" placeholder="不少于6位">
+    </div>
+    <a href="#" id="change_isShowSecret"><img src="{{'assets/img/usercenter/secretHide.png' |theme}}" alt=""></a>
+
+    <a class="changebtn btn btn-default">重置密码</a>
+
+    </div>
+  </form>
+</div>
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+  $(function(){
+
+    $('#change_bgclose').click(function(){
+      easyDialog.close();
+    })
+    $('#changePwd').click(function(){
+    // $('#login').hDialog({box:'#bgbox',width:305,height: 375,closeHide: true,effect: 'fadeOut'});
+    easyDialog.open({
+    		container : 'changebgbox'
+    	});
+
+    })
+
+    $(".changebtn").bind("click",function(){
+
+        var newsecret = $("#change_secret").val(); //验证码
+        var newagainsecret = $("#changeagain_secret").val();	 //电话号码
+
+        console.log(newsecret);
+          console.log(newagainsecret);
+
+        if (newsecret !=newagainsecret) {
+          alert('两次输入密码不一致');
+          return;
+        }
+        if (newsecret.length<6 || newagainsecret.length<6) {
+          alert('密码至少6位');
+          return;
+        }
+
+        $.request('account::onUpdate',{
+            data: {
+              password:newagainsecret,
+              password_confirmation:newagainsecret,
+            },
+            redirect:window.location.href,
+
+    })
+  })
+
+  $('#change_isShowSecret').bind('click', function(e){
+  e.preventDefault();
+
+  changeShowSecret('#change_isShowSecret','#change_secret','#changeagain_secret')
+
+  })
+
+  changeShowSecret=function(showId,inputIdone,inputIdtwo){
+
+    if ($(inputIdone.toString()).attr('type')=='password') {
+      // $(inputId.toString()+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretShow.png'});
+      $(showId+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretShow.png'});
+      $(inputIdone.toString()).attr('type','text')
+      $(inputIdtwo.toString()).attr('type','text')
+    }else if ($(inputIdone.toString()).attr('type')=='text') {
+        $(showId+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretHide.png'});
+        $(inputIdone.toString()).attr('type','password')
+          $(inputIdtwo.toString()).attr('type','password')
+    }
+  }
+
+
+})
+</script>
+{% endput %}

@@ -1,0 +1,132 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/boheviki/viki/:category?"
+layout="main"
+description=""
+hidden="0"
+from="boheviki"
+
+
+[blogPosts]
+type = 2
+pageNumber = 1
+postsPerPage=10
+==
+<?php
+function onStart(){
+  $this['typeName'] = 'viki';
+}
+?>
+==
+
+
+
+<!-- 顶部背景图begin -->
+<div id="topBg">
+
+
+  {% set topContent={'title1':'牙齿问题都能在这里找到答案','title2':'Dental problems can be found here','title3':'','imgSrc':'vikiTopBg.png','position':'right'} %}
+
+  {% partial 'viki/topBg' topContent=topContent %}
+
+</div>
+<!-- 顶部背景图end-->
+<!-- 面包屑导航begin -->
+<div id="breadNav">
+  {% set type =[{'title':'网站首页','isHref':'/'},{'title':'薄荷百科','isHref':'/boheviki/viki/1/categroy/1'},{'title':'洗牙','isHref':false}] %}
+  {% set typeIndex='service' %}
+  {% partial 'breadNav' typeIndex=typeIndex types=type %}
+
+</div>
+<!-- 面包屑导航end -->
+
+<!-- 服务项目导航begin -->
+<div id="vikiList">
+
+  {% partial 'index/serviceList' %}
+</div>
+
+<div id="viki_nextPage" class="viki_nextPage">
+
+{% partial 'listPartial/pagePartial' %}
+</div>
+
+
+{% put scripts %}
+
+   <script>
+   $(function(){
+
+   var _category = {{ category }};
+  //  $("#categoryArea").on('click',"#category_viki",function(e){
+  //    var category =e.target.getAttribute("category");
+  //      $('#viki_loadNextPage').attr("currentPage",1);
+  //       $('#viki_loadBeforePage').attr("currentPage",1);
+  //       _category = category;
+  //      e.preventDefault();
+  //      $.request('blogPosts::onGetnext',{
+  //           data: {page:1,type:2,cat:category,typeName:'viki'},
+  //           update:{'listPartial/listPartial':'#updateList','listPartial/pagePartial':'#viki_nextPage'}
+  //      })
+  //    });
+
+   $("#viki_nextPage").on('click',"#viki_loadBeforePage",function(e){
+
+   	  e.preventDefault();
+
+      var _currentPage =e.target.getAttribute("currentPage");
+
+      if(_currentPage-1<1){
+        alert("已经是第一页");
+        return;
+      }
+      $('#viki_loadBeforePage').attr("currentPage",--_currentPage);
+      $('#viki_loadNextPage').attr("currentPage",_currentPage);
+      $("#viki_nextPage ul li").removeClass();
+      $('#viki_nextPage ul li:eq(' + (Number(_currentPage)) +')').attr('class','active');
+   	  $.request('blogPosts::onGetnext',{
+           data: {page:(_currentPage),type:2,cat:_category,typeName:'viki'},
+   		    update:{'listPartial/listPartial':'#updateList'}
+
+       })
+     });
+
+       $("#viki_nextPage").on('click',"#viki_loadNextPage",function(e){
+          e.preventDefault();
+          var _currentPage =e.target.getAttribute("currentPage");
+          var _lastPage =e.target.getAttribute("lastPage");
+          console.log(_lastPage+'_lastPage');
+          if(_currentPage+1>_lastPage){
+            alert('已经是最后一页');
+            return;
+          }
+          console.log(_currentPage);
+          $("#viki_nextPage ul li").removeClass();
+          $('#viki_nextPage ul li:eq(' + (Number(_currentPage)+1) +')').attr('class','active');
+          $('#viki_loadNextPage').attr("currentPage",++_currentPage);
+          $('#viki_loadBeforePage').attr("currentPage",_currentPage);
+          $.request('blogPosts::onGetnext',{
+               data: {page:(_currentPage),type:2,cat: _category ,typeName:'viki'},
+              update:{'listPartial/listPartial':'#updateList'}
+          })
+         });
+        $("#viki_nextPage").on('click',"#viki_loadCurrentPage",function(e){
+              	  e.preventDefault();
+                 var _currentPage =e.target.getAttribute("currentPage");
+                 $("#viki_nextPage ul li").removeClass();
+                 e.target.parentNode.setAttribute('class','active');
+                 $('#viki_loadNextPage').attr("currentPage",_currentPage);
+                  $('#viki_loadBeforePage').attr("currentPage",_currentPage);
+              	  $.request('blogPosts::onGetnext',{
+                      data: {page:(_currentPage),type:2,cat: _category ,typeName:'viki'},
+              		    update:{'listPartial/listPartial':'#updateList'}
+              	  })
+                });
+
+
+
+
+
+   })
+   </script>
+   {% endput %}
+<!-- 服务项目导航end -->

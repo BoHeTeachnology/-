@@ -1,0 +1,50 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/usercenter/doctorDetail"
+layout="main"
+description="薄荷牙医"
+hidden="0"
+from="home"
+isneedLogin="1"
+cattype="userBaseData"
+
+[session]
+[account]
+[MonthEvents]
+month = "{{ :month }}"
+year = "{{ :year }}"
+weekstart = 0
+color = "red"
+loadstyle = 1
+title_max = 100
+usePermissions = 1
+category = "{{ :cat }}"
+doctor_id = "{{ :doctor_id }}"
+dayspast = 30
+daysfuture = 120
+raw_data = 0
+
+[theindexform]
+
+
+
+==
+<?php
+function onStart()
+{
+  $this['lefttype'] = 'basedata';
+}
+?>
+==
+
+
+{% if user %}
+  <!-- 用户中心begin -->
+<div id="doctorDetail" style="margin-top:65px">
+  {% set usertype='doctorBaseData' %}
+  {% partial 'userCenter/userCenter' lefttype='basedata' usertype=usertype %}
+</div>
+{% else %}
+<div class="authLogin" style="">
+  {% partial 'login/auth' %}
+</div>
+{% endif %}

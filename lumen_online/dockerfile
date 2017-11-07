@@ -1,0 +1,51 @@
+# The FROM instruction sets the Base Image for subsequent instructions.
+# Using Nginx as Base Image
+FROM registry.cn-beijing.aliyuncs.com/khan_space/php_fpm_develop:v1.0
+MAINTAINER King <87287864@qq.com>
+
+RUN rm -rf /root/worker_lumen
+
+RUN mkdir /root/worker_lumen
+
+RUN rm -rf /root/code_temp
+
+RUN mkdir /root/code_temp
+
+COPY . /root/code_temp
+
+COPY ./phpfpm_start.sh  /usr/local/bin
+
+RUN touch /root/code_temp/.env
+
+RUN echo -e "APP_ENV=local\n\
+APP_DEBUG=true\n\
+APP_KEY=lumenwxinterface\n\n\
+DB_CONNECTION=mysql\n\
+DB_HOST=dbrouter\n\
+DB_HOST_WRITE=rm-2ze514q9jmc3y259go.mysql.rds.aliyuncs.com\n\
+DB_HOST_READ=rm-2ze514q9jmc3y259go.mysql.rds.aliyuncs.com\n\
+DB_PORT_WRITE=3306\n\
+DB_PORT_READ=3306\n\
+DB_DATABASE=boheofficial\n\
+DB_USERNAME=khan\n\
+DB_PASSWORD=Wlswn1587\n\
+CACHE_DRIVER=redis\n\
+QUEUE_DRIVER=sync\n\
+JWT_KEY=iOjEsImlzcyI6I\n\
+APP_TIMEZONE=PRC\n\
+JWT_SECRET=iOjEsImlzcyI6I" > /root/code_temp/.env
+
+RUN sed -i "s/^;opcache.enable=0/opcache.enable=1/g" /usr/local/lib/php.ini
+
+RUN sed -i "s/^;opcache.memory_consumption=64/opcache.memory_consumption=64/g" /usr/local/lib/php.ini
+
+RUN sed -i "s/^;opcache.revalidate_freq=2/opcache.revalidate_freq=2/g" /usr/local/lib/php.ini
+
+RUN sed -i "s/^;date.timezone =/date.timezone = \"Asia\/Shanghai\"/g" /usr/local/lib/php.ini
+
+# Ubuntu
+RUN echo "Asia/shanghai" > /etc/timezone;
+# CentOS
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+RUN chmod 777 /usr/local/bin/phpfpm_start.sh

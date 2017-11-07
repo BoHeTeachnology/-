@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    update_existing:
+        label: Update existing posts
+        comment: Check this box to update posts that have exactly the same ID, title or slug.
+        type: checkbox
+        default: true
+        span: left
+
+    auto_create_categories:
+   
+
+    default_author:
+        label: Default post author (optional)
+        comment: The import will try to use an existing author if you match the Author Email column, otherwise the author specified above is used.
+        type: dropdown
+        placeholder: -- Select author --
+        span: left

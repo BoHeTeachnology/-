@@ -1,0 +1,65 @@
+<div class="modal-content">
+  <div class="modal-header{% if context %} modal-header-{{ context }}{% endif %}">
+
+
+    <a type="button" class="close btn btn-default" data-dismiss="modal">&times;</a>
+    <h4 class="modal-title">{{ ev.name }}</h4>{{ ev.date }} {% if ev.time %} {{ ev.time }}-{{ ev.end_time }} {% endif %}
+  </div>
+  <div class="modal-body">
+    {{ ev.text|raw }}
+  </div>
+  <div class="modal-footer">
+    {% for cat in ev.cats %}
+    <span class="label label-info" style="display: inline-block;
+    position: relative;
+    left: -76%;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    background-color: rgb(23, 172, 178) !important;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-top:20px;">{{cat}}</span> {% endfor %} <br />
+    {% if occs %}
+    {% for occ in occs %}
+    <span class="label label-default">{{occ}}</span>
+    {% endfor %}
+    <br />
+    {% endif %}
+    {% if ev.tys %}
+    {% for sev in ev.tys %}
+    <span class="label label-default" style="display: inline-block;
+    position: relative;
+    left: -67%;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    background-color: rgb(23, 172, 178) !important;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-top:20px;" >{{sev}}</span>
+    {% endfor %} <br />
+    {% endif %}
+
+    <!-- 判断事件是当前登陆用户 -->
+    {% if ev.nowuid==ev.user_id %}
+      <button data-request="onDelete"
+              data-request-data="id: {{ev.id}}"
+              data-request-confirm="确定要删除么？"
+              data-request-redirect="/usercenter/event"
+              style="background-color: rgb(23, 172, 178);box-shadow: none;border: none;color: #fff;padding: 8px 20px;border-radius: 4px;"
+              >删除 </button>
+      {% endif %}
+
+
+
+  </div>
+</div>

@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    doctor_name:
+        label: '医生姓名'
+
+    
+    outcash:
+            label: '提现总额'
+    state:
+            label: '状态'     

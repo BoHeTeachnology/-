@@ -1,0 +1,37 @@
+
+<!-- datepicker partial start-->
+        <div class="date-select input-group date">
+          <span>出诊日期</span>
+
+          <span>
+            <input
+                type="text"
+                id="DatePicker-form-input-{{name}}"
+                name="{{ name }}"
+                class="form-control {{ class }}  align-right"
+                value="{% if value %}{{ value }}{% else %}{{ "now"|date("Y-m-d") }}{% endif %}"
+                autocomplete="off">
+                <label for="DatePicker-form-input-{{ name }}" class="input-group-addon">
+                <i class="icon icon-calendar"></i>
+                </label>
+        </div>
+      </span>
+
+{% set y = date()|date("Y") %}
+{% put scripts %}
+
+   <script>
+   $(function(){
+
+    var picker = new Pikaday(
+    {
+        field: document.getElementById('DatePicker-form-input-{{name}}'),
+        minDate: new Date({{ y-1 }}, 1, 1),
+        maxDate: new Date({{ y+5 }}, 12, 31),
+        yearRange: [{{ y-1 }},{{ y+5 }}],
+      format: 'YYYY-MM-DD',
+    });
+  })
+</script>
+{% endput %}
+<!-- datepicker partial end-->

@@ -1,0 +1,76 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/usercenter/event/:month?/:year?/:doctor_id?"
+layout="main"
+description="薄荷牙医"
+hidden="0"
+from="viki"
+isneedLogin="1"
+cattype="chuzhen"
+
+
+[session]
+[account]
+[MonthEvents]
+usePermissions = 1
+[EventForm]
+bootstrapCDN=0
+month = "{{ :month }}"
+year = "{{ :year }}"
+weekstart = 0
+loadstyle = 1
+title_max = 100
+
+category = "{{ :cat }}"
+doctor_id = "{{ :doctor_id }}"
+dayspast = 30
+daysfuture = 120
+raw_data = 0
+is_published="1"
+isneedLogin="1"
+==
+<?php
+function onStart()
+{
+  /** Add yellow highlight for current day */
+   // keys must be integers
+  $y = (int) date('Y');
+  $m = (int) date('m');
+  $d = (int) date('d');
+
+
+  $sundow = ( $d - (int) date('N'));
+  $satdow = $d + ( 6 - (int) date('N'));
+
+  $highlightArray = range ( $sundow,$satdow);
+
+  foreach ($highlightArray as $dow){
+  if ($dow>0)
+      $week[$dow] =['class' => 'yellow'];
+  }
+
+
+
+   $this['MyDayProps'] = [
+      $y => [   // Year (must be integer)
+          $m =>$week
+      ]
+  ];
+
+}
+?>
+==
+
+{% if user %}
+  <!-- 用户中心begin -->
+<div id="chuzhen" style="margin-top:65px">
+  {% set usertype='chuzhen' %}
+  {% partial 'userCenter/userCenter' usertype=usertype %}
+</div>
+{% else %}
+<div class="authLogin" style="">
+  {% partial 'login/auth' %}
+
+</div>
+{% endif %}
+
+  <!-- 用户中心end -->

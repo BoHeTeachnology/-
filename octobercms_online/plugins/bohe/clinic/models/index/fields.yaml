@@ -1,0 +1,71 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    featured_images:
+        label: 'image'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    
+    name:
+        label: '诊所名称'
+        span: left
+        placeholder: '诊所名称'
+    refresh_token:
+        label: 'refresh_token'
+        span: left
+    appid:
+        label: 'appid'
+        span: left
+        placeholder: 'appid'    
+    
+
+    content:
+        label: '诊所介绍'
+        type: Bohe\Message\FormWidgets\BlogMarkdown
+        cssClass: field-slim blog-post-preview
+        mode: split 
+    addr:
+        label: '诊所地址'
+    featured_images2:
+        label: '审核图片1'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    featured_images3:
+        label: '审核图片2'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200 
+    check_state:
+        label: '审核状态'
+        span: left 
+        type: dropdown
+    check_info:
+        label: '审核不通过原因（无则不填）'
+        span: left 
+        type: text      
+        
+    state:
+            label: '状态'
+    user:
+            label: User
+            type: recordfinder
+            list: $/rainlab/user/models/user/columns.yaml
+            prompt: Click the %s button to find a user
+            nameFrom: name
+            descriptionFrom: mobile        
+  
+             
+
+
+           
+
+
+
+

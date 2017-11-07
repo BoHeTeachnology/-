@@ -1,0 +1,48 @@
+# The FROM instruction sets the Base Image for subsequent instructions.
+# Using Nginx as Base Image
+FROM registry.cn-beijing.aliyuncs.com/boheyayi/php_fpm_backup_5625:v3.3
+MAINTAINER King <87287864@qq.com>
+
+RUN rm -rf /root/octobercms
+
+RUN mkdir /root/octobercms
+
+RUN rm -rf /root/octobercms_temp
+
+RUN mkdir /root/octobercms_temp
+
+COPY . /root/octobercms_temp
+
+RUN rm -rf /root/octobercms_temp/storage/framework/cache/*
+
+RUN sed -i "s/^.*;request_slowlog_timeout = 0/request_slowlog_timeout = 1/g" /usr/local/etc/php-fpm.conf
+
+RUN sed -i "s/^.*;slowlog = log\/\$pool\.log\.slow/slowlog = \/var\/log\/php-fpm-slow\.log/g" /usr/local/etc/php-fpm.conf
+
+RUN sed -i "s/^memory_limit = 128M/memory_limit = 256M/g" /usr/local/lib/php.ini
+
+RUN sed -i "s/^;date.timezone =/date.timezone = \"Asia\/Shanghai\"/g" /usr/local/lib/php.ini
+
+RUN yum clean rpmdb
+
+RUN rpm --rebuilddb
+
+RUN touch /var/lib/rpm/*
+
+RUN yum -y install perl || yum -y install perl
+
+RUN yum -y install perl-devel || yum -y install perl-devel
+
+RUN yum -y install perl-Time-HiRes || yum -y install perl-Time-HiRes
+
+RUN yum -y install perl-DBD-MySQL || yum -y install perl-DBD-MySQL
+
+RUN yum -y install perl-Digest-MD5
+
+RUN yum -y install mysql
+
+COPY ./phpfpm_start.sh  /usr/local/bin
+
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+RUN chmod 777 /usr/local/bin/phpfpm_start.sh

@@ -1,0 +1,35 @@
+description = "Default layout"
+
+[account]
+security = "all"
+==
+function onStart()
+{
+    $this->addCss('assets/css/nav.css');
+}
+
+==
+<!DOCTYPE html>
+<html>
+    <head>
+      {% partial 'head' %}
+    </head>
+    <body data-spy="scroll" data-target="#bootstrap-touch-slider">
+
+
+         <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/javascript/jquery-1.11.3.min.js',
+            'assets/javascript/bootstrap.min.js',
+        ]|theme }}"></script>
+
+        {% framework extras %}
+        {% scripts %}
+
+    </body>
+</html>

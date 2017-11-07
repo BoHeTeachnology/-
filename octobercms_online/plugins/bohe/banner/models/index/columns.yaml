@@ -1,0 +1,29 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    
+    title:
+        label: '标题'
+        span: left
+
+    content:
+        label: '内容'
+        span: left
+ 
+    url:
+        label: 'url'
+        span: left
+ 
+    starttime:
+        label: '起始时间'
+
+ 
+    endtime:
+        label: '结束时间'
+ 
+        
+    state:
+            label: '状态'
+  

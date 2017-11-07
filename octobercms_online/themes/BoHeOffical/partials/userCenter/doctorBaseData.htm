@@ -1,0 +1,94 @@
+<div class="doctorbaseData_right">
+  <div class="userData_row1">
+    <span>基本资料</span>
+    <span id='godoctorAuth'>编辑资料</span>
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row2">
+    <p class="userData_row2_p">我的头像</p>
+    {% if doctor.photo.filename %}
+
+        <img data-src="{{ doctor.photo.filename }}" src="{{ doctor.photo.path }}" alt="{{ doctor.photo.description }}" style="max-width: 100%" />
+    {% endif %}
+    {% component 'fileUploaderavatar' %}
+    <!-- <a href="javascript:;" class="userData_row2_a">
+      <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+      <span>添加照片</span>
+    </a> -->
+
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row3 clearfix" data-field-name="name">
+   <span>姓名</span>
+   <span>{{doctor.name}}</span>
+  </div>
+  <div class="heght1"></div>
+
+
+  <div class="userData_row4 clearfix">
+   <span>性别</span>
+   <div class="userData_row_right">
+     <span class="W120" >
+      {{doctor.sex=='1'?'男':'女'}}
+     </span>
+   </div>
+
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row5 clearfix">
+   <span>年龄</span>
+   <span>{{doctor.age}}</span>
+  </div>
+  <div class="heght1"></div>
+  <div class="userData_row6 clearfix">
+   <span>所在地</span>
+  <span>{{doctor.city}}</span>
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row7 clearfix">
+   <span>手机号</span>
+
+  <span>{{doctor.phone}}</span>
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row8 clearfix">
+   <span>专属二维码</span>
+   <img id="codeImg" src="{{codeurl}}" alt="" style="width: 100px;">
+   <div class="userData_row8_right">
+    <a href="javascript:void(0)" id="downloadcode">下载二维码</a>
+    <span>下载后可用户分享功能或制作印刷品等</span>
+   </div>
+
+  </div>
+
+  </div>
+
+
+{% put scripts %}
+<script type="text/javascript">
+function Download(data,filename){
+        var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href=data;
+        save_link.download=filename;
+        var event=document.createEvent('MouseEvents');
+        event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+        save_link.dispatchEvent(event);
+};
+$('#downloadcode').bind('click', function(e){
+  console.log($('#codeImg').attr('src'))
+ e.preventDefault();
+
+
+ var link = $('#codeImg').attr('src');
+ var filename='code'+(new Date()).valueOf();
+ Download(link,filename)
+
+})
+
+</script>
+{% endput %}

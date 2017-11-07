@@ -1,0 +1,25 @@
+
+
+{% set doctorlists=[1,1,1,1] %}
+{% set questionranks=[1,1,1,1,1,1,1,1,1,1] %}
+<div class="container" style="margin-bottom:50px">
+<div class="col-lg-8 col-md-7 col-xs-10 col-sm-10"  style="padding-bottom: 80px;padding-right:80px" >
+  {% for key,questionlist in searcharticle.posts %}
+  <div class="questionItem">
+<div class="questionItem_top clearfix">
+<a href="{{'/faqdetail/'~questionlist.id}}">
+  <h5 style="font-size:24px">{{questionlist.title}}</h5>
+</a>
+  <span><i class="icon-eye-open" style="margin-right:8px"></i>{{questionlist.view}}</span>
+  <span>{{questionlist.created_at}}</span>
+</div>
+
+  <article class="questionItem_p">{{questionlist.abstract|raw}}</article>
+  <a href="{{'/faqdetail/'~questionlist.id}}" role="button" class="shadowBtn btn btn-default" style=""><span>详情</span></a>
+</div>
+{% endfor %}
+{{ posts|raw }}
+</div>
+
+  {% partial 'normalQuestion/questionLeft' %}
+</div>

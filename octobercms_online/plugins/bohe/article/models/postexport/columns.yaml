@@ -1,0 +1,29 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: ID
+    name: name
+    institution: institution
+    experience: experience
+    jobtitle: jobtitle
+    skilledin: skilledin
+    introduce: introduce
+    level: level
+    state: state
+    url: url
+    phone: phone
+    wechat: wechat
+    user_id: user_id
+    age: age
+    city: city
+    sex: sex
+    created_at: created_at
+    updated_at: updated_at
+    check_state: check_state
+    qrurl: qrurl
+    sort: sort
+    
+   

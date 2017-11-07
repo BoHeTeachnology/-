@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: kurtjensen.mycalendar::lang.types.form_name
+
+# Model Form Field configuration
+form: $/kurtjensen/mycalendar/models/type/fields.yaml
+
+# Model Class name
+modelClass: KurtJensen\MyCalendar\Models\Type
+
+# Default redirect location
+defaultRedirect: kurtjensen/mycalendar/types
+
+# Create page
+create:
+    title: kurtjensen.mycalendar::lang.types.create_title
+    redirect: kurtjensen/mycalendar/types/update/:id
+    redirectClose: kurtjensen/mycalendar/types
+
+# Update page
+update:
+    title: kurtjensen.mycalendar::lang.types.update_title
+    redirect: kurtjensen/mycalendar/types
+    redirectClose: kurtjensen/mycalendar/types
+
+# Preview page
+preview:
+    title: kurtjensen.mycalendar::lang.types.preview_title

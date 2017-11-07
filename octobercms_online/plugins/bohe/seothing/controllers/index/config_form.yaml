@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Seothing\Models\Post
+form: $/bohe/seothing/models/post/fields.yaml
+defaultRedirect: bohe/seothing/index
+create:
+    redirect: 'bohe/seothing/index/update/:id'
+    redirectClose: bohe/seothing/index
+update:
+    redirect: bohe/seothing/index
+    redirectClose: bohe/seothing/index
+preview: {  }

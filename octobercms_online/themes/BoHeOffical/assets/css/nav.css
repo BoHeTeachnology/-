@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.navbar-default .nav li a {
+
+  color: #000;
+}
+.navbar-default .nav li a:hover {
+  color: #17ACB2;
+}
+.navbar-default .nav li:last-child a:hover {
+  color: #000;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #000;
+}
+
+.navbar-default {
+
+  background-color: #fff;
+}

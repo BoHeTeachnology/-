@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Seothing\Models\Subkword
+form: $/bohe/seothing/models/subkword/fields.yaml
+defaultRedirect: bohe/seothing/subkey
+create:
+    redirect: 'bohe/seothing/subkey/update/:id'
+    redirectClose: bohe/seothing/subkey
+update:
+    redirect: bohe/seothing/subkey
+    redirectClose: bohe/seothing/subkey
+preview: {  }

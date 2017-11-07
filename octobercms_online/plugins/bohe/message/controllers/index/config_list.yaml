@@ -1,0 +1,11 @@
+title: '留言'
+modelClass: Bohe\Message\Models\Index
+list: $/bohe/message/models/index/columns.yaml
+recordUrl: 'bohe/message/index/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

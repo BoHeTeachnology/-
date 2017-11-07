@@ -1,0 +1,25 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    
+    doctor_name:
+        label: '医生姓名'
+
+    income:
+        label: '总收入'
+       
+        
+    outcash:
+            label: '提现总额'
+    balance:
+            label: '提现总额'        
+             
+
+
+           
+
+
+
+

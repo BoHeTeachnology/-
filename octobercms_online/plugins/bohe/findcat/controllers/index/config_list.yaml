@@ -1,0 +1,11 @@
+title: Bohe
+modelClass: Bohe\Findcat\Models\Index
+list: $/bohe/findcat/models/index/columns.yaml
+recordUrl: 'bohe/findcat/index/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

@@ -1,0 +1,20 @@
+
+
+<ul class="schedule">
+  {% for post in posts %}
+
+{% endfor %}
+ {% for key, typeItem in categorylist %}
+
+  {% if typeName =='viki' %}
+    {% set isCurrent = (category==typeItem.id ?1:0) %}
+  <li><a href="{{'/boheviki/viki/'~typeItem.id }}" id="category_viki"  class="{{isCurrent?'active':''}}" index={{key}} category={{typeItem.id}} data-sched="sunday">{{typeItem.name}}</a></li>
+  {% elseif typeName =='service' %}
+    {% set isCurrent = (category==typeItem.id ?1:0) %}
+  <li><a href="{{'/serviceList/service/'~typeItem.id }}" id="category_service" index={{key}} category={{typeItem.id}} class="{{isCurrent?'active':''}}" data-sched="sunday">{{typeItem.name}}</a></li>
+  {% elseif typeName=='doctor' %}
+    {% set isCurrent = (doctype==typeItem.id ?1:0) %}
+  <li><a href="{{'/doctorteam/'~typeItem.id }}" id="category_doctor" index={{key}} category={{typeItem.id}}  class="{{isCurrent?'active':''}}" data-sched="sunday">{{typeItem.name}}</a></li>
+  {% endif %}
+{% endfor %}
+</ul>

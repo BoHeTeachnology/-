@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Doctor\Models\Finance
+form: $/bohe/doctor/models/finance/fields.yaml
+defaultRedirect: bohe/doctor/finance
+create:
+    redirect: 'bohe/doctor/finance/update/:id'
+    redirectClose: bohe/doctor/finance
+update:
+    redirect: bohe/doctor/finance
+    redirectClose: bohe/doctor/finance
+preview: {  }

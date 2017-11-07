@@ -1,0 +1,6 @@
+plugin:
+    name: 'bohe.message::lang.plugin.name'
+    description: 'bohe.message::lang.plugin.description'
+    author: bohe
+    icon: oc-icon-adjust
+    homepage: ''

@@ -1,0 +1,58 @@
+<form
+    data-request="onPhoneregister">
+
+
+    <div class="form-group">
+        <label for="registerPhone">手机号</label>
+        <input
+            name="mobile"
+            type="mobile"
+            class="form-control"
+            id="registerEmail"
+            placeholder="输入您的手机号码" />
+    </div>
+     <a href="#"
+       class="btn btn-default"
+        data-request="onSendsms"
+        data-request-data="phone:15810812531"
+        >点击获取验证码</a>
+
+    <div class="form-group">
+        <label for="registerPhone">验证密码</label>
+        <input
+            name="phonecaptcha"
+            class="form-control"
+            id="registerEmail"
+            placeholder="输入您的验证码" />
+    </div>
+
+    <div class="form-group">
+        <label for="registerPassword">设置密码</label>
+        <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="registerPassword"
+            placeholder="输入密码" />
+    </div>
+
+     <div class="form-group">
+        <label for="registerchoose">用户类型</label>
+        <label><input name="usertype" type="radio" value="1" />医生 </label>
+        <label><input name="usertype" type="radio" value="2" />普通用户 </label>
+    </div>
+ <button type="submit" class="btn btn-default">Register</button>
+</form>
+{% put scripts %}
+
+<script>
+$(function(){
+$("#flushidentify").on('click',"button",function(e){
+	  e.preventDefault();
+	  $.request('account::onRecaptcha',{
+		  update:{'account::identify': '#testkingssss'}
+	  })
+  })
+})
+</script>
+{% endput %}

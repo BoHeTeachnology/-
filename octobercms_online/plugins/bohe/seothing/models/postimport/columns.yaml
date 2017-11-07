@@ -1,0 +1,14 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: ID
+    title: title
+    abstract: abstract
+    content: content
+    content_html: content_html
+    created_at: created_at
+    tag: tag
+    updated_at: updated_at

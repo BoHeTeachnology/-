@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Doctor\Models\Cash
+form: $/bohe/doctor/models/cash/fields.yaml
+defaultRedirect: bohe/doctor/cash
+create:
+    redirect: 'bohe/doctor/cash/update/:id'
+    redirectClose: bohe/doctor/cash
+update:
+    redirect: bohe/doctor/cash
+    redirectClose: bohe/doctor/cash
+preview: {  }

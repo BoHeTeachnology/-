@@ -1,0 +1,39 @@
+
+
+
+{% set typeItemLists =typeItemLists %}
+{% set typeIndex =typeIndex %}
+
+<div class="breadNav" style="border-bottom:1px solid #eff5f6;padding-bottom:10px;background-color:rgb(231,240,242);">
+<div class="wrap" style="background-color:#fff;padding:0;margin:0;border-radius:0;width:100%;">
+
+<div class="container" style="padding-top:10px;padding-bottom:10px;padding-left:0">
+<ul class="breadcrumb" style="background-color:#fff;margin-bottom:0;padding-left:0">
+
+  {% for type in types %}
+  {% if type.isHref %}
+   <li class="active"><span style="color:#000;">{{ type.title }}</span> <span class="divider"></span></li>
+   {% else %}
+   {% for item in typeItemLists %}
+
+   {%  if typeIndex=='service' %}
+
+   {% if item.id==this.param.category %}
+
+   <li class="active">{{ item.name }}</li>
+   {% endif %}
+
+   {% else %}
+
+   {% if item.id==this.param.type %}
+   <li class="active">{{ item.name }}</li>
+   {% endif %}
+   {% endif %}
+   {% endfor %}
+  {% endif %}
+  {% endfor %}
+</ul>
+</div>
+
+</div>
+</div>

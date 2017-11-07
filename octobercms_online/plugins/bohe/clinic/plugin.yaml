@@ -1,0 +1,6 @@
+plugin:
+    name: 'bohe.clinic::lang.plugin.name'
+    description: 'bohe.clinic::lang.plugin.description'
+    author: bohe
+    icon: oc-icon-adjust
+    homepage: ''

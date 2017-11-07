@@ -1,0 +1,51 @@
+
+<div class="container" style="margin-bottom:50px">
+<div class="col-lg-8 col-md-7 col-xs-10 col-sm-10"  style="padding-bottom: 80px;padding-right:80px" >
+<div class="taglistItem clearfix">
+  {% if  firsttag.imgsrc %}
+    <img src="{{firsttag.imgsrc}}" alt="">
+  {% else %}
+    <img src="{{'assets/img/tagDetailtemBg.png' |theme}}" alt="">
+  {% endif %}
+
+  <div class="tag_right">
+    <a href="{{'/faqdetail/'~firsttag.id}}" >
+  <h1 style="font-size:24px;margin-bottom:20px">{{firsttag.title}}</h1>
+  </a>
+
+  <article>{{firsttag.abstract|raw}}</article>
+  <a href="{{'/faqdetail/'~firsttag.id}}" role="button" class="shadowBtn btn btn-default" style=""><span>详情</span></a>
+  </div>
+</div>
+
+<div class="tag_aboutlinkone clearfix">
+  <h2 style="font-size:24px;margin-bottom:25px">{{this.param.tag}}相关标签</h2>
+  <ul>
+    {% for key,abouttag in tagarticle.tag %}
+          {% if abouttag %}
+    <li><a href="{{'/tagDetail/'~abouttag}}">{{abouttag}}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="tag_aboutlinktwo">
+    <h2 style="font-size:24px;margin-bottom: 30px;">{{this.param.tag}}相关链接</h2>
+      {% for key,tagitem in tagpost %}
+
+  <div class="tag_aboutlinktwo_content">
+      <a href="{{'/faqdetail/'~tagitem.id}}">
+  <h5>{{tagitem.title}}</h5>
+    </a>
+  <article>{{tagitem.abstract|raw}}</article>
+  </div>
+
+  {% endfor %}
+</div>
+{{ tagpost|raw }}
+
+</div>
+
+  {% partial 'normalQuestion/questionLeft' %}
+
+</div>

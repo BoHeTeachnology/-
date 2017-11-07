@@ -1,0 +1,41 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    # Page title
+    title: '导入'
+
+    # Import List Column configuration
+    list: $/bohe/seothing/models/postimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/bohe/seothing/models/postimport/fields.yaml
+
+    # Import Model class
+    modelClass: Bohe\Seothing\Models\PostImport
+
+    # Redirect when finished
+    redirect: bohe/seothing/index
+
+    # Required permissions
+    permissions: bohe.seothing.access_import_export
+
+export:
+    # Page title
+    title: '导出'
+
+    # Output file name
+    fileName: posts.csv
+
+    # Export List Column configuration
+    list: $/bohe/seothing/models/postexport/columns.yaml
+
+    # Export Model class
+    modelClass: Bohe\Seothing\Models\PostExport
+
+    # Redirect when finished
+    redirect: bohe/seothing/index
+
+    # Required permissions
+    permissions: bohe.seothing.access_import_export

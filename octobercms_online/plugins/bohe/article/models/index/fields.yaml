@@ -1,0 +1,129 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: '姓名'
+        span: left
+        placeholder: '请填写姓名'
+        
+    institution:
+        label: '执业机构' 
+    experience:
+        label: '背景'    
+
+    photo:
+        label: '照片'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    
+    qrcode_pic:
+        label: '二维码图片'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    certificate_one:
+        label: '职业资格证书'  
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imggeHeight: 200
+        
+    certificate_two:
+        label: '医师资格证书'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+        
+    certificate_three:
+        label: '专业技术资格证书'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200 
+    check_state:
+        label: '审核状态'
+        span: left 
+        type: dropdown
+    check_info:
+        label: '审核不通过原因（无则不填）'
+        span: left 
+        type: text   
+
+    jobtitle:
+        label: '职位'
+        span: left
+        placeholder: '请填写'
+        
+    skilledin:
+            label: '擅长领域' 
+    types:
+            type: relation
+            label: “医生类别”
+    cats:
+            type: relation
+            label: '医生标签'
+    sort:
+            type: text
+            label: '排序' 
+             
+
+
+secondaryTabs:
+    stretch: true
+    fields:
+
+        introduce:
+            label: '介绍'
+            span: left
+            type: textarea
+
+
+        state:
+            label: '状态'
+            span: left
+            type: switch
+
+        level:
+            label: '级别'
+            span: left 
+            type: dropdown 
+        phone:
+            label: '手机'
+            span: left 
+            type: text 
+        wechat:
+            label: '微信'
+            span: left 
+            type: text   
+        url:
+            label: '链接'
+            span: left 
+            type: text
+        qrurl:
+            label: '二维码链接（for医生助手）'
+            span: left 
+            type: text  
+        user:
+            label: User
+            type: recordfinder
+            list: $/rainlab/user/models/user/columns.yaml
+            prompt: Click the %s button to find a user
+            nameFrom: name
+            descriptionFrom: mobile
+            
+       
+        
+      
+
+           
+
+
+
+

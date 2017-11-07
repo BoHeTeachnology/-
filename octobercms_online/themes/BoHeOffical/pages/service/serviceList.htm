@@ -1,0 +1,138 @@
+
+url="/serviceList/service/:category?"
+layout="main"
+hidden="0"
+from="serviceItem"
+
+[blogPosts]
+type =1
+pageNumber =1
+postsPerPage=10
+
+==
+<?php
+function onStart(){
+  $this['typeName'] = 'service';
+
+}
+?>
+==
+
+<!-- 顶部背景图begin -->
+<div id="topBg">
+  {% set topContent={'title1':'追求卓越 尽善尽美','title2':'Pursuit of excellence， ','title3':'Make all-out efforts','imgSrc':'serviceTopBg.jpg','position':'left'} %}
+
+{% partial 'viki/topBg' topContent=topContent %}
+
+</div>
+<!-- 顶部背景图end-->
+<!-- 面包屑导航begin -->
+<div id="breadNav">
+
+{% set type =[{'title':'网站首页','isHref':'/'},{'title':'服务项目','isHref':'/'},{'title':'','isHref':false}] %}
+  {% set typeIndex='service' %}
+{% partial 'breadNav' types=type  typeIndex=typeIndex typeItemLists=typeLists %}
+</div>
+<!-- 面包屑导航end -->
+
+<!-- 服务项目导航begin -->
+
+<div id="seviceList" style="margin-bottom: 50px;min-height:1000px" >
+
+  {% partial 'index/serviceList' %}
+
+</div>
+
+
+<div id="service_nextPage" class="service_nextPage">
+
+{% partial 'listPartial/pagePartial' %}
+</div>
+
+
+
+
+   {% put scripts %}
+ <!-- <script type="text/javascript" src="/themes/BoHeOffical/assets/javascript/jquery.mloading.js"></script> -->
+   <script>
+   $(function(){
+
+   var _category = {{ category }};
+  //  $("#categoryArea").on('click',"#category_service",function(e){
+  // // $('body').mLoading("show");//显示loading组件
+  //
+  //    var category =e.target.getAttribute("category");
+  //      console.log(category)
+  //      $('#service_loadNextPage').attr("currentPage",1);
+  //       $('#service_loadBeforePage').attr("currentPage",1);
+  //    _category = category;
+  //      e.preventDefault();
+  //      $.request('blogPosts::onGetnext',{
+  //          data: {page:1,type:1,cat:category,typeName:'service'},
+  //           update:{'listPartial/listPartial':'#updateList','listPartial/pagePartial':'#service_nextPage'},
+  //
+  //
+  //      })
+  //    });
+
+   $("#service_nextPage").on('click',"#service_loadBeforePage",function(e){
+
+   	  e.preventDefault();
+
+      var _currentPage =e.target.getAttribute("currentPage");
+      if(_currentPage-1<1){
+        alert("已经是第一页");
+        return;
+      }
+      $('#service_loadBeforePage').attr("currentPage",--_currentPage);
+      $('#service_loadNextPage').attr("currentPage",_currentPage);
+      $("#service_nextPage ul li").removeClass();
+      $('#service_nextPage ul li:eq(' + (Number(_currentPage)) +')').attr('class','active');
+   	  $.request('blogPosts::onGetnext',{
+           data: {page:(_currentPage),type:1,cat:_category,typeName:'service'},
+   		    update:{'listPartial/listPartial':'#updateList'}
+
+       })
+     });
+
+       $("#service_nextPage").on('click',"#service_loadNextPage",function(e){
+          e.preventDefault();
+          var _currentPage =e.target.getAttribute("currentPage");
+          var _lastPage =e.target.getAttribute("lastPage");
+          console.log(_lastPage+'_lastPage');
+          if(_currentPage+1>_lastPage){
+            alert('已经是最后一页');
+            return;
+          }
+          $("#service_nextPage ul li").removeClass();
+          $('#service_nextPage ul li:eq(' + (Number(_currentPage)+1) +')').attr('class','active');
+
+          $('#service_loadBeforePage').attr("currentPage",++_currentPage);
+          $('#service_loadNextPage').attr("currentPage",_currentPage);
+
+          $.request('blogPosts::onGetnext',{
+               data: {page:(_currentPage),type:1,cat: _category ,typeName:'service'},
+              update:{'listPartial/listPartial':'#updateList'}
+          })
+         });
+         $("#service_nextPage").on('click',"#service_loadCurrentPage",function(e){
+               	  e.preventDefault();
+                  var _currentPage =e.target.getAttribute("currentPage");
+                  $("#service_nextPage ul li").removeClass();
+                  e.target.parentNode.setAttribute('class','active');
+                  $('#service_loadNextPage').attr("currentPage",_currentPage);
+                   $('#service_loadBeforePage').attr("currentPage",_currentPage);
+               	  $.request('blogPosts::onGetnext',{
+                       data: {page:(_currentPage),type:1,cat: _category ,typeName:'service'},
+               		    update:{'listPartial/listPartial':'#updateList'}
+               	  })
+                 });
+
+
+   })
+   </script>
+   {% endput %}
+
+
+
+<!-- 服务项目导航end -->

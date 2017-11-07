@@ -1,0 +1,203 @@
+[
+    {
+        "name": "composer/installers",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2016-08-13 20:53:52",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Composer\\Installers\\Plugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Hurad",
+            "ImageCMS",
+            "MODX Evo",
+            "Mautic",
+            "OXID",
+            "Plentymarkets",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lithium",
+            "magento",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "moodle",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "rainlab/user-plugin",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rainlab/user-plugin.git",
+            "reference": "9edf194ec6da1bf909e5abf802200043995150d7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rainlab/user-plugin/zipball/9edf194ec6da1bf909e5abf802200043995150d7",
+            "reference": "9edf194ec6da1bf909e5abf802200043995150d7",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "~1.0",
+            "php": ">=5.5.9"
+        },
+        "time": "2017-03-07 17:09:15",
+        "type": "october-plugin",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexey Bobkov",
+                "email": "aleksey.bobkov@gmail.com",
+                "role": "Co-founder"
+            },
+            {
+                "name": "Samuel Georges",
+                "email": "daftspunky@gmail.com",
+                "role": "Co-founder"
+            }
+        ],
+        "description": "User plugin for October CMS",
+        "homepage": "https://octobercms.com/plugin/rainlab-user",
+        "keywords": [
+            "october",
+            "octobercms",
+            "user"
+        ]
+    },
+    {
+        "name": "rainlab/location-plugin",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rainlab/location-plugin.git",
+            "reference": "6c5264ab10dca7aa25284b46af820f8e37b3d609"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rainlab/location-plugin/zipball/6c5264ab10dca7aa25284b46af820f8e37b3d609",
+            "reference": "6c5264ab10dca7aa25284b46af820f8e37b3d609",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "~1.0",
+            "php": ">=5.5.9"
+        },
+        "time": "2017-03-14 14:27:02",
+        "type": "october-plugin",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexey Bobkov",
+                "email": "aleksey.bobkov@gmail.com",
+                "role": "Co-founder"
+            },
+            {
+                "name": "Samuel Georges",
+                "email": "daftspunky@gmail.com",
+                "role": "Co-founder"
+            }
+        ],
+        "description": "Location plugin for October CMS",
+        "homepage": "https://octobercms.com/plugin/rainlab-location",
+        "keywords": [
+            "location",
+            "october",
+            "octobercms"
+        ]
+    }
+]

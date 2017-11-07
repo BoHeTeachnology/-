@@ -1,0 +1,48 @@
+<div class="boheDoctor">
+<div class="container">
+  <div class="row" style="margin-bottom:30px;">
+    <div class="col-md-12 text-center">
+      <h3>薄荷医生</h3>
+      <h3>Doctor Team</h3>
+    </div>
+  </div>
+  <div class="row">
+
+    {% for key,homedoctor in firstpagedoctor %}
+          <div class="col-md-6 team-grid" style="padding-right:-15px;">
+
+            {% if key%2==0 %}
+            <div class="wrap wow slideInLeft">
+              {% else %}
+              <div class="wrap wow slideInRight">
+              {% endif %}
+            <div class="team-grid-right aliquam">
+              {% if homedoctor.photo.path %}
+                  <img src="{{ homedoctor.photo.path}}" alt=" " class="img-responsive" />
+                {% endif %}
+            </div>
+            <div class="team-grid-left non" style="min-height:190px;">
+              <h4>{{homedoctor.name}}</h4>
+                <h5>{{homedoctor.jobtitle}}</h5>
+              <p>擅长领域：{{homedoctor.skilledin}}</p>
+                <a href="{{'/doctordetail/post/'~homedoctor.id }}" role="button" class="btn btn-default" style="">详情</a>
+
+            </div>
+            <div class="clearfix">
+
+            </div>
+       </div>
+        </div>
+{% endfor %}
+
+
+ </div>
+
+       <div class="row" style="margin-top:30px;">
+         <div class="col-md-12 text-center">
+           <a href="/doctorteam" role="button" class="moreDoctor shadowBtn btn btn-default" style=""><span>more</span></a>
+         </div>
+       </div>
+
+</div>
+</div>

@@ -1,0 +1,27 @@
+title="注销"
+url="/mobile/logout"
+layout="mobile"
+description=""
+hidden="0"
+from="doctorteam"
+
+[session]
+==
+function onStart()
+{
+   $viewurl=config('urlconfig.view');
+    $this['viewurl'] = $viewurl.'/firstpage';
+}
+==
+{% put scripts %}
+<script>
+$(function(){
+    $.request('session::onLogout',{
+      data:{
+          redirect: '{{viewurl}}'
+      }
+
+    })
+  })
+ </script>
+{% endput %}

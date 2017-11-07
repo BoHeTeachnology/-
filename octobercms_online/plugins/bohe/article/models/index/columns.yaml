@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+    name:
+        label: '姓名'
+        type: text
+        searchable: true
+    jobtitle:
+        label: '职位'
+        type: text
+        searchable: true   
+    skilledin:
+        label: '擅长领域'
+        type: text 
+    state:
+        label: '状态'
+        span: left
+        type: switch
+    check_state:
+        label: '审核状态（0未审核，1为审核中，2为审核成功，3为审核失败）'
+        span: left
+        type: text 
+    level:
+        label: '级别（1普通2高级）'
+        span: left 
+        type: text
+

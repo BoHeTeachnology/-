@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Seothing\Models\Kword
+form: $/bohe/seothing/models/kword/fields.yaml
+defaultRedirect: bohe/seothing/key
+create:
+    redirect: 'bohe/seothing/key/update/:id'
+    redirectClose: bohe/seothing/key
+update:
+    redirect: bohe/seothing/key
+    redirectClose: bohe/seothing/key
+preview: {  }

@@ -1,0 +1,88 @@
+<div class="baseData_right">
+{{ form_open() }}
+  <form method="post" name="User" data-request="{{ __SELF__ }}::onSave">
+
+
+  <div class="userData_row1" style="height:43px">
+    <span style="float:left;">上传资料</span>
+  </div>
+  <div class="heght1"></div>
+
+  <div class="userData_row2 uploadAvatarRow">
+    <p class="userData_row2_p">请上传正面照片，我们将为您制作漂亮的头像</p>
+    {% component 'fileUploaderavatar' %}
+    <!-- <a href="#" class="userData_row2_a">
+      <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+      <span>添加照片</span>
+    </a> -->
+
+
+    <div class="userData_row2_right">
+      <!-- <img src="" alt=""> -->
+      <dl class="userData_row2_right_dl clearfix">
+        <dt>头像示例</dd>
+    <dd>* 正面照片</dd>
+    <dd>* 清晰度高</dd>
+    <dd>* 半身照（胸部以上）</dd>
+    <dd>* 建议1：1比例的</dd>
+  </dl>
+  </div>
+
+
+ </div>
+ <div class="heght1"></div>
+
+ <div class="userData_row3 clearfix" data-field-name="name">
+   <span>姓名</span>
+   <input type="text" name="User[name]" value="{{theuser.name}}">
+ </div>
+ <div class="heght1"></div>
+
+
+ <div class="userData_row4 clearfix">
+   <span>性别</span>
+   <div class="userData_row_right">
+     <span class="W120" >
+         <label for="checkboxa_0"><i>男</i></label>
+      <input name="User[iu_gender]" value="male"  type="radio" {{ theuser.iu_gender=='male'?'checked':'' }} class="checkbox" id="checkboxa_0">
+
+     </span>
+     <span class="W120" >
+       <label for="checkboxa_0"><i>女</i></label>
+      <input name="User[iu_gender]" type="radio" class="checkbox" {{ theuser.iu_gender=='female'?'checked':'' }} id="checkboxa_1" value="female">
+    </span>
+   </div>
+
+ </div>
+ <div class="heght1"></div>
+
+ <div class="userData_row5 clearfix">
+   <span>年龄</span>
+   <input name="User[age]" type="text" name="age" value="{{theuser.age}}">
+ </div>
+ <div class="heght1"></div>
+ <div class="userData_row6 clearfix">
+   <span>所在地</span>
+   <input name="User[city]" type="text" name="address" value="{{theuser.city}}">
+ </div>
+ <div class="heght1"></div>
+
+ <div class="userData_row7 clearfix">
+   <span>手机号</span>
+   <input name="User[phone]" value="{{theuser.mobile}}" readonly="true" style="border:none"></input>
+ </div>
+ <div class="heght1"></div>
+
+ <div class="commit_but">
+   <a
+   type="submit"
+   data-request="updateuser::onSave"
+   data-hotkey="ctrl+s, cmd+s"
+   data-load-indicator="保存..."
+   class="btn btn-primary">
+   保存</a>
+   <!-- <a class="btn btn-default">保存</a> -->
+ </div>
+ </form>
+ {{ form_close() }}
+</div>

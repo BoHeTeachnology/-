@@ -1,0 +1,49 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/usercenter/userDetail"
+layout="main"
+description="薄荷牙医"
+hidden="0"
+from="home"
+lefttype ="userBaseData"
+isneedLogin="1"
+cattype="userBaseData"
+
+[userindex]
+[account]
+[session]
+deferredBinding = "1"
+
+
+==
+<?php
+function onStart(){
+
+}
+?>
+==
+
+
+{% if user %}
+
+  <!-- 用户中心begin -->
+<div id="userDetail" style="margin-top:65px">
+
+{% set usertype='userBaseData' %}
+  {% partial 'userCenter/userCenter' usertype=usertype %}
+</div>
+
+{% else %}
+<div class="authLogin" style=" position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(51,51,51,.6);
+    z-index: 9999;">
+
+
+  {% partial 'login/auth' %}
+
+</div>
+
+{% endif %}

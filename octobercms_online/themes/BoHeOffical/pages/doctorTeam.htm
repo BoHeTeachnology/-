@@ -1,0 +1,127 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/doctorteam/:type?"
+layout="main"
+description=""
+hidden="0"
+from="doctorteam"
+
+[articlebohelist]
+
+postsPerPage=10
+==
+
+<?php
+function onStart(){
+  $this['typeName'] = 'doctor';
+
+}
+?>
+==
+<!-- 顶部背景图begin -->
+<div id="topBg">
+{% set topContent={'title1':'您身边的牙医朋友','title2':'Your dentist friend','title3':'和更多优秀的牙医在一起','title4':'With more good dentists','imgSrc':'doctorTopBg.png','position':'left'} %}
+
+{% partial 'viki/topBg' topContent=topContent %}
+
+</div>
+<!-- 顶部背景图end-->
+<!-- 面包屑导航begin -->
+<div id="breadNav">
+  {% set types=[{'title':'网站首页','isHref':'/'},{'title':'医生团队','isHref':'/'},{'title':'口腔种植','isHref':false}] %}
+  {% set typeIndex='doctor' %}
+  {% partial 'breadNav' typeIndex=typeIndex  typeItemLists=typeLists types=types %}
+
+</div>
+<!-- 面包屑导航end -->
+
+<!-- 服务项目导航begin -->
+
+<div id="doctorList" style="min-height:1000px;margin-bottom:50px;">
+  {% partial 'index/serviceList' %}
+</div>
+<div id="doctor_nextPage">
+{% partial 'listPartial/pagePartial' %}
+
+</div>
+
+{% put scripts %}
+
+<script>
+$(function(){
+
+  var _category ={{ doctype }} ;
+
+  // $("#categoryArea").on('click',"#category_doctor",function(e){
+  //   var category =e.target.getAttribute("category");
+  //     $('#doctor_loadNextPage').attr("currentPage",1);
+  //      $('#doctor_loadBeforePage').attr("currentPage",1);
+  //      _category = category;
+  //         console.log(category+'category');
+  //     e.preventDefault();
+  //     $.request('articlebohelist::onGetnext',{
+  //          data: {page:1,cat:category,typeName:'doctor'},
+  //          update:{'listPartial/listPartial':'#updateList','listPartial/pagePartial':'#doctor_nextPage'}
+  //     })
+  //   });
+
+    $("#doctor_nextPage").on('click',"#doctor_loadBeforePage",function(e){
+
+       e.preventDefault();
+
+       var _currentPage =e.target.getAttribute("currentPage");
+
+       if(_currentPage-1<1){
+         alert("已经是第一页");
+         return;
+       }
+       $('#doctor_loadBeforePage').attr("currentPage",--_currentPage);
+       $('#doctor_loadNextPage').attr("currentPage",_currentPage);
+       $("#doctor_nextPage ul li").removeClass();
+       $('#doctor_nextPage ul li:eq(' + (Number(_currentPage)) +')').attr('class','active');
+       $.request('articlebohelist::onGetnext',{
+            data: {page:(_currentPage),cat:_category,typeName:'doctor'},
+           update:{'listPartial/listPartial':'#updateList'}
+
+        })
+      });
+
+      $("#doctor_nextPage").on('click',"#doctor_loadNextPage",function(e){
+         e.preventDefault();
+         var _currentPage =e.target.getAttribute("currentPage");
+         var _lastPage =e.target.getAttribute("lastPage");
+         console.log(_lastPage+'_lastPage');
+         if(_currentPage+1>_lastPage){
+           alert('已经是最后一页');
+           return;
+         }
+         console.log(_currentPage);
+         $("#doctor_nextPage ul li").removeClass();
+         $('#doctor_nextPage ul li:eq(' + (Number(_currentPage)+1) +')').attr('class','active');
+         $('#doctor_loadNextPage').attr("currentPage",++_currentPage);
+         $('#doctor_loadBeforePage').attr("currentPage",_currentPage);
+         $.request('articlebohelist::onGetnext',{
+              data: {page:(_currentPage),cat: _category ,typeName:'doctor'},
+             update:{'listPartial/listPartial':'#updateList'}
+         })
+        });
+       $("#doctor_nextPage").on('click',"#doctor_loadCurrentPage",function(e){
+                 e.preventDefault();
+                var _currentPage =e.target.getAttribute("currentPage");
+                $("#doctor_nextPage ul li").removeClass();
+                e.target.parentNode.setAttribute('class','active');
+                $('#doctor_loadNextPage').attr("currentPage",_currentPage);
+                 $('#doctor_loadBeforePage').attr("currentPage",_currentPage);
+                 $.request('articlebohelist::onGetnext',{
+                     data: {page:(_currentPage),cat: _category ,typeName:'doctor'},
+                     update:{'listPartial/listPartial':'#updateList'}
+                 })
+               });
+
+
+
+
+
+})
+</script>
+{% endput %}
+<!-- 服务项目导航end -->

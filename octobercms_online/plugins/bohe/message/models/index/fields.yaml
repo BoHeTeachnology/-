@@ -1,0 +1,55 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    featured_images:
+        label: 'image'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    title:
+        label: '标题'
+        span: left
+        placeholder: '标题'
+    username:
+        label: '用户名称'
+        span: left
+        placeholder: '标题'
+    user:
+        label: '选择用户'
+        type: recordfinder
+        list: $/rainlab/user/models/user/columns.yaml
+        prompt: Click the %s button to find a user
+        nameFrom: name
+        descriptionFrom: mobile
+    index:
+        label: '选择医生'
+        type: recordfinder
+        list: $/bohe/article/models/index/columns.yaml
+        prompt: Click the %s button to find a doctor
+        nameFrom: name
+        descriptionFrom: phone
+    great:
+        label: '点赞数'
+        span: left
+        placeholder: '标题'
+
+    content:
+        label: '内容'
+        type: Bohe\Message\FormWidgets\BlogMarkdown
+        cssClass: field-slim blog-post-preview
+        mode: split  
+        
+    state:
+            label: '状态'
+  
+             
+
+
+           
+
+
+
+

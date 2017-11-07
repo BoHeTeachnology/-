@@ -1,0 +1,8 @@
+1.0.0:
+    - First version.
+    - create_keyword.php
+    - create_subkeyword.php
+    - create_search_article.php
+    - add_tag.php
+    - add_view.php
+    - add_abstract.php

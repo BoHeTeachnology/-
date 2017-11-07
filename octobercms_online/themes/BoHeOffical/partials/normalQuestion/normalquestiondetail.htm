@@ -1,0 +1,73 @@
+
+
+<div class="container" style="margin-bottom:50px">
+
+<div class="col-lg-8 col-md-7 col-xs-10 col-sm-10"  style="padding-bottom: 80px;" >
+  <div class="questiondetail_top clearfix">
+    <h1 style="display: inline-block;float: left;font-size: 24px;margin-top: 10px;">{{post.title}}</h1>
+
+    <span><i class="icon-eye-open" style="margin-right:8px"></i>{{post.view}}</span>
+      <span>{{post.created_at}}</span>
+  </div>
+  <article class="delblank clearfix" style="padding-bottom: 30px;line-height: 24px;line-height: 27px;color: #666;margin-right:80px;text-align:justify;margin-bottom: 30px;border-bottom: 1px solid #dcdcdc;margin-top: 10px;">
+    {{post.content_html|raw}}
+
+   <ul>
+  {% for key,tagthing in tag %}
+  {% if key==0 %}
+  <li>标签：<a href="{{'/tagDetail/'~tagthing}}">{{tagthing}}</a></li>
+  {% else %}
+    <li><a href="{{'/tagDetail/'~tagthing}}">{{tagthing}}</a></li>
+  {% endif %}
+    {% endfor %}
+   </ul>
+  </article>
+<div class="otherQuestion clearfix">
+  <h2 style="font-size:24px;margin-bottom:25px">其他常见问题</h2>
+  <ul>
+    {% for aboutthing in unionpost %}
+    <li><a href="{{'/faqdetail/'~aboutthing.id}}">{{aboutthing.title}}</a></li>
+      {% endfor %}
+
+  </ul>
+</div>
+
+<!-- <div class="yachiIntro">
+  <h5>牙齿美白简介</h5>
+  <p>这是牙齿美白简介这是牙齿美白简介这是牙齿美白简介这是牙齿美白简介这是牙齿美白简介</p>
+</div>
+
+<div class="aboutservice clearfix">
+  <h5>相关产品</h5>
+  <ul>
+    <li><a href="javascript:;">冷光美白</a></li>
+    <li><a href="javascript:;">全瓷贴片</a></li>
+    <li><a href="javascript:;">美容冠</a></li>
+  </ul>
+</div>
+
+
+<div class="aboutbill clearfix">
+  <h5>相关病症</h5>
+  <ul>
+    <li><a href="javascript:;">氟斑牙</a></li>
+    <li><a href="javascript:;">四环氟牙</a></li>
+    <li><a href="javascript:;">黄牙</a></li>
+    <li><a href="javascript:;">烟渍牙</a></li>
+  </ul>
+</div>
+
+<div class="aboutcase clearfix">
+  <h5>相关案例</h5>
+  <ul>
+    <li><a href="javascript:;"><img src="" alt=""><span>牙齿冷光</span></a></li>
+    <li><a href="javascript:;"><img src="" alt=""><span>牙齿冷光</span></a></li>
+    <li><a href="javascript:;"><img src="" alt=""><span>牙齿冷光</span></a></li>
+    <li><a href="javascript:;"><img src="" alt=""><span>牙齿冷光</span></a></li>
+  </ul>
+</div> -->
+
+</div>
+
+  {% partial 'normalQuestion/questionLeft' %}
+</div>

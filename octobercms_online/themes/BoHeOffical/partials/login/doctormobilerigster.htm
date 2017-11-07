@@ -1,0 +1,180 @@
+<div id="regiesterbox" style="display:blcok">
+  <form class="" action="" method="post" style="margin-top:20%">
+    <div class="" style="text-align:center;">
+    <img src="{{'assets/img/down_logo.png' |theme}}" alt="">
+    </div>
+    <span class="regiesterTitle" style="width:100%;margin-bottom: 20px;">注册薄荷</span>
+    <!-- <ul class="regiester_ul clearfix">
+      <li><a class="huanzheregiester" href="#">我是患者</a></li>
+      <li><a href="#">我是医生</a></li>
+    </ul> -->
+    <div class="inputarea">
+    <div class="phonecontent">
+      <label for="phone">手机号</label>
+      <input style="width:210px" type="text" id="register_phone" name="phone" value="" placeholder="请输入手机号(phone number)">
+    </div>
+
+    <div class="yzmcontent">
+    <label for="yzm">验证码</label>
+    <input type="text" id="register_yzm" name="yzm" value="" autocomplete="off">
+    <label for="yzm" id="register_getVerifyCode">获取验证码</label>
+    </div>
+
+    <div class="secretcontent">
+      <label for="secret">密码</label>
+      <input type="password" id="register_secret" name="secret" value="" minlength="6"  placeholder="不少于6位">
+      <a href="#" id="register_isShowSecret"><img src="{{'assets/img/usercenter/secretHide.png' |theme}}" alt=""></a>
+    </div>
+
+    <a class="registerbtn btn btn-default">注册 / sign up</a>
+    <div class="regiester_bottomtip">
+    已有账号？ <a href="{{'/mobile/login/'~this.param.whid }}" id="gologin">登录(sign in)</a>
+    </div>
+    </div>
+  </form>
+</div>
+
+{% put scripts %}
+
+<script type="text/javascript">
+$(function(){
+
+var isdoctor='1';
+// 注册框实现
+ // $('#regiesterbox .regiester_ul li').on('click','a', function(e){
+ //   e.preventDefault();
+// $('.regiester_ul li a').css({'border-bottom':'none','color':'#666'});
+//   e.target.style.borderBottom='2px solid #17ACB2';
+//   e.target.style.color='#17ACB2';
+//     if (e.target.getAttribute('class')=='huanzheregiester') {
+//       //console.log('dsds')
+//     isdoctor='2';
+//     }else{
+//         //console.log('sdsds')
+//     isdoctor='1';
+//     }
+//  })
+
+ // 注册按钮点击
+       $(".registerbtn").bind("click",function(){
+     console.log(isdoctor);
+           var verifyCode = $("#register_yzm").val(); //验证码
+           var phoneCode = $("#register_phone").val();	 //电话号码
+           var secretCode = $("#register_secret").val();	 //密码
+           var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+           if (!phone.test(phoneCode)) {
+             alert('请输入正确的手机号');
+             return;
+           }
+           if (verifyCode.length == 0) {
+             alert('请输入验证码');
+             return;
+           }
+           if (secretCode.length < 6) {
+             alert('密码长度至少6位');
+             return;
+           }
+           $.request('account::onPhoneregister',{
+               data: {
+                 mobile:$("#register_phone").val(),
+                 password:$("#register_secret").val(),
+                 phonecaptcha:$("#register_yzm").val(),
+                 usertype:isdoctor,
+                 openid:"{{this.param.whid}}"
+               },
+               redirect:window.location.href,
+               //  success:function(){
+               //   //console.log('注册成功')
+               // },
+               // error:function(){
+               //     //console.log('注册失败')
+               // }
+
+
+           })
+
+
+
+       })
+
+ $("#register_getVerifyCode").bind("click", function() {
+   //console.log('sdsds')
+   if ($("#register_getVerifyCode").text() != '获取验证码')
+     return;
+   var phoneCode = $("#register_phone").val();
+   if (phoneCode.length == 0) {
+     alert("请输入手机号");
+     return;
+   };
+   var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+   if (!phone.test(phoneCode)) {
+     alert('请输入正确的手机号');
+     return;
+   };
+   //		倒计时
+   countDownTime('#register_getVerifyCode');
+   //console.log($("#register_phone").val())
+   $.request('account::onSendsms',{
+
+       data: {phone:$("#register_phone").val()},
+        success:function(res){
+         //console.log(res)
+       },
+       error:function(error){
+           //console.log(error)
+       }
+
+
+   })
+ })
+ //验证码获取倒计时
+ function countDownTime(codeLabelId) {
+   $(codeLabelId).html('60秒后重新获取')
+   var waitTime, currTime = 59;
+   var interval = setInterval(function() {
+     timeChange(currTime,codeLabelId);
+     currTime--;
+     if (currTime < 0) {
+       clearInterval(interval);
+       currTime = waitTime;
+     }
+   }, 1000);
+ }
+
+ //倒计时显示
+ function timeChange(waitTime,codeLabelId) {
+   if (waitTime != 0) {
+     $(codeLabelId).html(waitTime + '秒后重新获取');
+   } else {
+     $(codeLabelId).html('获取验证码');
+   }
+ }
+
+
+
+
+ $('#register_isShowSecret').bind('click', function(e){
+ e.preventDefault();
+
+ changeShowSecret('#register_isShowSecret','#register_secret')
+
+ })
+
+ changeShowSecret=function(showId,inputId){
+
+   if ($(inputId.toString()).attr('type')=='password') {
+     // $(inputId.toString()+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretShow.png'});
+     $(showId+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretShow.png'});
+     $(inputId.toString()).attr('type','text')
+   }else if ($(inputId.toString()).attr('type')=='text') {
+       $(showId+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretHide.png'});
+       $(inputId.toString()).attr('type','password')
+   }
+ }
+
+
+
+})
+</script>
+
+{% endput %}

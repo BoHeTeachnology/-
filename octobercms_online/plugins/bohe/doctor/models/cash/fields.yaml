@@ -1,0 +1,22 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    
+    doctor_name:
+        label: '医生姓名'
+
+    
+    outcash:
+            label: '提现总额'
+    state:
+            label: '状态'        
+             
+
+
+           
+
+
+
+

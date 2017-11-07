@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Findcat\Models\Index
+form: $/bohe/findcat/models/index/fields.yaml
+defaultRedirect: bohe/findcat/index
+create:
+    redirect: 'bohe/findcat/index/update/:id'
+    redirectClose: bohe/findcat/index
+update:
+    redirect: bohe/findcat/index
+    redirectClose: bohe/findcat/index
+preview: {  }

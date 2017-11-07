@@ -1,0 +1,23 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+      
+    name:
+        label: 'name'
+        span: left
+        placeholder: 'name'
+
+    keyid:
+        label: 'keyid'
+        span: left
+        placeholder: 'keyid'
+
+
+
+           
+
+
+
+

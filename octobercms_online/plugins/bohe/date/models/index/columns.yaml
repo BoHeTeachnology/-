@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    
+    
+    username:
+        label: '用户名称'
+        span: left
+        placeholder: '标题'
+    user_id:
+        label: '用户ID'
+        span: left
+        placeholder: '标题'
+    doc_id:
+        label: '医生ID'
+        span: left
+        placeholder: '标题'
+    
+    content:
+        label: '内容'
+        
+        
+    state:
+            label: '状态'
+    created_at:
+            label: '创建时间'        

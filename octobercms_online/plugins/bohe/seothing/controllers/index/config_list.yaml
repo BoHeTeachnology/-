@@ -1,0 +1,13 @@
+title: Bohe
+# Records to display per page
+recordsPerPage: 100
+modelClass: Bohe\Seothing\Models\Post
+list: $/bohe/seothing/models/post/columns.yaml
+recordUrl: 'bohe/seothing/index/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

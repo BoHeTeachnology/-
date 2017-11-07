@@ -1,0 +1,231 @@
+<div class="userData_right" style="">
+     {{ form_open() }}
+     <form method="post" name="Index" data-request="updateform::onSave">
+
+
+     <div class="userData_row1">
+       <span>认证资料</span>
+     </div>
+     <div class="heght1"></div>
+
+     <div class="userData_row2">
+       <p class="userData_row2_p">请上传正面照片，我们将为您制作漂亮的头像</p>
+        {% component 'fileUploaderphoto' %}
+       <!-- <a href="#" class="userData_row2_a">
+         <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+         <span>添加照片</span>
+       </a> -->
+       <div class="userData_row2_right clearfix">
+         <img src="" alt="">
+         <dl class="userData_row2_right_dl clearfix">
+           <dt>头像示例</dd>
+       <dd>* 正面照片</dd>
+       <dd>* 清晰度高</dd>
+       <dd>* 半身照（胸部以上）</dd>
+       <dd>* 建议1：1比例的</dd>
+     </dl>
+     </div>
+
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row3 clearfix">
+      <span>姓名</span>
+      <input type="text" name="Index[name]" value="{{doctor.name}}">
+    </div>
+    <div class="heght1"></div>
+
+
+    <div class="userData_row4 clearfix">
+      <span>性别</span>
+      <div class="userData_row_right">
+        <span class="W120" >
+            <label for="checkboxa_1"><i>男</i></label>
+         <input name="Index[sex]"  type="radio" {{ doctor.sex==1?'checked':'' }} class="checkbox" id="checkboxa_1" value="1">
+
+        </span>
+        <span class="W120" >
+          <label for="checkboxa_0"><i>女</i></label>
+         <input name="Index[sex]"  type="radio" class="checkbox" {{ doctor.sex==0?'checked':'' }} id="checkboxa_1" value="0">
+       </span>
+      </div>
+
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row5 clearfix">
+      <span>年龄</span>
+      <input type="text" name="Index[age]"  value="{{doctor.age}}">
+    </div>
+    <div class="heght1"></div>
+    <div class="userData_row6 clearfix">
+      <span>所在地</span>
+      <input type="text" name="Index[city]"  value="{{doctor.city}}">
+    </div>
+    <div class="heght1"></div>
+
+     <div class="userData_row7 clearfix">
+      <span>手机号</span>
+    <input name="Index[phone]" value="{{theuser.mobile}}" readonly="true" style="border:none"></input>
+
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row8 clearfix">
+      <span>专属二维码</span>
+
+      <div class="userData_row8_right">
+       <!-- <a href="javascript:void(0)">下载二维码</a> -->
+       <span>认证成功后会自动生成一个专属二维码</span>
+      </div>
+
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row9">
+      <span>医生认证</span>
+    </div>
+    <div class="heght1"></div>
+
+
+    <div class="userData_row10 clearfix">
+      <span>医疗机构</span>
+      <input type="text" name="Index[institution]" value="{{doctor.institution}}">
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row11 clearfix">
+      <span>职称</span>
+      <input type="text" name="Index[jobtitle]" value="{{doctor.jobtitle}}">
+    </div>
+    <div class="heght1"></div>
+    <div class="userData_row12 clearfix">
+      <span>背景</span>
+      <input type="text" name="Index[introduce]" value="{{doctor.introduce}}">
+    </div>
+    <div class="heght1"></div>
+    <div class="userData_row13 clearfix">
+      <span>职业年限</span>
+      <input type="text" name="Index[experience]"  value="{{doctor.experience}}">
+    </div>
+    <div class="heght1"></div>
+
+
+    <div class="userData_row14 clearfix">
+      <span>服务项目</span>
+      <div class="userData_row14_right">
+
+       {% if type %}
+        {% for ty in type %}
+        <span class="W80" >
+         <input name="Index[types][]"  type="checkbox" class="checkbox" id="checkboxa_{{ty.id}}" value="{{ty.id}}"   {% for nowty in nowtype %}
+                 {% if ty.id ==nowty.type_id  %} checked="checked" {% endif %}
+           {% endfor %}
+   >
+        <label for="checkboxa_{{ty.id}}"><i> {{ty.name}} </i></label>
+        </span>
+          {% endfor %}
+          {% endif %}
+
+      </div>
+    </div>
+    <div class="heght1"></div>
+
+
+    <div class="userData_row15 clearfix">
+      <span>擅长领域</span>
+      <input type="text" name="Index[skilledin]" value="{{doctor.skilledin}}">
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row16 clearfix">
+      <span>简介</span>
+        <textarea   name="Index[introduce]" rows="8" cols=""  placeholder="介绍您的学术背景、从医经历、擅长领域等内容，让患者更了解您">{{doctor.introduce}}</textarea>
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row17">
+      <span>上传审核证书</span>
+    </div>
+    <div class="heght1"></div>
+
+    <div class="userData_row18">
+     <div class="topImgDemo clearfix">
+       <img src="{{'assets/img/usercenter/zhengshuone.png' |theme}}" alt="">
+       <img src="{{'assets/img/usercenter/zhengshutwo.png' |theme}}" alt="">
+     </div>
+     <dl class="userData_row18_dl clearfix">
+     <dd>* 上传的照片仅用于认证，患者和第三方不会看到您的信息</dd>
+     <dd>* 拍照时请确认姓名、照片、编号、执业范围、签发机关等信息清晰可辨认</dd>
+     <dd>* 需上传证书第一、第二页、确保包含执业地点以及变更记录</dd>
+     </dl>
+    </div>
+    <div class="userData_row19 clearfix">
+      <span>请上传&nbsp;<i>医师执业证书</i></span>
+    </div>
+
+    <div class="heght1"></div>
+
+
+    <div class="userData_row20 clearfix">
+       {% component 'fileUploaderone' %}
+      <!-- <a href="#" class="userData_row20_a1">
+        <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+        <span>添加第一页</span>
+      </a> -->
+      <!-- {% component 'imageUploadertwo' %} -->
+      <!-- <a href="#" class="userData_row20_a2">
+        <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+        <span>添加第二页</span>
+      </a> -->
+    </div>
+
+
+    <div class="userData_row21 clearfix">
+      <span>请上传&nbsp;<i>医师资格证书</i></span>
+    </div>
+     <div class="heght1"></div>
+    <div class="userData_row22 clearfix">
+      {% component 'fileUploadertwo' %}
+      <!-- <a href="#" class="userData_row22_a1">
+        <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+        <span>添加第一页</span>
+      </a> -->
+      <!-- {% component 'imageUploaderone' %} -->
+      <!-- <a href="#" class="userData_row22_a2">
+        <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+        <span>添加第二页</span>
+      </a> -->
+    </div>
+
+    <div class="userData_row23 clearfix">
+      <span>请上传&nbsp;<i>专业技术资格证书（选填）</i></span>
+
+    </div>
+     <div class="heght1"></div>
+    <div class="userData_row24 clearfix">
+   {% component 'fileUploaderthree' %}
+      <!-- <a href="#" class="userData_row24_a1">
+        <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+        <span>添加第一页</span>
+
+
+      </a>
+      <a href="#" class="userData_row24_a2">
+        <img src="{{'assets/img/usercenter/addphoto.png' |theme}}" alt="">
+        <span>添加第二页</span>
+      </a> -->
+    </div>
+
+    <div class="commit_but">
+      <a
+      type="submit"
+      data-request="updateform::onSave"
+      data-hotkey="ctrl+s, cmd+s"
+      data-load-indicator="保存..."
+      class="btn btn-default">提交审核</a>
+      <!-- <a class="btn btn-default">保存</a> -->
+    </div>
+     </form>
+   {{ form_close() }}
+</div>

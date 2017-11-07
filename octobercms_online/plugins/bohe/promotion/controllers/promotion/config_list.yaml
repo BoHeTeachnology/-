@@ -1,0 +1,11 @@
+title: '活动'
+modelClass: Bohe\Promotion\Models\Promotion
+list: $/bohe/promotion/models/promotion/columns.yaml
+recordUrl: 'bohe/promotion/promotion/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

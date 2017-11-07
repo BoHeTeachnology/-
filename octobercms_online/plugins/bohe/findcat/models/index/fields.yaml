@@ -1,0 +1,37 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    featured_images:
+        label: 'image'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    name:
+        label: '名称'
+        span: left
+        placeholder: '名称'
+    title:
+        label: '标题'
+        span: left
+        placeholder: '标题'
+
+    content:
+        label: '内容'
+    cat_id:
+        label: 'categories的ID'
+       
+    state:
+            label: '状态'
+            span: auto
+            type: switch
+             
+
+
+           
+
+
+
+

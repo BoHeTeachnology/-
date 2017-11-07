@@ -1,0 +1,50 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/user/:month?/:year?/:doctor_id?"
+layout="main"
+description="薄荷牙医"
+hidden="0"
+from="home"
+[account]
+[MonthEvents]
+month = "{{ :month }}"
+year = "{{ :year }}"
+weekstart = 0
+color = "red"
+loadstyle = 1
+title_max = 100
+usePermissions = 1
+category = "{{ :cat }}"
+doctor_id = "{{ :doctor_id }}"
+dayspast = 30
+daysfuture = 120
+raw_data = 0
+
+
+
+[session]
+[updateuser]
+
+[updateformphoto]
+ deferredBinding = "1"
+[updateformone]
+deferredBinding = "1"
+
+==
+<?php
+function onStart()
+{
+    /** Add yellow highlight for current day */
+
+}
+?>
+==
+
+
+
+  <!-- 用户中心begin -->
+<div id="userCenter" style="margin-top:65px">
+
+{% partial 'userCenter/userCenter' %}
+</div>
+
+  <!-- 用户中心end -->

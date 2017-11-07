@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: kurtjensen.mycalendar::lang.type.name
+    slug:
+        label: kurtjensen.mycalendar::lang.type.slug
+    description:
+        label: kurtjensen.mycalendar::lang.type.description

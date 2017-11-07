@@ -1,0 +1,46 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    featured_images:
+        label: 'image'
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200
+    title:
+        label: '标题'
+        span: left
+
+    content:
+        label: '内容'
+        span: left
+ 
+    url:
+        label: 'url'
+        span: left
+ 
+    starttime:
+        label: '起始时间'
+        type: datepicker
+        mode: date
+        span: left
+ 
+    endtime:
+        label: '结束时间'
+        type: datepicker
+        mode: date
+        span: left
+        
+    state:
+            label: '状态'
+  
+             
+
+
+           
+
+
+
+

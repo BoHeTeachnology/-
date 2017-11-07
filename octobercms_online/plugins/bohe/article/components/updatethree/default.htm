@@ -1,0 +1,14 @@
+{% if not user %}
+
+    <div class="row">
+
+
+    </div>
+
+{% else %}
+
+    {% partial __SELF__ ~ '::form' %}
+
+ 
+
+{% endif %}

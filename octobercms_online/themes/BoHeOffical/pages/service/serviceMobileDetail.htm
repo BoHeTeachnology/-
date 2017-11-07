@@ -1,0 +1,49 @@
+title="薄荷牙医-您身边的牙医专家"
+url="mobile/serviceDetail/post/:id"
+layout="mobileMain"
+description=""
+hidden="0"
+
+[blogPost]
+==
+{% set serviceDetailList=blogPost.thepost %}
+
+<!-- 百科详情区域 begin -->
+
+<div id="serviceDetail" style="margin-top:20px">
+  {% partial 'serviceDetail/detailContent' serviceDetailList=serviceDetailList %}
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+  $(function() {
+
+    //
+    // function IsPC() {
+    //   var userAgentInfo = navigator.userAgent;
+    //   var Agents = ["Android", "iPhone",
+    //     "SymbianOS", "Windows Phone",
+    //     "iPad", "iPod"
+    //   ];
+    //   var flag = true;
+    //   for (var v = 0; v < Agents.length; v++) {
+    //     if (userAgentInfo.indexOf(Agents[v]) > 0) {
+    //       flag = false;
+    //       break;
+    //     }
+    //   }
+    //   return flag;
+    // }
+    //
+    // if (flag) {
+    //
+    // } else {
+    //
+    // }
+    // console.log(IsPC() + 'ssas');
+
+  })
+</script>
+{% endput %}
+
+<!-- 百科详情区域 end -->

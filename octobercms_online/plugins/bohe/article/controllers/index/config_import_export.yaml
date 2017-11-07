@@ -1,0 +1,41 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    # Page title
+    title: bohe.article::lang.posts.import_post
+
+    # Import List Column configuration
+    list: $/bohe/article/models/postimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/bohe/article/models/postimport/fields.yaml
+
+    # Import Model class
+    modelClass: Bohe\Article\Models\PostImport
+
+    # Redirect when finished
+    redirect: bohe/article/index
+
+    # Required permissions
+    permissions: bohe.article.access_import_export
+
+export:
+    # Page title
+    title: bohe.article::lang.posts.export_post
+
+    # Output file name
+    fileName: posts.csv
+
+    # Export List Column configuration
+    list: $/bohe/article/models/postexport/columns.yaml
+
+    # Export Model class
+    modelClass: Bohe\Article\Models\PostExport
+
+    # Redirect when finished
+    redirect: bohe/article/index
+
+    # Required permissions
+    permissions: bohe.article.access_import_export

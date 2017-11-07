@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Order\Models\Bill
+form: $/bohe/order/models/bill/fields.yaml
+defaultRedirect: bohe/order/bill
+create:
+    redirect: 'bohe/order/bill/update/:id'
+    redirectClose: bohe/order/bill
+update:
+    redirect: bohe/order/bill
+    redirectClose: bohe/order/bill
+preview: {  }

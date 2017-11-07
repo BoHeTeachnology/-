@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    doctor_name:
+        label: '医生姓名'
+    real_name:
+        label: '真实姓名'
+    identity:
+        label: '身份证'
+    type:
+        label: '银行类型'
+    bank_name:
+        label: '银行名称'
+    bk_province:
+        label: '银行所在省份' 
+    bk_city:
+        label: '银行所在城市' 
+    bk_mobile:
+        label: '银行预留电话'
+    card_number:
+        label: '银行卡号'                                                      
+    state:
+        label: '状态' 

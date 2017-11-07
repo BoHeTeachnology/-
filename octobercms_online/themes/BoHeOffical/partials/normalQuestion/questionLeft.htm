@@ -1,0 +1,44 @@
+
+{% set doctorlists=[1,1,1,1] %}
+{% set questionranks=[1,1,1,1,1,1,1,1,1,1] %}
+<div class="col-lg-4 col-md-5 col-sm-10 col-xs-10">
+  <div class="left_top">
+
+  <h5 class="title_h5">口腔医生</h5>
+    {% for key,doctoritem in articledoctor.doctorlist %}
+  <div class="normal_doctoritem clearfix">
+    {% if doctoritem.photo.path %}
+  <img src="{{doctoritem.photo.path}}" alt="">
+
+   {% endif %}
+
+  <div class="doctoritem_left">
+    <h5>{{doctoritem.name}}</h5>
+    <a href="{{'/doctordetail/post/'~doctoritem.id}}">立即预约</a>
+    <p style="padding-top:10px;font-size:14px;color:#666">{{doctoritem.jobtitle}}</p>
+    <p style="padding-bottom:0px;font-size:14px;color:#666;margin-bottom:0px;text-overflow: ellipsis;overflow: hidden;">擅长领域:{{doctoritem.skilledin}}</p>
+  </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="left_bottom">
+
+<h5 class="title_h5">问题排行</h5>
+<div class="left_bottom_p">
+{% for key,questionrank in searcharticle.hot %}
+  {% if key <10 %}
+  <p>
+{% if key<9 %}
+  <strong>0{{key+1}}</strong> <a href="{{'/faqdetail/'~questionrank.id}}" style="letter-spacing:0.5px">&nbsp;{{questionrank.title}}</a>
+{% else %}
+    <strong>{{key+1}}</strong> <a href="{{'/faqdetail/'~questionrank.id}}" style="letter-spacing:0.5px">&nbsp;{{questionrank.title}}</a>
+{% endif %}
+</p>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+
+
+</div>

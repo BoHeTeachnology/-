@@ -1,0 +1,11 @@
+name: '活动'
+modelClass: Bohe\Promotion\Models\Promotion
+form: $/bohe/promotion/models/promotion/fields.yaml
+defaultRedirect: bohe/promotion/promotion
+create:
+    redirect: 'bohe/promotion/promotion/update/:id'
+    redirectClose: bohe/promotion/promotion
+update:
+    redirect: bohe/promotion/promotion
+    redirectClose: bohe/promotion/promotion
+preview: {  }

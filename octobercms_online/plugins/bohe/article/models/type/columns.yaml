@@ -1,0 +1,28 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: bohe.article::lang.type.name
+        searchable: true
+    title:
+        label: 'title'
+        placeholder: 'title'
+
+    slug:
+        label: bohe.article::lang.type.slug
+        span: right
+        placeholder: bohe.article::lang.type.slug_placeholder
+        preset: name
+
+    description:
+        label: 'bohe.article::lang.type.description'
+        size: large
+        span: full
+        type: text
+
+    post_count:
+        label: bohe.article::lang.type.posts
+        sortable: false

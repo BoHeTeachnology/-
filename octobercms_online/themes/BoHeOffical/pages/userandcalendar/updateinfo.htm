@@ -1,0 +1,31 @@
+title = "a title"
+url = "/updateinfo"
+layout = "user"
+description = "test"
+meta_title = "a test"
+meta_description = "a test"
+is_hidden = 0
+[session]
+[updateform]
+[updateformone]
+deferredBinding = "1"
+[updateformtwo]
+deferredBinding = "1"
+[updateformthree]
+deferredBinding = "1"
+[updateformphoto]
+deferredBinding = "1"
+==
+function onStart()
+{
+  
+}
+==
+{% component 'updateformphoto' %}
+{% component 'updateformone' %}
+{% component 'updateformtwo' %}
+{% component 'updateformthree' %}
+{% component 'updateform' %}
+
+
+

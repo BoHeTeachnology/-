@@ -1,0 +1,116 @@
+
+
+{% if typeName=='service' %}
+<ul class="pagination" style="margin-left: 6%">
+{% if posts.lastPage > 1 %}
+
+    <li>
+      <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): (vikiLists.currentPage-1) }) }}">&larr; Prev</a> -->
+      <a id="service_loadBeforePage" currentPage={{posts.currentPage}} >
+      上一页
+    </a>
+    </li>
+
+    {% for page in 1..posts.lastPage %}
+
+    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+
+        <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a> -->
+        <a id="service_loadCurrentPage"  currentPage={{page}}>
+        {{ page }}
+      </a>
+    </li>
+
+    {% endfor %}
+    {% if posts.lastPage > posts.currentPage %}
+
+    <li>
+    <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): (vikiLists.currentPage+1) }) }}">Next &rarr;</a> -->
+      <a id="service_loadNextPage"  currentPage={{posts.currentPage}} lastPage={{posts.lastPage}}>
+      下一页
+    </a>
+    </li>
+    {% endif %}
+{% endif %}
+</ul>
+
+{% elseif typeName=='viki' %}
+
+
+<ul class="pagination" style="margin-left: 6%">
+{% if posts.lastPage > 1 %}
+  <li>
+
+    <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): (vikiLists.currentPage-1) }) }}">&larr; Prev</a> -->
+    <a id="viki_loadBeforePage"  currentPage={{posts.currentPage}} >
+    上一页
+  </a>
+  </li>
+
+  {% for page in 1..posts.lastPage %}
+
+  <li class="{{ posts.currentPage == page ? 'active' : null }}" style="background-color:#206477">
+
+      <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a> -->
+      <a id="viki_loadCurrentPage"  currentPage={{page}}>
+      {{ page }}
+    </a>
+  </li>
+
+  {% endfor %}
+  {% if posts.lastPage > posts.currentPage %}
+
+  <li>
+    <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): (vikiLists.currentPage+1) }) }}">Next &rarr;</a> -->
+    <a id="viki_loadNextPage"  currentPage={{posts.currentPage}} lastPage={{posts.lastPage}}>
+    下一页
+  </a>
+  </li>
+  {% endif %}
+  {% endif %}
+</ul>
+
+
+{% elseif typeName =='doctor' %}
+
+
+<ul class="pagination" style="margin-left: 6%">
+{% if posts.lastPage > 1 %}
+    <li>
+    <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): (vikiLists.currentPage-1) }) }}">&larr; Prev</a> -->
+      <a id="doctor_loadBeforePage" currentPage={{posts.currentPage}}>
+      上一页
+      </a>
+    </li>
+
+
+
+    {% for page in 1..posts.lastPage %}
+
+    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+
+        <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a> -->
+        <a id="doctor_loadBeforePage" currentPage={{page}}>
+        {{page }}
+        </a>
+    </li>
+
+    {% endfor %}
+
+    {% if posts.lastPage > posts.currentPage %}
+
+    <li>
+      <!-- <a href="{{ this.page.baseFileName|page({ (pageParam): (vikiLists.currentPage+1) }) }}">Next &rarr;</a> -->
+
+      <a id="doctor_loadNextPage" currentPage={{posts.currentPage}} lastPage={{posts.lastPage}}>
+      下一页
+      </a>
+    </li>
+
+    {% endif %}
+{% endif %}
+</ul>
+
+
+
+{% endif %}

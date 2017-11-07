@@ -1,0 +1,92 @@
+
+<br>
+ <a href='/updateinfo' target="_blank" color='red' ><button>编辑内容</button></a>
+<img src ={{codeurl}} >
+ 照片     
+{% if doctor.photo.count %}
+<div class="featured-images text-center">
+    {% for image in doctor.photo %}
+    <p>
+        <img
+                data-src="{{ image.filename }}"
+                src="{{ image.path }}"
+                alt="{{ image.description }}"
+                style="max-width: 100%" />
+    </p>
+    {% endfor %}
+</div>
+{% endif %}
+      {{doctor.name}}<br>
+      {{doctor.sex}}<br>
+      {{doctor.age}}<br>
+      {{doctor.city}}<br>
+      
+        {{doctor.phone}}<br>
+
+      {{doctor.institution}}<br>
+      
+{{doctor.experience}}<br>
+ 医师职业证书     
+<!-- Template for new files -->
+{% if doctor.certificate_one.count %}
+<div class="featured-images text-center">
+    {% for image in doctor.certificate_one %}
+    <p>
+        <img
+                data-src="{{ image.filename }}"
+                src="{{ image.path }}"
+                alt="{{ image.description }}"
+                style="max-width: 100%" />
+    </p>
+    {% endfor %}
+</div>
+{% endif %}
+ 医师资格证书
+{% if doctor.certificate_two.count %}
+<div class="featured-images text-center">
+    {% for image in doctor.certificate_two %}
+    <p>
+        <img
+                data-src="{{ image.filename }}"
+                src="{{ image.path }}"
+                alt="{{ image.description }}"
+                style="max-width: 100%" />
+    </p>
+    {% endfor %}
+</div>
+{% endif %}<br>
+专业技术资格证书
+ {% if doctor.certificate_three.count %}
+<div class="featured-images text-center">
+    {% for image in doctor.certificate_three %}
+    <p>
+        <img
+                data-src="{{ image.filename }}"
+                src="{{ image.path }}"
+                alt="{{ image.description }}"
+                style="max-width: 100%" />
+    </p>
+    {% endfor %}
+</div>
+{% endif %}
+{% component 'fileUploaderthree' %}<br>
+   
+{{doctor.jobtitle}}<br>
+     
+     {{doctor.skilledin}}<br>
+医生标签
+{% for ty in type %}
+     <div >
+                <input type="checkbox" id="checkbox_Form-field-Index-types_{{ty.id}}" name="Index[types][]" value="{{ty.id}}" 
+                {% for nowty in nowtype %}
+                      {% if ty.id ==nowty.type_id  %} checked="checked" {% endif %}
+                {% endfor %} 
+        >
+
+                <label for="checkbox_Form-field-Index-types_{{ty.id}}">
+                    {{ty.name}}               </label>
+                            </div>
+    {% endfor %} 
+
+        {{doctor.introduce}}<br>
+

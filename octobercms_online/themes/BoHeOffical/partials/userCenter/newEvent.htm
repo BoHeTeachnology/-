@@ -1,0 +1,118 @@
+
+
+{% put styles %}
+<link href="/themes/BoHeOffical/assets/css/kalendae.css" rel="stylesheet" />
+{% endput %}
+<form data-request="EventForm::onSave" id="EventForm" >
+<div class="chuzhenNew" style="display:none" >
+  <div class="chuzhen_row1">
+    <span>出诊安排</span>
+  </div>
+  <div class="heght1"></div>
+
+
+    <div class="chuzhen_row8 clearfix">
+      <span>标题</span>
+      <input name="name" value=""></input>
+
+        <!-- <textarea name="name"  rows="" cols="" placeholder=""></textarea> -->
+    </div>
+
+  <div class="chuzhen_row2">
+<span style="display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 20px;">出诊日期</span>
+    <div class="right-align input-group date" style="width: 300px;
+    display: inline-block;
+    margin-left: 94px;
+    position: relative;
+    top: 13px;">
+
+        <input
+            type="text"
+            id="DatePicker-form-input-date"
+            name="date"
+            class="form-control align-right auto-kal"
+            value=""
+            data-kal="direction: 'today-future',mode:'multiple'"
+            autocomplete="off"
+            style="width: 250px;height: 38px;">
+        <label for="DatePicker-form-input-date" class="input-group-addon" style="height: 38px;">
+             <i class="icon icon-calendar"></i>
+        </label>
+    </div>
+  </div>
+  <div class="chuzhen_row3">
+     {% partial 'datePicker/clockpicker'  name='time' value=''  label='起诊时间' %}
+  </div>
+
+  <div class="chuzhen_row4">
+     {% partial 'datePicker/clockpicker' name='end_time' value='' label='终诊时间' %}
+  </div>
+  <div class="chuzhen_row5">
+    <div class="chuzhen_row_select">
+        <span>出诊诊所</span>
+         <div class="select1 select">
+            {{ categorylist|raw  }}
+           </div>
+    </div>
+  </div>
+<!-- <div class="chuzhen_row6">
+   <div class="chuzhen_row_select">
+      <span>重复周期</span>
+      <div class="select2 select">
+      <select name="spacetime">
+      <option value="00:00:20">30分钟</option>
+      <option value="00:01:00">1小时</option>
+      <option value="00:01:30">1个半小时</option>
+      <option value="00:02:00">2小时</option>
+      </select>
+      </div>
+  </div>
+</div> -->
+<div class="chuzhen_row7">
+  <div class="chuzhen_row_select">
+      <span>出诊项目</span>
+      <!-- <div class="select3 select">
+      <select name="spacetime">
+      <option value="00:00:20">30分钟</option>
+      <option value="00:01:00">1小时</option>
+      <option value="00:01:30">1个半小时</option>
+      <option value="00:02:00">2小时</option>
+      </select>
+      </div> -->
+<div class="chuzhen_row7_right">
+
+
+{% if type.count>0 %} {% for ty in type %}
+<div class="type_div">
+  <input type="checkbox" id="Form-field-myevent-type_{{ty.id}}" name="type_id[]" value="{{ty.id}}" {% if nowtype.count>0 %} {% for nowty in nowtype %} {% if ty.id ==nowty.pivot.type_id %} checked="checked" {% endif %} {% endfor %} {% endif %} >
+  <label for="Form-field-myevent-type_{{ty.id}}"> {{ty.name}}</label>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+  </div>
+</div>
+  <div class="chuzhen_row9 clearfix">
+    <span>出诊详情</span>
+      <textarea name="text" rows="" cols="" placeholder=""></textarea>
+  </div>
+  <div class="chuzhen_commit_but">
+    <a type="submit"
+       data-request="EventForm::onSave"
+        data-hotkey="ctrl+s, cmd+s"
+        data-request-redirect="/usercenter/event"
+        data-load-indicator="{{ __SELF__.trans('kurtjensen.mycalendar::lang.event_form.saving') }}"
+        class="btn btn-default">保存</a>
+    <!-- <a class="btn btn-default">不保存</a> -->
+  </div>
+</div>
+</form>
+
+{% put scripts %}
+<script src="/themes/BoHeOffical/assets/javascript/kalendae.standalone.js"charset="utf-8"></script>
+
+
+{% endput %}

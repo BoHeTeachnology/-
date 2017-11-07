@@ -1,0 +1,136 @@
+
+{% set usertype=usertype %}
+<div class="container clearfix">
+  <div class="user_left">
+    <ul class="user_left_ul">
+      <li ><a href="/mycenter" class="baseData" >基本资料</a></li>
+      <li><a href="/usercenter/account"  class="myaccount">账户</a></li>
+      {% if user.type=='doctor' %}
+      <li ><a href="/usercenter/event/" class="chuzhenappoint">出诊安排</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  <div class="user_right">
+   <!-- 基本资料 right begin -->
+
+
+   {% if usertype=='userBaseData' %}
+
+   {% partial 'userCenter/userBaseData' %}
+
+    {% elseif usertype=='userAuth' %}
+    <!-- 基本资料 right end -->
+
+    <!-- 医生认证 right begin -->
+   {% partial 'userCenter/userAuth' %}
+   {% elseif usertype=='doctorBaseData' %}
+   <!-- 基本资料 right end -->
+
+   <!-- 医生认证 right begin -->
+  {% partial 'userCenter/doctorBaseData' %}
+
+   {% elseif usertype=='doctorAuth' %}
+   <!-- 基本资料 right end -->
+
+   <!-- 医生认证 right begin -->
+    {% partial 'userCenter/doctorAuth' %}
+    {% elseif usertype=='account' %}
+   <!-- 医生认证 right end -->
+
+<!-- 用户和密码 right begin  -->
+     {% partial 'userCenter/account' %}
+<!-- 用户和密码 right end  -->
+       {% elseif usertype=='chuzhen' %}
+<!-- 出诊安排 begin -->
+    {% partial 'userCenter/chuzhen' %}
+<!-- 出诊安排 end -->
+  {% endif %}
+ </div>
+
+</div>
+
+
+{% put scripts %}
+<script type="text/javascript" src="/themes/BoHeOffical/assets/javascript/jquery.combo.select.js"></script>
+<script>
+  $(function(){
+  $('.chuzhen_row5 .select1 select').comboSelect();
+  $('.chuzhen_row6 .select2 select').comboSelect();
+  $('.chuzhen_row7 .select3 select').comboSelect();
+  $('.eventList').parent().css('backgroundColor','#17ACB2')
+  $('.eventList li a').css({'color':'#fff','fontSize':'14px'})
+
+
+if ("{{this.page.cattype}}"=="userBaseData") {
+  $('.baseData').css({'border-left':'2px solid #17ACB2','color':'#17ACB2'});
+}else if ("{{this.page.cattype}}"=='account') {
+  $('.myaccount').css({'border-left':'2px solid #17ACB2','color':'#17ACB2'});
+}else if ("{{this.page.cattype}}"=='chuzhen') {
+  $('.chuzhenappoint').css({'border-left':'2px solid #17ACB2','color':'#17ACB2'});
+}
+// 左边选项点击事件
+
+// $('.user_left .user_left_ul li').on('click','a',function(e){
+//   e.preventDefault();
+//   e.stopPropagation();
+// $('#userCenter .user_left ul li a').css({'border-left':'none','color':'#666'});
+//   e.target.style.borderLeft='2px solid #17acb2';
+//   e.target.style.color='#17ACB2';
+//  if (e.target.getAttribute('class')=='baseData') {
+//       console.log('baseData')
+//    $('.userData_right').css('display','none');
+//    $('.baseData_right').css('display','block');
+//    $('.userAccount_right').css('display','none');
+//    $('.chuzhen_right').css('display','none');
+//  }else if(e.target.getAttribute('class')=='myaccount'){
+//    console.log('myaccount')
+//    $('.userData_right').css('display','none');
+//    $('.baseData_right').css('display','none');
+//    $('.userAccount_right').css('display','block');
+//    $('.chuzhen_right').css('display','none');
+//  }else {
+//     console.log('chuzhen_right')
+//     console.log(e.target)
+//
+//    $('.userData_right').css('display','none');
+//    $('.baseData_right').css('display','none');
+//    $('.userAccount_right').css('display','none');
+//    $('.chuzhen_right').css('display','block');
+//  }
+//
+// })
+
+// 新建行程事件
+$('#newChuzhen').click(function(){
+
+$('.eventMonth').css('display','none')
+$('.chuzhenNew').css('display','block')
+})
+
+
+// 去编辑资料按钮点击
+$('#gouserAuth').click(function(){
+console.log('dsdsadas');
+// $('.userData_right').css('display','block')
+// $('.baseData_right').css('display','none')
+// $('.userAccount_right').css('display','none');
+// $('.chuzhen_right').css('display','none');
+
+window.location.href='/usercenter/userAuth'
+
+})
+// 去编辑资料按钮点击
+$('#godoctorAuth').click(function(){
+console.log('dsdsadas');
+// $('.userData_right').css('display','block')
+// $('.baseData_right').css('display','none')
+// $('.userAccount_right').css('display','none');
+// $('.chuzhen_right').css('display','none');
+
+window.location.href='/usercenter/doctorAuth'
+
+})
+
+  })
+</script>
+{% endput %}

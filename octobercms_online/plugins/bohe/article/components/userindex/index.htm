@@ -1,0 +1,19 @@
+
+{% if theuser.avatar.count %}
+<div class="featured-images text-center">
+
+    <p>
+        <img
+                data-src="{{ theuser.avatar.filename }}"
+                src="{{ theuser.avatar.path }}"
+                alt="{{ theuser.avatar.description }}"
+                style="max-width: 100%" />
+    </p>
+
+</div>
+{% endif %}
+      {{theuser.name}}<br>
+      {{theuser.sex}}<br>
+      {{theuser.iu_gender}}<br>
+      {{theuser.city}}<br>
+      {{theuser.phone}}<br>

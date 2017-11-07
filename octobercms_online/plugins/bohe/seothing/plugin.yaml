@@ -1,0 +1,6 @@
+plugin:
+    name: 'bohe.seothing::lang.plugin.name'
+    description: 'bohe.seothing::lang.plugin.description'
+    author: bohe
+    icon: oc-icon-adjust
+    homepage: ''

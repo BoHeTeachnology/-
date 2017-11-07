@@ -1,0 +1,38 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/usercenter/account"
+layout="main"
+description="薄荷牙医"
+hidden="0"
+from="home"
+isneedLogin="1"
+cattype="account"
+
+[account]
+[session]
+[userindex]
+
+==
+<?php
+function onStart()
+{
+    /** Add yellow highlight for current day */
+
+}
+?>
+==
+
+
+{% if user %}
+
+  <!-- 用户中心begin -->
+<div id="account" style="margin-top:65px">
+{% set usertype='account' %}
+{% partial 'userCenter/userCenter' usertype=usertype %}
+</div>
+{% else %}
+<div class="authLogin" style="">
+  {% partial 'login/auth' %}
+
+</div>
+{% endif %}
+  <!-- 用户中心end -->

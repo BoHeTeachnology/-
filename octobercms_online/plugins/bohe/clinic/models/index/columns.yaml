@@ -1,0 +1,26 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    
+    
+
+    content:
+        label: '内容'
+    addr:
+        label: '诊所地址'
+    refresh_token:
+        label: 'refresh_token'
+        span: left
+    appid:
+        label: 'appid'
+        span: left
+        placeholder: 'appid'      
+    check_state:
+        label: '审核状态（0未审核，1为审核中，2为审核成功，3为审核失败）'
+        span: left
+        type: text     
+        
+    state:
+            label: '状态'

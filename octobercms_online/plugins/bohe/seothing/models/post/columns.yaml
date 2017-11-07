@@ -1,0 +1,29 @@
+columns:
+    id:
+        label: 'id'
+        type: text
+        searchable: true
+    
+    title:
+        label: '标题'
+        type: text
+        searchable: true  
+    content:
+        label: '内容'
+        type:  text
+         
+    tag:
+        label: '标签'
+        type: text 
+        
+    abstract:
+            label: '摘要'
+            type: text       
+   
+    state:
+        label: '状态'
+        span: auto
+        type: switch
+    hot:
+        label: '热度'
+        type: text

@@ -1,0 +1,18 @@
+<div class="confirm-container bg-success hide">
+    <p>Successfully created a new entry!</p>
+</div>
+{{ form_open() }}
+<form role="form" method="post"   name="index2"
+    data-request="{{ __SELF__ }}::onSave"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');">
+   
+新增或修改专业技术资格证书
+
+{% component 'fileUploaderthree' %}
+
+
+
+
+
+</form>
+{{ form_close() }}

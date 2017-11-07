@@ -1,0 +1,33 @@
+title="薄荷牙医-您身边的牙医专家"
+url="/doctordetail/post/:id"
+layout="main"
+description=""
+hidden="0"
+from="doctorteam"
+
+[bohedoctor]
+==
+
+
+<!-- 顶部背景图begin -->
+<div id="topBg">
+{% set topContent={'title1':'您身边的牙医朋友','title2':'Your dentist friend','title3':'和更多优秀的牙医在一起','title4':'With more good dentists','imgSrc':'doctorTopBg.png','position':'left'} %}
+
+{% partial 'viki/topBg' topContent=topContent %}
+
+</div>
+<!-- 顶部背景图end-->
+<!-- 面包屑导航begin -->
+<div id="breadNav" style="">
+  {% set type =[{'title':'网站首页','isHref':'/'},{'title':'医生详情','isHref':'/'}] %}
+  {% partial 'breadNav' types=type %}
+</div>
+<!-- 面包屑导航end -->
+
+<!-- 百科详情区域 begin -->
+
+<div id="doctorDetail">
+  {% partial 'doctor/doctorDetail' %}
+</div>
+
+<!-- 百科详情区域 end -->

@@ -1,0 +1,483 @@
+<div id="loginBgbox" style="     width: 305px;
+    height: 375px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;">
+    <h4 style="position:absolute;right:10px;top:0;"><a id="loginbgclose" title="">&times;</a></h4>
+
+    <div id="loginbox" class="loginbox" style="display:block">
+      <form class="loginform" action="" method="post">
+        <span class="logintopTitle">登录薄荷</span>
+        <ul class="login_ul clearfix">
+          <li><a class="secretLogin" href="#">密码登录</a></li>
+          <li><a href="#">短信登录</a></li>
+        </ul>
+        <div class="inputarea">
+        <div class="phonecontent">
+          <label for="phone">手机号</label>
+          <input type="text" id="login_phone" name="phone" value="" maxlength="11" placeholder="请输入手机号">
+        </div>
+
+      <div class="yzmcontent">
+      <label for="yzm">验证码</label>
+      <input type="text" id="login_yzm" name="yzm" value="">
+      <label for="yzm" id="login_getVerifyCode">获取验证码</label>
+      </div>
+
+        <div class="secretcontent">
+          <label for="secret">密码</label>
+          <input type="password" id="login_secret" name="secret" value="" placeholder="请输入密码">
+          <a href="#" id="login_isShowSecret"><img src="{{'assets/img/usercenter/secretHide.png' |theme}}" alt=""></a>
+        </div>
+
+        <a class="loginbtn btn btn-default">登录</a>
+        <div class="login_bottomtip">
+        还没有薄荷账号?<a href="javascript:;" id='goregiester'>注册</a>
+        </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div id="regiesterbox" style="display:none">
+      <form class="" action="" method="post">
+        <span class="regiesterTitle">注册薄荷</span>
+        <ul class="regiester_ul clearfix">
+          <li><a class="huanzheregiester" href="#">我是患者</a></li>
+          <li><a href="#">我是医生</a></li>
+        </ul>
+        <div class="inputarea">
+        <div class="phonecontent">
+          <label for="phone">手机号</label>
+          <input type="text" id="register_phone" name="phone" value="">
+        </div>
+
+        <div class="yzmcontent">
+        <label for="yzm">验证码</label>
+       <input type="text" id="register_yzm" name="yzm" value="" autocomplete="off">
+        <label for="yzm" id="register_getVerifyCode">获取验证码</label>
+        </div>
+
+        <div class="secretcontent">
+          <label for="secret">密码</label>
+          <input type="password" id="register_secret" name="secret" value="" minlength="6"  placeholder="不少于6位">
+          <a href="#" id="register_isShowSecret"><img src="{{'assets/img/usercenter/secretHide.png' |theme}}" alt=""></a>
+        </div>
+
+        <a class="registerbtn btn btn-default">注册</a>
+        <div class="regiester_bottomtip">
+        已有账号？ <a href="javascript:;" id="gologin">登录</a>
+        </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+{% put scripts %}
+
+<script type="text/javascript">
+$(function(){
+
+
+  $('#login').click(function(){
+      $('.authLogin').css('display','block');
+    $('#loginbox').css('display','block');
+    $('#regiesterbox').css('display','none');
+  })
+
+  $('#regiester').click(function(){
+      $('.authLogin').css('display','block');
+    $('#loginbox').css('display','none');
+    $('#regiesterbox').css('display','block');
+  })
+
+
+  var logintype='secretlogin';
+  // 登录框实现
+  $('#loginbox .login_ul li').on('click','a', function(e){
+     e.preventDefault();
+  $('.login_ul li a').css({'border-bottom':'none','color':'#666'});
+    e.target.style.borderBottom='2px solid #17ACB2';
+    e.target.style.color='#17ACB2';
+    if (e.target.getAttribute('class')=='secretLogin') {
+      logintype='secretlogin';
+      $('#loginbox .secretcontent').css('display','block');
+      $('#loginbox .yzmcontent').css('display','none');
+    }else {
+      logintype='codelogin';
+      $('#loginbox .secretcontent').css('display','none');
+      $('#loginbox .yzmcontent').css('display','block');
+    }
+
+  })
+
+  // 注册框实现
+  // $('#registerbox .register_ul li').on('click','a', function(e){
+  //    e.preventDefault();
+  // $('.login_ul li a').css({'border-bottom':'none','color':'#666'});
+  //   e.target.style.borderBottom='2px solid #17ACB2';
+  //   e.target.style.color='#17ACB2';
+  //   if (e.target.getAttribute('class')=='secretLogin') {
+  //     logintype='secretlogin';
+  //     $('#loginbox .secretcontent').css('display','block');
+  //     $('#loginbox .yzmcontent').css('display','none');
+  //   }else {
+  //     logintype='codelogin';
+  //     $('#loginbox .secretcontent').css('display','none');
+  //     $('#loginbox .yzmcontent').css('display','block');
+  //   }
+  //
+  // })
+
+  var isdoctor='2';
+  // 注册框实现
+   $('#regiesterbox .regiester_ul li').on('click','a', function(e){
+     e.preventDefault();
+  $('.regiester_ul li a').css({'border-bottom':'none','color':'#666'});
+    e.target.style.borderBottom='2px solid #17ACB2';
+    e.target.style.color='#17ACB2';
+      if (e.target.getAttribute('class')=='huanzheregiester') {
+        console.log('dsds')
+      isdoctor='0';
+      }else{
+          console.log('sdsds')
+      isdoctor='1';
+      }
+   })
+
+
+   // 忘记密码点击
+   $('#gofind').click(function(e){
+   e.preventDefault();
+   $('#loginbox').css('display','none')
+  $('#regiesterbox').css('display','none')
+   })
+
+   // 去注册按钮点击
+   $('#goregiester').click(function(e){
+
+   e.preventDefault();
+   $('#loginbox').css('display','none')
+   $('#regiesterbox').css('display','block')
+   })
+   // 去注册按钮点击
+   $('#find_goregiester').click(function(e){
+   e.preventDefault();
+   $('#loginbox').css('display','none')
+   $('#regiesterbox').css('display','block')
+   })
+
+   // 去登录按钮点击
+   $('#gologin').click(function(e){
+   e.preventDefault();
+   $('#loginbox').css('display','block')
+   $('#regiesterbox').css('display','none')
+   })
+
+  // //退出登录按钮点击
+  // $('#home_loginout').click(function(e){
+  // e.preventDefault();
+  //
+  // })
+
+
+
+
+  // 个人中心按钮点击
+  $('#home_userCenter').click(function(e){
+  e.preventDefault();
+  window.location.href='/mycenter'
+
+  })
+
+  // 退出登录按钮点击
+  $('#home_loginout').click(function(e){
+    e.stopPropagation();
+  e.preventDefault();
+  var NowUrl=window.location.href;
+  $.request('session::onLogout',{
+       data:{redirect: NowUrl}
+  })
+
+  })
+
+
+
+  //	获取验证码
+  			$("#login_getVerifyCode").bind("click", function() {
+          console.log('sdsds')
+  				if ($("#login_getVerifyCode").text() != '获取验证码')
+  					return;
+  				var phoneCode = $("#login_phone").val();
+  				if (phoneCode.length == 0) {
+  					alert("请输入手机号");
+  					return;
+  				};
+  				var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+  				if (!phone.test(phoneCode)) {
+  					alert('请输入正确的手机号');
+  					return;
+  				};
+  				//		倒计时
+  				countDownTime('#login_getVerifyCode');
+          $.request('account::onSendsms',{
+
+              data: {phone:$("#login_phone").val()},
+               success:function(res){
+              },
+              error:function(error){
+              }
+
+
+          })
+  			})
+
+
+        $("#register_getVerifyCode").bind("click", function() {
+          console.log('sdsds')
+          if ($("#register_getVerifyCode").text() != '获取验证码')
+            return;
+          var phoneCode = $("#register_phone").val();
+          if (phoneCode.length == 0) {
+            alert("请输入手机号");
+            return;
+          };
+          var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+          if (!phone.test(phoneCode)) {
+            alert('请输入正确的手机号');
+            return;
+          };
+          //		倒计时
+          countDownTime('#register_getVerifyCode');
+          console.log($("#register_phone").val())
+          $.request('account::onSendsms',{
+
+              data: {phone:$("#register_phone").val()},
+               success:function(res){
+                console.log(res)
+              },
+              error:function(error){
+                  console.log(error)
+              }
+
+
+          })
+        })
+
+        $("#find_getVerifyCode").bind("click", function() {
+          console.log('sdsds')
+          if ($("#find_getVerifyCode").text() != '获取验证码')
+            return;
+          var phoneCode = $("#find_phone").val();
+          if (phoneCode.length == 0) {
+            alert("请输入手机号");
+            return;
+          };
+          var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+          if (!phone.test(phoneCode)) {
+            alert('请输入正确的手机号');
+            return;
+          };
+          //		倒计时
+          countDownTime('#find_getVerifyCode');
+          $.request('account::onSendsms',{
+
+              data: {phone:$("#find_phone").val()},
+               success:function(res){
+                console.log(res)
+              },
+              error:function(error){
+                  console.log(error)
+              }
+
+
+          })
+        })
+
+  			//验证码获取倒计时
+  			function countDownTime(codeLabelId) {
+  				$(codeLabelId).html('60秒后重新获取')
+  				var waitTime, currTime = 59;
+  				var interval = setInterval(function() {
+  					timeChange(currTime,codeLabelId);
+  					currTime--;
+  					if (currTime < 0) {
+  						clearInterval(interval);
+  						currTime = waitTime;
+  					}
+  				}, 1000);
+  			}
+
+  			//倒计时显示
+  			function timeChange(waitTime,codeLabelId) {
+  				if (waitTime != 0) {
+  					$(codeLabelId).html(waitTime + '秒后重新获取');
+  				} else {
+  					$(codeLabelId).html('获取验证码');
+  				}
+  			}
+
+
+  // 登录按钮点击
+  			$(".loginbtn").bind("click",function(){
+          if (logintype=='codelogin') {
+            var verifyCode = $("#login_yzm").val(); //验证码
+    				var phoneCode = $("#login_phone").val();	 //电话号码
+
+            console.log(verifyCode);
+            console.log(phoneCode);
+            var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+    				if (!phone.test(phoneCode)) {
+    					alert('请输入正确的手机号');
+    					return;
+    				}
+    				if (verifyCode.length == 0) {
+    					alert('请输入验证码');
+    					return;
+    				}
+
+            $.request('account::onMesseagesignin',{
+                data: {
+                  mobile:phoneCode,
+                  phonecaptcha:verifyCode
+                },
+                redirect:window.location.href,
+                //  success:function(res){
+                //   console.log(res)
+                // },
+                // error:function(error){
+                //     console.log('登录失败'+error)
+                // }
+
+        })
+
+
+          }else {
+            var phoneCode = $("#login_phone").val();	 //电话号码
+            var secretCode = $("#login_secret").val();	 //密码
+            console.log(phoneCode);
+            console.log(secretCode);
+            var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+            if (!phone.test(phoneCode)) {
+              alert('请输入正确的手机号');
+              return;
+            }
+            if (secretCode.length < 6) {
+              alert('登录密码至少6位');
+              return;
+            }
+            $.request('account::onPhonesignin',{
+                data: {
+                  mobile:$("#login_phone").val(),
+                  password:$("#login_secret").val()
+                },
+                redirect:window.location.href,
+                //  success:function(res){
+                //   console.log(res)
+                // },
+                // error:function(error){
+                //     console.log('登录失败'+error)
+                // }
+
+        })
+      }
+
+  				//第三方登录绑定
+  //				var loginFlag = localStorage.getItem("loginFlag");
+  //				if(loginFlag == 2){
+  //					//QQ登录
+  //					qqBind(phoneCode,verifyCode);
+  //				}else if(loginFlag == 3){
+  //					//微信登录
+  //					wechatBind(phoneCode,verifyCode);
+  //				}else if(loginFlag == 4){
+  //					//微博登录
+  //					sinaBind(phoneCode,verifyCode);
+  //				}
+  			})
+
+
+        // 登录按钮点击
+        			$(".registerbtn").bind("click",function(){
+            console.log(isdoctor);
+                  var verifyCode = $("#register_yzm").val(); //验证码
+          				var phoneCode = $("#register_phone").val();	 //电话号码
+                  var secretCode = $("#register_secret").val();	 //密码
+          				var phone = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
+          				if (!phone.test(phoneCode)) {
+          					alert('请输入正确的手机号');
+          					return;
+          				}
+          				if (verifyCode.length == 0) {
+          					alert('请输入验证码');
+          					return;
+          				}
+                  if (secretCode.length < 6) {
+          					alert('密码长度至少6位');
+          					return;
+          				}
+                  $.request('account::onPhoneregister',{
+                      data: {
+                        mobile:$("#register_phone").val(),
+                        password:$("#register_secret").val(),
+                        phonecaptcha:$("#register_yzm").val(),
+                        usertype:isdoctor
+                      },
+                      redirect:window.location.href,
+                      //  success:function(){
+                      //   console.log('注册成功')
+                      // },
+                      // error:function(){
+                      //     console.log('注册失败')
+                      // }
+
+
+                  })
+
+
+
+        			})
+
+
+
+
+  // 密码可见不可见按钮点击
+  $('#login_isShowSecret').bind('click', function(e){
+  e.preventDefault();
+
+  changeShowSecret('#login_isShowSecret','#login_secret')
+
+  })
+
+  $('#register_isShowSecret').bind('click', function(e){
+  e.preventDefault();
+
+  changeShowSecret('#register_isShowSecret','#register_secret')
+
+  })
+  $('#find_isShowSecret').bind('click', function(e){
+  e.preventDefault();
+
+  changeShowSecret('#find_isShowSecret','#find_secret')
+
+  })
+
+  changeShowSecret=function(showId,inputId){
+
+    if ($(inputId.toString()).attr('type')=='password') {
+      // $(inputId.toString()+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretShow.png'});
+      $(showId+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretShow.png'});
+      $(inputId.toString()).attr('type','text')
+    }else if ($(inputId.toString()).attr('type')=='text') {
+        $(showId+' img').attr({'src':'/themes/BoHeOffical/assets/img/usercenter/secretHide.png'});
+        $(inputId.toString()).attr('type','password')
+    }
+  }
+  })
+</script>
+{% endput %}

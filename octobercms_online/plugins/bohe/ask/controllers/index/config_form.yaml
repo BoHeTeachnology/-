@@ -1,0 +1,11 @@
+name: '提问'
+modelClass: Bohe\Ask\Models\Index
+form: $/bohe/ask/models/index/fields.yaml
+defaultRedirect: bohe/ask/index
+create:
+    redirect: 'bohe/ask/index/update/:id'
+    redirectClose: bohe/ask/index
+update:
+    redirect: bohe/ask/index
+    redirectClose: bohe/ask/index
+preview: {  }

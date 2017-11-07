@@ -1,0 +1,16 @@
+
+[EventForm]
+[account]
+allowpublish = 1
+ckeditor = 1
+bootstrapCDN = 0
+==
+{% if user %}
+{% if can('canupload') %}
+                {% component 'EventForm' %}
+{% else %}
+                <p>您没有权限</p>
+{% endif %}
+{% else %}
+                <p>您没登陆</p>
+{% endif %}

@@ -1,0 +1,27 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+      
+    id:
+        label: 'id'
+        span: left
+        placeholder: 'id'
+
+    name:
+        type: text
+
+   
+    state:
+            label: '状态'
+            span: auto
+            type: switch
+             
+
+
+           
+
+
+
+

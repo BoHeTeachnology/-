@@ -1,0 +1,26 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+#    id:
+#        label: ID
+#        disabled: true
+
+    name:
+        label: kurtjensen.mycalendar::lang.type.name
+        placeholder: kurtjensen.mycalendar::lang.type.phold_name
+        span: left
+
+    slug:
+        label: kurtjensen.mycalendar::lang.type.slug
+        span: right
+        placeholder: kurtjensen.mycalendar::lang.type.phold_slug
+        preset: name
+    description:
+        label: kurtjensen.mycalendar::lang.type.description
+        placeholder: kurtjensen.mycalendar::lang.type.phold_description
+    permission_id:
+        label: kurtjensen.mycalendar::lang.type.permission
+        comment: kurtjensen.mycalendar::lang.type.comment_permission
+        type: dropdown

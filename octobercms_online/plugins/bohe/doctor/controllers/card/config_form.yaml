@@ -1,0 +1,11 @@
+name: Bohe
+modelClass: Bohe\Doctor\Models\Card
+form: $/bohe/doctor/models/card/fields.yaml
+defaultRedirect: bohe/doctor/card
+create:
+    redirect: 'bohe/doctor/card/update/:id'
+    redirectClose: bohe/doctor/card
+update:
+    redirect: bohe/doctor/card
+    redirectClose: bohe/doctor/card
+preview: {  }

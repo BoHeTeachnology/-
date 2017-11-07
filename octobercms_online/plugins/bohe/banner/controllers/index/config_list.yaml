@@ -1,0 +1,11 @@
+title: 'BANNER'
+modelClass: Bohe\Banner\Models\Index
+list: $/bohe/banner/models/index/columns.yaml
+recordUrl: 'bohe/banner/index/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

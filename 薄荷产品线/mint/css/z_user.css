@@ -1,0 +1,1597 @@
+
+i{
+	font-style: normal;
+}
+.default_inputbtn{
+	width: 70px;
+	height: 28px;
+	display: block;
+	line-height: 28px;
+	margin-right: 15px;
+	text-align: center;
+	margin-top: 7px;
+	border-radius: 3px;
+	padding-left: 15px;
+	font-size: 12px;
+	border: none;
+	border: solid 1px #3a91d4;
+	font-weight: normal;
+}
+.z_time_btn label{
+	float: right;
+}
+.z_save_btn{
+	color: #3a91d4;
+	background: #fff url(../images/savebj.png) no-repeat 15px center;
+	float: right;
+}
+.z_save_btn:hover{
+	color: #fff;
+	background: #3a91d4 url(../images/savebut.png) no-repeat 15px center;
+	
+}
+input.z_save_btn{
+	width:90px;
+}
+.head_desc_btnbox{
+	width: 270px;
+	float: right;
+}
+.see-but{
+	margin-right: 3.5%;
+	color: #3a91d4;
+	background: #fff url(../images/seebtn.png) no-repeat 10px center;
+	float: left;
+}
+.see-but:hover{
+	color: #fff;
+	background: #3a91d4 url(../images/seebtn2.png) no-repeat 10px center;
+	
+}
+.see-but1{
+	width: 110px;
+	margin-right: 3.5%;
+	color: #3a91d4;
+	background: #fff url(../images/seebtn1.png) no-repeat 10px center;
+	background-size: 15px 15px;
+	float: left;
+}
+.see-but2{
+	width: 110px;
+	margin-right: 3.5%;
+	color: #3a91d4;
+	background: #fff url(../images/seebtn.png) no-repeat 10px center;
+	background-size: 15px 15px;
+	float: left;
+}
+.see-but1:hover{
+	color: #fff;
+	background: #3a91d4 url(../images/seebtn1hover.png) no-repeat 10px center;
+	background-size: 15px 15px;
+	
+}
+.see-but2:hover{
+	color: #fff;
+	background: #3a91d4 url(../images/seebtn2.png) no-repeat 10px center;
+	background-size: 15px 15px;
+	
+}
+.z_add_btn{
+	color: #3a91d4;
+	background: #fff url(../images/add2.png) no-repeat 15px center;
+	float: left;
+}
+.z_add_btn2 {
+	color: #3a91d4;
+	background: #fff url(../images/add2.png) no-repeat 15px center;
+}
+.z_add_btn:hover,.z_add_btn2:hover{
+	color: #fff;
+	background: #3a91d4 url(../images/add.png) no-repeat 15px center;
+	
+}
+.z_edit_btn{
+	color: #3a91d4;
+	background: #fff url(../images/editbtn.png) no-repeat 15px center;
+	float: right;
+}
+.z_edit_btn:hover{
+	color: #fff;
+	background: #3a91d4 url(../images/edit.png) no-repeat 15px center;
+	
+}
+.z_left_box{
+	width:20%;
+	float: left;
+}
+
+.z_right_rbox{
+	width:80%;
+	float: left;
+	padding-bottom: 30px;
+}
+.z_touxiang{
+	width:90px;
+	height: 90px;
+	margin:0 auto;
+	border-radius: 50%;
+	margin-top: 35px;
+	overflow:hidden;
+	border:solid 1px #ccc;
+}
+.z_touxiang img{
+	width:94px;
+	height: 94px;
+	margin-top: -2px;
+	margin-left: -2px;
+}
+.z_but-input{
+	width: 65px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border: solid 1px #8c8c8c;
+	color: #8c8c8c;
+	background: #fff;
+	border-radius: 3px;
+	font-size: 12px;
+	margin:0 auto;
+	margin-top: 15px;
+	cursor: pointer;
+	position: relative;
+}
+.z_but-input:hover{
+	background: #8c8c8c;
+	color: #fff;
+}
+.z_main_contain{
+	width:98%;
+	border-bottom: 1px #dbdbdb solid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.z_main_left{
+	width:320px;
+	float: left;
+}
+.z_main_right{
+	width:55%;
+	float: left;
+}
+.h25>span{
+	width:85px;
+	height:25px;
+	line-height: 25px;
+}
+.h25 input.text-input{
+	width:155px;
+	min-height:25px;
+	height:25px;
+	line-height: 25px;
+	padding-left: 5px;
+	background: #fff;
+}
+.h25 p{
+	clear:both;
+	padding-left: 95px;
+	padding-bottom: 10px;
+}
+.h25 .select-div{
+	height: 27px;
+	width:160px;
+	padding-left: 5px;
+}
+.h25 .radio-box{
+	margin:0;
+}
+.h25 .radio-box span{
+	line-height: 27px;
+}
+.h25 .radio-box label{
+	top:4px;
+}
+.h25 input.W475{
+	width:475px;
+}
+.radio-box span{
+	width:40px;
+	display: block;
+}
+.radio-box label{
+	width:auto;
+	height:19px;
+	line-height: 19px;
+	top:0;
+	background: url(../images/radiog.png) no-repeat left top;
+	padding-left: 20px;
+	cursor: pointer;
+}
+.radio1:checked+label {
+	width: auto;
+	height:19px;
+	line-height: 19px;
+	background: url(../images/radiob.png) no-repeat left top;
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+
+/* 既往史样式 */
+.z_jws_main h2{
+	width:100%;
+	height:28px;
+	line-height: 28px;
+	font-size: 12px;
+	font-weight: normal;
+	background: #f5f7f9;
+	border-bottom: solid 1px #ebebeb;
+	border-top:solid 1px #ebebeb;
+}
+.z_jws_main h2 i{
+	width:10px;
+	height:10px;
+	display: block;
+	float: left;
+	margin:10px 7px 0 10px;
+}
+.z_jws_main h2 span{
+	color: #5e90d1;
+}
+.z_jws_main h2 i.row_1{
+	background: url(../images/z_row.png) no-repeat 0 0 ;
+}
+.z_jws_main h2 i.row_2{
+	background: url(../images/z_row.png) no-repeat 0 -10px ;
+}
+.z_jws_main h2 i.row_3{
+	background: url(../images/z_row.png) no-repeat 0 -20px ;
+}
+.z_jws_main h2 i.row_4{
+	background: url(../images/z_row.png) no-repeat 0 -30px ;
+}
+.z_jws_main h2 i.row_5{
+	background: url(../images/z_row.png) no-repeat 0 -40px ;
+}
+.z_jws_main h2 i.row_6{
+	background: url(../images/z_row.png) no-repeat 0 -50px ;
+}
+.z_checkbox_main{
+	max-width: 800px;
+	padding-left: 50px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+.z_checkbox_main .checkbox-box i{
+	height:30px;
+	line-height: 20px;
+	float: left;
+	padding-left: 20px;
+}
+.z_checkbox_main .checkbox-box span input[type="checkbox"]{
+	position: absolute;
+	top:4px;
+	left:16px;
+}
+.z_checkbox_main .checkbox-box label{
+	top:0;
+	width:auto;
+	cursor: pointer;
+	position: relative;
+	height:30px;
+	background: url(../images/check.png) no-repeat left 2px;
+	float: left;
+}
+.checkbox-box input[type=checkbox]:checked + label {
+	position: relative;
+	top:0;
+	width: auto;
+	height:30px;
+	background: url(../images/checked.png) no-repeat left 2px;
+}
+.z_checkbox_main .checkbox-box span em{float:left;}
+.z_checkbox_main .checkbox-box span b{
+	font-weight: normal;
+	padding-left: 20px;
+	float: left;
+	line-height:20px;
+}
+.z_checkbox_main .checkbox-box span input[type="text"]{
+	float: left;
+	width:100px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 3px;
+	border:solid 1px #d1d1d1;
+	font-size: 12px;
+	background: #fff;
+}
+.clear_checkbox span{
+	clear:both;
+}
+.z_checkbox_main .checkbox-box span input[type="text"].layicon {
+	background:#fff url(../images/rili.png) no-repeat 95% center;
+}
+.userInfobox{
+	height:75px;
+	background: #fff;
+	border-bottom: 1px #dbdbdb solid;
+}
+.user_topmenu_edit{
+	top:175px;
+}
+.z_time_edit{
+	top:214px;
+}
+.z_userContain_edit{
+	top:260px;
+}
+.rtop_edit{
+	height:120px;
+}
+.userInfobox dl{
+	min-width: 1000px;
+	padding-top: 12px;
+}
+.userInfobox dt{
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+	margin-left:20px;
+	float: left;
+	overflow: hidden;
+	border:solid 1px #ccc;
+}
+.userInfobox dt img{
+	width:54px;
+	height:54px;
+	margin-top: -2px;
+	margin-left: -2px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.userInfobox dd{
+	width:350px;
+	float: left;
+	padding-left: 20px;
+}
+.userInfobox dd h3,.userInfobox dd p{
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 25px;
+}
+.userInfobox dd h3 span{
+	padding-right: 20px;
+}
+
+.z_time_btn p{
+	float: left;
+	line-height: 45px;
+	padding-left: 20px;
+	width:550px;
+	color: #666;
+}
+.z_time_btn p span{
+	color: #000;
+}
+.z_time_btn p b{
+	font-weight: normal;
+	float: left;
+}
+.z_time_btn p select{
+	width:100px;
+	height:25px;
+	border-radius: 3px;
+	border:solid 1px #ccc;
+	float: left;
+	margin:10px 30px 0 5px;
+	font-size: 12px;
+}
+.z_userContain_see .checkbox-box label,.z_userContain_see .checkbox-box{
+	cursor: auto;
+}
+/* 家庭成员样式 */
+table.family_able{
+	width:95%;
+	margin:0 auto;
+	margin-top: 10px;
+}
+table.family_able thead th{
+	width:20%;
+	background: #e6e8ef;
+}
+table.family_able tbody tr:nth-child(even) td{
+	background: #f8fafc;
+}
+table.family_able tbody tr:hover > td {
+	background-color: #e4fbff;
+}
+
+table.family_able tbody tr td span.operate a{
+	color: #3a91d4;
+	padding-left:10px;
+	padding-right: 10px;
+}
+table.family_able tbody tr td span.operate a:hover{
+	color: red;
+}
+
+
+/* 查看页面样式 */
+.z_textinfo{
+	width:200px;
+	float: left;
+	line-height: 25px;
+	min-height: 25px;
+	font-size: 12px;
+	color: #000;
+}
+.chakanspan span{
+	color: #666;
+}
+.creat_time_h6{
+	font-weight: normal;
+}
+
+
+.W520{
+	width:520px;
+}
+.W120{
+	width:120px;
+}
+.pbtom30{
+	margin-bottom: 30px;
+}
+.no_border{
+	border:none;
+}
+.z_checkbox_main .checkbox-box span input[type="text"].Wid480{
+	width:480px;
+	display: none;
+}
+.new_time{
+	color: #000;
+}
+/* .see_hide span{
+	display:none;
+} */
+.readonly{
+	background: #fff;
+}
+.no_add_real{
+	font-weight: normal;
+	color: #888;
+}
+.z_past_desc span{
+	float: left;
+	line-height: 20px;
+	padding-right: 20px;
+}
+.z_no_past_data{
+	height:100%;
+}
+.z_no_past_data p{
+	width:150px;
+	text-align: center;
+	margin:0 auto;
+	padding-top: 50px;
+}
+.z_no_past_data p img{
+	width:70px;
+	height:70px;
+	margin:0 auto;
+	display: block;
+}
+.z_no_past_data p span{
+	color: #000;
+	line-height: 25px;
+}
+
+.z_no_past_data p a{
+	margin:0 auto;
+	clear:both;
+	margin-top:10px;
+	margin-bottom: 50px;
+}
+.z_userContainMain{
+	border-top: none;
+}
+.nobord_btom{
+	border-bottom:none;
+}
+.z_default_desc{
+	color: #999;
+	line-height: 25px;
+	padding-left: 10px;
+	font-size: 12px;
+	float: left;
+}
+.gray{
+	color: #999;
+	clear: both;
+	padding-left: 95px;
+	line-height: 18px;
+}
+.bindPhone{
+	width:120px;
+	height:25px;
+	line-height: 23px;
+	border:solid 1px #3a91d4;
+	border-radius: 3px;
+	color: #3a91d4;
+	text-align: center;
+	background: #fff;
+	font-size: 12px;
+}
+.bindPhone:hover{
+	background: #3a91d4;
+	color: #fff;
+}
+.relationtip_tip{
+	font-weight: normal;
+	color: #666;
+	display: none;
+}
+.relationtip_tip label{
+	color: #000;
+}
+.relationtip_tip label.parentname{
+	color: #3a91d4;
+	cursor: pointer;
+}
+.relationtip_tip label.parentname:hover{
+	color: red;
+}
+
+/* 初筛报告单样式 */
+.repoter_top{
+	top:100px;
+}
+
+.repoter_container{
+	top:145px;
+}
+
+.repoter_top h6{
+	width:100%;
+	line-height: 45px;
+	font-weight: normal;
+	font-size: 16px;
+	text-align: center;
+	font-weight: bold;
+}
+.input-box2 span.desc_span{
+	float: left;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-right: 5px;
+	font-size: 12px;
+}
+.input_top_floatbox .input-box2{
+	float: left;
+}
+.input-box2 p.error{
+	color: red;
+	line-height: 25px;
+	clear:both;
+	overflow: hidden;
+}
+.input-box2 p.desc_tip{
+	color: #666;
+	padding-top: 5px;
+}
+.repoter_container .containb_right{
+	padding-top: 15px;
+	overflow: hidden;
+}
+.input_top_floatbox{
+	width:98%;
+	margin:0 auto;
+	padding-bottom: 20px;
+	margin-top: 5px;
+	border-bottom: 1px solid #efefef;
+}
+.bordernone{
+	border:none;
+}
+.repoter_left_main{
+	width:480px;
+	float: left;
+}
+.repoter_right_main{
+	width:49%;
+	float: left;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.contaim_main_floatbox{
+	padding:10px;
+	padding-bottom:50px;
+	padding-top:0;
+}
+.contaim_main_floatbox .radio-box label{
+	top:6px;
+}
+.repoter_left_main .input-box2{
+	clear:both;
+	padding-top: 10px;
+}
+.repoter_container .input-box2 .btn{
+	width:200px;
+}
+.repoter_container .text-input{
+	width:190px;
+}
+
+.contaim_main_floatbox .radio-box span{
+	width:80px;
+	padding-right: 0;
+}
+.repoter_container .containb_right_inner{
+	min-width: 1000px;
+}
+.repoter_left_main .textarea{
+	margin-top: 8px;
+	width:325px;
+	margin-bottom: 0;
+}
+.repoter_left_main .z_checkbox_main{
+	max-width: auto;
+	padding:0;
+	padding-top:5px;
+	float: left;
+	width:340px;
+}
+.repoter_left_main .checkbox-box span{
+	padding-right:10px;
+	padding-left:0;
+}
+.tooth_pic_time_top{
+	height:30px;
+	line-height: 30px;
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+	padding-bottom: 15px;
+}
+.tooth_box_pic_left{
+	width:210px;
+	height:340px;
+	background: #ebf2fc;
+	border-radius: 50%;
+	float: left;
+	position: relative;
+}
+.tooth_box_pic_right{
+	width:260px;
+	float: left;
+	padding-left: 10px;
+}
+
+.round_teeth{
+	width:22px;
+	height:22px;
+	display: block;
+	border:solid 1px #ccc;
+	line-height: 22px;
+	font-size: 12px;
+	color: #333;
+	text-align: center;
+	border-radius: 50%;
+	position:absolute;
+}
+.layicons{
+	background: #fff url(../images/rili.png) no-repeat 95% center;
+}
+.tooth_11{
+	top:5px;
+	left:82px;
+}
+.tooth_12{
+	top:13px;
+	left:60px;
+}
+.tooth_13{
+	top:29px;
+	left:42px;
+}
+.tooth_14{
+	top:50px;
+	left:30px;
+}
+.tooth_15{
+	top:71px;
+	left:18px;
+}
+.tooth_16{
+	top:93px;
+	left:12px;
+}
+.tooth_17{
+	top:116px;
+	left:7px;
+}
+.tooth_18{
+	top:140px;
+	left:5px;
+}
+
+.tooth_21{
+	top:5px;
+	right:82px;
+}
+.tooth_22{
+	top:13px;
+	right:60px;
+}
+.tooth_23{
+	top:29px;
+	right:42px;
+}
+.tooth_24{
+	top:50px;
+	right:30px;
+}
+.tooth_25{
+	top:71px;
+	right:18px;
+}
+.tooth_26{
+	top:93px;
+	right:12px;
+}
+.tooth_27{
+	top:116px;
+	right:7px;
+}
+.tooth_28{
+	top:140px;
+	right:5px;
+}
+
+.tooth_41{
+	bottom:5px;
+	left:82px;
+}
+.tooth_42{
+	bottom:13px;
+	left:60px;
+}
+.tooth_43{
+	bottom:29px;
+	left:42px;
+}
+.tooth_44{
+	bottom:50px;
+	left:30px;
+}
+.tooth_45{
+	bottom:71px;
+	left:18px;
+}
+.tooth_46{
+	bottom:93px;
+	left:12px;
+}
+.tooth_47{
+	bottom:116px;
+	left:7px;
+}
+.tooth_48{
+	bottom:140px;
+	left:5px;
+}
+
+.tooth_31{
+	bottom:5px;
+	right:82px;
+}
+.tooth_32{
+	bottom:13px;
+	right:60px;
+}
+.tooth_33{
+	bottom:29px;
+	right:42px;
+}
+.tooth_34{
+	bottom:50px;
+	right:30px;
+}
+.tooth_35{
+	bottom:71px;
+	right:18px;
+}
+.tooth_36{
+	bottom:93px;
+	right:12px;
+}
+.tooth_37{
+	bottom:116px;
+	right:7px;
+}
+.tooth_38{
+	bottom:140px;
+	right:5px;
+}
+.tooth_color{
+	background: #cc6060;
+	color: #000;
+}
+.H_teeth_list dl{
+	padding-top: 10px;
+	clear: both;
+	position: relative;
+}
+.H_teeth_list dl dt{
+	float: left;
+	color: #000;
+	font-size: 12px;
+	position: absolute;
+	left:20px; 
+	top:10px;
+	line-height: 25px;
+}
+.H_teeth_list dl dd{
+	float: left;
+	padding-left: 85px;
+}
+.H_teeth_list dl dd span{
+	line-height: 25px;
+	color: #666;
+	font-size: 12px;
+	padding-right: 10px;
+	display: block;
+}
+
+.checkBone2 label i{
+	font-style: normal;
+}
+.repoter_container .caret{
+	width:30px;
+	height:30px;
+	background:#fff url(../images/arrow.png) no-repeat center center;
+	border:none;
+	position: absolute;
+	top:0;
+	right: 0;
+}
+.zhensuo .col-sm-8 .selectpicker .dropdown-menu ul>li{
+	width:150px;
+}
+.personput .btn span.placeholder, .btn span.text{
+	width:170px;
+}
+
+.PL50{
+	padding-left: 50px;
+}
+.PL60{
+	padding-left: 60px;
+}
+.PL75{
+	padding-left: 75px;
+}
+.input_top_floatbox .see-main2{
+	width:200px;
+	float: left;
+	line-height: 30px;
+	overflow: hidden;
+}
+.see_contain_main .see-main2{
+	float: left;
+	width: 340px;
+	min-height: 30px;
+	font-size: 12px;
+	padding-top: 4px;
+	line-height: 25px;
+}
+.see-main2 ul li{
+	width: 85px;
+	height: 80px;
+	overflow: hidden;
+	border-radius: 5px;
+	border:solid 1px #ccc;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.see-main2 ul li img{
+	width:100%;
+	height:100%;
+}
+.repoter_see_main .input-box2 .desc_span{
+	color: #666;
+}
+.tooth_pic_time_top b{
+    float: left;
+    font-weight: normal;
+}
+.tooth_pic_time_top select{
+    width:150px;
+    height:30px;
+    border:solid 1px #ccc;
+    padding-left: 5px;
+    float: left;
+}
+
+
+
+/* 病历管理样式*/
+.header_case_bj{
+	background: #ededed;
+}
+
+.caseheadertop span.desc_span{
+	float: left;
+}
+.header_user_main span.desc_span{
+	float: left;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+.header_user_main{
+	font-size:12px;
+}
+.case_user_top_main dl dd{
+	margin-top: -2px;
+}
+.select_case_top{
+	height:30px;
+	border:solid 1px #ccc;
+	padding-left: 5px;
+	background: #fff url(../images/arrow.png) no-repeat right center;
+	background-size: 20px 20px ;
+	padding-right: 15px;
+	margin-right: 5px;
+	font-size: 12px;
+}
+.W50px{
+	width:70px;
+}
+.W100px{
+	width:110px;
+}
+
+.widdiv .col-sm-8,.widdiv .col-sm-8 .btn{
+	width:180px;
+}
+.widdiv .col-sm-8 .form-control{
+	width:145px;
+}
+.widdiv .col-sm-8 .selectpicker .dropdown-menu ul>li{
+	width:160px;
+}
+.repoter_container .Mtopbox_case{
+	padding-top: 0;
+}
+.Mtopbox_case .input-box2{
+	margin-top: 15px;
+	padding-right: 10px;
+}
+.Mtopbox_case .input_top_floatbox{
+	border: none;
+}
+.wd140{
+	width:140px;
+}
+.Mtopbox_case .input-box2 span.desc_span{
+	color: #555;
+}
+.case_num_input label{
+	line-height: 30px;
+	font-size: 12px;
+	color: #555;
+}
+.case_prebox{
+	padding-bottom: 15px;
+}
+.case_prebox h3{
+	width:100%;
+	height:40px;
+	line-height: 40px;
+	background: #ededed;
+	font-size: 14px;
+	color: #333;
+	border-top:1px #ccc solid;
+	border-bottom: 1px #ccc solid;
+	font-weight: normal;
+}
+.case_prebox h3 i{
+	width:7px;
+	height:7px;
+	border-radius: 50%;
+	display: block;
+	float: left;
+	margin:16px 10px 0 20px;
+}
+.case_prebox h3 .add_case_check{
+	font-size:14px;
+	color: #3077d3;
+	float: right;
+	padding-right: 3%;
+}
+.case_prebox h3 .add_case_check b{
+	font-size:20px;
+	font-weight: normal;
+}
+.case_pre_child textarea.case_textarea{
+	width:92%;
+	max-width:92%;
+	height:50px;
+	border:solid 1px #ccc;
+	border-radius: 5px;
+	display: block;
+	padding:5px 20px;
+	outline:none;
+	margin:15px 20px;
+
+}
+.case_blue{
+	background: #3077d3;
+}
+.case_orange{
+	background: #e89c09;
+}
+.case_black{
+	background: #3b4252;
+}
+.case_pre_child .history_case{
+	width:94%;
+	margin:0 auto;
+	margin:20px 10px 0 20px;
+	padding-left: 20px;
+}
+.case_pre_child .history_case span{
+	padding-right: 20px;
+	line-height: 25px;
+}
+.case_pre_check{
+	width:96%;
+	border:solid 1px #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+	margin:16px 10px 0 20px;
+
+}
+.case_pre_check h4{
+	height:35px;
+	line-height: 35px;
+	border-bottom:solid 1px #ccc;
+	background: #f6f6f6;
+	font-size: 14px;
+	color: #333;
+	font-weight: normal;
+}
+.case_pre_check p{
+	float: left;
+	padding-left: 20px;	
+	font-size: 14px;
+	padding-right: 20px;
+}
+.case_pre_check p a.case_tooth{
+	color: #3077d3;
+}
+.case_pre_check textarea.check_textarea{
+	width:96%;
+	height:50px;
+	border:none;
+	padding:5px 20px;
+	outline:none;
+}
+.see_user_photozip{
+	color: #3077d3;
+	cursor: pointer;
+	line-height: 25px;
+}
+.Pbtom50{
+	padding-bottom: 50px;
+}
+.tip_box_select{
+	height:40px;
+	margin:20px 0 10px 10px;
+}
+.tip_box_select select{
+	width:100px;
+	height:30px;
+	border:solid 1px #ccc;
+	border-radius: 3px;
+	padding-left: 5px;
+	padding-right: 21px;
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.case_user_top_main b{
+	font-weight: normal;
+}
+.case_see_label{
+	line-height: 30px;
+	color: #000;
+	padding-right: 20px;
+}
+
+.Wid225{
+	width:225px;
+}
+select.case_time_select{
+	width:120px;
+	height:25px;
+	padding-left: 5px;
+	padding-right: 21px;
+	background: #fff url("../images/arrow.png") no-repeat 95% center;
+	border:solid 1px #ccc;
+}
+
+.case_pre_child .case_see_main{
+	width:96%; 
+	margin: 15px 0 0 20px;
+	padding-left: 20px;
+}
+.case_pre_check_see{
+	width:96%;
+	border-radius: 5px;
+	overflow: hidden;
+	margin:16px 10px 0 20px;
+}
+.case_pre_child h5{
+	width:500px;
+	max-width:100%;
+	height:30px;
+	line-height: 30px;
+	background: #f6f6f6;
+	font-weight: normal;
+	font-size: 14px;
+	border:solid 1px #ccc;
+	border-radius: 5px;
+	margin-top:15px;
+}
+.case_pre_child h5 p{
+	float: left;
+	padding-left: 20px;
+	border-left:1px #ccc solid;
+	padding-right: 20px;
+	font-size: 14px;
+}
+.case_pre_child h5 p:nth-child(1){
+	border:none;
+}
+a.case_tooth{
+	color:#3a91d4;
+}	
+.case_see_main2{
+	line-height: 20px;
+	padding-top: 10px;
+	padding-left:20px;
+}
+.see-but3{
+	margin-right: 3.5%;
+    color: #3a91d4;
+    background: #fff ;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.see-but3:hover{
+	color: #fff;
+    background: #3a91d4 ;
+}
+.Float_r{
+	float: right;
+}
+.input_top_see_dloatbox{
+	padding-top: 15px;
+}
+.input_top_see_dloatbox .input-box2{
+	margin-top: 0;
+}
+
+
+/*病历模板样式*/
+.modal_left_main{
+	width:300px;
+	float: left;
+	margin:10px 10px;
+	overflow-y: auto;
+  	border:solid 1px #ccc;
+  	border-radius: 5px;
+  	border-bottom: none;
+}
+.modal_right_main{
+	width:65%;
+	float: left;
+	margin-top:10px;
+}
+.modal_left_main_title{
+	height:35px;
+	line-height: 35px;
+	font-size: 16px;
+	color: #000;
+	font-weight: normal;
+	border-bottom: 1px #ccc solid;
+	background: #f5f6f8;
+}
+.modal_left_main_title b{
+	padding-left: 15px;
+	font-weight: normal;
+}
+.modal_left_main_title span{
+	float: right;
+	padding-right: 15px;
+	color: #3a91d4;
+	font-size: 14px;
+	cursor: pointer;
+}
+.accordion-menu {
+  width: 100%;
+  background: #fff;
+}
+.accordion-menu ul {
+  display: none;
+}
+.accordion-menu li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+}
+.accordion-menu input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.accordion-menu label, .accordion-menu a {
+  position: relative;
+  display: block;
+  padding: 10px 10px 10px 40px;
+  background: none;
+  box-shadow: inset 0 -1px #ccc;
+  color: #333;
+  font-size: 14px;
+}
+.no-touch .accordion-menu label:hover, .no-touch .accordion-menu a:hover {
+  background: #5c88c3;
+}
+.accordion-menu label::before, .accordion-menu label::after, .accordion-menu a::after {
+  /* icons */
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.accordion-menu label {
+  cursor: pointer;
+}
+.accordion-menu label::before, .accordion-menu label::after {
+  background-image: url(../images/cd-icons.png);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+}
+.accordion-menu ul label::before, .accordion-menu ul label::after {
+  background-image: url(../images/cd-icons2.png);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+}
+.accordion-menu label::before {
+  /* arrow icon */
+  left: 18px;
+  background-position: 0 0;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  -moz-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  -o-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+}
+.accordion-menu label::after {
+  /* folder icons */
+  left: 41px;
+  background-position: -16px 0;
+}
+.accordion-menu a::after {
+  /* image icon */
+  left: 36px;
+  /*background: url(../images/cd-icons.png) no-repeat -48px 0; */
+}
+.accordion-menu input[type=checkbox]:checked + label::before {
+  /* rotate arrow */
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.accordion-menu input[type=checkbox]:checked + label::after {
+  background-position: -32px 0;
+}
+.accordion-menu input[type=checkbox]:checked + label + ul,
+.accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  display: block;
+}
+.accordion-menu ul label,
+.accordion-menu ul a {
+  box-shadow: inset 0 -1px #1a4899;
+  padding-left: 55px;
+  color: #fff;
+}
+.accordion-menu ul li{
+  background: #386fb8;
+}
+.accordion-menu > li:hover{
+  background: #f5f6f8;
+}
+.accordion-menu ul li:hover{
+  background: #5c88c3;
+}
+.accordion-menu > li.active{
+  background: #f5f6f8;
+}
+.accordion-menu ul li.active{
+  background: #5c88c3;
+}
+.accordion-menu > li > ul > li:last-of-type label{
+  box-shadow: none;
+}
+.accordion-menu ul label::before {
+  left: 36px;
+}
+.accordion-menu ul label::after,
+.accordion-menu ul a::after {
+  left: 59px;
+}
+.accordion-menu ul ul label,
+.accordion-menu ul ul a {
+  padding-left: 70px;
+}
+.accordion-menu ul ul label::before {
+  left: 54px;
+}
+.accordion-menu ul ul label::after,
+.accordion-menu ul ul a::after {
+  left: 77px;
+}
+.accordion-menu ul ul ul label,
+.accordion-menu ul ul ul a {
+  padding-left: 118px;
+}
+.accordion-menu ul ul ul label::before {
+  left: 72px;
+}
+.accordion-menu ul ul ul label::after,
+.accordion-menu ul ul ul a::after {
+  left: 95px;
+}
+
+
+.accordion-menu.animated label::before {
+  /* this class is used if you're using jquery to animate the accordion */
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+}
+.list_bbtn_wrap{
+	position: absolute;
+	right:10px;
+	top:0;
+	height:40px;
+	z-index: 5;
+	display:none;
+}
+.list_bbtn_wrap span{
+	width:25px;
+	height:40px;
+	line-height: 40px;
+	font-size: 15px;
+	color: #333;
+	float: left;
+	display: block;
+	cursor: pointer;
+	text-align: center;
+	font-weight: normal;
+}
+.accordion-menu > li > ul>li label,.accordion-menu > li > ul>li a{
+	font-size: 13px;
+}
+.accordion-menu ul ul li a{
+	font-size: 12px;
+}
+
+.accordion-menu ul li .list_bbtn_wrap span{
+	color: #fff;
+}
+.accordion-menu > li .list_bbtn_wrap span:hover{
+	color: #386fb8;
+}
+.accordion-menu ul li .list_bbtn_wrap span:hover{
+	color: #ccc;
+}
+.accordion-menu > li:hover > .list_bbtn_wrap{
+	display:block;
+}
+.accordion-menu ul > li:hover > .list_bbtn_wrap{
+	display:block;
+}
+
+
+.modal_right_main h4{
+	height:35px;
+	width: 250px;
+	border-radius: 5px 5px 0 0;
+	border:solid 1px #ccc;
+	display: -webkit-box;
+	display: box;
+	line-height: 35px;
+	overflow: hidden;
+}
+.modal_right_main h4 span{
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	display: block;
+	border-left:solid 1px #ccc;
+	text-align: center;
+	height:35px;
+	font-weight: normal;
+	font-size: 14px;
+	margin-left: -1px;
+	background: #fff;
+	cursor: pointer;
+}
+.modal_right_main h4 span:hover,.modal_right_main h4 span.active{
+	background: #3a91d4;
+	color: #fff;
+}
+.modal_container{
+	border:solid 1px #ccc;
+	background: #f5f6f8;
+	margin-top:-1px;
+	padding-bottom: 20px;
+}
+.modal_container h5.modal_right_title{
+	font-weight: normal;
+	font-size: 14px;
+	height:35px;
+	line-height: 35px;
+	border-bottom:solid 1px #ccc;
+}
+.modal_container h5.modal_right_title span{
+	padding-left: 3%;
+}
+
+.modal_right_pre span.pre_title{
+	line-height: 30px;
+	padding-left: 3%;
+	display: block;
+	font-size: 13px;
+	padding-top: 10px;
+}
+
+.modal_right_pre textarea{
+	width:92%;
+	max-width: 92%;
+	margin-left:3%;
+	border:solid 1px #ccc;
+	background: #fff;
+	height:70px;
+	border-radius: 5px;
+	outline:none;
+	padding:5px;
+}
+.dont_add{
+	width:93%;
+	margin-left:3%;
+	height:20px;
+}
+.modal_wartip{
+	padding-top:0;
+}
+.modal_wartip span{
+	font-size: 15px;
+	text-align: left;
+	display: block;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+.Mtop10{
+	margin-top:10px;
+}
+
+.case_choose_tooth{
+	background: #fff;
+	height:350px;
+}
+.case_main_picbox{
+	width:210px;
+	margin:0 auto;
+}
+.delete_btnLabel{
+	width:20px;
+	height:20px;
+	float: right;
+	display: block;
+	background: url(../images/closeBtn.png) no-repeat;
+	margin-top: 7px;
+	margin-right: 20px;
+	background-size:100% 100%;
+	cursor: pointer;
+}
+.visit_personbox{
+	float: left;
+	position: relative;
+}
+.visit_personbox .visit_inputs{
+	float: left;
+	width:200px;
+	height:28px;
+	line-height: 28px;
+	border:solid 1px #ccc;
+	border-radius: 5px;
+}
+
+.visit_personbox .visit_searchs{
+	width: 50px;
+	height: 30px;
+	display: block;
+	float: left;
+	line-height: 30px;
+	margin-right: 10px;
+	text-align: center;
+	margin-left: 10px;
+	border-radius: 3px;
+	color: #fff;
+	background: #3a91d4;
+	border:none;
+	font-size: 12px;
+}
+.visit_personbox .visit_searchs:hover{
+	background: #3383c1;
+	color: #fff;
+}
+.visit_personbox ul{
+	width:260px;
+	max-height:300px;
+	overflow-y: auto;
+	position: absolute;
+	top:32px;
+	background: #fff;
+	border:solid 1px #3a91d4;
+	padding:5px 0;
+}
+.visit_personbox ul li{
+	width:240px;
+	height:25px;
+	line-height: 25px;
+	cursor: default;
+	white-space: nowrap;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding:0 10px;
+}
+.visit_personbox ul li:hover{
+	background: #1e90ff;
+	color: #fff;
+}
+.visit_personbox ul li span{
+	width:48px;
+	display: block;
+	overflow: hidden;
+	float: left;
+	height:25px;
+	margin-right: 5px;
+}
+.visit_personbox ul p{
+	width:100%;
+	font-size: 12px;
+	height:30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>病历详情</title>
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Expires" CONTENT="0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/record.css?time=1">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script src="../js/Ajax.js?time=1"></script>
+  <script src="../js/vue.js"></script>
+  <script src="../js/share.js"></script>
+  <script src="../js/doctorCaseContent.js?time=1"></script>
+</head>
+<body>
+
+<div class="record-wrap" id="app">
+  <header>
+    <div class="header">
+      <h3 id="patient_name"></h3>
+      <p>问诊时间：<span id="visit_time"></span></p>
+      <p>主治医生：<span id="doctor_name"></span></p>
+      <p id="clinicDiv" style="display:none">诊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所：<span id="clinic_name"></span></p>
+    </div>
+  </header>
+  <div class="men_case" id="shai_report2">
+    <div  class="centermain">
+      <h3 class="title">
+        <span style="line-height:40px;">诊断</span>
+        <i class="bottom"></i>
+      </h3>
+      <div class="tooth_roundbox">
+        <div class="weui_panel">
+            <div class="weui_panel_bd">
+              <div class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd" id="tooth_zhen_pic">
+                  <img src="../images/ya5.png" alt="">
+                </div>
+                <div class="weui_media_bd">
+                  <p class="weui_media_descs" id="record_content"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="bottom-line"></div>
+    </div>
+    <div  class="centermain">
+      <h3 class="title">
+        <span style="line-height:40px;">治疗</span>
+        <i class="bottom"></i>
+      </h3>
+      <div class="tooth_roundbox">
+        <div class="weui_panel">
+            <div class="weui_panel_bd">
+              <div class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd" id="tooth_zhi_pic">
+                  <img src="../images/ya5.png" alt="">
+                </div>
+                <div class="weui_media_bd">
+                  <p class="weui_media_descs" id="treatment"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="suggestion_box">
+    <div class="suggestion_main">
+      <h3 id="chuzhi"></h3>
+      <div class="suggestion" id="suggestion">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>价格表</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/iscroll.js"></script>
+  <script src="../js/price.js"></script>
+</head>
+<body class="pricebodybj">
+  <div id="wrapper2">
+    <div class="d_si">
+        <div class="main" id="main">
+           <div class="main_left" id="main_left">
+                <div class="main_left_scroll" id="main_left_scroll">
+                     <ul>
+                        <!-- <li><a class="cur" href="#">常用分类</a></li>
+                        <li><a href="#">潮流女装</a></li>
+                        <li><a href="#">品牌男装</a></li>
+                        <li><a href="#">内衣配饰</a></li>
+                        <li><a href="#">家用电器</a></li> -->
+                     </ul>
+                </div>
+           </div>
+            <div class="main_right" id="main_right">
+                <div class="main_right_scroll" id="main_right_scroll" style="padding-top:10px">
+                  <!-- <ol>
+                    <li>
+                      <p class="productTitle"><b>拔牙（天吃那个）</b><span>￥500</span></p>
+                      <p class="productCtr"><i class="minusBut"></i><input type="text" value="1" class="numVal"><i class="addBut"></i></p>
+                      <p class="productCheck"><input type="checkbox" id="checkbox1"><label for="checkbox1"></label></p>
+                    </li>
+                    <li>
+                      <p class="productTitle"><b>拔牙（天吃那个）</b><span>￥500</span></p>
+                      <p class="productCtr"><i class="minusBut"></i><input type="text" value="1" class="numVal"><i class="addBut"></i></p>
+                      <p class="productCheck"><input type="checkbox" id="checkbox2"><label for="checkbox2"></label></p>
+                    </li>
+                    <li>
+                      <p class="productTitle"><b>拔牙（天吃那个）</b><span>￥500</span></p>
+                      <p class="productCtr"><i class="minusBut"></i><input type="text" value="1" class="numVal"><i class="addBut"></i></p>
+                      <p class="productCheck"><input type="checkbox" id="checkbox3"><label for="checkbox3"></label></p>
+                    </li>
+                  </ol> -->
+
+
+                </div>
+           </div>
+
+         </div>
+     </div>
+     <div class="pricefootbox">
+       <div class="hejibox">
+         <b>合计<span>（人民币元）</span></b>
+         <label id="moneyAll">￥0.00</label>
+       </div>
+       <input type="button" value="确认" class="price_confirm" id="confirmBut">
+     </div>
+  </div>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+</body>
+</html>

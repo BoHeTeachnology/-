@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>初筛报告-信息查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="stylesheet" type="text/css" href="../../diyUpload/css/diyUpload.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript" src="../../diyUpload/js/webuploader.html5only.min.js"></script>
+  <script type="text/javascript" src="../../diyUpload/js/diyUpload.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src='../user/vue1.js'></script>
+  <script src="../../js/illLibrarySee.js?time=5"></script>
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper1">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="backs">返回</a>
+                <a href="javascript:void(0)" class="save-but" id="send-but" style="display:none">发送</a>
+                <span class="sent-but" id="sent" style="display:none">已发送</span>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="user_main_top">
+                <div class="time repoter_top">
+                    <div class="z_time_btn">
+                        <h6>
+                          初筛报告单
+                          <a href="javascript:;" class="default_inputbtn z_edit_btn" id="edit-but">编辑</a>
+                        </h6>
+                        
+                    </div>
+                </div>
+                <div class="userContain repoter_container repoter_see_main" id="">
+                    <div class="z_userContainMain">
+                      <div class="containb_right" id="">
+                        <div class="containb_right_inner">
+                          
+                          <div class="input_top_floatbox" style="padding-top:0;">
+                              <div class="input-box2 personput"> 
+                                  <span class="desc_span" style="padding-left:10px">就诊人：</span>
+                                  <div class="col-sm-8">
+                                      <div class="see-main2" id="Valuser"></div>
+                                  </div>
+                                  <p class="desc_tip PL60" id="desc_tip"> </p>
+                              </div>
+                              <div class="input-box2" style="margin-left:-60px;"> 
+                                  <span class="desc_span">就诊时间：</span>
+                                  <div class="see-main2" id="J-xl" style="width:200px"></div>
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">医生：</span>
+                                  <div class="col-sm-8" style="width:200px;">
+                                      <div class="see-main2" id="DovVal"></div>
+                                  </div>
+                              </div>
+                              <div class="input-box2 zhensuo"> 
+                                  <span class="desc_span">诊所：</span>
+                                  <div class="col-sm-8" id="ClinkBox" style="width:150px;">
+                                      <div class="see-main2" id="ClinkVal"></div>
+                                  </div>
+                              </div>
+                              <div class="clear">&nbsp;</div>
+                          </div>
+                          <div class="contaim_main_floatbox see_contain_main">
+                            <!-- 左侧盒子 -->
+                            <div class="repoter_left_main">
+                                <div class="input-box2">
+                                  <span class="desc_span">病历类型：</span>
+                                  <div class="see-main2" id="types"></div>
+                                  <div class="clear"></div>
+                                </div>
+                                <div class="input-box2">
+                                  <span class="desc_span">牙周情况：</span>
+                                  <div class="see-main2" id="tooth_type"></div>
+                                  <div class="clear"></div>
+                                </div>
+                                <div class="input-box2">
+                                  <span class="desc_span">牙列情况：</span>
+                                  <div class="see-main2" id="tooth_square"></div>
+                                  <div class="clear"></div>
+                                </div>
+                                <div class="input-box2"> 
+                                    <span class="desc_span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;诊断：</span>
+                                    <div class="see-main2" id="record_content"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="input-box2"> 
+                                    <span class="desc_span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;治疗：</span>
+                                    <div class="see-main2" id="treatment"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="input-box2"> 
+                                    <span class="desc_span" id="desc_span"></span>
+                                    <div class="see-main2" id="tooth_suggestion"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="input-box2"> 
+                                    <span class="desc_span">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标签：</span>
+                                    <div class="see-main2" id="tag_name"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="input-box2" style="position:relative;padding-top:10px;"> 
+                                  <span class="desc_span">上传图片：</span>
+                                  <div class="see-main2">
+                                      <ul id="filePath">
+                                        <!-- <li><img src="../../images/pic1.png" alt=""></li> -->
+                                      </ul>
+                                  </div>
+                                  <div class="clear"></div>
+                                </div>
+
+                            </div><!-- 左侧盒子结束 -->
+                            <!-- 右侧盒子 -->
+                            <div class="repoter_right_main">
+                              <h5 class="tooth_pic_time_top">牙位图：<span id="time_showbox"></span></h5>
+                              <div class="tooths_pic_main" id="tooth_pic_main" style="display:none">
+                                <div class="tooth_box_pic_left">
+                                    <span class="round_teeth tooth_{{teeth.name}} {{teeth.content==0?'':'tooth_color'}}" v-for='teeth in data_son.teeth_arr'>{{teeth.name}}</span>
+                                </div>
+                                <div class="tooth_box_pic_right">
+                                  <div class="H_teeth_list">
+                                      <dl v-for='item in data_brother'>
+                                        <dt>牙齿{{item.name}}：</dt>
+                                        <dd>
+                                          <span v-for='itemson in item.content'>{{itemson}}</span>
+                                          
+                                        </dd>
+                                      </dl>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div><!-- 右侧盒子结束 -->
+                            <div class="clear"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                        
+                    </div>  
+                    <div class="clear"></div>
+                </div>
+                    
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="opcity-progress"  style="display:none">
+    <div class="diyBar">
+        <div class="diyProgress"></div>
+        <div class="diyProgressText">0%</div>
+    </div>
+</div>
+</body>
+</html>

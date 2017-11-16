@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>预约详情</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection" /> 
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/myOrderinfo.js"></script>
+</head>
+<body>
+<!-- 
+<div class="myOrdermainbox myOrderdescbox" id="" style="margin-top:10px;">
+    <div class="weui_cells weui_cells_access">
+        <a class="weui_cell" href="#">
+            <div class="weui_cell_hd">
+                <p>
+                  <label>就诊时间：<span>2016-12-21</span></label>
+                </p>
+                <em class="yuyuezhong">预约中</em>
+            </div>
+            <span class="weui_cell_ft"></span>
+        </a>
+    </div>
+</div> -->
+
+<div class="myOrderdescbox">
+    <div class="weui_cells" style="border-top:1px #e5e5e5 solid">
+        <a class="weui_cell" href="javascript:;">
+            <div class="weui_cell_hd">
+                <p><span>就诊时间：</span><font id="visit_time"></font></span></p>
+                <em id="status"></em>
+                <!-- <em class="wancheng" id="status">已完成</em>
+                <em class="yuyuehzong" id="status">预约中</em>
+                <em class="guoqi" id="status">已过期</em>
+                <em class="quxiao" id="status">已取消</em>
+                <em class="queren" id="status">已确认</em> -->
+                <!-- <em class="zhifu">已支付</em> -->
+                <!-- <em class="nozhifu">未支付</em> -->
+            </div>
+        </a>
+    </div>
+
+</div>
+
+<div class="orderDescContain" style="border-top:none">
+  <p id="project_name_box"><b>预约项目：</b><span id="project_name"></span><em class="clear"></em></p>
+  <p><b>预约编号：</b><span id="reserve_number"></span><em class="clear"></em></p>
+  <p><b>预约医生：</b><span id="doctor_name"></span><em class="clear"></em></p>
+  <p><b>预约诊所：</b><span id="clinic_name"></span><em class="clear"></em></p>
+  <p><b>诊所地址：</b><span id="clinic_address"></span><em class="clear"></em></p>
+</div>
+<div class="orderDescContain" id="isselfDiv" style="margin-top:10px;display:none">
+  <p><b>就&nbsp;&nbsp;诊&nbsp;人：</b><span id="patient_name"></span><em class="clear"></em></p>
+  <p><b>与我关系：</b><span id="relations"></span><em class="clear"></em></p>
+  <p><b>联系电话：</b><span id="contact_tel"></span><em class="clear"></em></p>
+</div>
+<div class="orderDescContain" style="margin-top:10px;">
+  <p id="apBox"><b></b><span id="appointment_name"></span><em class="clear"></em></p>
+  <p><b>联系电话：</b><span id="patient_phone"></span><em class="clear"></em></p>
+  <p id="company_name_box"><b>所属公司：</b><span id="company_name"></span><em class="clear"></em></p>
+</div>
+<div class="demos-content-padded btnbox" id="quxiaoBut" style="display:none">
+  <a href="javascript:'" class="price_confirm" id="confirm" style="margin-top:20px;">取消预约</a>
+  <!-- <a href="javascript:;" class="weui_btn weui_btn_blue" id="confirm">取消预约</a> -->
+</div>
+  
+<!-- <div class="orderMoney">
+    <div class="myOrdermainbox">
+      <div class="weui_cells weui_cells_access">
+          <a class="weui_cell" href="#">
+              <div class="weui_cell_hd">
+                  <p><b>总金额</b><span>单位：元</span></p>
+                  <em class="zhifu">￥2334.00</em>
+              </div>
+          </a>
+      </div>
+    </div>
+</div> -->
+<div class="opcitybox" style="display:none"><span></span></div>
+<div id="toast" style="display:none">
+  <div class="weui_mask_transparent"></div>
+  <div class="weui_toast">
+      <i class="weui_icon_toast"></i>
+      <p class="weui_toast_content">取消成功</p>
+  </div>
+</div>
+</body>
+</html>

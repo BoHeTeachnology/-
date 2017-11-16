@@ -1,0 +1,1077 @@
+[ 2016-10-09T13:56:47+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=undefined&visit_date=undefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001412s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0347s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = 'undefined' AND a.visit_date = 'undefined' LIMIT 1   [ RunTime:0.0341s ]
+NOTIC: [8] Undefined variable: doctor_data /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 465 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008707s ]
+
+[ 2016-10-09T13:57:27+08:00 ] ::1 /mintAdmin/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000715s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0343s ]
+SQL: SELECT * FROM `mint_user` WHERE `account` = '18610212470' LIMIT 1   [ RunTime:0.0335s ]
+SQL: UPDATE `mint_user` SET `user_token`='aaaed862ca055d96d44b2d0fce962ae4' WHERE `id` = 156 [ RunTime:0.0413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001104s ]
+
+[ 2016-10-09T13:57:29+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000070s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002409s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0339s ]
+SQL: SELECT `id`,`account`,`password`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-10-09T13:57:29+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0331s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000823s ]
+
+[ 2016-10-09T13:57:34+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/patientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0338s ]
+SQL: UPDATE `mint_appointment` SET `status`='3' WHERE `patient_id` = 156 AND `status` IN ('1','5') AND `visit_time` < 1475942400 [ RunTime:0.0324s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_appointment` WHERE `patient_id` = '156' LIMIT 1   [ RunTime:0.0325s ]
+SQL: SELECT a.id,a.patient_name,a.reserve_number,a.visit_time,a.status,a.is_return,b.service_name FROM mint_appointment a left join mint_service as b on a.service_id=b.id  WHERE `patient_id` = '156' ORDER BY a.status asc,a.id desc LIMIT 0,15   [ RunTime:0.0327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2016-10-09T13:57:36+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT `id`,`account`,`password`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000640s ]
+
+[ 2016-10-09T13:57:36+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0325s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2016-10-09T13:57:37+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0338s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468216656 AND 1475992656 LIMIT 1   [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2016-10-09T13:57:37+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000557s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0341s ]
+SQL: SELECT `id`,`account`,`password`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2016-10-09T13:57:37+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2016-10-09T13:57:37+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000825s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0337s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468216657 AND 1475992657 LIMIT 1   [ RunTime:0.0331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000635s ]
+
+[ 2016-10-09T13:57:39+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000954s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0327s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0333s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0325s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0328s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-10%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0324s ]
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0331s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1475251200 AND 1477929600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-10-09T13:57:39+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0331s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0329s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0338s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0326s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-11%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0333s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1477929600 AND 1480521600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000824s ]
+
+[ 2016-10-09T13:57:42+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0335s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0332s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0332s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000765s ]
+
+[ 2016-10-09T13:57:44+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001271s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0323s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0320s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0319s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0328s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0318s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000620s ]
+
+[ 2016-10-09T13:57:44+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0344s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0344s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0354s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0341s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-10-09T13:57:46+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=158&visit_date=2016-10-14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0336s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '158' AND a.visit_date = '2016-10-14' LIMIT 1   [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0338s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '158' AND `status` <> 4 AND `visit_time` BETWEEN 1476406800 AND 1476437400 LIMIT 1   [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0339s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 158 LIMIT 1   [ RunTime:0.0328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2016-10-09T13:58:16+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=158&visit_date=2016-10-14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0332s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '158' AND a.visit_date = '2016-10-14' LIMIT 1   [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0334s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '158' AND `status` <> 4 AND `visit_time` BETWEEN 1476406800 AND 1476437400 LIMIT 1   [ RunTime:0.0329s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 158 LIMIT 1   [ RunTime:0.0326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000972s ]
+
+[ 2016-10-09T13:59:52+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=158&visit_date=2016-10-14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000932s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0332s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '158' AND a.visit_date = '2016-10-14' LIMIT 1   [ RunTime:0.0329s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0334s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '158' AND `status` <> 4 AND `visit_time` BETWEEN 1476406800 AND 1476437400 LIMIT 1   [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0339s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 158 LIMIT 1   [ RunTime:0.0328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001064s ]
+
+[ 2016-10-09T14:03:46+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=158&visit_date=2016-10-14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0342s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '158' AND a.visit_date = '2016-10-14' LIMIT 1   [ RunTime:0.0339s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0347s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '158' AND `status` <> 4 AND `visit_time` BETWEEN 1476406800 AND 1476437400 LIMIT 1   [ RunTime:0.0336s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0349s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 158 LIMIT 1   [ RunTime:0.0336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011532s ]
+
+[ 2016-10-09T14:03:47+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001242s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0339s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0334s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0344s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0333s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2016-10-09T14:03:48+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000937s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0332s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0328s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0332s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-10%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0332s ]
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0338s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1475251200 AND 1477929600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001198s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001541s ]
+
+[ 2016-10-09T14:03:49+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001274s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0336s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0334s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0344s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0335s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-11%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0340s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1477929600 AND 1480521600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2016-10-09T14:03:56+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0345s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0341s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0340s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0342s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0351s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0342s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000954s ]
+
+[ 2016-10-09T14:03:57+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0339s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0333s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0334s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0343s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0335s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000743s ]
+
+[ 2016-10-09T14:03:57+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-14&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0321s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-14' ) LIMIT 1   [ RunTime:0.0318s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0319s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0316s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0328s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0319s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-14'  [ RunTime:0.0320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000972s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001059s ]
+
+[ 2016-10-09T14:04:01+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0326s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0328s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-10%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0325s ]
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0328s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1475251200 AND 1477929600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000891s ]
+
+[ 2016-10-09T14:04:02+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0334s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0326s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0328s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0328s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-11%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0336s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1477929600 AND 1480521600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2016-10-09T14:04:07+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-22&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0336s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-22' ) LIMIT 1   [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0335s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('16') AND `is_show` = 1  [ RunTime:0.0332s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('16') AND a.visit_date = '2016-10-22'  [ RunTime:0.0333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2016-10-09T14:04:07+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-22&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001043s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0336s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-22' ) LIMIT 1   [ RunTime:0.0329s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0331s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0341s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('16') AND `is_show` = 1  [ RunTime:0.0328s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('16') AND a.visit_date = '2016-10-22'  [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-10-09T14:04:08+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-22&service_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0326s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-22' ) LIMIT 1   [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0324s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0324s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0332s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('16') AND `is_show` = 1  [ RunTime:0.0326s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('16') AND a.visit_date = '2016-10-22'  [ RunTime:0.0325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000871s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2016-10-09T14:04:10+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=16&visit_date=2016-10-22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0328s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '16' AND a.visit_date = '2016-10-22' LIMIT 1   [ RunTime:0.0326s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0328s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '16' AND `status` <> 4 AND `visit_time` BETWEEN 1477098000 AND 1477128600 LIMIT 1   [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000629s ]
+
+[ 2016-10-09T14:04:44+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=16&visit_date=2016-10-22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0330s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '16' AND a.visit_date = '2016-10-22' LIMIT 1   [ RunTime:0.0328s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0331s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '16' AND `status` <> 4 AND `visit_time` BETWEEN 1477098000 AND 1477128600 LIMIT 1   [ RunTime:0.0334s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0335s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2016-10-09T14:04:49+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: 病人预约微信模板消息记录："{\"errcode\":40003,\"errmsg\":\"invalid openid hint: [4cJu70089age9]\"}"
+[ 2016-10-09T14:04:50+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: 病人预约短信发送成功记录：0
+[ 2016-10-09T14:04:50+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001055s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0330s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217086 AND 1475993086 LIMIT 1   [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_company` [ RunTime:0.0327s ]
+SQL: SELECT * FROM `mint_company` WHERE ( company_code='726953' ) LIMIT 1   [ RunTime:0.0321s ]
+SQL: SELECT * FROM `mint_appointment` WHERE ( reserve_number='36931155' )  [ RunTime:0.0321s ]
+SQL: SELECT * FROM `mint_appointment` WHERE `doctor_id` = '16' AND `visit_time` = 1477112400 LIMIT 1   [ RunTime:0.0323s ]
+SQL: SELECT * FROM `mint_appointment` WHERE `visit_time` = 1477112400 AND `doctor_id` = '16' LIMIT 1   [ RunTime:0.0324s ]
+SQL: INSERT INTO `mint_appointment` (`doctor_id`,`invite_code`,`is_self`,`patient_name`,`contact_tel`,`clinic_id`,`visit_time`,`project_name`,`service_id`,`relations`,`is_return`,`patient_id`,`reserve_number`,`create_time`,`visit_date`,`patient_phone`) VALUES ('16','726953','1','张德慧','18610212470','2','1477112400','洗牙','1','','0','156','36931155','1475993087','1477065600','18610212470') [ RunTime:0.0414s ]
+SQL: SELECT a.id,a.reserve_number,a.patient_id,a.doctor_id,b.openid as p_openid,c.openid as d_openid,c.name,d.clinic_name,d.clinic_address FROM mint_appointment a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE a.id = '31' LIMIT 1   [ RunTime:0.0329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2016-10-09T14:04:50+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0327s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217090 AND 1475993090 LIMIT 1   [ RunTime:0.0317s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000669s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-10-09T14:05:25+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0344s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217125 AND 1475993125 LIMIT 1   [ RunTime:0.0334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000723s ]
+
+[ 2016-10-09T14:05:27+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=16&visit_date=2016-10-22
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0329s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '16' AND a.visit_date = '2016-10-22' LIMIT 1   [ RunTime:0.0326s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0333s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '16' AND `status` <> 4 AND `visit_time` BETWEEN 1477098000 AND 1477128600 LIMIT 1   [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000710s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000795s ]
+
+[ 2016-10-09T14:05:30+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+
+[ 2016-10-09T14:05:35+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT `id`,`account`,`password`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000618s ]
+
+[ 2016-10-09T14:05:35+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001353s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0337s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000680s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000755s ]
+
+[ 2016-10-09T14:05:35+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0337s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217135 AND 1475993135 LIMIT 1   [ RunTime:0.0326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000824s ]
+
+[ 2016-10-09T14:05:37+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0325s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0324s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0335s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0321s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0325s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-10%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0322s ]
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0332s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1475251200 AND 1477929600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2016-10-09T14:05:37+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0324s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=1 ) LIMIT 1   [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0334s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0326s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-11%' AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date  [ RunTime:0.0324s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0326s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1477929600 AND 1480521600 AND `doctor_id` IN ('139','75','158','157','16','255') GROUP BY visit_date,doctor_id  [ RunTime:0.0321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000775s ]
+
+[ 2016-10-09T14:05:39+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0335s ]
+SQL: SELECT `id`,`account`,`password`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2016-10-09T14:05:39+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001549s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0343s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2016-10-09T14:05:39+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000103s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001338s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0332s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217139 AND 1475993139 LIMIT 1   [ RunTime:0.0319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2016-10-09T14:05:44+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0346s ]
+SQL: SELECT `id`,`account`,`password`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2016-10-09T14:05:45+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001113s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001218s ]
+
+[ 2016-10-09T14:05:45+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0342s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217145 AND 1475993145 LIMIT 1   [ RunTime:0.0332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000652s ]
+
+[ 2016-10-09T14:05:46+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000098s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001114s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0333s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=2 ) LIMIT 1   [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0345s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0332s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-10%' AND `doctor_id` IN ('139','75','158','157') GROUP BY visit_date  [ RunTime:0.0332s ]
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+NOTIC: [8] Undefined index: toal_count /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 687 行.
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0337s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1475251200 AND 1477929600 AND `doctor_id` IN ('139','75','158','157') GROUP BY visit_date,doctor_id  [ RunTime:0.0331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000606s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000712s ]
+
+[ 2016-10-09T14:05:47+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDayStatus
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002262s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0337s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=2 ) LIMIT 1   [ RunTime:0.0335s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0347s ]
+SQL: SELECT group_concat(id) as id FROM `mint_user` WHERE ( is_show=1 and identity_id=2 ) LIMIT 1   [ RunTime:0.0337s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0336s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) AS doctor_id,GROUP_CONCAT(start_time) AS start_time,GROUP_CONCAT(end_time) AS end_time,`visit_date`,`time_span` FROM `mint_dttime` WHERE `visit_date` LIKE '%2016-11%' AND `doctor_id` IN ('139','75','158','157') GROUP BY visit_date  [ RunTime:0.0334s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0342s ]
+SQL: SELECT count(*) as real_count,`visit_date`,`doctor_id` FROM `mint_appointment` WHERE `visit_date` BETWEEN 1477929600 AND 1480521600 AND `doctor_id` IN ('139','75','158','157') GROUP BY visit_date,doctor_id  [ RunTime:0.0336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000565s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2016-10-09T14:05:48+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-21&service_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0320s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-21' ) LIMIT 1   [ RunTime:0.0317s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0321s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=2 ) LIMIT 1   [ RunTime:0.0317s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0334s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0320s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-21'  [ RunTime:0.0323s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-10-09T14:05:49+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-21&service_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000454s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0330s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-21' ) LIMIT 1   [ RunTime:0.0328s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0329s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=2 ) LIMIT 1   [ RunTime:0.0330s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0329s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-21'  [ RunTime:0.0328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000560s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2016-10-09T14:05:50+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getDoctorLst?visit_date=2016-10-21&service_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0342s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_dttime` WHERE ( visit_date='2016-10-21' ) LIMIT 1   [ RunTime:0.0339s ]
+SQL: SHOW COLUMNS FROM `mint_doctor_service` [ RunTime:0.0344s ]
+SQL: SELECT group_concat(doctor_id) as id FROM `mint_doctor_service` WHERE ( service_id=2 ) LIMIT 1   [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0352s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` IN ('158','143') AND `is_show` = 1  [ RunTime:0.0341s ]
+SQL: SELECT a.doctor_id,a.clinic_id,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id IN ('158','143') AND a.visit_date = '2016-10-21'  [ RunTime:0.0341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2016-10-09T14:05:51+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOneVisitData?doctor_id=158&visit_date=2016-10-21
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0322s ]
+SQL: SELECT a.*,b.clinic_name,b.clinic_address FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.doctor_id = '158' AND a.visit_date = '2016-10-21' LIMIT 1   [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0325s ]
+SQL: SELECT group_concat(visit_time) as visit_time FROM `mint_appointment` WHERE `doctor_id` = '158' AND `status` <> 4 AND `visit_time` BETWEEN 1477011600 AND 1477042200 LIMIT 1   [ RunTime:0.0317s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0327s ]
+SQL: SELECT `id`,`name`,`photo`,`job_age`,`field` FROM `mint_user` WHERE `id` = 158 LIMIT 1   [ RunTime:0.0320s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2016-10-09T14:05:55+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: 病人预约微信模板消息记录："{\"errcode\":40003,\"errmsg\":\"invalid openid hint: [JcdhCA0155ge18]\"}"
+[ 2016-10-09T14:05:55+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: 病人预约短信发送成功记录：0
+[ 2016-10-09T14:05:55+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000989s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0337s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217153 AND 1475993153 LIMIT 1   [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `mint_company` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `mint_company` WHERE ( company_code='726953' ) LIMIT 1   [ RunTime:0.0331s ]
+SQL: SELECT * FROM `mint_appointment` WHERE ( reserve_number='85791249' )  [ RunTime:0.0333s ]
+SQL: SELECT * FROM `mint_appointment` WHERE `doctor_id` = '158' AND `visit_time` = 1477033200 LIMIT 1   [ RunTime:0.0333s ]
+SQL: SELECT * FROM `mint_appointment` WHERE `visit_time` = 1477033200 AND `doctor_id` = '158' LIMIT 1   [ RunTime:0.0330s ]
+SQL: INSERT INTO `mint_appointment` (`doctor_id`,`invite_code`,`is_self`,`patient_name`,`contact_tel`,`clinic_id`,`visit_time`,`project_name`,`service_id`,`relations`,`is_return`,`patient_id`,`reserve_number`,`create_time`,`visit_date`,`patient_phone`) VALUES ('158','726953','1','张德慧','18610212470','2','1477033200','补牙','2','','0','156','85791249','1475993153','1476979200','18610212470') [ RunTime:0.0414s ]
+SQL: SELECT a.id,a.reserve_number,a.patient_id,a.doctor_id,b.openid as p_openid,c.openid as d_openid,c.name,d.clinic_name,d.clinic_address FROM mint_appointment a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE a.id = '33' LIMIT 1   [ RunTime:0.0331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2016-10-09T14:05:55+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/shiyueCount
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001583s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0332s ]
+SQL: SELECT count(*) as count FROM `mint_appointment` WHERE `patient_id` = '156' AND `status` = 3 AND `create_time` BETWEEN 1468217155 AND 1475993155 LIMIT 1   [ RunTime:0.0322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2016-10-09T14:06:06+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/patientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0347s ]
+SQL: UPDATE `mint_appointment` SET `status`='3' WHERE `patient_id` = 156 AND `status` IN ('1','5') AND `visit_time` < 1475942400 [ RunTime:0.0339s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_appointment` WHERE `patient_id` = '156' LIMIT 1   [ RunTime:0.0340s ]
+SQL: SELECT a.id,a.patient_name,a.reserve_number,a.visit_time,a.status,a.is_return,b.service_name FROM mint_appointment a left join mint_service as b on a.service_id=b.id  WHERE `patient_id` = '156' ORDER BY a.status asc,a.id desc LIMIT 0,15   [ RunTime:0.0341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000902s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001016s ]
+
+[ 2016-10-09T14:06:08+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0329s ]
+SQL: SELECT a.*,b.name as doctor_name,c.name as appointment_name,d.clinic_name,d.clinic_address,e.id as company_id,e.company_name FROM mint_appointment a left join mint_user as b on a.doctor_id=b.id left join mint_user as c on a.patient_id=c.id left join mint_clinic as d on a.clinic_id=d.id left join mint_company as e on a.invite_code=e.company_code  WHERE ( a.id=31 ) LIMIT 1   [ RunTime:0.0322s ]
+NOTIC: [8] Undefined index: doctor_phone /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 284 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2016-10-09T14:06:10+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/cancel?appointment_id=31
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001115s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0343s ]
+SQL: SELECT * FROM `mint_appointment` WHERE `id` = 31 LIMIT 1   [ RunTime:0.0334s ]
+SQL: UPDATE `mint_appointment` SET `id`='31',`is_self`='1',`relations`='',`patient_id`='156',`patient_name`='张德慧',`patient_phone`='18610212470',`contact_tel`='18610212470',`reserve_number`='36931155',`invite_code`='726953',`doctor_id`='16',`start_time`='0',`end_time`='0',`time_type`='1',`clinic_id`='2',`option_id`='1',`service_id`='1',`project_name`='洗牙',`remark`='',`visit_date`='1477065600',`visit_time`='1477112400',`status`='4',`create_time`='1475993087',`is_return`='0',`need_return`='0' WHERE ( id=31 ) [ RunTime:0.0491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+
+[ 2016-10-09T14:06:11+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/patientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000932s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0341s ]
+SQL: UPDATE `mint_appointment` SET `status`='3' WHERE `patient_id` = 156 AND `status` IN ('1','5') AND `visit_time` < 1475942400 [ RunTime:0.0331s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_appointment` WHERE `patient_id` = '156' LIMIT 1   [ RunTime:0.0329s ]
+SQL: SELECT a.id,a.patient_name,a.reserve_number,a.visit_time,a.status,a.is_return,b.service_name FROM mint_appointment a left join mint_service as b on a.service_id=b.id  WHERE `patient_id` = '156' ORDER BY a.status asc,a.id desc LIMIT 0,15   [ RunTime:0.0331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000868s ]
+
+[ 2016-10-09T14:06:12+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000700s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003454s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0339s ]
+SQL: SELECT a.*,b.name as doctor_name,c.name as appointment_name,d.clinic_name,d.clinic_address,e.id as company_id,e.company_name FROM mint_appointment a left join mint_user as b on a.doctor_id=b.id left join mint_user as c on a.patient_id=c.id left join mint_clinic as d on a.clinic_id=d.id left join mint_company as e on a.invite_code=e.company_code  WHERE ( a.id=33 ) LIMIT 1   [ RunTime:0.0337s ]
+NOTIC: [8] Undefined index: doctor_phone /Applications/MAMP/htdocs/mintAdmin/Application/Home/Controller/AppointmentController.class.php 第 284 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-10-09T14:06:14+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/cancel?appointment_id=33
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001122s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0325s ]
+SQL: SELECT * FROM `mint_appointment` WHERE `id` = 33 LIMIT 1   [ RunTime:0.0321s ]
+SQL: UPDATE `mint_appointment` SET `id`='33',`is_self`='1',`relations`='',`patient_id`='156',`patient_name`='张德慧',`patient_phone`='18610212470',`contact_tel`='18610212470',`reserve_number`='85791249',`invite_code`='726953',`doctor_id`='158',`start_time`='0',`end_time`='0',`time_type`='1',`clinic_id`='2',`option_id`='1',`service_id`='2',`project_name`='补牙',`remark`='',`visit_date`='1476979200',`visit_time`='1477033200',`status`='4',`create_time`='1475993153',`is_return`='0',`need_return`='0' WHERE ( id=33 ) [ RunTime:0.0407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2016-10-09T14:06:15+08:00 ] ::1 /mintAdmin/index.php/Home/Appointment/patientList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0335s ]
+SQL: UPDATE `mint_appointment` SET `status`='3' WHERE `patient_id` = 156 AND `status` IN ('1','5') AND `visit_time` < 1475942400 [ RunTime:0.0324s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_appointment` WHERE `patient_id` = '156' LIMIT 1   [ RunTime:0.0326s ]
+SQL: SELECT a.id,a.patient_name,a.reserve_number,a.visit_time,a.status,a.is_return,b.service_name FROM mint_appointment a left join mint_service as b on a.service_id=b.id  WHERE `patient_id` = '156' ORDER BY a.status asc,a.id desc LIMIT 0,15   [ RunTime:0.0326s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+

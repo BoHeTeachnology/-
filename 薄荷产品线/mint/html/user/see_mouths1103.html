@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src='vue1.js'></script>
+</head>
+<body id='app'>
+
+  <div class="add">
+    <input value='{{add_data.name}}' v-model='add_data.name' type='text' name='name' v-on:keyup='add(add_data.name,0,0,200,50)'>
+    是
+    <input value='{{add_data_rename.name}}' v-model='add_data_rename.name' type='text' name='name' v-on:keyup='add(add_data_rename.name,400,0,200,50)'>
+    <input value='{{relation.name}}' v-model='relation.name' type='text' name='relation'  v-on:keyup='connect(relation.name)'>
+  </div>
+
+  <canvas id="canvas" width="600" height="600"></canvas>
+
+</body>
+<script type="text/javascript">
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+            var v1 = new Vue({
+              el: '#app',
+              data: {
+                add_data:{
+                  name:''
+                },
+                add_data_rename:{
+                  name:''
+                },
+                relation:{
+                  name:''
+                }
+              },
+              methods:{
+                add:function(a,x1,y1,x2,y2){
+                  ctx.clearRect(x1,y1,x2,y2);
+                  ctx.fillStyle='#ebebeb';
+                  ctx.fillRect(x1,y1,x2,y2);
+                  ctx.fillStyle='#f00';//文字颜色
+                  ctx.font = '30px Arial';
+                  ctx.fillText(a,x1+x2/2,y2/2);//创建文字，控制文件的起始位置
+                  ctx.textAlign='center';//文本水平对齐方式
+                  ctx.textBaseline='middle';//文本垂直方向，基线位置
+                },
+                connect:function(a){
+                  if(a=='父'){
+                    ctx.fillStyle='#ebebeb';
+                    ctx.fillRect(200,50,200,50);
+                    ctx.fillStyle='#f00';//文字颜色
+                    ctx.font = '30px Arial';
+                    ctx.fillText(v1.add_data.name,300,75);//创建文字，控制文件的起始位置
+                    ctx.textAlign='center';//文本水平对齐方式
+                    ctx.textBaseline='middle';//文本垂直方向，基线位置
+
+                    ctx.fillRect(200,150,200,50);
+                    ctx.fillText(v1.add_data_rename.name,300,100);
+                  }
+
+                }
+              }
+            });
+
+
+</script>
+</html>

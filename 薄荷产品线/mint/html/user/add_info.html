@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userAdd_info.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                                <li><a class="active" href="javascript:;" data-href="add_info.html#User" id='info'>基础信息</a></li>
+                                <li><a href="javascript:;" data-href="add_past.html#User" id='past'>既往史</a></li>
+                                <li><a href="javascript:;" data-href="add_mouths.html#User" id='mouth'>口腔情况</a></li>
+                                <li><a href="javascript:;" data-href="add_tooth.html#User" id='pics'>牙位图</a></li>
+                                <li><a href="javascript:;" data-href="add_family.html#User" id='family'>关系成员</a></li>
+                                <!-- <li><a href="javascript:;" data-href="add_photo.html#User" id='photo'>影像资料</a></li> -->
+                            </ul>
+
+                        </div>
+                        <div class="time">
+                            <div class="z_time_btn">
+                                <input type="button" value="保存" class="default_inputbtn z_save_btn" id="save-but" style="display:none">
+                                <a href="javascript:;" class="default_inputbtn z_edit_btn" id="edit_but_see" style="display:none">编辑</a>
+                                <!-- <a href="#" class="default_inputbtn z_save_btn" id="save-but">保存</a> -->
+                            </div>
+                        </div>
+                        <div class="userContain" id="change">
+                            <div class="z_userContainMain">
+                                <!-- 基础信息 -->
+                                <div class="containb_right" id="infobox_see" style="display:none">
+                                    <div class="z_left_box">
+                                        <div class="z_headerPic">
+                                            <div class="z_touxiang" id="photo_see"><img src="../../images/userPic.png" alt=""></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="z_right_rbox">
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>薄荷名：</span>
+                                                    <div class="z_textinfo" id="mint_name_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>登录手机号：</span>
+                                                    <div class="z_textinfo" id="account_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>姓名：</span>
+                                                    <div class="z_textinfo" id="name_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>真实姓名：</span>
+                                                    <div class="z_textinfo" id="real_name_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>出生年月：</span>
+                                                    <div class="z_textinfo" id="birth_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>民族：</span>
+                                                    <div class="z_textinfo" id="race_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>证件种类：</span>
+                                                    <div class="z_textinfo" id="card_type_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>证件号码：</span>
+                                                    <div class="z_textinfo" id="card_id_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>联系方式：</span>
+                                                    <div class="z_textinfo" id="phone_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>性别：</span>
+                                                    <div class="z_textinfo" id="sex_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>年龄：</span>
+                                                    <div class="z_textinfo" id="age_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>婚姻状况：</span>
+                                                    <div class="z_textinfo" id="married_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>有无子女：</span>
+                                                    <div class="z_textinfo" id="have_child_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="z_main_contain no_border">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>工作单位：</span>
+                                                    <div class="z_textinfo" id="company_name_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>职业：</span>
+                                                    <div class="z_textinfo" id="job_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>Email：</span>
+                                                    <div class="z_textinfo" id="email_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>社保号：</span>
+                                                    <div class="z_textinfo" id="society_number_see"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="input-box h25 chakanspan"> 
+                                                <span>邮寄地址：</span>
+                                                <div class="z_textinfo W520" id="post_address_see"></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="input-box h25 chakanspan"> 
+                                                <span>备注：</span>
+                                                <div class="z_textinfo W520" id="remark_see"></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                            
+                                    </div>
+                                </div><!-- 基础信息结束 -->
+                                
+                                <!-- 基础信息 -->
+                                <div class="containb_right" id="infobox_add" style="display:none">
+                                    <div class="z_left_box">
+                                        <div class="z_headerPic">
+                                            <div class="z_touxiang" id="photo"><img src="../../images/userPic.png" alt=""></div>
+                                            <div class="z_but-input"><input type="file" value="上传头像" id="file2" class="but-input upfile-butt">上传头像</div> 
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="z_right_rbox">
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25"> 
+                                                    <span><em class="emx">薄荷名：</em></span>
+                                                    <input type="text" class="text-input readonly" id="mint_name" maxLength="20" placeholder="自动生成" disabled>
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span><em class="emx">登录手机号：</em></span>
+                                                    <input type="text" class="text-input" id="account" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" placeholder="只能输入手机号">
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25"> 
+                                                    <span>姓名：</span>
+                                                    <input type="text" class="text-input yongHuming readonly" autocomplete="off" disabled>
+                                                    <div class="z_default_desc">默认读取移动端用户姓名</div>
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>密码设置：</span>
+                                                    <input type="password" class="text-input Mima" placeholder="6～20个字符" autocomplete="off">
+                                                    <div class="z_default_desc">未设置密码则默认为:123456</div>
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25"> 
+                                                    <span>真实姓名：</span>
+                                                    <input type="text" class="text-input" id="real_name">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>出生年月：</span>
+                                                    <input type="text" class="text-input layicon" id="birth" readonly="readonly">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>民族：</span>
+                                                    <input type="text" class="text-input" id="race">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                
+                                                <div class="input-box h25"> 
+                                                    <span>证件种类：</span>
+                                                    <select class="select-div" id="card_type">
+                                                        <option value="">请选择</option>
+                                                        <option value="1">身份证</option>
+                                                        <option value="3">护照</option>
+                                                    </select>
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>证件号码：</span>
+                                                    <input type="text" class="text-input" id="card_id"  maxLength="18">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25"> 
+                                                    <span><em class="emx">联系方式：</em></span>
+                                                    <input type="text" class="text-input" id="phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>性别：</span>
+                                                    <div class="radio-box" id="sex">
+                                                        <span><input type="radio" class="radio1" name="radio2" id="checkboxa" value="1"><label for="checkboxa">男</label></span>
+                                                        <span><input type="radio" class="radio1" name="radio2" id="checkboxb" value="2"><label for="checkboxb">女</label></span>
+                                                    </div>
+                                                    <p class="errorTip"></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>年龄：</span>
+                                                    <input type="text" class="text-input" readonly="readonly" id="age">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>婚姻状况：</span>
+                                                    <div class="radio-box" id="married">
+                                                        <span><input type="radio" class="radio1" name="married" id="checkboxc" value="1"><label for="checkboxc">已婚</label></span>
+                                                        <span><input type="radio" class="radio1" name="married" id="checkboxd" value="0"><label for="checkboxd">未婚</label></span>
+                                                    </div>
+                                                    <p class="errorTip"></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>有无子女：</span>
+                                                    <div class="radio-box" id="have_child">
+                                                        <span><input type="radio" class="radio1" name="have_child" id="checkboxe" value="1"><label for="checkboxe">有</label></span>
+                                                        <span><input type="radio" class="radio1" name="have_child" id="checkboxf" value="0"><label for="checkboxf">无</label></span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="z_main_contain no_border">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25"> 
+                                                    <span>工作单位：</span>
+                                                    <input type="text" class="text-input" id="company_name">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>职业：</span>
+                                                    <input type="text" class="text-input" id="job">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25"> 
+                                                    <span>Email：</span>
+                                                    <input type="text" class="text-input" id="email">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25"> 
+                                                    <span>社保号：</span>
+                                                    <input type="text" class="text-input" id="society_number">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="input-box h25"> 
+                                                <span>邮寄地址：</span>
+                                                <input type="text" class="text-input W475" id="post_address">
+                                                <div class="clear"></div>
+                                                <p></p>
+                                            </div>
+                                            <div class="input-box h25"> 
+                                                <span>备注：</span>
+                                                <input type="text" class="text-input W475" id="remark">
+                                                <div class="clear"></div>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                            
+                                    </div>
+                                </div><!-- 基础信息结束 -->
+                            </div>  
+                            <div class="clear"></div>
+                        </div>
+                            
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传头像<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+            
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file">重新选择</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save">
+          <input type="button" class="but butblue" value="保存" id="save_btn">
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

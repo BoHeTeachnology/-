@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>诊所管理-预约详情</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../jedate/skin/jquery-weui.css">
+  <link rel="stylesheet" href="../../clinic/css/clinic.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jedate/jquery-weui.js"></script>
+  <script src="../../js/js.js"></script>
+  <script type="text/javascript" src="../../js/clinicIndex.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper" style="position: fixed;">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop2">
+            <div class="but-box bj-none">
+              <p>
+                <a href="/mint/html/caseList/cliniclist.html#ClinicSurvey" class="back-but" id="back">返回</a>
+              </p>
+            </div>
+            <div class="clinic_toptitle">
+              <h6><b id="clinicNameId"></b><a href="clinicIndex.html#ClinicSurvey" class="activecur">预约总览</a><a href="clinicMsg.html#ClinicSurvey">诊所信息</a></h6>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="add-main-box1">
+              <div class="clinicmain">
+                <!-- 预约总览详情主要内容 -->
+                  <div class="containOutMain">
+                    <div class="containbox" style="top:50px;padding-bottom:50px;">
+                      <div class="containMain" style="padding-right:20px;">
+                        <div class="containLeft" style="padding-bottom:40px;background:#fff;">
+                          <div class="leftprebox">
+                            <h3 class="rilic">日历</h3>
+                            <div class="canaldarbox">
+                                <div id="inline-calendar"></div>
+                                <input id="date" type="text" style="opacity:0">
+                            </div>
+                          </div>
+                          <div class="leftprebox">
+                            <h3 class="tingji">当天预约统计</h3>
+                            <div class="tongjiproj">
+                              <ul>
+                                <!-- <li><span style="height:100%"><i>10</i></span><b>洗牙</b></li>
+                                <li><span style="height:20%"><i>2</i></span><b>洗牙</b></li>
+                                <li><span style="height:70%"><i>7</i></span><b>洗牙</b></li>
+                                <li><span style="height:60%"><i>6</i></span><b>洗牙</b></li>
+                                <li><span style="height:40%"><i>4</i></span><b>洗牙</b></li>
+                                <li><span style="height:30%"><i>3</i></span><b>洗牙</b></li> -->
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="containRight" style="min-width:750px">
+                          <div class="rightTopbox">
+                            <div class="righLeft">
+                              <h3 class="tjnum">当日数据统计</h3>
+                              <div class="circleOutbox">
+                                <div class="circlepre">
+                                    <div class="circleProgress_wrapper bodOrange">  
+                                      <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                                      <div class="left"><div class="circleProgress leftcircle"></div></div>  
+                                      <div class="center"><b></b><span>元</span></div>
+                                    </div>  
+                                    <p>今日流水</p>
+                                </div>
+                                <div class="circlepre">
+                                    <div class="circleProgress_wrapper bodGreen">  
+                                      <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                                      <div class="left"><div class="circleProgress leftcircle"></div></div>
+                                      <div class="center"><b></b><span>元</span></div> 
+                                    </div>  
+                                    <p>今日已到账</p>
+                                </div>
+                                <div class="circlepre">
+                                    <div class="circleProgress_wrapper boxBlue">  
+                                      <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                                      <div class="left"><div class="circleProgress leftcircle"></div></div> 
+                                      <div class="center"><b></b><span>个</span></div> 
+                                    </div> 
+                                    <p>今日预约</p> 
+                                </div>
+                                  
+                              </div>
+                            </div>
+                            <div class="righRight">
+                              <h3 class="tjnum">医生列表</h3>
+                              <div class="doctorListshow"> 
+                                <!-- <dl>
+                                  <dt></dt>
+                                  <dd>
+                                    <h4>唐医生</h4>
+                                    <p>的说法进房间啊</p>
+                                  </dd>
+                                  <label class="on"></label>
+                                </dl>
+                                <dl>
+                                  <dt></dt>
+                                  <dd>
+                                    <h4>唐医生</h4>
+                                    <p>的说法进房间啊</p>
+                                  </dd>
+                                  <label class="off"></label>
+                                </dl>
+                                <dl>
+                                  <dt></dt>
+                                  <dd>
+                                    <h4>唐医生</h4>
+                                    <p>的说法进房间啊</p>
+                                  </dd>
+                                  <label class="on"></label>
+                                </dl>
+                                <dl>
+                                  <dt></dt>
+                                  <dd>
+                                    <h4>唐医生</h4>
+                                    <p>的说法进房间啊</p>
+                                  </dd>
+                                  <label class="on"></label>
+                                </dl> -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="rightTablebox">
+                            <table class="table table-bordered table-hover table-height table-height4 clinictablebox">
+                                <thead>
+                                    <tr>
+                                        <th width="60px">序号</th>
+                                        <th>预约时间</th>
+                                        <th>预约状态</th>
+                                        <th>客户姓名</th>
+                                        <th>主治医生</th>
+                                        <th>预约项目</th>
+                                        <th>医生联系电话</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <!-- <tr>
+                                    <td>2323</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr>
+                                  <tr>
+                                    <td>4454</td>
+                                    <td>13:00</td>
+                                    <td>已预约</td>
+                                    <td>打单费发</td>
+                                    <td>阿斯顿发发</td>
+                                    <td>大发发发</td>
+                                    <td>151015555522</td>
+                                  </tr> -->
+
+                                </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                <!-- 预约总览详情主要内容结束 -->
+              </div>
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>
+<script>
+  $("#inline-calendar").calendar({
+        container: "#inline-calendar",
+        input: "#date",
+        onDayClick:function(p, dayContainer, year, month, day){
+         /*获取具体时间*/
+          var Monthdate = (parseInt(month)+1) < 10 ? "0" + (parseInt(month)+1): (parseInt(month)+1);
+          var Datdate = day < 10 ? "0" + day : day;
+          var visit_date_juti = year + "-" + Monthdate + "-" + Datdate; 
+          var clinicId = sessionStorage.getItem('clinic_id');
+          viewAll(visit_date_juti,clinicId);
+          get_clinic_id();
+        }
+        
+  }); 
+
+</script>

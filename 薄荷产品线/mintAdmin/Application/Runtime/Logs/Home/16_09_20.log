@@ -1,0 +1,26 @@
+[ 2016-09-20T14:37:11+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.269544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.021714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.021822s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0842s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=178 ) LIMIT 1   [ RunTime:0.0603s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012116s ]
+
+[ 2016-09-20T14:39:58+08:00 ] ::1 /mintAdmin/index.php/Home/User/getInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.042906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.042994s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0579s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`position`,`hospital`,`context`,`field`,`label`,`job_age`,`work_time`,`invite_code`,`openid`,`identity_id`,`label_id`,`company_code` FROM `mint_user` WHERE ( id=178 ) LIMIT 1   [ RunTime:0.0575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.094687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.094768s ]
+

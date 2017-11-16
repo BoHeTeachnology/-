@@ -1,0 +1,1477 @@
+[ 2016-09-26T15:11:21+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003315s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0326s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '178'  [ RunTime:0.0321s ]
+
+[ 2016-09-26T15:11:21+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 178 LIMIT 1   [ RunTime:0.0309s ]
+SQL: SELECT c.id,c.app_name,c.app_uri,c.app_url,c.parent_id FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '178' ORDER BY c.sort  [ RunTime:0.0312s ]
+NOTIC: [8] Undefined variable: data1 /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/IndexController.class.php 第 51 行.
+
+[ 2016-09-26T15:11:21+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000627s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001844s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0299s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 178 LIMIT 1   [ RunTime:0.0294s ]
+SQL: SELECT c.id,c.app_name,c.app_uri,c.app_url,c.parent_id FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '178' ORDER BY c.sort  [ RunTime:0.0287s ]
+NOTIC: [8] Undefined variable: data1 /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/IndexController.class.php 第 51 行.
+
+[ 2016-09-26T15:11:24+08:00 ] ::1 /mintAdmin/index.php/Admin/Login/logOut
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.017072s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017176s ]
+
+[ 2016-09-26T15:11:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `mint_user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+
+[ 2016-09-26T15:11:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007218s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0323s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0317s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0312s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0318s ]
+
+[ 2016-09-26T15:11:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002402s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0280s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0278s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0279s ]
+
+[ 2016-09-26T15:11:30+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0313s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0310s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0331s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001083s ]
+
+[ 2016-09-26T15:11:37+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0323s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0311s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0311s ]
+
+[ 2016-09-26T15:11:37+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0344s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0338s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0332s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0332s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000702s ]
+
+[ 2016-09-26T15:12:13+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001695s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0323s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0313s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 20,10   [ RunTime:0.0324s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001189s ]
+
+[ 2016-09-26T15:12:18+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0325s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0312s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0320s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0312s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 10,10   [ RunTime:0.0750s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001063s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001180s ]
+
+[ 2016-09-26T15:12:20+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0308s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0296s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0310s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0300s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 20,10   [ RunTime:0.0305s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2016-09-26T15:12:39+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0309s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0298s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0310s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0296s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0307s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2016-09-26T15:12:43+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0298s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0299s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0286s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 10,10   [ RunTime:0.0293s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001147s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001286s ]
+
+[ 2016-09-26T15:12:46+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0296s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0284s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0294s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0282s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0289s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000941s ]
+
+[ 2016-09-26T15:13:58+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001521s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0283s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0290s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0279s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 10,10   [ RunTime:0.0285s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0280s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001886s ]
+
+[ 2016-09-26T15:14:05+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0323s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0326s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0314s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0317s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001380s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001525s ]
+
+[ 2016-09-26T15:14:57+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0343s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0334s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0331s ]
+
+[ 2016-09-26T15:14:58+08:00 ] ::1 /mintAdmin/index.php/Admin/ClinicSurvey/getClinicSurvey
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0313s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0297s ]
+SQL: SHOW COLUMNS FROM `mint_clinic` [ RunTime:0.0302s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/ClinicSurveyController.class.php 第 19 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_clinic` LIMIT 1   [ RunTime:0.0294s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/ClinicSurveyController.class.php 第 20 行.
+SQL: SELECT `id`,`clinic_brand`,`clinic_name`,`chair_nums` FROM `mint_clinic` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0296s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0308s ]
+SQL: SELECT `clinic_id`,`visit_date`,COUNT(id) AS COUNT FROM `mint_appointment` WHERE `status` <> 4 AND `visit_date` BETWEEN '1474819199' AND '1475424001' GROUP BY clinic_id,visit_date  [ RunTime:0.0301s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0300s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) as doctor_ids,`visit_date`,`clinic_id` FROM `mint_dttime` WHERE `visit_date` BETWEEN '2016-09-26' AND '2016-10-03' GROUP BY clinic_id,visit_date  [ RunTime:0.0301s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('200') AND `visit_date` = '2016-09-27'  [ RunTime:0.0298s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('200') AND `visit_date` = '2016-09-28'  [ RunTime:0.0299s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('159','200') AND `visit_date` = '2016-09-29'  [ RunTime:0.0298s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('200','159') AND `visit_date` = '2016-09-30'  [ RunTime:0.0298s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185') AND `visit_date` = '2016-09-27'  [ RunTime:0.0298s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185') AND `visit_date` = '2016-09-28'  [ RunTime:0.0298s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185') AND `visit_date` = '2016-09-29'  [ RunTime:0.0295s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185','185') AND `visit_date` = '2016-10-01'  [ RunTime:0.0300s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185','185') AND `visit_date` = '2016-10-02'  [ RunTime:0.0299s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185','185') AND `visit_date` = '2016-10-03'  [ RunTime:0.0298s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('150') AND `visit_date` = '2016-09-29'  [ RunTime:0.0297s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('179') AND `visit_date` = '2016-09-27'  [ RunTime:0.0300s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('179') AND `visit_date` = '2016-09-28'  [ RunTime:0.0299s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('181','179','180','169') AND `visit_date` = '2016-09-29'  [ RunTime:0.0297s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('181','179') AND `visit_date` = '2016-09-30'  [ RunTime:0.0299s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('169') AND `visit_date` = '2016-10-01'  [ RunTime:0.0297s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('169') AND `visit_date` = '2016-10-02'  [ RunTime:0.0298s ]
+SQL: SHOW COLUMNS FROM `mint_chairnum` [ RunTime:0.0348s ]
+SQL: SELECT `clinic_id`,`chair_nums`,`chair_date` FROM `mint_chairnum` WHERE `chair_date` BETWEEN '1474819199' AND '1475424001'  [ RunTime:0.0303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011997s ]
+
+[ 2016-09-26T15:14:58+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001043s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0296s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0290s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0290s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0290s ]
+
+[ 2016-09-26T15:14:59+08:00 ] ::1 /mintAdmin/index.php/Admin/Clinic/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0313s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0295s ]
+SQL: SHOW COLUMNS FROM `mint_clinic` [ RunTime:0.0308s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/ClinicController.class.php 第 22 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_clinic` LIMIT 1   [ RunTime:0.0298s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/ClinicController.class.php 第 23 行.
+SQL: SELECT * FROM `mint_clinic` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2016-09-26T15:15:05+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001833s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0320s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0308s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0311s ]
+
+[ 2016-09-26T15:15:06+08:00 ] ::1 /mintAdmin/index.php/Admin/ClinicSurvey/getClinicSurvey
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0303s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0284s ]
+SQL: SHOW COLUMNS FROM `mint_clinic` [ RunTime:0.0290s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/ClinicSurveyController.class.php 第 19 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_clinic` LIMIT 1   [ RunTime:0.0283s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/ClinicSurveyController.class.php 第 20 行.
+SQL: SELECT `id`,`clinic_brand`,`clinic_name`,`chair_nums` FROM `mint_clinic` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0284s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0291s ]
+SQL: SELECT `clinic_id`,`visit_date`,COUNT(id) AS COUNT FROM `mint_appointment` WHERE `status` <> 4 AND `visit_date` BETWEEN '1474819199' AND '1475424001' GROUP BY clinic_id,visit_date  [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0285s ]
+SQL: SELECT GROUP_CONCAT(doctor_id) as doctor_ids,`visit_date`,`clinic_id` FROM `mint_dttime` WHERE `visit_date` BETWEEN '2016-09-26' AND '2016-10-03' GROUP BY clinic_id,visit_date  [ RunTime:0.0288s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('200') AND `visit_date` = '2016-09-27'  [ RunTime:0.0286s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('200') AND `visit_date` = '2016-09-28'  [ RunTime:0.0287s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('159','200') AND `visit_date` = '2016-09-29'  [ RunTime:0.0283s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('200','159') AND `visit_date` = '2016-09-30'  [ RunTime:0.0285s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185') AND `visit_date` = '2016-09-27'  [ RunTime:0.0283s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185') AND `visit_date` = '2016-09-28'  [ RunTime:0.0287s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185') AND `visit_date` = '2016-09-29'  [ RunTime:0.0285s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185','185') AND `visit_date` = '2016-10-01'  [ RunTime:0.0283s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185','185') AND `visit_date` = '2016-10-02'  [ RunTime:0.0283s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('185','185') AND `visit_date` = '2016-10-03'  [ RunTime:0.0288s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('150') AND `visit_date` = '2016-09-29'  [ RunTime:0.0286s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('179') AND `visit_date` = '2016-09-27'  [ RunTime:0.0286s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('179') AND `visit_date` = '2016-09-28'  [ RunTime:0.0285s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('181','179','180','169') AND `visit_date` = '2016-09-29'  [ RunTime:0.0284s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('181','179') AND `visit_date` = '2016-09-30'  [ RunTime:0.0286s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('169') AND `visit_date` = '2016-10-01'  [ RunTime:0.0286s ]
+SQL: SELECT `visit_date`,`start_time`,`end_time`,`time_span` FROM `mint_dttime` WHERE `doctor_id` IN ('169') AND `visit_date` = '2016-10-02'  [ RunTime:0.0283s ]
+SQL: SHOW COLUMNS FROM `mint_chairnum` [ RunTime:0.0286s ]
+SQL: SELECT `clinic_id`,`chair_nums`,`chair_date` FROM `mint_chairnum` WHERE `chair_date` BETWEEN '1474819199' AND '1475424001'  [ RunTime:0.0284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-09-26T15:15:12+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0312s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0299s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0300s ]
+
+[ 2016-09-26T15:15:12+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0326s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0315s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0324s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0307s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0319s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000834s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-09-26T15:15:25+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0304s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0299s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0292s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0296s ]
+
+[ 2016-09-26T15:15:25+08:00 ] ::1 /mintAdmin/index.php/Admin/Company/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0323s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0312s ]
+SQL: SHOW COLUMNS FROM `mint_company` [ RunTime:0.0317s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/CompanyController.class.php 第 22 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_company` LIMIT 1   [ RunTime:0.0311s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/CompanyController.class.php 第 23 行.
+SQL: SELECT * FROM `mint_company` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013964s ]
+
+[ 2016-09-26T16:51:28+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001658s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0303s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0292s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0287s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0295s ]
+
+[ 2016-09-26T16:51:28+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000971s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001659s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0484s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0313s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0318s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0311s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.014974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015137s ]
+
+[ 2016-09-26T16:51:54+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0291s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0283s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0278s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0281s ]
+
+[ 2016-09-26T16:51:54+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0291s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0283s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0291s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0281s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.205327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.205449s ]
+
+[ 2016-09-26T16:52:02+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001588s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0344s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0334s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=67 )  [ RunTime:0.0336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000762s ]
+
+[ 2016-09-26T16:52:02+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0304s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0289s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0295s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=67 ) LIMIT 1   [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000632s ]
+
+[ 2016-09-26T16:52:26+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0324s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0313s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=67 )  [ RunTime:0.0311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001036s ]
+
+[ 2016-09-26T16:52:26+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0287s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0277s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0281s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=67 ) LIMIT 1   [ RunTime:0.0279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000872s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001091s ]
+
+[ 2016-09-26T16:52:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001528s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0324s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0319s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=67 )  [ RunTime:0.0313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001240s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001357s ]
+
+[ 2016-09-26T16:52:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0320s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0300s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0307s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=67 ) LIMIT 1   [ RunTime:0.0303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2016-09-26T16:52:39+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001637s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0308s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0307s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=68 )  [ RunTime:0.0306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2016-09-26T16:52:40+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0295s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=68 ) LIMIT 1   [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2016-09-26T16:52:44+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0349s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0336s ]
+NOTIC: [8] Undefined index: visit_time /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 90 行.
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0342s ]
+SQL: UPDATE `mint_bill` SET `status`='1',`pay_method`='线下支付' WHERE `id` = 68 [ RunTime:0.0623s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000642s ]
+
+[ 2016-09-26T16:52:44+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001708s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0307s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0297s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0302s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0296s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001048s ]
+
+[ 2016-09-26T16:52:45+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0400s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0286s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0286s ]
+
+[ 2016-09-26T16:52:49+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0300s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0294s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0290s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=68 )  [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2016-09-26T16:52:49+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0307s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0292s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0301s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=68 ) LIMIT 1   [ RunTime:0.0301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001007s ]
+
+[ 2016-09-26T16:52:53+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0310s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0301s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0305s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=70 )  [ RunTime:0.0300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000629s ]
+
+[ 2016-09-26T16:52:53+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0288s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0278s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0283s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=70 ) LIMIT 1   [ RunTime:0.0281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2016-09-26T16:52:56+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0310s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0299s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0301s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=70 )  [ RunTime:0.0300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001506s ]
+
+[ 2016-09-26T16:52:56+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0302s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0291s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0298s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=70 ) LIMIT 1   [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000831s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2016-09-26T16:53:00+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0325s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0330s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=70 )  [ RunTime:0.0328s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000614s ]
+
+[ 2016-09-26T16:53:00+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0315s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0300s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0308s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=70 ) LIMIT 1   [ RunTime:0.0306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-09-26T16:53:04+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0283s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0274s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0276s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=63 )  [ RunTime:0.0274s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+
+[ 2016-09-26T16:53:04+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0310s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0294s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0304s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=63 ) LIMIT 1   [ RunTime:0.0299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000594s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2016-09-26T16:53:07+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0279s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0272s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0270s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=63 )  [ RunTime:0.0276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002196s ]
+
+[ 2016-09-26T16:53:08+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0289s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0296s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=63 ) LIMIT 1   [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000617s ]
+
+[ 2016-09-26T16:53:11+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0328s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0309s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0314s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=61 )  [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001534s ]
+
+[ 2016-09-26T16:53:11+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0304s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0296s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0300s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=61 ) LIMIT 1   [ RunTime:0.0297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000612s ]
+
+[ 2016-09-26T16:53:16+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0312s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0298s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=62 )  [ RunTime:0.0299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001264s ]
+
+[ 2016-09-26T16:53:16+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000516s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0284s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0289s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=62 ) LIMIT 1   [ RunTime:0.0289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000839s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000923s ]
+
+[ 2016-09-26T16:54:16+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0307s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0293s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=62 )  [ RunTime:0.0297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2016-09-26T16:54:16+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0301s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0286s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0291s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=62 ) LIMIT 1   [ RunTime:0.0291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2016-09-26T18:01:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0324s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0313s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0315s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=68 )  [ RunTime:0.0316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001178s ]
+
+[ 2016-09-26T18:01:29+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0285s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0292s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=68 ) LIMIT 1   [ RunTime:0.0290s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000838s ]
+
+[ 2016-09-26T18:01:55+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001186s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0315s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0307s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0306s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0304s ]
+
+[ 2016-09-26T18:01:55+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000739s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001430s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0304s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0291s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0454s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0290s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2016-09-26T18:02:10+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001169s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001326s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0293s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0280s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0286s ]
+
+[ 2016-09-26T18:02:11+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0304s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0293s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0300s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0296s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000846s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000923s ]
+
+[ 2016-09-26T18:02:26+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0315s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0300s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0305s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=72 )  [ RunTime:0.0301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2016-09-26T18:02:26+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0304s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0294s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0300s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=72 ) LIMIT 1   [ RunTime:0.0299s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000923s ]
+
+[ 2016-09-26T18:04:17+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0315s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0303s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0306s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=68 )  [ RunTime:0.0311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001328s ]
+
+[ 2016-09-26T18:04:17+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0349s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0337s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0342s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=68 ) LIMIT 1   [ RunTime:0.0341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2016-09-26T18:05:06+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001043s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0287s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0278s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0279s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0277s ]
+
+[ 2016-09-26T18:05:07+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001433s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0346s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0339s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0333s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.062353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.062436s ]
+
+[ 2016-09-26T18:05:16+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0349s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0337s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=73 )  [ RunTime:0.0338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2016-09-26T18:05:16+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0301s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0289s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0295s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=73 ) LIMIT 1   [ RunTime:0.0295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-09-26T18:05:43+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0285s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0287s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=73 )  [ RunTime:0.0288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000693s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000753s ]
+
+[ 2016-09-26T18:05:43+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0303s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0289s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0299s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=73 ) LIMIT 1   [ RunTime:0.0293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000861s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000963s ]
+
+[ 2016-09-26T18:05:48+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0311s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0306s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0306s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0301s ]
+
+[ 2016-09-26T18:05:49+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0294s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0281s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0288s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 33 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  LIMIT 1   [ RunTime:0.0281s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/BillController.class.php 第 34 行.
+SQL: SELECT a.*,b.real_name as name,c.name as doctor_name,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  ORDER BY a.id desc LIMIT 0,10   [ RunTime:0.0292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001042s ]
+
+[ 2016-09-26T18:07:38+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0296s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0277s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0283s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=73 )  [ RunTime:0.0281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001019s ]
+
+[ 2016-09-26T18:07:38+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0307s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0313s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=73 ) LIMIT 1   [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2016-09-26T18:09:07+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/billDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000511s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0313s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0297s ]
+SQL: SHOW COLUMNS FROM `mint_bill_project` [ RunTime:0.0298s ]
+SQL: SELECT * FROM `mint_bill_project` WHERE ( bill_id=73 )  [ RunTime:0.3039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2016-09-26T18:09:08+08:00 ] ::1 /mintAdmin/index.php/Admin/Bill/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0295s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0278s ]
+SQL: SHOW COLUMNS FROM `mint_bill` [ RunTime:0.0286s ]
+SQL: SELECT a.*,b.name as patient_name,b.account as patient_phone,c.name as doctor_name,c.account as doctor_phone,d.clinic_name FROM mint_bill a left join mint_user as b on a.patient_id=b.id left join mint_user as c on a.doctor_id=c.id left join mint_clinic as d on a.clinic_id=d.id  WHERE ( a.id=73 ) LIMIT 1   [ RunTime:0.0284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+
+[ 2016-09-26T18:10:10+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0303s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0294s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0295s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0293s ]
+
+[ 2016-09-26T18:10:11+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000694s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0365s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0349s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0366s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0345s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0356s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000996s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001083s ]
+
+[ 2016-09-26T18:10:13+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000946s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0309s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0301s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0296s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0299s ]
+
+[ 2016-09-26T18:10:13+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/serviceLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0334s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_service` [ RunTime:0.0321s ]
+SQL: SELECT * FROM `mint_service`  [ RunTime:0.0321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000595s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-09-26T18:10:13+08:00 ] ::1 /mintAdmin/index.php/Admin/User/tagLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0297s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0291s ]
+SQL: SHOW COLUMNS FROM `mint_tag` [ RunTime:0.0293s ]
+SQL: SELECT * FROM `mint_tag` WHERE ( type=1 )  [ RunTime:0.0287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-09-26T18:10:13+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/clinicLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0305s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0293s ]
+SQL: SHOW COLUMNS FROM `mint_clinic` [ RunTime:0.0299s ]
+SQL: SELECT `id`,`clinic_name` FROM `mint_clinic`  [ RunTime:0.0291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000810s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000903s ]
+
+[ 2016-09-26T18:10:14+08:00 ] ::1 /mintAdmin/index.php/Admin/Appointment/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0282s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0275s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0275s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '1'  [ RunTime:0.0275s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000868s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000938s ]
+
+[ 2016-09-26T18:10:56+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0291s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0291s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0282s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0282s ]
+
+[ 2016-09-26T18:10:56+08:00 ] ::1 /mintAdmin/index.php/Admin/Appointment/userLst?identity_id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0504s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT `id`,`name`,`account` FROM `mint_user` WHERE ( identity_id=2 )  [ RunTime:0.0313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000664s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-09-26T18:10:57+08:00 ] ::1 /mintAdmin/index.php/Admin/Appointment/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0350s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0337s ]
+SQL: SHOW COLUMNS FROM `mint_appointment` [ RunTime:0.0343s ]
+SQL: UPDATE `mint_appointment` SET `status`='3' WHERE ( visit_time<1474798257 and status = 1 ) [ RunTime:0.0336s ]
+SQL: UPDATE `mint_appointment` SET `status`='3' WHERE ( visit_time<1474711857 and status = 5 ) [ RunTime:0.0337s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/AppointmentController.class.php 第 51 行.
+SQL: SELECT COUNT(*) AS tp_count FROM mint_appointment a left join mint_user as b on a.doctor_id=b.id left join mint_clinic as d on a.clinic_id=d.id left join mint_company as e on a.invite_code=e.company_code  LIMIT 1   [ RunTime:0.0341s ]
+NOTIC: [8] Undefined variable: where /Applications/MAMP/htdocs/mintAdmin/Application/Admin/Controller/AppointmentController.class.php 第 52 行.
+SQL: SELECT a.*,b.name as doctor_name,d.clinic_name,e.company_name FROM mint_appointment a left join mint_user as b on a.doctor_id=b.id left join mint_clinic as d on a.clinic_id=d.id left join mint_company as e on a.invite_code=e.company_code  ORDER BY id desc LIMIT 0,10   [ RunTime:0.0350s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2016-09-26T18:10:57+08:00 ] ::1 /mintAdmin/index.php/Admin/Appointment/clinicLst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0299s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0285s ]
+SQL: SHOW COLUMNS FROM `mint_clinic` [ RunTime:0.0291s ]
+SQL: SELECT `id`,`clinic_name` FROM `mint_clinic`  [ RunTime:0.0284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000613s ]
+
+[ 2016-09-26T18:13:38+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002915s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0326s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0320s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0320s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0317s ]
+
+[ 2016-09-26T18:13:39+08:00 ] ::1 /mintAdmin/index.php/Admin/Doctor/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000588s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0299s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0284s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0288s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '2' LIMIT 1   [ RunTime:0.0286s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`real_name`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`sex`,`phone`,`email`,`province`,`city`,`county`,`company_name`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time` FROM `mint_user` WHERE `identity_id` = '2' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0289s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000671s ]
+

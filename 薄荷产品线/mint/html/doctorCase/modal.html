@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-病历列表</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+</head>
+<body class="">
+<div class="wrapper">
+  <div class="header">
+  </div>
+
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3> 
+      <ul class="cd-accordion-menu" id="left-list">
+      </ul>
+    </div>
+    <div class="container-right">
+        <div class="modal_left_main">
+          <h6 class="modal_left_main_title"><b>病历分类</b><span>新建</span></h6>
+          <article class="htmleaf-container">
+              <ul class="accordion-menu animated">
+                  <li class="has-child">
+                      <p class="list_bbtn_wrap">
+                        <span class="add_list_btn icon-plus"></span>
+                        <span class="edit_list_btn icon-pencil"></span>
+                        <span class="delete_list_btn icon-trash"><i></i></span>
+                      </p>
+                      <input type="checkbox" name="group-1" id="group-1" checked>
+                      <label for="group-1">一级分类</label>
+                      <ul>
+                          <li class="has-child active">
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <input type="checkbox" name="sub-group-1" id="sub-group-1">
+                              <label for="sub-group-1">2、二级分类</label>
+                              
+                              <ul>
+                                  <li>
+                                      <a href="#0">3、三级分类三级分类三级</a>
+                                      <p class="list_bbtn_wrap">
+                                          <span class="edit_list_btn icon-pencil"></span>
+                                          <span class="delete_list_btn icon-trash"></span>
+                                      </p>
+                                  </li>
+                                  <li>
+                                      <a href="#0">3、三级分类</a>
+                                      <p class="list_bbtn_wrap">
+                                          <span class="edit_list_btn icon-pencil"></span>
+                                          <span class="delete_list_btn icon-trash"></span>
+                                      </p>
+                                  </li>
+                                  <li>
+                                      <a href="#0">3、三级分类</a>
+                                      <p class="list_bbtn_wrap">
+                                          <span class="edit_list_btn icon-pencil"></span>
+                                          <span class="delete_list_btn icon-trash"></span>
+                                      </p>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <a href="#0">2、二级分类</a>
+                          </li>
+                          <li>
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <a href="#0">2、二级分类</a>
+                          </li>
+                      </ul>
+                  </li>
+
+                  <li class="has-child">
+                      <p class="list_bbtn_wrap">
+                        <span class="add_list_btn icon-plus"></span>
+                        <span class="edit_list_btn icon-pencil"></span>
+                        <span class="delete_list_btn icon-trash"><i></i></span>
+                      </p>
+                      <input type="checkbox" name="group-2" id="group-2">
+                      <label for="group-2">一级分类</label>
+                  </li>
+
+                  <li class="has-child">
+                      <p class="list_bbtn_wrap">
+                        <span class="add_list_btn icon-plus"></span>
+                        <span class="edit_list_btn icon-pencil"></span>
+                        <span class="delete_list_btn icon-trash"><i></i></span>
+                      </p>
+                      <input type="checkbox" name="group-3" id="group-3">
+                      <label for="group-3">一级分类</label>
+
+                      <ul>
+                          <li>
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <a href="#0">2、二级分类</a>
+                          </li>
+                          <li>
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <a href="#0">2、二级分类</a>
+                          </li>
+                      </ul>
+                  </li>
+
+                  <li class="has-child">
+                      <p class="list_bbtn_wrap">
+                        <span class="add_list_btn icon-plus"></span>
+                        <span class="edit_list_btn icon-pencil"></span>
+                        <span class="delete_list_btn icon-trash"><i></i></span>
+                      </p>
+                      <input type="checkbox" name="group-4" id="group-4">
+                      <label for="group-4">一级分类</label>
+
+                      <ul>
+                          <li>
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <a href="#0">2、二级分类</a>
+                          </li>
+                          <li>
+                              <p class="list_bbtn_wrap">
+                                <span class="add_list_btn icon-plus"></span>
+                                <span class="edit_list_btn icon-pencil"></span>
+                                <span class="delete_list_btn icon-trash"><i></i></span>
+                              </p>
+                              <a href="#0">2、二级分类</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul> <!-- cd-accordion-menu -->
+          </article>
+        </div>
+        <div class="modal_right_main">
+            <h4><span class="active">初诊病历模板</span><span>复诊病历模板</span></h4>
+            <article class="modal_container">
+                <h5 class="modal_right_title"><span>急性牙周炎</span></h5>
+                <div class="chu_zhen">
+                    <div class="modal_right_pre">
+                      <span class="pre_title">主诉：</span>
+                      <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="modal_right_pre">
+                      <span class="pre_title">现病史：</span>
+                      <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="modal_right_pre">
+                      <span class="pre_title">既往史：</span>
+                      <div class="dont_add">无需添加</div>
+                    </div>
+                </div>
+                <div class="fu_zhen">
+                    <div class="modal_right_pre">
+                      <span class="pre_title">复诊：</span>
+                      <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                    
+                <div class="modal_right_pre">
+                  <span class="pre_title">检查：</span>
+                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="modal_right_pre">
+                  <span class="pre_title">诊断：</span>
+                  <div class="dont_add">无需添加</div>
+                </div>
+                <div class="modal_right_pre">
+                  <span class="pre_title">治疗：</span>
+                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+            </article>
+        </div>
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+</div>
+
+
+<!-- 新建弹出层 -->
+<div class="new-create-opcity" id="" style="display:none">
+  <div class="new-create-bj sortipbj" style="margin-top:-106px;">
+    <div class="new-create-box">
+      <h4 class="toph4"><b>新建</b><span class="close-dialog"></span></h4>
+      <div class="new-input">
+          <div class="new-input-box h50"> 
+              <span>项目名称：</span>
+              <input type="text" class="text-input" id="service_name" placeholder="建议8个字之内" maxLength="16">
+              <p class="errorTip"></p>
+          </div>
+          <div class="clear"></div>
+          <div class="new-creatbut-box">
+            <input type="button" class="but butgray" value="取 消" id="close-dialog">
+            <input type="button" class="but butblue" value="确 定" id="confirm-but">
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除分类<span class="close-dialog"></span></h4>
+        <div class="wartip modal_wartip"><span>您确定要删除该分类吗？分类中包含<br>的模板也一并被删除，请慎重！</span></div>
+        <div class="new-creatbut-box Mtop10">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>
+
+<script>
+jQuery(document).ready(function(){
+  var accordionsMenu = $('.accordion-menu');
+  if( accordionsMenu.length > 0 ) {
+    
+    accordionsMenu.each(function(){
+      var accordion = $(this);
+      accordion.on('change', 'input[type="checkbox"]', function(){
+        var checkbox = $(this);
+        //console.log(checkbox.prop('checked'));
+        ( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+      });
+    });
+  }
+});
+</script>
+
+
+
+

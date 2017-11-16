@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/H_user1.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/js.js"></script>
+
+  <script src='vue1.js'></script>
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop_edit">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href='javascript:;' class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                    <div class="userInfobox">
+                        <dl>
+                            <dt id="user_photo"><img src="" alt=""></dt>
+                            <dd>
+                                <h3><span id="user_name"></span><span id="user_age"></span></h3>
+                                <p id="user_phone"></p>
+                            </dd>
+                        </dl>
+                        <a href="#" class="default_inputbtn see-but" id="see-but">查看病历</a>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top" >
+                        <div class="user_topmenu user_topmenu_edit">
+                            <ul id='routeUl'>
+                                <li><a href="javascript:;" id='a1' v-on:click='changeUrl("edit_info.html#User")'>基础信息</a></li>
+                                <li><a href="javascript:;" id='a2' v-on:click='changeUrl("edit_past.html#User")'>既往史</a></li>
+                                <li><a href="javascript:;" id='a3' v-on:click='changeUrl("edit_mouths.html#User")'>口腔情况</a></li>
+                                <li><a class="active" href="javascript:;" id='a4'>牙位图</a></li>
+                                <li><a href="javascript:;" id='a6' v-on:click='changeUrl("edit_family.html#User")'>家庭成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time z_time_edit">
+                          <div class="z_time_btn">
+
+                            <p> <b style='display:none'>更新记录：</b>
+                                <select name="" id="creat_time" style="display:none">
+
+                                </select>
+                                <em class="see_page_em" style="display:none">基于最新（<font class="new_time" id="new_time"></font>）信息上进行添加</em>
+
+                                <span id="recent_time" style="opacity:0"></span>
+                            </p>
+                            <label for="">
+                                <span href="" class="default_inputbtn z_save_btn" id="save-but" v-on:click='save'>保存</span>
+
+                            </label>
+                          </div>
+                        </div>
+                        <div class="userContain z_userContain_edit" id="change">
+                          <div class="z_userContainMain">
+
+
+
+                                <div class="containb_right" style="padding-bottom:50px;">
+
+                                  <div class="H_teeth_position">
+
+                                    <div class="H_teeth_position_pic H_teeth_position_pic_son" style='display:none' id="H_child">
+
+                                      <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_child_arr'
+                                      v-on:click='click_ya(teeth,2)' v-cloak track-by="$index">
+                                        {{teeth.name}}
+                                      </div>
+
+
+                                    </div>
+
+                                    <div class="H_teeth_position_pic" style='display:block' id="H_man">
+                                      <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_arr'
+                                      v-on:click='click_ya(teeth,1)' v-cloak track-by="$index">
+                                        {{teeth.name}}
+                                      </div>
+
+                                    </div>
+
+                                    <div class="H_teeth_position_left">
+                                      <div class="man active" v-on:click='clear_child'>
+                                        成人牙位图
+                                      </div>
+                                      <div class="child" v-on:click='clear_man'>
+                                        幼儿牙位图
+                                      </div>
+                                    </div>
+
+                                    <div class="H_teeth_position_list" style="pointer-events:none;">
+                                      <div class="H_teeth_position_list_title">
+                                        <span id='tishi' style='font-size: 18px;'>请选择左图的牙齿，进行添加</span>&nbsp;&nbsp;<span id='H_teeth_xu_hao'></span>
+                                      </div>
+
+                                      <div class="H_teeth_position_list_item" id='H_child2' style='display:none;'>
+
+                                          <div class="wrap" v-for='item in data_son.ache_list_child' v-cloak track-by="$index">
+                                            <input type="checkbox" value="" id={{item.id}}  checked={{item.bool}} v-model='item.bool' >
+                                            <label for={{item.id}} v-on:click='click_ache(item,2)'><i>&nbsp;{{item.name}}</i></label>
+                                          </div>
+
+                                      </div>
+
+
+                                      <div class="H_teeth_position_list_item" id='H_man2' >
+
+                                          <div class="wrap" v-for='item in data_son.ache_list' v-cloak track-by="$index">
+                                            <input type="checkbox" value="" id={{item.id}}  checked={{item.bool}} v-model='item.bool' >
+                                            <label for={{item.id}} v-on:click='click_ache(item,1)'><i>&nbsp;{{item.name}}</i></label>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                          </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save">
+          <input type="button" class="but butblue" value="保存" id="save_btn" v-on:click='teshu_save(1)'>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="delete-tipbox" id="warmTipbox2" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save2">
+          <input type="button" class="but butblue" value="保存" id="save_btn2" v-on:click='teshu_save(2)'>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!--
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+            // $('.opacity-tip').fadeIn(500);
+            // $('.opacity-tip p').html('<span>加载中...</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+            // $('#change').hide();
+            // $("#change").ajaxStop(function(){
+            //   $('.opacity-tip').fadeOut(0);
+            //   setTimeout(function(){
+            //     $('#change').show();
+            //   },500)
+            // });
+            $('.userContain').height( $(window).height()-260 )
+            window.onresize=function(){
+                $('.userContain').height( $(window).height()-260 )
+            }
+            sessionStorage.setItem('url_flag2',0);
+            $('#a4').addClass('active').parent().siblings().children().removeClass('active');
+            var create_time = sessionStorage.getItem('create_time_pic');
+            var user_id = sessionStorage.getItem('user_id');
+            var userObj = JSON.parse(sessionStorage.getItem('getOneobj'));
+            var childORman = 'man';
+            window.childORman = childORman;
+            if(!userObj){
+              AjaxObj.UsergetOne(function(result){
+                console.log(result.Data);
+                userObj = {
+                  "user_name":result.Data.data.real_name==null?'':result.Data.data.real_name,
+                  "user_age":result.Data.data.age==null?'':result.Data.data.age,
+                  "user_photo":result.Data.data.photo||'../../images/userPic.png',
+                  "user_phone":result.Data.data.phone
+                }
+                $('#user_name').html(userObj.user_name);
+                $('#user_age').html(userObj.user_age);
+                $('#user_phone').html(userObj.user_phone);
+                $('#user_photo img').attr('src',userObj.user_photo);
+
+              },user_id);
+            }else{
+              $('#user_name').html(userObj.user_name);
+              $('#user_age').html(userObj.user_age);
+              $('#user_phone').html(userObj.user_phone);
+              $('#user_photo img').attr('src',userObj.user_photo);
+            }
+            $('#backs').click(function(){
+              if(sessionStorage.getItem('url_flag2') == 0){
+                window.location.href = '../../index.html#User';
+              }else{
+                $('#warmTipbox2').show();
+              }
+            })
+            $('.close_x').click(function(){
+                $('#warmTipbox').hide();
+            })
+            $('#no_save').click(function(){
+                if(sessionStorage.getItem('fromwheretooth') == 'see_tooth'){
+                  var str = 'see_'+url.split('_')[1];
+                  window.location.href = str;
+                  sessionStorage.setItem('fromwheretooth','');
+                }else{
+                  window.location.href = url;
+                  sessionStorage.setItem('fromwheretooth','');
+                }
+                $('#warmTipbox').hide();
+            })
+            $('.close_x2').click(function(){
+                $('#warmTipbox2').hide();
+            })
+            $('#no_save2').click(function(){
+              window.location.href = '../../index.html#User';
+            })
+            var v2 = new Vue({
+              el:'#app',
+              data:{
+                data_son:{
+                  teeth_arr:[
+                    {
+                      name:11,
+                      id:'H_teeth_position_pic_11',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:12,
+                      id:'H_teeth_position_pic_12',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_13',
+                      name:13,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_14',
+                      name:14,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_15',
+                      name:15,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_16',
+                      name:16,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_17',
+                      name:17,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_18',
+                      name:18,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_21',
+                      name:21,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_22',
+                      name:22,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_23',
+                      name:23,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_24',
+                      name:24,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_25',
+                      name:25,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_26',
+                      name:26,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_27',
+                      name:27,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_28',
+                      name:28,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:41,
+                      id:'H_teeth_position_pic_41',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:42,
+                      id:'H_teeth_position_pic_42',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_43',
+                      name:43,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_44',
+                      name:44,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_45',
+                      name:45,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_46',
+                      name:46,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_47',
+                      name:47,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_48',
+                      name:48,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_31',
+                      name:31,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_32',
+                      name:32,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_33',
+                      name:33,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_34',
+                      name:34,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_35',
+                      name:35,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_36',
+                      name:36,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_37',
+                      name:37,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_38',
+                      name:38,
+                      type:0,
+                      content:[
+
+                      ]
+                    }
+
+                  ],
+                  'ache_list':[
+                    {
+                      id:'H_content_list_item_1',
+                      name:'C:龋坏',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_2',
+                      name:'M:缺失',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_3',
+                      name:'F:填充物',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_4',
+                      name:'R:扭转牙',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_5',
+                      name:'U:未见萌出',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_6',
+                      name:'IT:种植牙',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_7',
+                      name:'IM:阻生牙',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_8',
+                      name:'CP:部分冠',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_9',
+                      name:'CF:全冠',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_10',
+                      name:'GO:金合金高嵌体',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_11',
+                      name:'CV:瓷贴面',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_12',
+                      name:'RV:树脂贴面',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_13',
+                      name:'FP:固定桥',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_14',
+                      name:'RP:可摘局部义齿',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_15',
+                      name:'RP:可摘局部义齿',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_16',
+                      name:'DCP:畸形中央尖',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_17',
+                      name:'TC:牙隐裂',
+                      bool:false
+                    }
+
+
+                  ],
+                  'ache_list_child':[
+                    {
+                      id:'H_content_list_item_child_18',
+                      name:'C:龋坏',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_19',
+                      name:'M:缺失',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_20',
+                      name:'PFS:窝沟封闭',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_21',
+                      name:'CF:全冠',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_22',
+                      name:'U:未见萌出',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_23',
+                      name:'F:填充物',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_24',
+                      name:'RT:根管治疗后',
+                      bool:false
+                    },
+                    {
+                      id:'H_content_list_item_child_25',
+                      name:'SR:间隙保持器',
+                      bool:false
+                    }
+                  ],
+                  'teeth_child_arr':[
+                    {
+                      name:51,
+                      id:'H_teeth_position_pic_51',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:52,
+                      id:'H_teeth_position_pic_52',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_53',
+                      name:53,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_54',
+                      name:54,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_55',
+                      name:55,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:61,
+                      id:'H_teeth_position_pic_61',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:62,
+                      id:'H_teeth_position_pic_62',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_63',
+                      name:63,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_64',
+                      name:64,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_65',
+                      name:65,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:81,
+                      id:'H_teeth_position_pic_81',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:82,
+                      id:'H_teeth_position_pic_82',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_83',
+                      name:83,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_84',
+                      name:84,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_85',
+                      name:85,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:71,
+                      id:'H_teeth_position_pic_71',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      name:72,
+                      id:'H_teeth_position_pic_72',
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_73',
+                      name:73,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_74',
+                      name:74,
+                      type:0,
+                      content:[
+
+                      ]
+                    },
+                    {
+                      id:'H_teeth_position_pic_75',
+                      name:75,
+                      type:0,
+                      content:[
+
+                      ]
+                    }
+
+                  ]
+                }
+              },
+              methods:{
+                save:function(){
+                  var user_id = sessionStorage.getItem('user_id');
+                  var create_times = $('#recent_time').text();
+                  var pastObj_json = JSON.stringify(this.data_son);
+                  if(childORman == 'man'){
+                    var count = 0;
+                    for(var i=0;i<this.data_son.teeth_child_arr.length;i++){
+                      this.data_son.teeth_child_arr[i].content.length = 0;
+                      this.data_son.teeth_child_arr[i].type = 0;
+                    }
+                    for(var i=0;i<this.data_son.ache_list_child.length;i++){
+                      this.data_son.ache_list_child[i].bool = false;
+                    }
+                    for(var i=0;i<this.data_son.teeth_arr.length;i++){
+                      if(this.data_son.teeth_arr[i].content.length == 0){
+                        ++count;
+                      }
+                    }
+                      if(count == 32){
+                        $('.opacity-tip').fadeIn(500).delay(2000).fadeOut();
+                      $('.opacity-tip p').html('<span class="success">您还没有添加牙齿相关信息</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                      }else{
+                        if(create_times==''){
+                    AjaxObj.UsereditArchives(function(result){
+                      if( result.Data.code == 1 ){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('<span class="success">添加成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                                sessionStorage.setItem('url_flag2',0);
+                                if(sessionStorage.getItem('fromwheretooth') =='see_tooth'){
+                                  sessionStorage.setItem('fromwheretooth','')
+                                  setTimeout(function(){
+                                    window.location.href = './see_tooth.html';
+                                  },2000);
+                                }
+                            }else{
+                              if(result.Data.msg == '缺少用户id！'){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                              }
+
+
+                            }
+                    },user_id,pastObj_json,3);
+                  }else{
+                    AjaxObj.UsereditArchives2(function(result){
+                      if( result.Data.code == 1 ){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('<span class="success">修改成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                                sessionStorage.setItem('url_flag2',0);
+                                if(sessionStorage.getItem('fromwheretooth')=='see_tooth'){
+                                  sessionStorage.setItem('fromwheretooth','')
+                                  setTimeout(function(){
+                                    window.location.href = './see_tooth.html';
+                                  },2000);
+                               }
+                            }else{
+                              if(result.Data.msg == '缺少用户id！'){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                              }
+                              if(result.Data.msg == '失败'){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('您没有修改无需保存').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                                setTimeout(function(){
+                                  window.location.href = './see_tooth.html';
+                                },2000);
+                              }
+                            }
+                    },user_id,pastObj_json,3,create_times);
+
+                  }
+                      
+                      
+                    }
+
+                  }else if(childORman == 'child'){
+                    var count = 0;
+                    for(var i=0;i<this.data_son.teeth_arr.length;i++){
+                      this.data_son.teeth_arr[i].content.length = 0;
+                      this.data_son.teeth_arr[i].type = 0;
+                    }
+                    for(var i=0;i<this.data_son.ache_list.length;i++){
+                      this.data_son.ache_list[i].bool = false;
+                    }
+                    for(var i=0;i<this.data_son.teeth_child_arr.length;i++){
+                      if(this.data_son.teeth_child_arr[i].content.length == 0){
+                        ++count;
+                      }                     
+                    }
+                    if(count == 20){
+                       $('.opacity-tip').fadeIn(500).delay(2000).fadeOut();
+                      $('.opacity-tip p').html('<span class="success">您还没有添加牙齿相关信息</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                    }else{
+                       if(create_times==''){
+                    AjaxObj.UsereditArchives(function(result){
+                      if( result.Data.code == 1 ){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('<span class="success">添加成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                                sessionStorage.setItem('url_flag2',0);
+                                if(sessionStorage.getItem('fromwheretooth') =='see_tooth'){
+                                  sessionStorage.setItem('fromwheretooth','')
+                                  setTimeout(function(){
+                                    window.location.href = './see_tooth.html';
+                                  },2000);
+                                }
+                            }else{
+                              if(result.Data.msg == '缺少用户id！'){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                              }
+
+
+                            }
+                    },user_id,pastObj_json,3);
+                  }else{
+                    AjaxObj.UsereditArchives2(function(result){
+                      if( result.Data.code == 1 ){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('<span class="success">修改成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                                sessionStorage.setItem('url_flag2',0);
+                                if(sessionStorage.getItem('fromwheretooth')=='see_tooth'){
+                                  sessionStorage.setItem('fromwheretooth','')
+                                  setTimeout(function(){
+                                    window.location.href = './see_tooth.html';
+                                  },2000);
+                               }
+                            }else{
+                              if(result.Data.msg == '缺少用户id！'){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                              }
+                              if(result.Data.msg == '失败'){
+                                $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                                $('.opacity-tip p').html('您没有修改无需保存').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                                setTimeout(function(){
+                                  window.location.href = './see_tooth.html';
+                                },2000);
+                              }
+                            }
+                    },user_id,pastObj_json,3,create_times);
+
+                  }
+                      
+                      
+                    
+                    }
+
+                  }
+                  
+                  
+
+                  // for(var i =0;i<this.data_son.teeth_arr.length;i++){
+                  //   console.log(this.data_son.teeth_arr[i].content);
+                  //   this.data_son.teeth_arr[i].content.length = 0;
+                  //   this.data_son.teeth_arr[i].type = 0;
+                  // }
+                  // for(var i =0;i<this.data_son.ache_list.length;i++){
+                  //   this.data_son.ache_list[i].bool = false;
+                  // }
+
+                },
+                click_ya:function(index,flag){
+                  $('.H_teeth_position_list').attr('style','pointer-events:true;');               
+                $('#tishi').html('牙齿:');
+                  if(flag == 1){
+                    var obj = this.data_son.ache_list;
+                    var obj2 = this.data_son.teeth_arr;
+                  }else{
+                    var obj = this.data_son.ache_list_child;
+                    var obj2 = this.data_son.teeth_child_arr;
+                  }
+                  $('#H_teeth_xu_hao').html(index.name);
+                  for(var i =0;i<obj.length;i++){
+                    obj[i].bool = false;
+                  }
+                  if(index.type == 2){
+
+                    for(var i =0;i<index.content.length;i++){
+                      for(var ii=0;ii<obj.length;ii++){
+                        if(index.content[i].id == obj[ii].id){
+                          obj[ii].bool = true;
+                        }
+                      }
+                    }
+                  }
+                  if(index.type==1){
+                    if(index.content.length != 0){
+                      for(var i =0;i<index.content.length;i++){
+                        for(var ii=0;ii<obj.length;ii++){
+                          if(index.content[i].id == obj[ii].id){
+                            obj[ii].bool = true;
+                          }
+                        }
+                      }
+                    }
+                  }
+                  for(var j =0;j<obj2.length;j++){
+                    if(obj2[j].content!=0){
+                      obj2[j].type = 2;
+                    }else{
+                      obj2[j].type = 0;
+                    }
+                  }
+                  index.type = 1;
+
+                },
+                click_ache:function(index,flag){
+                  if(flag == 1){
+
+                    var obj2 = this.data_son.teeth_arr;
+                  }else{
+                    var obj2 = this.data_son.teeth_child_arr;
+
+                  }
+
+                  for(var j=0;j<obj2.length;j++){
+                    if(obj2[j].type == 1){
+
+                        if(index.bool == false){
+                          var obj = {
+                            name : index.name,
+                            id : index.id
+                          }
+                          obj2[j].content.push(obj);
+
+                        }else{
+                          for(var z =0;z<obj2[j].content.length;z++){
+                            if(obj2[j].content[z].name == index.name){
+                              obj2[j].content.pop(z,1);
+                              z--;
+                            }
+                          }
+                        }
+                      }
+                    }
+                },
+                clear_child:function(event){
+                  $('#H_man').show();
+                  $('#H_child').hide();
+                  $('#H_child2').hide();
+                  $('#H_man2').show();
+                  $('.man').attr('class','man active');
+                  $('.child').attr('class','child');
+                  $('.H_teeth_position_list').attr('style','pointer-events:none;');
+                  $('#tishi').html('请选择左图的牙齿，进行添加');               
+                  $('#H_teeth_xu_hao').html('');
+                  childORman = 'man';
+                  // for(var i =0;i<this.data_son.teeth_child_arr.length;i++){
+                  //   this.data_son.teeth_child_arr[i].content.length = 0;
+                  //   this.data_son.teeth_child_arr[i].type = 0;
+                  // }
+                  // for(var i =0;i<this.data_son.ache_list_child.length;i++){
+                  //   this.data_son.ache_list_child[i].bool = false;
+                  // }
+                },
+                clear_man:function(event){
+                  $('#H_man').hide();
+                  $('#H_child').show();
+                  $('#H_man2').hide();
+                  $('#H_child2').show();
+                  $('.child').attr('class','child active');
+                  $('.man').attr('class','man');
+                  $('.H_teeth_position_list').attr('style','pointer-events:none;');
+                  $('#tishi').html('请选择左图的牙齿，进行添加');               
+                  $('#H_teeth_xu_hao').html('');
+                  childORman = 'child';
+
+                  // for(var i =0;i<this.data_son.teeth_arr.length;i++){
+                  //
+                  //   this.data_son.teeth_arr[i].content.length = 0;
+                  //   this.data_son.teeth_arr[i].type = 0;
+                  // }
+                  // for(var i =0;i<this.data_son.ache_list.length;i++){
+                  //   this.data_son.ache_list[i].bool = false;
+                  // }
+                },
+                changeUrl:function(url){
+                  window.url = url;
+                  if(sessionStorage.getItem('url_flag2') == 0){
+                    if(sessionStorage.getItem('fromwheretooth') == 'see_tooth'){
+                      var str = 'see_'+url.split('_')[1];
+                      sessionStorage.setItem('fromwheretooth','');
+                      setTimeout(function () {
+                         window.location.href = str;
+                       }, 2000);
+                    }else{
+                      sessionStorage.setItem('fromwheretooth','');
+                      setTimeout(function () {
+                      window.location.href = url;
+                    }, 2000);
+
+                    }
+                  }else{
+                    $('#warmTipbox').show();
+                  }
+                },
+                teshu_save:function(n){
+                  $('#warmTipbox').hide();
+                  if(childORman == 'man'){
+                    for(var i=0;i<this.data_son.teeth_child_arr.length;i++){
+                      this.data_son.teeth_child_arr[i].content.length = 0;
+                      this.data_son.teeth_child_arr[i].type = 0;
+                    }
+                    for(var i=0;i<this.data_son.ache_list_child.length;i++){
+                      this.data_son.ache_list_child[i].bool = false;
+                    }
+
+                  }else if(childORman == 'child'){
+                    for(var i=0;i<this.data_son.teeth_arr.length;i++){
+                      this.data_son.teeth_arr[i].content.length = 0;
+                      this.data_son.teeth_arr[i].type = 0;
+                    }
+                    for(var i=0;i<this.data_son.ache_list.length;i++){
+                      this.data_son.ache_list[i].bool = false;
+                    }
+
+                  }
+                  var create_times = $('#recent_time').text();
+                  var pastObj_json = JSON.stringify(v2.data_son);
+                  if(create_times){
+                    AjaxObj.UsereditArchives2(function(result){
+                     if( result.Data.code == 1 ){
+                          $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                          $('.opacity-tip p').html('<span class="success">修改成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                          if(n==1){
+                            if(sessionStorage.getItem('fromwheretooth') == 'see_tooth'){
+                              var str = 'see_'+url.split('_')[1];
+                              sessionStorage.setItem('fromwheretooth','');
+                              setTimeout(function () {
+                                 window.location.href = str;
+                               }, 2000);
+                            }else{
+                              sessionStorage.setItem('fromwheretooth','');
+                              setTimeout(function () {
+                              window.location.href = url;
+                            }, 2000);
+
+                            }
+                          }else{
+                            window.location.href = '../../index.html#User';
+                          }
+
+                      }else{
+                        if(n==1){
+                          if(result.Data.msg == '缺少用户id！'){
+                            $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                            $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                          }
+                        }else{
+                          window.location.href = '../../index.html#User';
+                        }
+                      }
+                   },user_id,pastObj_json,3,create_times)
+                 }else{
+                   AjaxObj.UsereditArchives(function(result){
+                    if( result.Data.code == 1 ){
+                        $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                        $('.opacity-tip p').html('<span class="success">添加成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                        if(n==1){
+                          if(sessionStorage.getItem('fromwheretooth') == 'see_tooth'){
+                          var str = 'see_'+url.split('_')[1];
+                            sessionStorage.setItem('fromwheretooth','');
+                            setTimeout(function () {
+                               window.location.href = str;
+                             }, 2000);
+                          }else{
+                            sessionStorage.setItem('fromwheretooth','');
+                            setTimeout(function () {
+                              window.location.href = url;
+                            }, 2000);
+
+                          }
+                        }else{
+                          window.location.href = '../../index.html#User';
+                        }
+
+
+                     }else{
+                       if(n==1){
+                         if(result.Data.msg == '缺少用户id！'){
+                           $('.opacity-tip').fadeIn(500).delay(2000).fadeOut()
+                           $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                         }
+                       }else{
+                         window.location.href = '../../index.html#User';
+                       }
+
+                     }
+                  },user_id,pastObj_json,3)
+                 }
+                 // setTimeout(function () {
+                 //   window.location.href = url;
+                 // }, 2000);
+
+                }
+
+              }
+
+
+
+            });
+
+
+
+
+            AjaxObj.UsersltDateRecords(function(model){
+
+              if(model.Data.code ==1){
+                if(model.Data.data.length!=0){
+                  $('#recent_time').html(model.Data.data[0].create_time);
+                  for(var h=0;h<model.Data.data.length;h++){
+                    $('#creat_time').append('<option value="'+model.Data.data[h].create_time+'">'+model.Data.data[h].create_time+'</option>');
+                  }
+                  $("#creat_time").change(function(){
+                    var create_time = $(this).find("option:selected").text();
+                    AjaxObj.UsersltArchives(function(model){
+                      for(var i=0;i<model.Data.teeth_arr.length;i++){
+                        if(model.Data.teeth_arr[i].content.length != 0){
+                          $('#H_man').show();
+                          $('#H_child').hide();
+                          $('#H_child2').hide();
+                          $('#H_man2').show();
+                          $('.man').attr('class','man active');
+                          $('.child').attr('class','child');
+                          break;
+                        }else{
+                          $('#H_man').hide();
+                          $('#H_child').show();
+                          $('#H_man2').hide();
+                          $('#H_child2').show();
+                          $('.child').attr('class','child active');
+                          $('.man').attr('class','man');
+                          continue;
+                        }
+                      }
+                      v2.data_son = model.Data;
+                      $('#recent_time').html(create_time)
+                    },user_id,create_time,3)
+                  });
+                  if(create_time){
+                    if(create_time=='nodata_pic'){
+                      $('#recent_time').html('')
+                      var create_time_this = model.Data.data[0].create_time;
+                      $('#new_time').parent().show();
+                      $('#new_time').parent().siblings('b').hide();
+                      $('#new_time').text(model.Data.data[0].create_time);
+                      $('#creat_time').hide();
+                    }else{
+                      $('#new_time').parent().siblings('b').show();
+                      $('#creat_time').show();
+                      $('#recent_time').html(create_time)
+                      var create_time_this = create_time;
+                      $('#creat_time option[value="'+create_time+'"]').attr('selected',true);
+                    }
+                  }else{
+                    $('#recent_time').html(model.Data.data[0].create_time)
+                    var create_time_this = model.Data.data[0].create_time;
+                  }
+
+                  AjaxObj.UsersltArchives(function(model){
+                    console.log(model.Data);
+                    console.log(11111);
+
+                    for(var i=0;i<model.Data.teeth_child_arr.length;i++){
+                      if(model.Data.teeth_child_arr[i].content.length != 0){
+                        $('#H_man').hide();
+                        $('#H_child').show();
+                        $('#H_man2').hide();
+                        $('#H_child2').show();
+                        $('.child').attr('class','child active');
+                        $('.man').attr('class','man');
+                        break;
+                      }else{
+                        $('#H_man').show();
+                        $('#H_child').hide();
+                        $('#H_child2').hide();
+                        $('#H_man2').show();
+                        $('.man').attr('class','man active');
+                        $('.child').attr('class','child');
+                        continue;
+                      }
+                    }
+                    v2.data_son = model.Data;
+
+                  },user_id,create_time_this,3)
+
+
+
+
+                }
+                v2.$watch('data_son',function(val1,val2){
+                  if(val1 != val2){
+                    sessionStorage.setItem('url_flag2',0);
+                    console.log('no')
+                  }else{
+                    sessionStorage.setItem('url_flag2',1);
+                    console.log('yes')
+                  }
+                },{deep:true})
+              }
+            },user_id,3)
+
+
+
+</script>
+</html>

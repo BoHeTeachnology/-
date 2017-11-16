@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-编辑</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userAdd_family.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop_edit">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="../../index.html#User" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                    <div class="userInfobox">
+                        <script src="../../js/header.js"></script> 
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu user_topmenu_edit">
+                            <ul id='routeUl'>
+                                <li><a href="javascript:;" data-href="edit_info.html#User" see-href="see_info.html#User" id='info'>基础信息</a></li>
+                                <li><a href="javascript:;" data-href="edit_past.html#User" see-href="see_past.html#User" id='past'>既往史</a></li>
+                                <li><a href="javascript:;" data-href="edit_mouths.html#User" see-href="see_mouths.html#User" id='mouth'>口腔情况</a></li>
+                                <li><a href="javascript:;" data-href="edit_tooth.html#User" see-href="see_tooth.html#User" id='pics'>牙位图</a></li>
+                                <li><a href="javascript:;" class="active" data-href="edit_family.html#User" see-href="see_family.html#User" id='family'>关系成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time z_time_edit">
+                            <div class="z_time_btn">
+                                <!-- <p>时间：<span id="recent_time"></span></p> -->
+                                <label for="">
+                                  <a href="javascript:;" class="default_inputbtn z_add_btn" id="add-but">添加</a>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        <div class="userContain z_userContain_edit" id="change">
+                            <div class="z_userContainMain">
+                                <!-- 家庭成员 -->
+                                <div class="containb_right">
+                                    <table class="table table-bordered table-hover table-height table-height4 Mbtom50 family_able">
+                                        <thead>
+                                            <tr>
+                                                <th>姓名</th>
+                                                <th>关系</th>
+                                                <th>出生年月</th>
+                                                <th>联系方式</th>
+                                                <th style="text-align:center">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="family_able">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div><!-- 家庭成员结束 -->
+                            </div>  
+                            <div class="clear"></div>
+                        </div>
+                            
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" id="family_tipbox" style="display:none">
+  <div class="new-create-bj" style="margin-top: -197px;">
+    <div class="new-create-box">
+      <h4 class="toph4"><b>编辑关系成员</b><span class="close-dialog"></span></h4>
+      <div class="new-input">
+          <div class="new-input-box h50"> 
+              <span>姓名：</span>
+              <input type="text" class="text-input" id="member_name">
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-input-box h50"> 
+              <span>关系：</span>
+              <input type="text" class="text-input" id="relation">
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-input-box" id="quanX"> 
+              <span>出生年月：</span>
+              <input type="text" class="text-input layicon" readonly id="birth">
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-input-box h50"> 
+              <span>联系方式：</span>
+              <input type="text" class="text-input" id="phone" maxlength="11">
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-creatbut-box">
+            <input type="button" class="but butgray" value="取 消" id="close-dialog">
+            <input type="button" class="but butblue confirm-add" value="确 定" id="confirm-but">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>确定要删除吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

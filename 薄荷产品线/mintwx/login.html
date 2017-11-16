@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .logo{
+        margin:0 auto;
+        padding-top: 39px;
+        padding-bottom: 44px;
+    }
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="wrapper">
+        <img src="images/font_logo.png" alt="" class="logo">
+    </div>    
+    <div class="swiper-container" id="slider">
+        <div class="nav">
+            <a href="#" class="active" >验证码登录</a>
+            <a href="#">密码登录</a>
+            <div class="clear"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="swiper-wrap">
+                    
+                    <div class="text-input-box Mtop40">
+                      <input type="tel" class="input-text tel phone" maxLength="11" id="phone" placeholder="手机号">
+                      <div class="clear_num"></div>
+                      </div>
+                      <div class="text-input-box Mtop20">
+                        <input type="text" class="input-text yzm" maxLength="6" id="code" placeholder="验证码">
+                        <input type="button" class="btn-code" id="sendYzm" value="发送验证码">
+                      </div>
+                      <div class="btn-input-box Mtop60">
+                        <input type="button" class="btn-default yzmlogin" value="登录" id="loginBut">
+                        <p class="btomjump">没有账号？<a href="javascript:;" id="go_register">立即注册</a></p>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-wrap">
+                    <div class="text-input-box Mtop40">
+                      <input type="text" class="input-text tel phonetwo" id="phone2" maxLength="20" placeholder="手机号/薄荷名">
+                      <div class="clear_num"></div>
+                    </div>
+                    <div class="text-input-box Mtop20">
+                      <input type="password" class="input-text mima" maxLength="20" id="pwd" placeholder="6～20位密码">
+                      <a href="javascript:;" class="pwd-show"></a>
+                      <a href="javascript:;" class="pwd-hide"></a>
+                      <i class="forget">忘记密码?</i>
+                      <!-- <input type="button" class="btn-code" value="发送验证码"> -->
+                    </div>
+                    <div class="btn-input-box Mtop60">
+                      <input type="button" class="btn-default mimalogin" value="登录" id="loginBut2">
+                      <p class="btomjump">没有账号？<a href="javascript:;" id="go_register">立即注册</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        
+        <!-- Add Arrows -->
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> -->
+    </div>
+    <div class="foot-icon">
+        <p><a href="html/private.html">隐私保护条款</a></p>
+    </div>
+    <div class="opcitybox" style="display:none"><span></span></div>
+
+    <!-- Swiper JS -->
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/Ajax.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/login.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    console.log($('body').height(),$('.wrapper').height())
+    $('.swiper-container').height( ($('body').height()-$('.wrapper').height())  )
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        speed:300,
+        onSlideChangeStart: function(swiper){
+            console.log(swiper.activeIndex)
+            if(swiper.activeIndex ==0){
+                $('.nav a').eq(0).addClass('active').siblings().removeClass('active');
+            }else if(swiper.activeIndex ==1){
+                $('.nav a').eq(1).addClass('active').siblings().removeClass('active');
+            }
+        }
+    });
+
+
+    
+    </script>
+</body>
+</html>

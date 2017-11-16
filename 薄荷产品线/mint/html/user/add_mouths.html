@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/H_user1.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+
+
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src='vue1.js'></script>
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top" >
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                              <li><a href="javascript:;" id='a1' v-on:click='changeUrl("add_info.html#User")'>基础信息</a></li>
+                              <li><a href="javascript:;" id='a2' v-on:click='changeUrl("add_past.html#User")'>既往史</a></li>
+                              <li><a class="active" href="add_mouths.html#User" id='a3'>口腔情况</a></li>
+                              <li><a href="javascript:;" id='a4' v-on:click='changeUrl("add_tooth.html#User")'>牙位图</a></li>
+                              <li><a href="javascript:;" id='a6' v-on:click='changeUrl("add_family.html#User")'>关系成员</a></li>
+                              <!-- <li><a href="javascript:;" id='a7' v-on:click='changeUrl("add_photo.html#User")'>影像资料</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="time">
+                          <div class="z_time_btn" id='add_head'>
+                            <label for="">
+                                <span class="default_inputbtn z_save_btn" id="add-but" v-on:click='save'>保存</span>
+                            </label>
+                          </div>
+
+                          <div class="z_time_btn" id='see_head' style='border-bottom:none; border-right:none; display:none;'>
+                            <p>
+                              <b style="display:none;">更新记录：</b>
+                                <select name="" id="creat_time" style="display:none;"></select>
+                                <!-- 上一次更新时间：<span id="recent_time"></span> -->
+                            </p>
+                            <label for="">
+                                <span  class="default_inputbtn z_edit_btn" id="edit-but" style="display:block">编辑</span>
+                                <span  class="default_inputbtn z_add_btn" id="save-but" style="display:none">添加</span>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="userContain" id="change">
+                          <div class="z_userContainMain">
+
+                                <div class="containb_right" id='add_page'>
+                                    <div class="H_content">
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color2">牙周</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='teeth_around'>
+                                        <div class="H_small_box H_margin_bottom20" v-for='itemzdh in data_son.teeth_around'>
+
+                                          <span class="H_content_radio_title" v-cloak>{{itemzdh.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_sonzdh in itemzdh.choose'>
+                                            <input type="radio" id={{item_sonzdh.id}} value={{item_sonzdh.count}} class="radio radio2" name={{itemzdh.id}} checked={{itemzdh.bool==item_sonzdh.count?true:false}} v-model='itemzdh.bool'>
+                                            <label for={{item_sonzdh.id}} ><i v-cloak>&nbsp;{{item_sonzdh.name}}</i></label>
+
+                                          </span>
+
+                                        </div>
+
+
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color3">粘膜</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box" id='H_mucosa'>
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right" v-for='i in data_son.mucosa'>
+                                            <input type="checkbox" value="" id={{i.id}} checked={{i.bool}} v-model='i.bool'>
+                                            <label for={{i.id}}><i v-cloak>&nbsp;{{i.name}}</i></label>
+                                            <input type='text' v-show='i.teshu=="1"?true:false' disabled="{{i.bool==true?false:true}}" value="{{i.content}}" v-model='i.content'>
+                                          </span>
+
+                                        </div>
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color4">外科</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+
+                                        <div class="H_small_box H_margin_bottom20" v-for='item in data_son.surgery'>
+                                          <span class="H_content_radio_title" v-cloak>{{item.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son in item.choose'>
+                                            <input type="radio" id={{item_son.id}} value={{item_son.count}} class="radio radio2" name={{item.id}} checked={{item.bool==item_son.count?true:false}} v-model='item.bool'>
+                                            <label for={{item_son.id}} ><i v-cloak>&nbsp;{{item_son.name}}</i></label>
+                                          </span>
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20" v-for='itemadd in data_son.newadd'>
+                                          <span class="H_content_radio_title" v-cloak>{{itemadd.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son_add in itemadd.content'>
+                                            <input type="checkbox" id={{item_son_add.id}} checked={{item_son_add.bool}} v-model='item_son_add.bool'>
+                                            <label for={{item_son_add.id}} ><i v-cloak>&nbsp;{{item_son_add.name}}</i></label>
+                                          </span>
+                                        </div>
+                                        <div class="H_small_box" v-cloak v-show='data_son.surgery.length==0&&data_son.newadd.length==0?true:false'>{{data_son.surgeryNO}}</div>
+
+
+
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color5">牙病治疗及修复史</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box">
+                                          <span class="H_content_list_item H_margin_bottom_none padding_left0">
+                                            治疗及修复史
+
+                                            <textarea class="teeth_repair_textarea" v-model='data_son.teeth_repair' v-cloak>{{data_son.teeth_repair}}</textarea>
+                                          </span>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                </div>
+                                <div class="containb_right" id='see_page' style='display:none;'>
+                                  <div class="z_no_past_data" id="page_noData" style="display:none">
+                                      <p>
+                                          <img src="../../images/nodata.png" alt="">
+                                          <span>此项目暂无数据</span>
+                                          <a href="javascript:;" class="default_inputbtn z_add_btn2" id="add_btns">添加</a>
+                                      </p>
+                                  </div>
+                                    <div class="H_content" id='content_hide' style="display:block">
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color2">牙周</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='teeth_around' v-cloak>
+                                        <div class="H_small_box {{$index!=data_son.teeth_around.length-1?'H_margin_bottom20':''}}" v-for='items in data_son.teeth_around'>
+                                          <span class="H_content_radio_title" v-cloak >{{items.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son in items.choose' style="line-height:19px;">
+                                            <!-- <input type="radio" id={{item_son.id}} value={{item_son.count}} class="radio radio2" name={{items.id}} checked={{items.bool==item_son.count?true:false}} v-model='items.bool' disabled>
+                                            <label for={{item_son.id}} ><i v-cloak>&nbsp;{{item_son.name}}</i></label> -->
+                                            <span v-cloak>{{item_son.name}}</span>
+                                          </span>
+                                          <span class="H_content_radio_title" v-cloak v-show='items.bool?false:true'>{{items.bool==''?'无'+items.name:''}}</span>
+                                        </div>
+                                      </div>
+
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color3">粘膜</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box" id='H_mucosa'>
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right" v-for='i in data_son.mucosa'>
+                                            <!-- <input type="checkbox" disabled value="" id={{i.id}} checked={{i.bool}} v-model='i.bool'>
+                                            <label for={{i.id}}><i v-cloak>&nbsp;{{i.name}}</i></label> -->
+                                            <span v-cloak>{{i.name}}</span>
+                                            <span style='position:absolute; left:58px;' v-show='i.teshu=="1"?true:false' v-cloak>{{i.content}}</span>
+                                            <!-- <input type='text' v-show='i.teshu=="1"?true:false'  value="{{i.content}}" v-model='i.content'> -->
+
+
+                                          </span>
+
+                                        </div>
+                                        <div class="H_small_box" style="display:none" v-cloak v-show='!data_son.mucosa||data_son.mucosa.length==0?true:false'>{{data_son.mucosaNO}}</div>
+                                      </div>
+
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color4">外科</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='surgery' v-cloak>
+                                        <div v-cloak class="H_small_box {{$index!=data_son.surgery.length?'H_margin_bottom20':''}}" v-for='items2 in data_son.surgery' >
+                                          <span class="H_content_radio_title">{{items2.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son in items2.choose' style="line-height:19px;">
+                                            <!-- <input disabled type="radio" id={{item_son.id}} value={{item_son.count}} class="radio radio2" name={{items2.id}} checked={{items2.bool==item_son.count?true:false}} v-model='items2.bool'>
+                                            <label for={{item_son.id}} ><i v-cloak>&nbsp;{{item_son.name}}</i></label> -->
+                                            <span >{{item_son.name}}</span>
+                                          </span>
+                                        </div>
+
+                                        <div v-cloak class="H_small_box {{$index!=data_son.newadd.length-1?'H_margin_bottom20':''}}" v-for='itemadd in data_son.newadd'>
+                                          <span class="H_content_radio_title" >{{itemadd.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son_add in itemadd.content' style="line-height:19px;">
+                                            <!-- <input type="checkbox" id={{item_son_add.id}} checked={{item_son_add.bool}} v-model='item_son_add.bool'>
+                                            <label for={{item_son_add.id}} ><i v-cloak>&nbsp;{{item_son_add.name}}</i></label> -->
+                                            <span>{{item_son_add.name}}</span>
+                                          </span>
+                                        </div>
+                                        <div class="H_small_box" v-cloak v-show='data_son.surgery.length==0&&data_son.newadd.length==0?true:false'>{{data_son.surgeryNO}}</div>
+
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color5">牙病治疗及修复史</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='surveyhide' style="display:none;">
+                                        <div class="H_small_box">
+                                          <span class="H_content_list_item H_margin_bottom_none padding_left0">
+                                            治疗及修复史
+                                            <textarea disabled class="teeth_repair_textarea" v-model='data_son.teeth_repair' v-cloak>{{data_son.teeth_repair}}</textarea>
+                                          </span>
+                                        </div>
+                                        <div class="H_small_box H_small_box_show" style="display:none;">无</div>
+                                      </div>
+
+                                    </div>
+                                </div>
+
+                          </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save">
+          <input type="button" class="but butblue" value="保存" id="save_btn" v-on:click='teshu_save(1)'>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox2" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save2">
+          <input type="button" class="but butblue" value="保存" id="save_btn2" v-on:click='teshu_save(2)'>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!--
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+            $('#routeUl li').eq(4).show();
+            $('.opacity-tip').fadeIn(500);
+            $('.opacity-tip p').html('<span>加载中...</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+            $('#change').hide();
+            $("#change").ajaxStop(function(){
+              $('.opacity-tip').fadeOut(0);
+              setTimeout(function(){
+                $('#change').show();
+              },500)
+            });
+            window.startData = startData;
+            var startData;
+            //判断页面是否发生变化 0没变 初始化
+            sessionStorage.setItem('url_flag_add',0);
+            $('.userContain').height( $(window).height()-190 )
+            window.onresize=function(){
+                $('.userContain').height( $(window).height()-190 )
+            }
+            var user_id = sessionStorage.getItem('user_id');
+            var create_time = sessionStorage.getItem('create_time');
+            $('#backs').click(function(){
+              if(sessionStorage.getItem('url_flag_add') == 0){
+                window.location.href = '../../index.html#User';
+              }else{
+                $('#warmTipbox2').show();
+              }
+            })
+            $('.close_x').click(function(){
+              $('#warmTipbox').hide();
+            })
+            $('.close_x2').click(function(){
+              $('#warmTipbox2').hide();
+            })
+            $('#no_save').click(function(){
+              $('#warmTipbox').hide();
+              window.location.href = url;
+            })
+            $('#no_save2').click(function(){
+              $('#warmTipbox2').hide();
+              window.location.href = '../../index.html#User';
+            })
+            //点击修改页面的保存按钮 see:hide add:show 回到查看状态
+            $('#edit-but').click(function(){
+              $('#see_page').hide();
+              $('#add_page').show();
+              $('#add_head').show();
+              $('#see_head').hide();
+              startData = sessionStorage.getItem('startData');
+              v1.data_son = JSON.parse(startData);
+            })
+
+            var v1 = new Vue({
+              el: '#app',
+              data: {
+                "data_son":{
+                  "teeth":[
+                    {
+                      name:'牙体',
+                      content:[
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'楔状缺损',
+                          id:'H_content_list_item_1'
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'形态异常',
+                          id:'H_content_list_item_2'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'龋齿',
+                          id:'H_content_list_item_3'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'缺失牙',
+                          id:'H_content_list_item_4'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'萌生异常',
+                          id:'H_content_list_item_5'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'多生牙',
+                          id:'H_content_list_item_6'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'牙体发育异常',
+                          id:'H_content_list_item_7'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'牙齿表面缺损',
+                          id:'H_content_list_item_8'
+
+                        },
+                        {
+                          bool:false,
+                          sum:'',
+                          name:'隐裂',
+                          id:'H_content_list_item_9'
+
+                        }
+                      ]
+                    }
+                  ],
+                  "teeth_around":[
+                    {
+                      name:'牙石',
+                      id:'H_teeth_roundt1',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'Ⅰ',
+                          id:'H_content_list_item_t10',
+                          count:1
+                        },
+                        {
+                          name:'Ⅱ',
+                          id:'H_content_list_item_t11',
+                          count:2
+                        },
+                        {
+                          name:'Ⅲ',
+                          id:'H_content_list_item_t12',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'松动',
+                      id:'H_teeth_roundt2',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'Ⅰ',
+                          id:'H_content_list_item_t13',
+                          count:1
+                        },
+                        {
+                          name:'Ⅱ',
+                          id:'H_content_list_item_t14',
+                          count:2
+                        },
+                        {
+                          name:'Ⅲ',
+                          id:'H_content_list_item_t15',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'出血',
+                      id:'H_teeth_roundt3',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'Ⅰ',
+                          id:'H_content_list_item_t16',
+                          count:1
+                        },
+                        {
+                          name:'Ⅱ',
+                          id:'H_content_list_item_t17',
+                          count:2
+                        },
+                        {
+                          name:'Ⅲ',
+                          id:'H_content_list_item_t18',
+                          count:3
+                        },
+                        {
+                          name:'IV',
+                          id:'H_content_list_item_t19',
+                          count:4
+                        },
+                        {
+                          name:'V',
+                          id:'H_content_list_item_t20',
+                          count:5
+                        }
+                      ],
+                    }
+                  ],
+                  "mucosa":[
+                    {
+                      name:'正常',
+                      bool:false,
+                      id:'H_content_list_item_21',
+                      content:'',
+                    },
+                    {
+                      name:'白色斑块',
+                      bool:false,
+                      id:'H_content_list_item_22',
+                      content:'',
+                    },
+                    {
+                      name:'红色斑块',
+                      id:'H_content_list_item_23',
+                      bool:false,
+                      content:'',
+                    },
+                    {
+                      name:'扁平苔藓',
+                      id:'H_content_list_item_24',
+                      bool:false,
+                      content:'',
+                    },
+                    {
+                      name:'溃疡',
+                      id:'H_content_list_item_25',
+                      bool:false,
+                      content:'',
+                    },
+                    {
+                      id:'H_content_list_item_26',
+                      name:'其他',
+                      bool:false,
+                      content:'',
+                      teshu:'1'
+                    }
+                  ],
+                  "surgery":[
+                    {
+                      name:'开口度',
+                      id:'H_teeth_roundt4',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'三指宽度',
+                          id:'H_content_list_item_t27',
+                          count:1
+                        },
+                        {
+                          name:'两指宽度',
+                          id:'H_content_list_item_t28',
+                          count:2
+                        },
+                        {
+                          name:'一指宽度，甚至更小',
+                          id:'H_content_list_item_t29',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'开口型',
+                      id:'H_teeth_roundt5',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'直线',
+                          id:'H_content_list_item_t30',
+                          count:1
+                        },
+                        {
+                          name:'左偏',
+                          id:'H_content_list_item_t31',
+                          count:2
+                        },
+                        {
+                          name:'右偏',
+                          id:'H_content_list_item_t32',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'面型',
+                      id:'H_teeth_roundt6',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'大致对称',
+                          id:'H_content_list_item_t33',
+                          count:1
+                        },
+                        {
+                          name:'中线左偏',
+                          id:'H_content_list_item_t34',
+                          count:2
+                        },
+                        {
+                          name:'中线右偏',
+                          id:'H_content_list_item_t3400',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'',
+                      id:'H_teeth_roundt7',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'直面型',
+                          id:'H_content_list_item_t35',
+                          count:1
+                        },
+                        {
+                          name:'凹面型',
+                          id:'H_content_list_item_t36',
+                          count:2
+                        },
+                        {
+                          name:'凸面型',
+                          id:'H_content_list_item_t37',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'牙列',
+                      id:'H_teeth_roundt8',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'正常',
+                          id:'H_content_list_item_t3800',
+                          count:1
+                        },
+                        {
+                          name:'拥挤',
+                          id:'H_content_list_item_t38',
+                          count:2
+                        },
+                        {
+                          name:'间隙',
+                          id:'H_content_list_item_t39',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'磨牙关系',
+                      id:'H_teeth_roundt9',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'Ⅰ',
+                          id:'H_content_list_item_t40',
+                          count:1
+                        },
+                        {
+                          name:'Ⅱ',
+                          id:'H_content_list_item_t41',
+                          count:2
+                        },
+                        {
+                          name:'Ⅲ',
+                          id:'H_content_list_item_t42',
+                          count:3
+                        }
+                      ]
+                    },
+                    {
+                      name:'前牙关系',
+                      id:'H_teeth_roundt10',
+                      bool:'',
+                      choose:[
+                        {
+                          name:'正常',
+                          id:'H_content_list_item_t4300',
+                          count:1
+                        },
+                        {
+                          name:'反合',
+                          id:'H_content_list_item_t43',
+                          count:2
+                        },
+                        {
+                          name:'开合',
+                          id:'H_content_list_item_t44',
+                          count:3
+                        },
+                        {
+                          name:'对刃',
+                          id:'H_content_list_item_t45',
+                          count:4
+                        }
+                      ]
+                    }
+                  ],
+                  'newadd':[
+                    {
+                      name:'',
+                      content:[
+                        {
+                          name:'深覆盖',
+                          id:'H_content_list_item_t5100',
+                          bool:false
+                        },
+                        {
+                          name:'深覆合',
+                          id:'H_content_list_item_t5200',
+                          bool:false
+                        }
+                      ]
+                    },
+                    {
+                      name:'系带',
+                      content:[
+                        {
+                          name:'唇系带过低',
+                          id:'H_content_list_item_t51',
+                          bool:false
+                        },
+                        {
+                          name:'舌系带过短',
+                          id:'H_content_list_item_t52',
+                          bool:false
+                        },
+                        {
+                          name:'正常',
+                          id:'H_content_list_item_t5300',
+                          bool:false
+                        }
+                      ]
+                    },
+                    {
+                      name:'TMJ',
+                      content:[
+                        {
+                          name:'关节弹响',
+                          id:'H_content_list_item_t53',
+                          bool:false
+                        },
+                        {
+                          name:'关节压痛',
+                          id:'H_content_list_item_t54',
+                          bool:false
+                        },
+                        {
+                          name:'关节脱位',
+                          id:'H_content_list_item_t55',
+                          bool:false
+                        }
+                      ]
+                    }
+                  ],
+                  "teeth_repair":'',
+                  'surgeryNO':'外科情况正常',
+                  'mucosaNO':'粘膜正常'
+                }
+              },
+              methods:{
+                save:function(){
+                  var pastObj_json = JSON.stringify(this.data_son);
+                  //把要保存的数据保存下来
+                  sessionStorage.setItem('startData',pastObj_json);
+                  //添加接口
+                  AjaxObj.UsereditArchives(function(result){
+              			if( result.Data.code == 1 ){
+                        $('.opacity-tip').fadeIn(500).delay(1000).fadeOut()
+                        $('.opacity-tip p').html('<span class="success">保存成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                        //存下保存过的状态
+                        setTimeout(function () {
+                          sessionStorage.setItem('url_flag_add',0);
+                        }, 100);
+                        //变成查看样式
+                        
+                        $('#see_page').show();
+                        $('#add_page').hide();
+                        $('#add_head').hide();
+                        $('#see_head').show();
+                        var dd = v1.data_son;
+                        var rnd = dd.teeth_around;
+                        var moc = dd.mucosa;
+                        var sur = dd.surgery;
+                        var newadd = dd.newadd;
+                        //删掉不需要的数据 以便显示查看状态
+                        for(var i=0;i<newadd.length;i++){
+                          for(var j=0;j<newadd[i].content.length;j++){
+                            if(newadd[i].content[j].bool == false){
+                              newadd[i].content.splice(j,1);
+                              --j;
+                            }
+                          }
+                          if(newadd[i].content.length == 0){
+                            newadd.splice(i,1);
+                            --i;
+                          }
+                        }
+                        for(var i=0;i<rnd.length;i++){
+                          if(rnd[i].bool == ''){
+                            for(var j =0;j<rnd[i].choose.length;j++){
+                              if(rnd[i].choose[j].count!=rnd[i].bool){
+                                rnd[i].choose.splice(j,1);
+                                --j;
+                              }
+                            }
+                          }else{
+                            for(var j =0;j<rnd[i].choose.length;j++){
+                              if(rnd[i].choose[j].count!=rnd[i].bool){
+                                rnd[i].choose.splice(j,1);
+                                --j;
+                              }
+                            }
+                          }
+                        }
+                        for(var i=0;i<moc.length;i++){
+                          if(moc[i].bool == false){
+                            moc.splice(i,1);
+                            --i;
+                          }
+                        }
+                        for(var i=0;i<sur.length;i++){
+                          if(sur[i].bool == ''){
+                            sur.splice(i,1);
+                            --i;
+                          }else{
+                            for(var j =0;j<sur[i].choose.length;j++){
+                              if(sur[i].choose[j].count!=sur[i].bool){
+                                console.log(22222);
+                                sur[i].choose.splice(j,1);
+                                --j;
+                              }
+                            }
+                          }
+                        }
+                        if(dd.teeth_repair == ''){
+                          $('#surveyhide').show();
+                          $('#surveyhide .H_small_box').hide();//隐藏textarea
+                          $('#surveyhide .H_small_box_show').show();//显示 无
+                        }else{
+                          $('#surveyhide').show();
+                        }
+                        v1.data_son = dd;
+                    }else{
+                      if(result.Data.msg == '缺少用户id！'){
+                        $('.opacity-tip').fadeIn(500).delay(1000).fadeOut()
+                        $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                        setTimeout(function(){
+      	                	location.href="/mint/html/user/add_info.html#User";
+      	                },1000)
+                      }
+                    }
+              		},user_id,pastObj_json,2)
+                },
+                changeUrl:function(url){
+                  window.url = url;
+                  if(sessionStorage.getItem('url_flag_add') == 0){
+                    window.location.href = url;
+                  }else{
+                    $('#warmTipbox').show();
+                  }
+                },
+                teshu_save:function(n){
+                  $('#warmTipbox').hide();
+                  var pastObj_json = JSON.stringify(v1.data_son);
+                  //添加接口
+                  AjaxObj.UsereditArchives(function(result){
+                    if( result.Data.code == 1 ){
+                         $('.opacity-tip').fadeIn(500).delay(1000).fadeOut()
+                         $('.opacity-tip p').html('<span class="success">保存成功</span>').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                         if(n==1){
+                           //点击别的选项弹出层的保存
+                           window.location.href = url;
+                         }else{
+                           //返回按钮之后的弹出层的保存
+                           window.location.href = '../../index.html#User';
+                         }
+                     }else{
+                       if(n==1){
+                         if(result.Data.msg == '缺少用户id！'){
+                           $('.opacity-tip').fadeIn(500).delay(1000).fadeOut()
+                           $('.opacity-tip p').html('请您完成基础信息').css({'margin-left':-($('.opacity-tip p').width()/2)})
+                           setTimeout(function(){
+        	                	location.href="/mint/html/user/add_info.html#User";
+        	                },1000)
+                         }
+                       }else{
+                         window.location.href = '../../index.html#User';
+                       }
+                     }
+                  },user_id,pastObj_json,2)
+                }
+              }
+            });
+            //初始渲染页面
+            AjaxObj.UsersltDateRecords(function(model){
+              if(model.Data.code ==1){
+                console.log(model.Data);
+                if(model.Data.data.length != 0){
+                  $('#see_page').show();
+                  $('#add_page').hide();
+                  $('#add_head').hide();
+                  $('#see_head').show();
+                  //遍历渲染时间日期
+                  for(var h=0;h<model.Data.data.length;h++){
+                    $('#creat_time').append('<option value="'+model.Data.data[h].create_time+'">'+model.Data.data[h].create_time+'</option>');
+                  }
+                  // //绑定改变时间渲染页面事件
+                  // $("#creat_time").change(function(){
+                  //   var create_time = $(this).find("option:selected").text();
+                  //   $('#recent_time').html(create_time);
+                  //   AjaxObj.UsersltArchives(function(model){
+                  //     v1.data_son = model.Data;
+                  //   },user_id,create_time,2)
+                  // });
+                  //因为有数据 所以把最近日期的数据渲染
+                  $('#creat_time').show();
+                  AjaxObj.UsersltArchives(function(model){
+                    // var pastObj_json = JSON.stringify(this.data_son);
+                    // var startData = pastObj_json;
+                    // window.startData = startData;
+                    // if(model.Data.)
+                    console.log(model.Data)
+                    //取回数据渲染
+                    dd = model.Data;
+                    var rnd = dd.teeth_around;
+                    var moc = dd.mucosa;
+                    var sur = dd.surgery;
+                    var newadd = dd.newadd;
+                    for(var i=0;i<newadd.length;i++){
+                      for(var j=0;j<newadd[i].content.length;j++){
+                        if(newadd[i].content[j].bool == false){
+                          newadd[i].content.splice(j,1);
+                          --j;
+                        }
+                      }
+                      if(newadd[i].content.length == 0){
+                        newadd.splice(i,1);
+                        --i;
+                      }
+                    }
+                    for(var i=0;i<rnd.length;i++){
+                      if(rnd[i].bool == ''){
+                        rnd.splice(i,1);
+                        --i;
+                      }else{
+                        for(var j =0;j<rnd[i].choose.length;j++){
+                          if(rnd[i].choose[j].count!=rnd[i].bool){
+                            rnd[i].choose.splice(j,1);
+                            --j;
+                          }
+                        }
+                      }
+                    }
+                    for(var i=0;i<moc.length;i++){
+                      if(moc[i].bool == false){
+                        moc.splice(i,1);
+                        --i;
+                      }
+                    }
+                    for(var i=0;i<sur.length;i++){
+                      if(sur[i].bool == ''){
+                        sur.splice(i,1);
+                        --i;
+                      }else{
+                        for(var j =0;j<sur[i].choose.length;j++){
+                          if(sur[i].choose[j].count!=sur[i].bool){
+                            console.log(22222);
+                            sur[i].choose.splice(j,1);
+                            --j;
+                          }
+                        }
+                      }
+                    }
+                    if(dd.teeth_repair == ''){
+                      $('#surveyhide').show();
+                      $('#surveyhide .H_small_box').hide();
+                      $('#surveyhide .H_small_box_show').show();
+                    }else{
+                      $('#surveyhide').show();
+                    }
+                    v1.data_son = dd;
+                  },user_id,model.Data.data[0].create_time,2)
+
+                }
+
+              }
+
+            },user_id,2)
+            v1.$watch('data_son',function(val1,val2){
+              if(val1 != val2){
+                sessionStorage.setItem('url_flag_add',0);
+                console.log('no')
+              }else{
+                sessionStorage.setItem('url_flag_add',1);
+                console.log('yes')
+              }
+            },{deep:true})
+
+</script>
+</html>

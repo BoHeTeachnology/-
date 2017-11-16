@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>预约表-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../jedate/skin/jquery-weui.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jedate/jquery-weui.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/orderlistAdd.js?time=1"></script>
+  <style>
+    .input-box{
+      position: relative;
+    }
+    .calendarbox{
+      width:300px;
+      position: absolute;
+      bottom:-325px;
+      left:150px;
+      border:solid 1px #ccc;
+      background: #fff;
+      z-index: 9999;
+      display:none;
+    }
+    .current-year-value,.current-month-value{
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="back">返回</a>
+                <input type="button" class="save-but" id="save-but" value="保存">
+                <!-- <a href="javascript:void(0)" class="save-but" id="save-but">保存</a> -->
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container" style="min-height:700px;">
+            <div class="add-h3 add-main-box1 mtop45">
+              <h3 class="box5-h3">基本信息<span></span></h3>
+                <div class="main-input">
+                    
+                    <div class="input-box h30"> 
+                        <span><em class="emx">就诊人姓名：</em></span>
+                        <div class="col-sm-8" id="PatInputbox">
+                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                              <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                              <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                <span class="placeholder" id="PatVal" data-val="">请选择就诊人</span>
+                                <span class="caret"></span>
+                              </button>
+                              <div class="dropdown-menu">
+                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                  <label class="sr-only" for="input-bts-ex-5"></label>
+                                  <div class="search-box">
+                                    <div class="input-group">
+                                      <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1" />
+                                    </div>
+                                  </div>
+                                  <div class="list-to-filter">
+                                        <ul class="list-unstyled" id="patient_id">
+                                            <!-- <li class="filter-item items" data-filter="整整" data-value="1">整整</li>
+                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                            <li class="filter-item items" data-filter="22222" data-value="5">22222</li>  -->
+                                        </ul>
+                                    <div class="no-search-results">
+                                      <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <input type="hidden" name="bts-ex-5" value="">
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                    <div class="input_box_choose">
+                      <div class="input-box h30"> 
+                          <span>预约人姓名：</span>
+                          <input type="text" class="text-input" id="patient_name" disabled>
+                          <p></p>
+                      </div>
+                      <div class="input-box h30"> 
+                          <span>是否本人：</span>
+                          <input type="text" class="text-input" id="is_self" disabled>
+                          <p></p>
+                      </div>
+                      <div class="input-box h30" id="guanxi" style="display:none" disabled> 
+                          <span>与预约人关系：</span>
+                          <input type="text" class="text-input" id="relations" disabled>
+                          <p></p>
+                      </div>
+                      <div class="input-box h30"> 
+                          <span>联系方式：</span>
+                          <input type="text" class="text-input" id="contact_tel" disabled>
+                          <p></p>
+                      </div>
+                    </div>
+                      
+                    <div class="input-box h30"> 
+                        <span><em class="emx">所属公司：</em></span>
+                        <select name="" id="company_name" class="select-div">
+                          <option value="">请选择</option>
+                        </select>
+                        <label class="inviteCode"></label>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">选择项目：</em></span>
+                        <select name="" id="service_id" class="select-div">
+                        </select>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30" id="jdatebox"> 
+                        <span><em class="emx">预约日期：</em></span>
+                        <input type="text" class="text-input layicon" id="visit_time" readonly="readonly">
+                        <label class="timeMinute" id="timeMinute"></label>
+                        <p></p>
+                        <div class="calendarbox" id="inline-calendar"></div>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">医生：</em></span>
+                        <select name="" id="doctor_id" class="select-div">
+                          <option value="">请选择</option>
+                        </select>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>诊所：</span>
+                        <input type="text" class="text-input readonly" id="clink" readonly="readonly">
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">项目所需时长：</em></span>
+                        <select name="" id="selectTime" class="select-div">
+                          <option value="15">15分钟</option>
+                          <option value="30">30分钟</option>
+                          <option value="45">45分钟</option>
+                          <option value="60">60分钟</option>
+                          <option value="90">90分钟</option>
+                          <option value="120">120分钟</option>
+                        </select>
+                        <p></p>
+                    </div>
+                    <div class="input-box chuzhenTimebox">
+                      <span><em class="emx">选择出诊时间：</em></span>
+                      <ul id="timeArry">
+                          <!-- <li class="cur"><span>9:00</span></li>
+                          <li class="gray"><span>9:30</span></li>
+                          <li><span>10:00</span></li>
+                          <li><span>10:30</span></li>
+                          <li><span>11:00</span></li>
+                          <li><span>11:30</span></li>
+                          <li><span>12:00</span></li>
+                          <li><span>12:30</span></li>
+                          <li><span>13:00</span></li>
+                          <li><span>13:30</span></li>
+                          <li><span>14:00</span></li>
+                          <li><span>14:30</span></li>
+                          <li><span>15:00</span></li>
+                          <li><span>15:30</span></li>
+                          <li><span>16:00</span></li>
+                          <li><span>16:30</span></li>
+                          <li><span>17:00</span></li>
+                          <li><span>17:30</span></li> -->
+                      </ul>
+                      <p id="timeWrong"></p>
+                      <div class="clear"></div>
+                    </div>
+                    
+                    <div class="input-box h30"> 
+                        <span>备注：</span>
+                        <textarea class="textarea" style="max-width:245px;" id="remark"></textarea>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>

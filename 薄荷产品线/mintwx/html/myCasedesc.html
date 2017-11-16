@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>病历详情</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+	<link rel="stylesheet" href="../css/weui.min.css">
+	<link rel="stylesheet" href="../css/jquery-weui.css">
+	<link rel="stylesheet" href="../css/record.css?time=1">
+	<script src="../js/jquery-1.8.0.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="../js/Ajax.js?time=1"></script>
+	<script src="../js/vue.js"></script>
+	<script src="../js/share.js"></script>
+	<script src="../js/myCasedesc.js?time=1"></script>
+</head>
+<body>
+
+<div class="record-wrap" id="app">
+	<header>
+		<div class="header">
+			<h3 id="patient_name"></h3>
+			<!-- <p>病历类型：<span id="record_name"></span></p> -->
+			<p>问诊时间：<span id="record_time"></span></p>
+			<p>问诊医生：<span id="record_doctor"></span></p>
+			<p id="clinicDiv" style="display:none">问诊诊所：<span id="clinic_name"></span></p>
+			<div class="relation" id="relation"></div>
+		</div>
+	</header>
+	<div class="shai_report" id="shai_report1" style="display:none">
+		<div class="centermain" id="tooth_body_main" style="display:none">
+			<h3 class="title">
+				<span>牙体<br>情况</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="toothbox">
+				<div class="toothpic">
+					<div class="round tooth_{{teeth.name}} {{teeth.type==0?'':'tooth_color'}}" v-for='teeth in data_son.teeth_arr'>{{teeth.name}}</div>
+				</div>
+				<div class="tooth_record">
+					<dl  v-for='item in data_brother'>
+						<dt>{{item.name}}</dt>
+						<dd>
+							<span v-for='itemson in item.content'>{{itemson}}</span>
+						</dd>
+					</dl>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain">
+			<h3 class="title">
+				<span>牙周<br>情况</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_hd" id="tooth_around_pic">
+			            <img src="" alt="">
+			          </div>
+			          <div class="weui_media_bd">
+			            <h4 class="weui_media_title" id="tooth_around_title"></h4>
+			            <p class="weui_media_descs" id="tooth_around_desc"></p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain">
+			<h3 class="title">
+				<span>牙列<br>情况</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_hd" id="tooth_list_pic">
+			            <img src="" alt="">
+			          </div>
+			          <div class="weui_media_bd">
+			            <h4 class="weui_media_title" id="tooth_list_title"></h4>
+			            <p class="weui_media_descs" id="tooth_list_desc"></p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="men_case" id="shai_report2" style="display:none">
+		<div  class="centermain">
+			<h3 class="title">
+				<span style="line-height:40px;">诊断</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_hd" id="tooth_zhen_pic">
+			            <img src="" alt="">
+			          </div>
+			          <div class="weui_media_bd">
+			            <p class="weui_media_descs" id="record_content">哈哈就是单反机啊地方还近阿发人人</p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain">
+			<h3 class="title">
+				<span style="line-height:40px;">治疗</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_hd" id="tooth_zhi_pic">
+			            <img src="" alt="">
+			          </div>
+			          <div class="weui_media_bd">
+			            <p class="weui_media_descs" id="treatment">哈哈就是单反机啊地方还近阿发人人</p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="suggestion_box">
+		<div class="suggestion_main">
+			<h3 id="chuzhi"></h3>
+			<div class="suggestion" id="suggestion">
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

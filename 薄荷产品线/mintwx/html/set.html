@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>设置</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/style.css?time=2">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+</head>
+<body>
+<div class="weui_cells weui_cells_access setPage">
+  <a class="weui_cell weui_position" href="editBohe.html">
+        <div class="weui_cell_hd">
+            <img src="../images/icon24.png">
+            <p>薄荷名</p>
+            <label class="bohe_name" id="bohe_name"></label>
+        </div>
+        <span class="weui_cell_ft"></span>
+    </a>
+    <a class="weui_cell" href="changePhone.html">
+        <div class="weui_cell_hd">
+            <img src="../images/icon25.png">
+            <p>更换手机号</p>
+        </div>
+        <span class="weui_cell_ft"></span>
+    </a>
+    <a class="weui_cell" href="personmsg.html">
+        <div class="weui_cell_hd">
+            <img src="../images/icon2.png">
+            <p>个人信息</p>
+        </div>
+        <span class="weui_cell_ft"></span>
+    </a>
+    <a class="weui_cell" href="editPwd.html">
+        <div class="weui_cell_hd">
+            <img src="../images/icon18.png">
+            <p id="passwordyes"></p>
+        </div>
+        <span class="weui_cell_ft"></span>
+    </a>
+</div>
+<div class="weui_cells weui_cells_access setPage">
+    <a class="weui_cell" href="suggestion.html">
+        <div class="weui_cell_hd">
+            <img src="../images/icon5.png">
+            <p>意见反馈</p>
+        </div>
+        <span class="weui_cell_ft"></span>
+    </a>
+    <a class="weui_cell" href="private.html">
+       <div class="weui_cell_hd">
+           <img src="../images/icon17.png">
+           <p>隐私保护</p>
+       </div>
+       <span class="weui_cell_ft"></span>
+   </a>
+   <a class="weui_cell" href="http://mp.weixin.qq.com/s?__biz=MzAwNDk4MjAxNA==&mid=100000033&idx=1&sn=e49a7d819c87d83a2ea43224e4679e4a&scene=18#wechat_redirect" id="about_us">
+        <div class="weui_cell_hd">
+            <img src="../images/icon3.png">
+            <p>关于我们</p>
+        </div>
+        <span class="weui_cell_ft"></span>
+    </a>
+
+</div>
+
+<div class="demos-content-padded" style="padding:5px;">
+  <a href="javascript:;" class="price_confirm" id="exitLogin" style="margin-top:20px;">退出登录</a>
+</div>
+
+<div class="opcitybox" style="display:none"><span></span></div>
+</body>
+<script>
+  $(function(){
+    $('#bohe_name').html(sessionStorage.getItem('mint_name'))
+    $("#exitLogin").click(function(){
+        Ajax.logout(function(result){
+          if(result.Data.code == 1){
+            $('.opcitybox').fadeIn(500).delay(2000).fadeOut()
+            $('.opcitybox span').html('退出成功').css({'margin-left':-( ($('.opcitybox span').width()+40)/2)})
+            setTimeout(function(){
+              location.href='http://'+location.host+"/mintwx/login.html";
+            },1000)
+          }else{
+            $('.opcitybox').fadeIn(500).delay(2000).fadeOut()
+            $('.opcitybox span').html(result.Data.msg).css({'margin-left':-( ($('.opcitybox span').width()+40)/2)})
+          }
+        })
+    })
+    if(sessionStorage.getItem("passwordyes") == 'no'){
+      $('#passwordyes').text('设置密码');
+    }else if(sessionStorage.getItem("passwordyes") == 'yes'){
+      $('#passwordyes').text('修改密码');
+    }
+    Ajax.UsergetInfo(function(result){
+      if(result.Data.code == 1){
+        if(result.Data.data.password ==''){
+          $('#passwordyes').text('设置密码');
+          sessionStorage.setItem("passwordyes","no");
+        }else{
+          $('#passwordyes').text('修改密码');
+          sessionStorage.setItem("passwordyes","yes");
+        }
+      }
+    })
+
+  })
+</script>
+</html>

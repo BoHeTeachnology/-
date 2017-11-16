@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-查看</title>
+  <script src='vue1.js'></script>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/H_user1.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/tooth_see.js"></script>
+  <script src='../../js/firstChoose.js'></script>
+
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop_edit">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                    <div class="userInfobox">
+                        <dl>
+                            <dt id="user_photo"><img src="" alt=""></dt>
+                            <dd>
+                                <h3><span id="user_name"></span><span id="user_age"></span></h3>
+                                <p id="user_phone"></p>
+                            </dd>
+                        </dl>
+                        <a href="javascript:;" class="default_inputbtn see-but" id="see-but">查看病历</a>
+                        <a href="javascript:;" class="default_inputbtn see-but" style='width:100px;' id="firstChoose">生成初筛报告单</a>
+
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top" >
+                        <div class="user_topmenu user_topmenu_edit">
+                            <ul id='routeUl'>
+                                <li><a href="see_info.html#User" id='a1'>基础信息</a></li>
+                                <li><a href="see_past.html#User" id='a2'>既往史</a></li>
+                                <li><a href="see_mouths.html#User" id='a3'>口腔情况</a></li>
+                                <li><a class="active" href="see_tooth.html#User" id='a4'>牙位图</a></li>
+                                <li><a href="see_family.html#User" id='a6'>家庭成员</a></li>
+                            </ul>
+                        </div>
+                        <div class="time z_time_edit" style='top:215px;'>
+                          <div class="z_time_btn" style='border:none;'>
+
+                              <p id="updateTimebox" style="display:none;">
+                                <b>更新记录：</b>
+                                  <select name="" id="creat_time">
+                                  </select>
+                              </p>
+
+                              <label for="">
+                                  <span class="default_inputbtn z_add_btn" id="save-but" style="display:none;">添加</span>
+                                  <span class="default_inputbtn z_edit_btn" id="edit-but" style="display:none">编辑</span>
+                              </label>
+                          </div>
+                        </div>
+                        <div class="userContain z_userContain_edit" id="change">
+                          <div class="z_userContainMain">
+
+                            <div class="z_no_past_data" id="page_noData" style="display:none">
+                                <p>
+                                    <img src="../../images/nodata.png" alt="">
+                                    <span>此项目暂无数据</span>
+                                    <a href="javascript:;" class="default_inputbtn z_add_btn2" id="add_btns">添加</a>
+                                </p>
+                            </div>
+                            <div class="containb_right" style="padding-bottom:50px;display:none" id='content_hide'>
+                              <div class="H_teeth_position">
+                                <div class="H_teeth_position_left">
+                                  <span class="man active" id="mantab">成人牙位图</span><span class="child" id="childtab">幼儿牙位图</span>
+                                 </div>
+                                <div id="adults_box_see" style="display:none">
+                                  <div class="H_teeth_position_pic" id="H_man">
+                                    <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_arr'
+                                    v-cloak track-by="$index">{{teeth.name}}
+                                    </div>
+                                  </div>
+                                  <div class="H_teeth_position_list" id="bingbox">
+                                      <div v-for='item in data_brother' class="H_teeth_position_list_margin_bottom" track-by="$index">
+                                        <label v-cloak>牙齿{{item.name}}:</label>
+                                        <p><span v-for='itemson in item.content' class='H_teeth_position_list_margin' v-cloak>{{itemson}}<span></p>
+                                        <div class="clear"></div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div id="child_box_see"  style="clear:both;display:none">
+                                  <div class="H_teeth_position_pic H_teeth_position_pic_son" id="H_child">
+                                    <div class="H_teeth_position_pic_same {{teeths.id}} {{teeths.type==0?'white':teeths.type==1?'blue':'red'}}"  v-for='teeths in data_son.teeth_child_arr'
+                                    v-cloak track-by="$index">{{teeths.name}}
+                                    </div>
+                                  </div>
+                                  <div class="H_teeth_position_list" id="bingbox">
+                                      <div v-for='item in data_brother' class="H_teeth_position_list_margin_bottom" track-by="$index">
+                                        <label v-cloak>牙齿{{item.name}}:</label>
+                                        <p><span v-for='itemson in item.content' class='H_teeth_position_list_margin' v-cloak>{{itemson}}<span></p>
+                                        <div class="clear"></div>
+                                      </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+<div class="delete-tipbox firstChoose" id="warmTipbox3" style="display:none;">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">初筛检查报告单<span class="close_x" id='firstChooseClose'></span></h4>
+      <div>
+        <div style='height:340px;width:100%;border-bottom:1px solid #dcdcdc'>
+          <div class="containb_right" style="border:none;" id='content_hide'>
+            <div class="H_teeth_position" style='padding-top: 20px;'>
+              <div id="adults_box_see">
+                <div class="H_teeth_position_pic" id="H_man" style='width:228px;'>
+                  <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_arr'
+                  v-cloak track-by="$index">{{teeth.name}}
+                  </div>
+                </div>
+                <div class="H_teeth_position_list" id="bingbox">
+                    <div v-for='item in data_brother' class="H_teeth_position_list_margin_bottom" track-by="$index">
+                      <label v-cloak>牙齿{{item.name}}:</label>
+                      <p class="p"><span v-for='itemson in item.content' class='H_teeth_position_list_margin' v-cloak>{{itemson}}<span></p>
+                      <div class="clear"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="H_content_list" id="teeth_around">
+          <div class="H_small_box H_margin_bottom20">
+            <span class="H_content_radio_title">牙周情况</span>
+            <span class="H_content_list_item H_content_list_item_radio" >
+              <input type="radio" class="radio radio2" id="H_content_list_item_t10" name="H_teeth_roundt1">
+              <label for="H_content_list_item_t10"><i>&nbsp;早期</i></label>
+            </span><span class="H_content_list_item H_content_list_item_radio">
+              <input type="radio" class="radio radio2" id="H_content_list_item_t11" name="H_teeth_roundt1" checked="">
+              <label for="H_content_list_item_t11"><i>&nbsp;中期</i></label>
+            </span><span class="H_content_list_item H_content_list_item_radio">
+              <input type="radio" class="radio radio2" id="H_content_list_item_t12" name="H_teeth_roundt1">
+              <label for="H_content_list_item_t12"><i>&nbsp;晚期</i></label>
+            </span><span class="H_content_list_item H_content_list_item_radio">
+              <input type="radio" class="radio radio2" id="H_content_list_item_t13" name="H_teeth_roundt1">
+              <label for="H_content_list_item_t13"><i>&nbsp;医嘱</i></label>
+            </span>
+          </div>
+          <div class="H_small_box H_margin_bottom20">
+            <span class="H_content_radio_title">牙周情况</span>
+            <span class="H_content_list_item H_content_list_item_radio">
+              <input type="radio" class="radio radio2" id="H_content_list_item_t14" name="H_teeth_roundt2">
+              <label for="H_content_list_item_t14"><i>&nbsp;牙列不齐</i></label>
+            </span><span class="H_content_list_item H_content_list_item_radio">
+              <input type="radio" class="radio radio2" id="H_content_list_item_t15" name="H_teeth_roundt2" checked="">
+              <label for="H_content_list_item_t15"><i>&nbsp;牙列基本整齐</i></label>
+            </span>
+          </div>
+          <div class="H_small_box ">
+            <span class="H_content_radio_title">综合意见</span>
+            <textarea></textarea>
+          </div>
+          <div class="new-creatbut-box">
+            <input type="button" class="but butgray" value="取消" id=''/>
+            <input type="button" class="but butblue" value="确定" id=''/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+
+</html>

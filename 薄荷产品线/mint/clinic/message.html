@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-诊所预约</title>
+  <link rel="stylesheet" href="../jedate/skin/jquery-weui.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href="../css/account.css">
+  <link rel="stylesheet" href="css/clinic.css">
+  <link rel="stylesheet" href="css/zdhChange.css">
+  <link rel="shortcut icon" href="../images/logo.png"/>
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/upPic.js"></script>
+  <script src="../jedate/jquery-weui.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/Ajax2.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/message.js"></script>
+
+</head>
+<body>
+
+
+<div class="clinicwrap">
+  <script type="text/javascript" src="js/head.js"></script>
+  <script>showCurrent(1)</script>
+</div>
+<div class="containOutbox">
+  <div class="containbox">
+    <div class="containMain">
+      <div class="containLeft" style="bottom:0">
+        <div class="leftprebox">
+          <h3 class="jiben">基本信息</h3>
+          <div class="preJiben">
+            <p><b>诊所品牌：</b><span id="clinic_brand"></span></p>
+            <p><b>诊所名称：</b><span id="clinic_name"></span></p>
+            <p><b>成立时间：</b><span id="set_date"></span></p>
+            <p><b>诊所地址：</b><span id="clinic_address"></span></p>
+            <div class="clear"></div>
+          </div>
+          <div class="preJiben2">
+            <p><b>默认牙椅数量：</b><span id="chair_nums"></span></p>
+            <p><b>员工人数：</b><span id="staff_nums"></span></p>
+            <p><b>诊所资质：</b><a href="#" id="clinic_pic_btn">查看</a></p>
+            <p><b>环评资质：</b><a href="#" id="around_pic_btn">查看</a></p>
+            <div class="clear"></div>
+          </div>
+          <div class="preJiben2 noBorder">
+            <p><b>诊所负责人：</b><span id="clinic_head_name"></span></p>
+            <p><b>薄荷对接人：</b><span id="mint_head_name"></span></p>
+            <p><b>对接人电话：</b><span id="mint_head_phone"></span></p>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="containRight">
+        <div class="msg-rightTopbox">
+          <div class="leftriLibox">
+              <div class="canaldarbox">
+                  <div id="inline-calendar"></div>
+                  <input id="date" type="text" style="opacity:0">
+              </div>
+          </div>
+          <div class="rightyayibox">
+            <h3 class="H3style yayinum">可用牙椅数量<p><input type="text" id="chair_numsInput" style="display:none"><a href="javascript:;" class="default-clinck-but edit" id="editChairNum">修改</a><a href="javascript:;" class="default-clinck-but save" id="saveChairNum" style="display:none">保存</a></p></h3>
+            <div class="rtoprcirclebox">
+              <div class="circlepre">
+                  <div class="circleProgress_wrapper bodOrange">  
+                    <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                    <div class="left"><div class="circleProgress leftcircle"></div></div>  
+                    <div class="center"><b id="chair_numsText"></b><span>可用牙椅数量</span></div>
+                  </div>  
+              </div>
+              <div class="circletipp">牙医数量变化，您需每月底25号之前，提交至薄荷牙医，<br>谢谢您的理解与支持！</div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <div class="righCenterboxmain">
+          <h3 class="H3style shebei">设备信息<p><a href="javascript:;" class="default-clinck-but add" id="addEquipment">添加</a></p></h3>
+              <!-- Swiper -->
+              <div class="swiperOutbox">
+                  <div class="swiper-container swiper-container1 centerSwiper">
+                      <div class="swiper-wrapper" id="EquipmentList">
+                          <!-- <div class="swiper-slide">
+                            <div class="swiper-slidebox">
+                                <dl>
+                                  <dt><img src="images/pic1.png" alt=""><span></span></dt>
+                                  <dd>
+                                    <p><b>品牌：</b><span>啊打发</span></p>
+                                    <p><b>国家：</b><span>阿发达</span></p>
+                                    <p><b>使用年限：</b>3发<span></span></p>
+                                    <p><b>数量：</b><span>34343发</span></p>
+                                    <p><b>支持电话：</b><span>010-83933848343</span></p>
+                                  </dd>
+                                </dl>
+                            </div>
+                          </div> -->
+                      </div>
+                      <!-- Add Pagination -->
+                      <!-- <div class="swiper-pagination"></div> -->
+                  </div>
+                  <div class="swiper-button-next swiper-button-next1"></div>
+                  <div class="swiper-button-prev swiper-button-prev1"></div>
+              </div>
+              <!-- Swiper end -->
+        </div>
+
+        <div class="righBtomboxmain">
+          <h3 class="H3style haocai">耗材库存<p><a href="javascript:;" class="default-clinck-but add" id="addMaterial">添加</a></p></h3>
+          <!-- Swiper -->
+          <div class="swiperOutbox">
+              <div class="swiper-container swiper-container2 btomSwiper">
+                  <div class="swiper-wrapper" id="materialList">
+                      <!-- <div class="swiper-slide">
+                        <div class="swiper-slidebox">
+                            <dl>
+                              <dt><img src="images/pic1.png" alt=""><span></span></dt>
+                              <dd>
+                               <span>老虎钳字</span>
+                               <label>10把</label>
+                              </dd>
+                            </dl>
+                        </div>
+                      </div> -->
+                  </div>
+              </div>
+              <div class="swiper-button-next swiper-button-next2"></div>
+              <div class="swiper-button-prev swiper-button-prev2"></div>
+          </div>
+              <!-- Swiper end -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="clinic-fotCopyright">Copyright@2016   薄荷牙医</div>
+</div>
+  
+
+<div class="clinicTipbox-opacity" id="EquipmentTipbox" style="display:none">
+  <div class="opacity-tipboxContain Mtop240 Mtop2402">
+    <h4><span id="title_Equip"></span><i class="closebtni"></i></h4>
+    <div class="inputboxdiv new-input-box h45">
+      <span>品牌：&nbsp;</em></span>
+      <input type="text" name="textInput" id="brand" >
+      <p class="errorTip"></p>
+    </div>
+    <div class="inputboxdiv new-input-box h45">
+      <span>国家：&nbsp;</span>
+      <input type="text" name="textInput" id="country" >
+      <p class="errorTip"></p>
+    </div>
+    <div class="inputboxdiv new-input-box h45">
+      <span>使用年限：&nbsp;</span>
+      <input type="text" name="textInput" id="life_year" >
+      <p class="errorTip"></p>
+    </div>
+    <div class="inputboxdiv new-input-box h45">
+      <span>数量：&nbsp;</span>
+      <input type="text" name="textInput" id="equipment_nums" style="width:60%" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"><b> 台</b>
+      <p class="errorTip"></p>
+    </div>
+    <div class="inputboxdiv new-input-box h45">
+      <span>支持电话：&nbsp;</span>
+      <input type="text" name="textInput" id="tel" >
+      <p class="errorTip"></p>
+    </div>
+    <div class="inputboxdiv">
+      <span>设备图片：&nbsp;</span>
+      <div class="touxiang touxiangju" id="equipment_pic"><img src="" alt="">
+        
+      </div>
+      <div class="but-input uppic-input"><input type="file" value="点击上传" id="filen" class="but-input upfile-butt">点击添加</div>
+      <p class="uppicerrorTip"></p>
+    </div>
+    <div class="inputboxdiv">
+      <a href="javascript:;" class="btn clear" id="cancelBtn">取消</a>
+      <a href="javascript:;" class="btn save" id="saveBtn">保存</a>
+    </div>
+  </div>
+</div>
+<div class="clinicTipbox-opacity" id="MaterialTipbox" style="display:none">
+  <div class="opacity-tipboxContain Mtop150">
+    <h4><span id="title_Material"></span><i class="closebtni"></i></h4>
+    <div class="inputboxdiv new-input-box h45">
+      <span>耗材名称：&nbsp;</em></span>
+      <input type="text" name="textInput" id="material_name">
+      <p class="errorTip"></p>
+    </div>
+    <div class="inputboxdiv new-input-box h45">
+      <span>数量：&nbsp;</span>
+      <div>
+        <input type="text" name="textInput" id="material_nums" style="width:50%" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+        <select name="" id="material_unit">
+          <option value="个">个</option>
+          <option value="把">把</option>
+        </select>
+      </div>
+      
+      <p class="errorTip"></p>
+    </div>
+    
+    <div class="inputboxdiv">
+      <span>耗材图片：&nbsp;</span>
+      <div class="touxiang" id="material_pic"><img src="" alt="">
+        
+
+      </div>
+      <div class="but-input uppic-input"><input type="file" value="点击上传" id="filen2" class="but-input upfile-butt">点击添加</div>
+      <p class="uppicerrorTip"></p>
+    </div>
+    <div class="inputboxdiv">
+      <a href="javascript:;" class="btn clear" id="cancelBtn2">取消</a>
+      <a href="javascript:;" class="btn save" id="saveBtn2">保存</a>
+    </div>
+  </div>
+</div>
+<div class="clinicTipbox-opacity" id="showPicTipbox" style="display:none">
+  <div class="showPicmain">
+      <img src="" alt="">
+      <span id="closeShowpic"></span>
+  </div>
+</div>
+<div class="new-create-opcity clinic-create-opcity" id="clinicupPic1"  style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传图片<span class="close-dialog"></span></h4>
+            <div class="imageBox" id="imageBox">
+                <div class="thumbBox" id="thumbox"></div>
+                <div class="spinner" id="spinner" style="display: none">Loading...</div>
+            </div>
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传图片</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+<div class="new-create-opcity clinic-create-opcity2" id="clinicupPic2"  style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传图片<span class="close-dialog"></span></h4>
+            <div class="imageBox" id="imageBox2">
+                <div class="thumbBox" id="thumbox2"></div>
+                <div class="spinner" id="spinner2" style="display: none">Loading...</div>
+            </div>
+            <div class="action">
+                <div class="filebut"><input type="file" id="file2" class="choose-file"> 上传图片</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut2" class="btnZoomOut"></span>
+                    <span id="btnZoomIn2" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop2" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>

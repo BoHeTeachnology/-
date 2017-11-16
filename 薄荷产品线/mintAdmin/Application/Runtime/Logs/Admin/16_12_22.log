@@ -1,0 +1,54 @@
+[ 2016-12-22T10:23:23+08:00 ] ::1 /mintAdmin/index.php/Admin/Login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002219s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `mint_user` WHERE `account` = 'admin' LIMIT 1   [ RunTime:0.0327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015370s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015450s ]
+
+[ 2016-12-22T10:23:23+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0342s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0332s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0312s ]
+
+[ 2016-12-22T10:23:24+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001662s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0329s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0340s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0322s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0334s ]
+
+[ 2016-12-22T10:23:24+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0303s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0321s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0307s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0312s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>选择预约项目</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../../css/weui.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/chooseproj.js?time=1"></script>
+  <script>
+    $(function(){
+      //location.href='http://'+location.host+"/mintwx/html/order/doctorMa.html";
+    })
+  </script>
+</head>
+<body>
+<div class="choosetop" style="margin-top:0;display:none" id="choseBoxtop1">
+    <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="height:25px;">
+                <p id="name" style="max-width:70px;overflow:hidden"></p>
+                <span id="phone"></span>
+            </div>
+            <a class="forOther" id="forOtherBtn" href="chooseOther.html">为他人预约</a>
+        </div>
+    </div>
+</div>
+<div class="choosetop" style="margin-top:0;display:none" id="choseBoxtop2">
+    <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="height:25px;">
+                <p id="name2" style="max-width:70px;overflow:hidden"></p>
+                <span id="phone2"></span>
+            </div>
+            <a class="forOther" id="forOtherBtn_cancel" href="javascript:;">取消为他人预约</a>
+        </div>
+    </div>
+</div>
+
+<h3 class="chooseTitle">选择预约项目</h3>
+<div class="chooseProjbox">
+  <div class="chooseProjboxdl" id="chooseProjboxdl">
+    <!-- <dl>
+      <dt><img src="../../images/pro1.png" alt=""></dt>
+      <dd>洗牙</dd>
+    </dl>
+    <dl class="cur">
+      <dt><img src="../../images/pro2.png" alt=""></dt>
+      <dd>补牙</dd>
+    </dl>
+    <dl>
+      <dt><img src="../../images/pro3.png" alt=""></dt>
+      <dd>拔牙</dd>
+    </dl>
+    <dl>
+      <dt><img src="../../images/pro4.png" alt=""></dt>
+      <dd>镶牙</dd>
+    </dl>
+    <dl>
+      <dt><img src="../../images/pro5.png" alt=""></dt>
+      <dd>整牙</dd>
+    </dl>
+    <dl>
+      <dt><img src="../../images/pro6.png" alt=""></dt>
+      <dd>检查</dd>
+    </dl> -->
+    
+  </div>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+<div class="opacityTipbox" style="display:none">
+  <h3>
+    <label>您是否要复诊？</label>
+    <p class="fuzhentip"><span class="reOrderCancel">以后再说</span><span class="wantReorder">我要复诊</span></p>
+  </h3>
+</div>
+<div class="fotIcon fotprojIcon" style="display:none" ><!-- 添加了隐藏，可去除 -->
+    <img src="../../images/logo2.png" alt="">
+    <p>轻快预约&nbsp;&nbsp;&nbsp;从“齿”简单</p>
+</div>
+<span style="font-size: 14px;text-align: center;padding:30px 20px;margin: 0 auto;display:none;color: #979797;">薄荷牙医春节放假时间为1月23日~2月3日，2月4日起开始继续为大家提供服务</span>
+</body>
+</html>
+<script>
+  (function(m, ei, q, i, a, j, s) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.charset = 'UTF-8';
+        j.src = '//static.meiqia.com/dist/meiqia.js';
+        s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', 47693);
+
+</script>

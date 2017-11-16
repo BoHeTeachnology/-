@@ -1,0 +1,24 @@
+[ 2016-12-15T10:40:30+08:00 ] ::1 /mintAdmin/up/images/20161214/photo_585139b1aa3c0.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+ERR: 无法加载模块:Up
+
+[ 2016-12-15T10:48:16+08:00 ] ::1 /mintAdmin/up/images/20161214/photo_585139b1aa3c0.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+ERR: 无法加载模块:Up
+
+[ 2016-12-15T11:04:15+08:00 ] ::1 /mintAdmin/up/images/20161214/photo_585139b1aa3c0.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+ERR: 无法加载模块:Up
+
+[ 2016-12-15T11:32:17+08:00 ] ::1 /mintAdmin/up/images/20161214/photo_585139b1aa3c0.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+ERR: 无法加载模块:Up
+

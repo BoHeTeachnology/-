@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userSee_info.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop_edit">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="../../index.html#User" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                    <div class="userInfobox">
+                        <script src="../../js/header.js"></script> 
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu user_topmenu_edit">
+                            <ul id='routeUl'>
+                                <li><a class="active" href="see_info.html#User" id='info'>基础信息</a></li>
+                                <li><a href="see_past.html#User" id='past'>既往史</a></li>
+                                <li><a href="see_mouths.html#User" id='mouth'>口腔情况</a></li>
+                                <li><a href="see_tooth.html#User" id='pics'>牙位图</a></li>
+                                <li><a href="see_family.html#User" id='family'>关系成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time z_time_edit">
+                            <div class="z_time_btn">
+                                <a href="javascript:;" class="default_inputbtn z_edit_btn" id="edit-but">编辑</a>
+                            </div>
+                           <!--  <input type="button" class="default_inputbtn z_save_btn" value="保存"> -->
+                            
+                        </div>
+                        <div class="userContain z_userContain_edit" id="change">
+                            <div class="z_userContainMain">
+
+                                <!-- 基础信息 -->
+                                <div class="containb_right">
+                                    <div class="z_left_box">
+                                        <div class="z_headerPic">
+                                            <div class="z_touxiang" id="photo"><img src="" alt=""></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="z_right_rbox">
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>薄荷名：</span>
+                                                    <div class="z_textinfo" id="mint_name"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>登录手机号：</span>
+                                                    <div class="z_textinfo" id="account"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>姓名：</span>
+                                                    <div class="z_textinfo" id="name"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>真实姓名：</span>
+                                                    <div class="z_textinfo" id="real_name"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>出生年月：</span>
+                                                    <div class="z_textinfo" id="birth"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>民族：</span>
+                                                    <div class="z_textinfo" id="race"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>证件种类：</span>
+                                                    <div class="z_textinfo" id="card_type"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>证件号码：</span>
+                                                    <div class="z_textinfo" id="card_id"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>联系方式：</span>
+                                                    <div class="z_textinfo" id="phone"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>性别：</span>
+                                                    <div class="z_textinfo" id="sex"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>年龄：</span>
+                                                    <div class="z_textinfo" id="age"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>婚姻状况：</span>
+                                                    <div class="z_textinfo" id="married"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>有无子女：</span>
+                                                    <div class="z_textinfo" id="have_child"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="z_main_contain no_border">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>工作单位：</span>
+                                                    <div class="z_textinfo" id="company_name"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>职业：</span>
+                                                    <div class="z_textinfo" id="job"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>Email：</span>
+                                                    <div class="z_textinfo" id="email"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="input-box h25 chakanspan"> 
+                                                    <span>社保号：</span>
+                                                    <div class="z_textinfo" id="society_number"></div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="input-box h25 chakanspan"> 
+                                                <span>邮寄地址：</span>
+                                                <div class="z_textinfo W520" id="post_address"></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="input-box h25 chakanspan"> 
+                                                <span>备注：</span>
+                                                <div class="z_textinfo W520" id="remark"></div>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                            
+                                    </div>
+                                </div><!-- 基础信息结束 -->
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                            
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+            
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

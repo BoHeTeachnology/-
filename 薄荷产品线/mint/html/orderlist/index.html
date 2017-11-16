@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-预约表</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/pagination.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/jquery.pagination.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/orderlist.js?time=2"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+  <div class="header">
+    <!-- <div class="logo">
+      <img src="../../images/logo.png" alt="">
+      <span>薄荷口腔</span>
+    </div>
+    <div class="exit">
+      <a href="#" class="exit-but">退出</a>
+      <p>欢迎您！<span></span></p>
+    </div> -->
+  </div>
+
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul class="cd-accordion-menu" id="left-list">
+       <!--  <li class="User cur"><a href="#">合作诊所</a></li>
+       <li class="Role"><a href="#">合作企业</a></li>
+       <li class="App"><a href="#">医生列表</a></li>
+       <li class="App"><a href="#">医生列表</a></li>
+       <li class="App"><a href="#">医生列表</a></li>
+       <li class="App"><a href="#">医生列表</a></li> -->
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop2">
+            <div class="but-box">
+              <p>
+                <a href="add.html#Appointment" class="add-but" id="add">新建</a>
+                <a href="javascript:void(0)" class="edit-but" id="edit">修改</a>
+                <a href="javascript:void(0)" class="delete-but" id="delete">删除</a>
+              </p>
+            </div>
+
+            <div class="top-input-box">
+              <p>预约单号：<input type="text" id="reserve_number"></p>
+              <p>就诊人：<input type="text" id="patient_name"></p>
+              <p>预约时间：<input type="text" id="timeStart" readonly class="riliicon"><span> 至 </span><input type="text" id="timeEnd" readonly class="riliicon"></p>
+              <p>所属公司：<input type="text" id="company_name"></p>
+
+              <div class="moresel">
+                <span class="moreButspan"><b>更多</b><i></i></span>
+                <div class="moreboxhide">
+                    <p>项目：<input type="text" id="project_name"></p>
+                    <div class="orderDoctor"> 
+                        <span class="doctorspan">医生：</span>
+                        <div class="col-sm-9" id="DocInputbox">
+                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                              <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                              <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                                <span class="caret"></span>
+                              </button>
+                              <div class="dropdown-menu">
+                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                  <label class="sr-only" for="input-bts-ex-5"></label>
+                                  <div class="search-box">
+                                    <div class="input-group">
+                                      <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search form-control3" aria-describedby="search-icon5" tabindex="1" />
+                                    </div>
+                                  </div>
+                                  <div class="list-to-filter">
+                                        <ul class="list-unstyled" id="doctor_id">
+                                            <!-- <li class="filter-item items" data-filter="整整" data-value="1">整整</li>
+                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                            <li class="filter-item items" data-filter="22222" data-value="5">22222</li> -->
+                                        </ul>
+                                    <div class="no-search-results">
+                                      <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <input type="hidden" name="bts-ex-5" value="">
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                    <div class="orderDoctor"> 
+                        <span class="doctorspan">诊所：</span>
+                        <div class="col-sm-9" id="ClinkBox">
+                            <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                              <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                              <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                                <span class="caret"></span>
+                              </button>
+                              <div class="dropdown-menu">
+                                <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                  <label class="sr-only" for="input-bts-ex-5"></label>
+                                  <div class="search-box">
+                                    <div class="input-group">
+                                      <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search form-control3" aria-describedby="search-icon5" tabindex="1" />
+                                    </div>
+                                  </div>
+                                  <div class="list-to-filter">
+                                        <ul class="list-unstyled" id="clinic_id">
+                                            <!-- <li class="filter-item items" data-filter="整整" data-value="1">整整（15101538595）</li>
+                                            <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                            <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                            <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                            <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                            <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                            <li class="filter-item items" data-filter="22222" data-value="5">22222</li> -->
+                                        </ul>
+                                    <div class="no-search-results">
+                                      <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <input type="hidden" name="bts-ex-5" value="">
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                </div>
+              </div>
+              <p>
+                <a href="javascript:void(0)" class="search-but" id="search">搜索</a>
+                <a href="javascript:void(0)" class='reset-but' id="reset">重置</a>
+              </p>
+                  
+              
+              
+            </div>
+            
+        </div><!-- rtop -->
+        <div class="table-box">
+        <table class="table table-bordered table-hover table-height table-height4 mtop100 Mbtom50">
+            <thead>
+                <tr>
+                    <th width="60px">选择</th>
+                    <th width="80px">预约单号</th>
+                    <th width="60px">就诊人</th>
+                    <th width="120px">预约时间</th>
+                    <!-- <th width="80px">提交日期</th> -->
+                    <th>所属公司</th>
+                    <th width="80px">医生</th>
+                    <th width="100px">诊所</th>
+                    <th width="80px">项目</th>
+                    <th width="80px">预约状态</th>
+                    <th width="100px">联系方式</th>
+                    <th width="80px">是否本人</th>
+
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody id="AppointmentTable">
+                <!-- <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio" name="radio" id="radioInput1"><label for="radioInput1"></label></span></td>
+                    <td><span>15101538595</span></td>
+                    <td><span>selina</span></td>
+                    <td><span>女</span></td>
+                    <td><span>ddd</span></td>
+                    <td><span>北京</span></td>
+                    <td><span>北京</span></td>
+                </tr> -->
+              </tbody>
+        </table>
+        <div id="Pagination-box" style="display:none">
+              <div class="pountAll">共有<span id="pcountNum"></span>条，每页显示：10条</div>
+              <div id="Pagination">
+              </div>
+              <div id="go-nextBox">
+                <!-- <label>共<span class="pageNum"></span>页</label> -->
+                <span class="jumppage go-page" id="go-page">
+                  <input id="jump-to" class="jump-to numPage" value="" name="page" type="text" style="border:none">
+                  <a href="javascript:;" title="立即跳转" id="jump-btn" class="jump-btn go">Go</a>
+                </span>
+              </div>
+        </div>
+        
+        </div>
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+</div>
+
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>确定要删除吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>

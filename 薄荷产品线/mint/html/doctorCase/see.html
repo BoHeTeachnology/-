@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>初筛报告-查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper1">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="ima ges/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop_edit">
+            <div class="but-box bj-none">
+                <p>
+                    <a href="javascript:;" class="back-but" id="backs">返回</a>
+                    <a href="javascript:void(0)" class="save-but" id="send-but">发送</a>
+                    <span class="sent-but" id="sent" style="">已发送</span>
+                </p>
+            </div>
+            <div class="userInfobox case_user_top_main" id="">
+                <div>
+                    <dl>
+                        <dt id="user_photo"><img src="" alt=""></dt>
+                        <dd>
+                            <h3>
+                                <span id="">就诊人：<b>selina 29393029293849</b></span>
+                            </h3>
+                            <p id="">主账户：<span>selina 292929393 （1322222222）</span></p>
+                        </dd>
+                        <div class="head_desc_btnbox Wid225" id="head_btnbox">
+                          <a href="javascript:;" class="default_inputbtn see-but3" id="see-but-case">新建病历</a>
+                          <a href="javascript:;" class="default_inputbtn see-but3" id="see-but-case">查看档案</a>
+                        </div>
+                        <div class="clear"></div>
+                    </dl>
+                </div>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="user_main_top">
+                <div class="user_topmenu user_topmenu_edit">
+                    <ul>
+                        <select class="case_time_select" id="">
+                            <option value="">2015-21-21</option>
+                        </select>
+                    </ul>
+
+                </div>
+                <div class="time repoter_top" style="top:206px;">
+                    <div class="z_time_btn">
+                        <h6 class="header_case_bj">
+                          <span>慢性咽炎-牙周炎</span>
+                          <a href="javascript:;" class="default_inputbtn z_edit_btn">编辑</a>
+                        </h6>
+                        
+                    </div>
+                </div>
+                <div class="userContain repoter_container" id="" style="top:250px;">
+                    <div class="z_userContainMain">
+                      <div class="containb_right Mtopbox_case" id="">
+                        <div class="containb_right_inner">
+
+                          <div class="input_top_floatbox input_top_see_dloatbox">
+                              <div class="input-box2 case_num_input"> 
+                                  <span class="desc_span">病 历 号 ：</span>
+                                  <label class="case_see_label">232333</label>
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">状态：</span> 
+                                  <label class="case_see_label">复诊</label>
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">就诊日期：</span>
+                                  <label class="case_see_label">2016-12-32</label>
+                              </div>
+                              <div class="input-box2 widdiv"> 
+                                  <span class="desc_span">医生：</span>
+                                  <label class="case_see_label">selina（132222222222）</label>
+                                  
+                              </div>
+                              <div class="input-box2 zhensuo widdiv"> 
+                                  <span class="desc_span">诊所：</span>
+                                  <label class="case_see_label">北京市朝阳区薄荷口腔</label>
+                                  
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">诊断项目：</span>
+                                  <label class="case_see_label">阿斯顿发， 大幅回家萨芬， 爱上对方你很少</label>
+                              </div>
+                              <div class="clear">&nbsp;</div>
+                          </div>
+                          <div class="case_container_main">
+                            <div class="case_prebox">
+                                <h3><i class="case_blue"></i><span>主诉：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="case_see_main">那家饭店是金发粉</p>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_orange"></i><span>现病史：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="case_see_main">那家饭店是金发粉</p>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_black"></i><span>既往史：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="history_case">
+                                      <span>就打死对方</span>
+                                      <span>爱的是分散</span>
+                                      <span>就打死对方</span>
+                                      <span>睡你的</span>
+                                      <span>就打死对方</span>
+                                      <span>就打死对方</span>
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_blue"></i><span>检查：</span></h3>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check_see">
+                                    <h5>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <p>牙位：<a class="case_tooth" href="javascript:;">23，23，32</a></p>
+                                    </h5>
+                                    <div class="case_see_main2">女生叫大金刚家饭店就暗示法</div>
+                                  </div>
+                                </div>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check_see">
+                                    <h5>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <p>牙位：<a class="case_tooth" href="javascript:;">23，23，32</a></p>
+                                    </h5>
+                                    <div class="case_see_main2">女生叫大金刚家饭店就暗示法<br>女生叫大金刚家饭店就暗示法</div>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="case_prebox">
+                                <h3><i class="case_orange"></i><span>影像学检查：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="history_case">
+                                      <span style="display:none">暂无影像！请到客户管理中增添影像资料。</span>
+                                      <label class="see_user_photozip">查看该客户影像资料</label>
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_black"></i><span>诊断：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="history_case">
+                                      <span>12，21，42  慢性龈缘炎</span>
+                                      <span>12，21 残冠</span>
+                                  </p>
+                                </div>
+                            </div>
+
+                            <div class="case_prebox">
+                                <h3><i class="case_blue"></i><span>治疗：</span></h3>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check_see">
+                                    <h5>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <p>牙位：<a class="case_tooth" href="javascript:;">23，23，32</a></p>
+                                    </h5>
+                                    <div class="case_see_main2">女生叫大金刚家饭店就暗示法女生叫大金刚家饭店就暗示法</div>
+                                  </div>
+                                </div>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check_see">
+                                    <h5>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <p>牙位：<a class="case_tooth" href="javascript:;">23，23，32</a></p>
+                                    </h5>
+                                    <div class="case_see_main2">女生叫大金刚家饭店就暗示法>女生叫大金刚家饭店就暗示法</div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="case_prebox Pbtom50">
+                                <h3><i class="case_orange"></i><span>医嘱：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="case_see_main">那家饭店是金发粉</p>
+                                </div>
+                            </div>
+
+
+
+                          </div>
+
+                        </div>
+                      </div>
+                        
+                    </div>  
+                    <div class="clear"></div>
+                </div>
+                    
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">请选则检查模板<span class="close-dialog"></span></h4>
+        <div class="tip_box_select">
+          <select name="" id="">
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+          </select>
+          <select name="" id="">
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+          </select>
+          <select name="" id="">
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+          </select>
+        </div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>您确定要删除该治疗类目信息吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+  $('.userContain').height( $(window).height()-250 )
+    window.onresize=function(){
+        $('.userContain').height( $(window).height()-250 )
+    }
+</script>

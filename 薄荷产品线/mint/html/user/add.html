@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../cssuser.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userAdd_info.js"></script>
+<<<<<<< .mine
+  <script src="vue.js"></script>
+<style>
+    .yawei{
+        width:30px;
+        height: 30px;
+        background: #eee;
+        color: red;
+        text-align: center;
+        line-height: 30px;
+    }
+    .yellow{
+        background: yellow;
+    }
+    .white{
+        background: white;
+    }
+
+</style>
+=======
+  <script src="../../js/userAdd_past.js"></script>
+>>>>>>> .r14309
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="../../index.html#User" class="back-but" id="back">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top"  id='app'>
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                                <li><a href="#page1" id='a1'>基础信息</a></li>
+                                <li><a href="#page2" id='a2'>既往史</a></li>
+                                <li><a href="#page3" id='a3'>口腔情况</a></li>
+                                <li><a href="#page4" id='a4'>牙位图</a></li>
+                                <li><a href="#page5" id='a5'>牙片</a></li>
+                                <li><a href="#page6" id='a6'>家庭成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time">
+                           <!--  <input type="button" class="default_inputbtn z_save_btn" value="保存"> -->
+                            <a href="#" class="default_inputbtn z_save_btn" id="save-but" v-on:click="save">保存</a>
+                            <a href="#" class="default_inputbtn z_save_btn" id="save-but2">保存2</a>
+                        </div>
+                        <div class="userContain" id="change">
+                                <!-- 基础信息 -->
+                                <div class="containb_right">
+                                    <div class="z_left_box">
+                                        <div class="z_headerPic">
+                                            <div class="z_touxiang" id="photo"><img src="../../images/userPic.png" alt=""></div>
+                                            <div class="z_but-input"><input type="file" value="上传头像" id="file2" class="but-input upfile-butt">上传头像</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="z_right_rbox">
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25">
+                                                    <span><em class="emx">账号：</em></span>
+                                                    <input type="text" class="text-input" id="account" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" placeholder="只能输入手机号">
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span><em class="emx">手机：</em></span>
+                                                    <input type="text" class="text-input" id="phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25">
+                                                    <span>用户名：</span>
+                                                    <input type="text" class="text-input" id="name">
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span><em class="emx">密码：</em></span>
+                                                    <input type="password" class="text-input" id="password" placeholder="6～20个字符">
+                                                    <div class="clear"></div>
+                                                    <p class="z_error"></p>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="z_main_contain">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25">
+                                                    <span>真实姓名：</span>
+                                                    <input type="text" class="text-input" id="real_name">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>出生年月：</span>
+                                                    <input type="text" class="text-input layicon" id="birth" readonly="readonly">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>民族：</span>
+                                                    <input type="text" class="text-input" id="race">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+
+                                                <div class="input-box h25">
+                                                    <span>证件种类：</span>
+                                                    <select class="select-div" id="card_type">
+                                                        <option value="">请选择</option>
+                                                        <option value="1">身份证</option>
+                                                        <option value="3">护照</option>
+                                                    </select>
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>证件号码：</span>
+                                                    <input type="text" class="text-input" id="card_id">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25">
+                                                    <span>性别：</span>
+                                                    <div class="radio-box" id="sex">
+                                                        <span><input type="radio" class="radio1" name="radio2" id="checkboxa" value="1"><label for="checkboxa"></label>男</span>
+                                                        <span><input type="radio" class="radio1" name="radio2" id="checkboxb" value="2"><label for="checkboxb"></label>女</span>
+                                                    </div>
+                                                    <p class="errorTip"></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>年龄：</span>
+                                                    <input type="text" class="text-input" readonly="readonly" id="age">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>婚姻状况：</span>
+                                                    <div class="radio-box" id="married">
+                                                        <span><input type="radio" class="radio1" name="married" id="checkboxc" value="1"><label for="checkboxc"></label>已婚</span>
+                                                        <span><input type="radio" class="radio1" name="married" id="checkboxd" value="0"><label for="checkboxd"></label>未婚</span>
+                                                    </div>
+                                                    <p class="errorTip"></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>有无子女：</span>
+                                                    <div class="radio-box" id="have_child">
+                                                        <span><input type="radio" class="radio1" name="have_child" id="checkboxe" value="1"><label for="checkboxe"></label>有</span>
+                                                        <span><input type="radio" class="radio1" name="have_child" id="checkboxf" value="0"><label for="checkboxf"></label>无</span>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="z_main_contain no_border">
+                                            <div class="z_main_left">
+                                                <div class="input-box h25">
+                                                    <span>工作单位：</span>
+                                                    <input type="text" class="text-input" id="company_name">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>职业：</span>
+                                                    <input type="text" class="text-input" id="job">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="z_main_right">
+                                                <div class="input-box h25">
+                                                    <span>Email：</span>
+                                                    <input type="text" class="text-input" id="email">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                                <div class="input-box h25">
+                                                    <span>社保号：</span>
+                                                    <input type="text" class="text-input" id="society_number">
+                                                    <div class="clear"></div>
+                                                    <p></p>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <div class="input-box h25">
+                                                <span>邮寄地址：</span>
+                                                <input type="text" class="text-input W475" id="post_address">
+                                                <div class="clear"></div>
+                                                <p></p>
+                                            </div>
+                                            <div class="input-box h25">
+                                                <span>备注：</span>
+                                                <input type="text" class="text-input W475" id="remark">
+                                                <div class="clear"></div>
+                                                <p></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- 基础信息结束 -->
+                                <!-- 既往史 -->
+                                <div class="containb_right">
+
+                                    <div class="z_jws_main">
+                                        <h2 class="no_border"><i class="row_1"></i><span>{{data_arr[0].name}}</span></h2>
+                                        <div class="z_checkbox_main" id="body_condition">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone" id="">
+<<<<<<< .mine
+
+
+                                                    <span class="W120" v-for="todo in data_arr[0].content">
+                                                        <input type="checkbox" class="checkbox" id={{todo.id}} value="8" checked={{todo.bool}} v-model="todo.bool">
+                                                        <label for={{todo.id}}><i>{{todo.content_name}}</i></label>
+=======
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_0" value="心脏病史">
+                                                        <label for="checkboxa_0"><i>心脏病史</i></label>
+>>>>>>> .r14309
+                                                    </span>
+                                                    <!-- <span class="W120" v-for="todo in data_arr[0].content">
+                                                        <input type="checkbox" class="checkbox" id={{todo.id}} value="12" checked={{todo.bool}}>
+                                                        <label for={{todo.id}}><i>{{todo.content_name}}</i></label></span>
+                                                    <span class="W120">
+<<<<<<< .mine
+=======
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_1" value="高血压病史">
+                                                        <label for="checkboxa_1"><i>高血压病史</i></label>
+                                                    </span>
+                                                    <span class="W120">
+>>>>>>> .r14309
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_2" value="糖尿病史">
+                                                        <label for="checkboxa_2"><i>糖尿病史</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_3" value="风湿病">
+                                                        <label for="checkboxa_3"><i>风湿病</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_4" value="癫痫病">
+                                                        <label for="checkboxa_4"><i>癫痫病</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_5" value="在妊娠期">
+                                                        <label for="checkboxa_5"><i>在妊娠期</i></label>
+                                                    </span>
+                                                    <span class="W120">
+<<<<<<< .mine
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_6" value="12">
+                                                        <label for="checkboxa_6"><i>是否在哺乳期</i></label></span> -->
+=======
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_6" value="在哺乳期">
+                                                        <label for="checkboxa_6"><i>在哺乳期</i></label>
+                                                    </span>
+>>>>>>> .r14309
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_7" value="定期体检">
+                                                        <label for="checkboxa_7"><i>定期体检</i> </label>
+                                                        <b>最近一次体检日期： </b><input type="text" class="layicon" id="time1" readonly>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_8" value="定期洗牙">
+                                                        <label for="checkboxa_8"><i>定期洗牙</i></label>
+                                                        <b>最近一次洗牙日期： </b><input type="text" class="layicon" id="time2" readonly>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_2"></i><span>{{data_arr[1].name}}</span></h2>
+                                        <div class="z_checkbox_main" id="family_history">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone">
+<<<<<<< .mine
+                                                    <span class="W120" v-for='todo in data_arr[1].content '>
+                                                        <input type="checkbox" class="checkbox" id={{todo.id}} value="8" checked={{todo.bool}} v-model="todo.bool">
+                                                        <label for="{{todo.id}}"><i>{{todo.content_name}}</i></label></span>
+                                                    <!-- <span class="W120">
+=======
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_11" value="牙周病">
+                                                        <label for="checkboxa_11"><i>牙周病</i></label>
+                                                    </span>
+                                                    <span class="W120">
+>>>>>>> .r14309
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_12" value="牙列不齐">
+                                                        <label for="checkboxa_12"><i>牙列不齐</i></label>
+                                                    </span>
+                                                    <span class="W120">
+<<<<<<< .mine
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_13" value="12">
+                                                        <label for="checkboxa_13"><i>贫血</i></label></span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_14" value="12">
+                                                        <label for="checkboxa_14"><i>血液病</i></label></span> -->
+=======
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_13" value="颌骨发育异常">
+                                                        <label for="checkboxa_13"><i>颌骨发育异常</i></label>
+                                                    </span>
+>>>>>>> .r14309
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_3"></i><span>用药史</span></h2>
+                                        <div class="z_checkbox_main" id="medicine">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone clear_checkbox" id="">
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_21" value="是否在服用抗凝药（阿司匹林/华法林等）">
+                                                        <label for="checkboxa_21"><i>是否在服用抗凝药（阿司匹林/华法林等）</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_22" value="是否在服用免疫抑制剂（如环磷酰胺，他克莫司等）">
+                                                        <label for="checkboxa_22"><i> 是否在服用免疫抑制剂（如环磷酰胺，他克莫司等）</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_23" value="是否在服用骨质疏松类治疗药物（如福善美）">
+                                                        <label for="checkboxa_23"><i>是否在服用骨质疏松类治疗药物（如福善美）</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_24" value="近期是否在服用消炎止痛药">
+                                                        <label for="checkboxa_24"><i>近期是否在服用消炎止痛药</i></label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_4"></i><span>{{data_arr[2].name}}</span></h2>
+                                        <div class="z_checkbox_main" id="surgery">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone clear_checkbox" id="">
+                                                    <span>
+<<<<<<< .mine
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_31" value="8" checked={{data_arr[2].bool}} v-model='data_arr[2].bool'>
+                                                        <label for="checkboxa_31"><i> 近期是否做过手术</i></label>
+                                                        <b>&nbsp;</b><input type="text" disabled={{data_arr[2].bool?false:true}} value={{data_arr[2].bool?'':data_arr[2].text}} v-model='data_arr[2].text'>
+=======
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_31" value="近期是否做过手术" data="text">
+                                                        <label for="checkboxa_31"><i>近期是否做过手术</i></label>
+                                                        <b>&nbsp;</b><input class="Wid480" type="text">
+>>>>>>> .r14309
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <h2><i class="row_5"></i><span>过敏情况</span></h2>
+                                        <div class="z_checkbox_main" id="allergy">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone" id="">
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_41" value="青霉素类">
+                                                        <label for="checkboxa_41"><i>青霉素类</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_42" value="磺胺类">
+                                                        <label for="checkboxa_42"><i>磺胺类</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_43" value="局麻药">
+                                                        <label for="checkboxa_43"><i>局麻药</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_44" value="酒精">
+                                                        <label for="checkboxa_44"><i>酒精</i></label>
+                                                    </span> <br>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_45" value="其他过敏情况" data="text">
+                                                        <label for="checkboxa_45"><i>其他过敏情况</i></label>
+                                                        <b>&nbsp;</b><input class="Wid480" type="text">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_6"></i><span>传染病</span></h2>
+                                        <div class="z_checkbox_main pbtom30" id="infection">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone" id="">
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_51" value="肝炎">
+                                                        <label for="checkboxa_51"><i>肝炎</i></label></span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_52" value="结核">
+                                                        <label for="checkboxa_52"><i>结核</i></label></span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_53" value="艾滋病">
+                                                        <label for="checkboxa_53"><i>艾滋病</i></label></span><br>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_54" value="其他传染病" data="text">
+                                                        <label for="checkboxa_54"><i>其他传染病</i></label>
+                                                        <b>&nbsp;</b><input class="Wid480" type="text">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+
+                                </div><!-- 既往史结束 -->
+                                <!-- 口腔情况 -->
+                                <div class="containb_right">33333</div><!-- 口腔情况结束 -->
+                                <!-- 牙位图 -->
+                                <div class="containb_right">
+                                    <div  v-bind:class="['yawei', item.bool ? 'yellow' : 'white']" v-for='item in data_arr'>{{item.id}}</div>
+
+                                    <div class="checkBone" id="">
+                                     <span class="W120" v-for="item in data_arr2">
+                                        <input type="checkbox" class="checkbox" id={{item.id}} value="8" checked={{item.bool}} v-model="item.bool">
+                                        <label for={{todo.id}}><i>{{item.name}}</i></label>
+                                    </span>
+                                    </div>
+
+
+
+
+                                </div><!-- 牙位图结束 -->
+                                <!-- 牙片 -->
+                                <div class="containb_right">55555</div><!-- 牙片结束 -->
+                                <!-- 家族成员 -->
+                                <div class="containb_right">666666</div><!-- 家族成员结束 -->
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!--
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+    (function () {
+        /*$('#change div.containb_right').eq(0).show()
+        $('#a1').addClass('active');*/
+        $('.userContain').height( $(window).height()-190 )
+        window.onresize=function(){
+            $('.userContain').height( $(window).height()-190 )
+        }
+        $('#routeUl li a').click(function(){
+            //$(this).children().attr('class','active').parent().siblings().children().attr('class','');
+            $(this).addClass('active').parent().siblings().children().removeClass('active');
+        })
+       //$('#change div.containb_right').eq(0).show()
+    function Router () {} Router.prototype.route = function ( path, callback ) { var url = location.hash.slice(1) || '/';
+    // 刷新时的处理
+    window.addEventListener('load', function () { if ( url == path ) { callback&&callback(); } }, false);
+    // hash变化时的处理
+    window.addEventListener('hashchange', function () { url = location.hash.slice(1) || '/'; if ( url == path ) { callback&&callback(); } }, false); }; window.Router = new Router(); })();
+
+     var content = document.getElementById('change');
+        Router.route('page1', function () {
+            $('#a1').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2016');
+            $('#change div.containb_right').eq(0).show().siblings().hide();
+        });
+        Router.route('page2', function () {
+            $('#a2').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-2222222');
+            $('#change div.containb_right').eq(1).show().siblings().hide();
+
+
+
+                new Vue({
+                  el: '#app',
+                  data: {
+                    data_arr: [
+                        {
+                            name:'全身情况',
+                            content: [
+                                {
+                                    id:'checkboxa_0',
+                                    bool:false,
+                                    content_name:'心脏病史'
+                                },
+                                {
+                                    id:'checkboxa_1',
+                                    bool:false,
+                                    content_name:'高血压病史'
+                                },
+                                {
+                                    id:'checkboxa_2',
+                                    bool:false,
+                                    content_name:'糖尿病史'
+                                },
+                                {
+                                    id:'checkboxa_3',
+                                    bool:false,
+                                    content_name:'风湿病史'
+                                },{
+                                    id:'checkboxa_4',
+                                    bool:false,
+                                    content_name:'是否在妊娠期'
+                                },
+                                {
+                                    id:'checkboxa_5',
+                                    bool:false,
+                                    content_name:'是否在哺乳期'
+                                }
+                            ]
+                        },
+                        {
+                            name:'家族史',
+                            content: [
+                                {
+                                    id:'checkboxa_11',
+                                    bool:false,
+                                    content_name:'牙周病'
+                                },
+                                {
+                                    id:'checkboxa_12',
+                                    bool:false,
+                                    content_name:'牙列不齐'
+                                },
+                                {
+                                    id:'checkboxa_13',
+                                    bool:false,
+                                    content_name:'贫血'
+                                },
+                                {
+                                    id:'checkboxa_14',
+                                    bool:false,
+                                    content_name:'血液病'
+                                }
+                            ]
+                        },
+                        {
+                            name:'手术史',
+                            bool:false,
+                            text:''
+                        }
+                    ]
+                  },
+                  methods:{
+                    save: function () {
+                        console.log(this.data_arr)
+
+                    }
+                  }
+                })
+
+
+
+            });
+
+
+        Router.route('page3', function () {
+            $('#a3').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-3333333');
+            $('#change div.containb_right').eq(2).show().siblings().hide();
+
+
+        });
+
+        Router.route('page4', function () {
+            $('#a4').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-444444444444');
+            $('#change div.containb_right').eq(3).show().siblings().hide();
+
+            new Vue({
+                  el: '#app',
+                  data: {
+                    data_arr : [
+                        {
+                            id:11,
+                            bool:true,
+                            content:''
+                        },
+                        {
+                            id:12,
+                            bool:false,
+                            content:''
+                        },
+                        {
+                            id:13,
+                            bool:false,
+                            content:''
+                        },
+                        {
+                            id:14,
+                            bool:false,
+                            content:''
+                        },
+                        {
+                            id:15,
+                            bool:false,
+                            content:''
+                        },
+                        {
+                            id:16,
+                            bool:false,
+                            content:''
+                        },
+                        {
+                            id:17,
+                            bool:false,
+                            content:''
+                        },
+                    ],
+                    data_arr2:[
+                        {
+                            id:1,
+                            bool:false,
+                            name:'牙痛1111'
+                        },{
+                            id:2,
+                            bool:false,
+                            name:'牙痛222'
+                        },{
+                            id:3,
+                            bool:false,
+                            name:'牙痛3333'
+                        },{
+                            id:4,
+                            bool:false,
+                            name:'牙痛4444'
+                        }
+                    ]
+                  }
+              });
+
+        });
+
+        Router.route('page5', function () {
+            $('#a5').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-555555555555');
+            $('#change div.containb_right').eq(4).show().siblings().hide();
+        });
+
+        Router.route('page6', function () {
+            $('#a6').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-666666666');
+            $('#change div.containb_right').eq(5).show().siblings().hide();
+        });
+
+</script>
+</html>

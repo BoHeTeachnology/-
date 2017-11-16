@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-编辑</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/account.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="images/logo.png"/>
+  <script src="js/jquery-1.8.0.min.js"></script>
+  <script src="js/Ajax.js"></script>
+  <script src="js/upPic.js"></script>
+  <script src="jedate/jedate.js"></script>
+  <script src="js/js.js"></script>
+  <script src="js/userEdit.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="back">返回</a>
+                <a href="javascript:void(0)" class="save-but" id="save-but">保存</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="add-h3 add-main-box1 mtop45">
+                <h3 class="box5-h3">基本信息<span></span></h3>
+                <div class="main-input">
+                    <!-- <div class="containMainbox">
+                       左边盒子
+                        <div class="containMainleft">
+                        </div>
+                        <div class="containMainright">
+                        </div>
+                    </div> -->
+                    <div class="input-box h30"> 
+                        <span><em class="emx">账号：</em></span>
+                        <input type="text" class="text-input readonly" id="account" readonly>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>客户姓名：</span>
+                        <input type="text" class="text-input" id="name">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>真实姓名：</span>
+                        <input type="text" class="text-input" id="real_name">
+                        <p></p>
+                    </div>
+                    <div class="input-box h65"> 
+                        <span>客户头像：</span>
+                        <div class="touxiang" id="logo"><img src="" alt=""></div>
+                        <div class="but-input uppic-input"><input type="file" value="上传头像" id="file2" class="but-input upfile-butt">上传头像</div>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>性别：</span>
+                        <div class="radio-box" id="sex">
+                            <span><input type="radio" class="radio1" name="radio2" id="checkbox10" value="1"><label for="checkbox10"></label>男</span>
+                            <span><input type="radio" class="radio1" name="radio2" id="checkbox11" value="2"><label for="checkbox11"></label>女</span>
+                        </div>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>出生年月：</span>
+                        <input type="text" class="text-input layicon" id="J-xl" readonly="readonly">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>年龄：</span>
+                        <input type="text" class="text-input readonly" readonly="readonly" id="age">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>身份证：</span>
+                        <input type="text" class="text-input" id="card_id">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>Email：</span>
+                        <input type="text" class="text-input" id="email">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">手机（账号）：</em></span>
+                        <input type="text" class="text-input" id="phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>密码：</span>
+                        <input type="password" class="text-input" id="password" placeholder="6～20个字符">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>所在公司：</span>
+                        <input type="text" class="text-input" id="company_name">
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+            
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-诊所预约</title>
+  <link rel="stylesheet" href="../jedate/skin/jquery-weui.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="stylesheet" href="css/clinic.css">
+  <link rel="stylesheet" href="css/zdhChange.css">
+  <link rel="shortcut icon" href="../images/logo.png"/>
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../jedate/jquery-weui.js"></script>
+  <script type="text/javascript" src="js/Ajax2.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+<div class="clinicwrap">
+  <script type="text/javascript" src="js/head.js"></script> 
+  <script>showCurrent(0)</script>
+</div>
+<div class="containOutbox">
+  <div class="containbox">
+    <div class="containMain">
+      <div class="containLeft">
+        <div class="leftprebox">
+          <h3 class="rili">日历</h3>
+          <div class="canaldarbox">
+              <div id="inline-calendar"></div>
+              <input id="date" type="text" style="opacity:0">
+          </div>
+        </div>
+        <div class="leftprebox">
+          <h3 class="tingji">当日预约统计</h3>
+          <div class="tongjiproj">
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="containRight">
+        <div class="rightTopbox">
+          <div class="righLeft">
+            <h3 class="tjnum">当日数据统计</h3>
+            <div class="circleOutbox">
+              <div class="circlepre">
+                  <div class="circleProgress_wrapper bodOrange">  
+                    <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                    <div class="left"><div class="circleProgress leftcircle"></div></div>  
+                    <div class="center"><b></b><span>元</span></div>
+                  </div>  
+                  <p>今日流水</p>
+              </div>
+              <div class="circlepre">
+                  <div class="circleProgress_wrapper bodGreen">  
+                    <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                    <div class="left"><div class="circleProgress leftcircle"></div></div>
+                    <div class="center"><b></b><span>元</span></div> 
+                  </div>  
+                  <p>今日已到账</p>
+              </div>
+              <div class="circlepre">
+                  <div class="circleProgress_wrapper boxBlue">  
+                    <div class="right"><div class="circleProgress rightcircle"></div></div>  
+                    <div class="left"><div class="circleProgress leftcircle"></div></div> 
+                    <div class="center"><b></b><span>个</span></div> 
+                  </div> 
+                  <p>今日预约</p> 
+              </div>
+                
+            </div>
+          </div>
+          <div class="righRight">
+            <h3 class="tjnum">医生列表</h3>
+            <div class="doctorListshow"> 
+              
+            </div>
+          </div>
+        </div>
+        <div class="rightTablebox">
+          <table class="table table-bordered table-hover table-height table-height4 clinictablebox">
+              <thead>
+                  <tr>
+                      <th width="60px">序号</th>
+                      <th>预约时间</th>
+                      <th>预约状态</th>
+                      <th>客户姓名</th>
+                      <th>主治医生</th>
+                      <th>预约项目</th>
+                      <th>医生联系电话</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+  <div class="clear"></div>
+  <div class="clinic-fotCopyright">Copyright@2016 薄荷牙医</div>
+</div>
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>

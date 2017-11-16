@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>初筛报告-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../fillter/tabcomplete.min.js"></script>
+  <script src="../../fillter/livefilter.min.js"></script>
+  <script src="../../fillter/src/bootstrap-select.js"></script>
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper1">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="ima ges/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop_edit">
+            <div class="but-box bj-none">
+                <p>
+                    <a href="javascript:;" class="back-but" id="backs">返回</a>
+                    <a href="javascript:void(0)" class="save-but" id="send-but">发送</a>
+                    <span class="sent-but" id="sent" style="">已发送</span>
+                </p>
+            </div>
+            <div class="userInfobox case_user_top_main" id="header_desc">
+                <div>
+                    <dl>
+                        <dt id="user_photo"><img src="" alt=""></dt>
+                        <dd>
+                            <div class="input-box2 caseheadertop" id="visit_purson2"> 
+                                  <span class="desc_span">就诊人：</span>
+                                  <div class="visit_personbox">
+                                    <input type="text" class="visit_inputs">
+                                    <input type="button" value="搜索" class="visit_searchs">
+                                    <ul>
+                                      <p>没有查找到相关数据</p>
+                                      <li><span>张三张三</span>  15101323232 （18999999999）</li>
+                                      <li><span>张三</span>  15101323232 （18999999999）</li>
+                                      <li><span>张三</span>  15101323232 （18999999999）</li>
+                                      <li><span>张三</span>  15101323232 （18999999999）</li>
+                                    </ul>
+                                  </div>
+                                  <p class="error PL60"></p>
+                                  <p class="desc_tip PL60" id="desc_tip1"> </p>
+                            </div>
+                            <div class="header_user_main"> 
+                                <span class="desc_span">主账户：</span>
+                                <label>张三  15101323232 （18999999999）</label>
+                            </p>
+
+                        </dd>
+                        <a href="javascript:;" class="default_inputbtn see-but3 Float_r" id="see-but-case">查看档案</a>
+                        <div class="clear"></div>
+                    </dl>
+
+                    
+                    
+                </div>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="user_main_top">
+                <div class="time repoter_top" style="top:175px;">
+                    <div class="z_time_btn">
+                        <h6 class="header_case_bj">
+                          <span>客户病历</span>
+                          <input type="button" value="保存" class="default_inputbtn z_save_btn" id="save-but">
+                        </h6>
+                        
+                    </div>
+                </div>
+                <div class="userContain repoter_container" id="" style="top:220px;">
+                    <div class="z_userContainMain">
+                      <div class="containb_right Mtopbox_case" id="">
+                        <div class="containb_right_inner">
+
+                          <div class="input_top_floatbox">
+                              <div class="input-box2 case_num_input"> 
+                                  <span class="desc_span">病 历 号 ：</span>
+                                  <label for="">自动生成</label>
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">状态：</span>
+                                  <select class="select_case_top W50px" name="" id="">
+                                    <option value="">初诊</option>
+                                    <option value="">复诊</option>
+                                  </select>
+                                  <p class="error PL75"></p>
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">就诊日期：</span>
+                                  <input type="text" class="text-input layicons wd140" id="J-xl" readonly="readonly">
+                                  <p class="error PL75"></p>
+                              </div>
+                              <div class="input-box2 widdiv"> 
+                                  <span class="desc_span">医生：</span>
+                                  <div class="col-sm-8" id="DocInputbox">
+                                      <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                                        <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                                        <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                          <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                                          <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                          <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                            <label class="sr-only" for="input-bts-ex-5"></label>
+                                            <div class="search-box">
+                                              <div class="input-group">
+                                                <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1"/>
+                                              </div>
+                                            </div>
+                                            <div class="list-to-filter">
+                                                  <ul class="list-unstyled" id="doctor_id">
+                                                      <li class="filter-item items" data-filter="请选择" data-value="">请选择</li>
+                                                      <li class="filter-item items" data-filter="整整整整整整整整" data-value="1">男医生（151015392929）</li>
+                                                      <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                                      <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                                      <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                                      <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                                      <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                                      <li class="filter-item items" data-filter="11" data-value="5">22222</li>
+    
+                                                  </ul>
+                                              <div class="no-search-results">
+                                                <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <input type="hidden" name="bts-ex-5" value="">
+                                      </div>
+                                  </div>
+                                  <p class="error PL50"></p>
+                              </div>
+                              <div class="input-box2 zhensuo widdiv"> 
+                                  <span class="desc_span">诊所：</span>
+                                  <div class="col-sm-8" id="ClinkBox">
+                                      <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                                        <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                                        <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                                          <span class="placeholder" id="ClinkVal" data-val="">请选择</span>
+                                          <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                          <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                                            <label class="sr-only" for="input-bts-ex-5"></label>
+                                            <div class="search-box">
+                                              <div class="input-group">
+                                                <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search" aria-describedby="search-icon5" tabindex="1"/>
+                                              </div>
+                                            </div>
+                                            <div class="list-to-filter">
+                                                  <ul class="list-unstyled" id="clinic_id">
+                                                     <li class="filter-item items" data-filter="请选择" data-value="">请选择</li>
+                                                     <li class="filter-item items" data-filter="整整整整整整整整" data-value="1">整整整整整整</li>
+                                                     <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                                     <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                                     <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                                     <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                                     <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                                     <li class="filter-item items" data-filter="11" data-value="5">22222</li>
+                                                  </ul>
+                                              <div class="no-search-results">
+                                                <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <input type="hidden" name="bts-ex-5" value="">
+                                      </div>
+                                  </div>
+                                  <p class="error PL50"></p>
+                              </div>
+                              <div class="input-box2"> 
+                                  <span class="desc_span">诊断项目：</span>
+                                  <select class="select_case_top W100px" name="" id="">
+                                    <option value="">牙龈干牙龈干</option>
+                                    <option value="">拔牙</option>
+                                  </select>
+                                  <select class="select_case_top W100px" name="" id="">
+                                    <option value="">牙龈干牙龈干牙龈干牙龈干</option>
+                                    <option value="">拔牙</option>
+                                  </select>
+                                  <select class="select_case_top W100px" name="" id="">
+                                    <option value="">牙龈干牙龈干</option>
+                                    <option value="">拔牙</option>
+                                  </select>
+                                  <p class="error PL75"></p>
+                              </div>
+                              <div class="clear">&nbsp;</div>
+                          </div>
+                          <div class="case_container_main">
+                            <div class="case_prebox">
+                                <h3><i class="case_blue"></i><span>主诉：</span></h3>
+                                <div class="case_pre_child">
+                                  <textarea class="case_textarea" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_orange"></i><span>现病史：</span></h3>
+                                <div class="case_pre_child">
+                                  <textarea class="case_textarea" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_black"></i><span>既往史：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="history_case">
+                                      <span>就打死对方</span>
+                                      <span>爱的是分散</span>
+                                      <span>就打死对方</span>
+                                      <span>睡你的</span>
+                                      <span>就打死对方</span>
+                                      <span>就打死对方</span>
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_blue"></i><span>检查：</span><a class="add_case_check" href="javascript:;">添加<b>+</b></a></h3>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check">
+                                    <h4>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <p>牙位：<a class="case_tooth" href="javascript:;">23，23，32</a></p>
+                                      <label class="delete_btnLabel"></label>
+                                    </h4>
+                                    <textarea class="check_textarea" id="" cols="30" rows="10"></textarea>
+                                  </div>
+                                </div>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check">
+                                    <h4>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <p>牙位：<a class="case_tooth" href="javascript:;">23，23，32</a></p>
+                                      <label class="delete_btnLabel"></label>
+                                    </h4>
+                                    <textarea class="check_textarea" id="" cols="30" rows="10"></textarea>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="case_prebox">
+                                <h3><i class="case_orange"></i><span>影像学检查：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="history_case">
+                                      <span style="display:none">暂无影像！请到客户管理中增添影像资料。</span>
+                                      <label class="see_user_photozip">查看该客户影像资料</label>
+                                  </p>
+                                </div>
+                            </div>
+                            <div class="case_prebox">
+                                <h3><i class="case_black"></i><span>诊断：</span></h3>
+                                <div class="case_pre_child">
+                                  <p class="history_case">
+                                      <span>12，21，42  慢性龈缘炎</span>
+                                      <span>12，21 残冠</span>
+                                  </p>
+                                </div>
+                            </div>
+
+                            <div class="case_prebox">
+                                <h3><i class="case_blue"></i><span>治疗：</span><a class="add_case_check" href="javascript:;">添加<b>+</b></a></h3>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check">
+                                    <h4>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <label class="delete_btnLabel"></label>
+                                    </h4>
+                                    <textarea class="check_textarea" id="" cols="30" rows="10"></textarea>
+                                  </div>
+                                </div>
+                                <div class="case_pre_child">
+                                  <div class="case_pre_check">
+                                    <h4>
+                                      <p>项目：<span>洗牙</span></p>
+                                      <p>诊断分类：<span>牙龈炎 出血</span></p>
+                                      <label class="delete_btnLabel"></label>
+                                    </h4>
+                                    <textarea class="check_textarea" id="" cols="30" rows="10"></textarea>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="case_prebox Pbtom50">
+                                <h3><i class="case_orange"></i><span>医嘱：</span></h3>
+                                <div class="case_pre_child">
+                                  <textarea class="case_textarea" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+
+
+
+                          </div>
+
+                        </div>
+                      </div>
+                        
+                    </div>  
+                    <div class="clear"></div>
+                </div>
+                    
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" id="" style="display:none">
+  <div class="new-create-bj sortipbj" style="margin-top:-256px;">
+    <div class="new-create-box">
+      <h4 class="toph4"><b>选择牙位</b><span class="close-dialog"></span></h4>
+      <div class="case_choose_tooth">
+          <div class="tooths_pic_main case_main_picbox" id="">
+            <div class="tooth_box_pic_left">
+                <span class="round_teeth tooth_11">11</span>
+                <span class="round_teeth tooth_12">12</span>
+                <span class="round_teeth tooth_13">13</span>
+                <span class="round_teeth tooth_14">14</span>
+                <span class="round_teeth tooth_15">15</span>
+                <span class="round_teeth tooth_16">16</span>
+                <span class="round_teeth tooth_17">17</span>
+                <span class="round_teeth tooth_18">18</span>
+
+                <span class="round_teeth tooth_21">21</span>
+                <span class="round_teeth tooth_22">22</span>
+                <span class="round_teeth tooth_23">23</span>
+                <span class="round_teeth tooth_24">24</span>
+                <span class="round_teeth tooth_25">25</span>
+                <span class="round_teeth tooth_26">26</span>
+                <span class="round_teeth tooth_27">27</span>
+                <span class="round_teeth tooth_28">28</span>
+
+                <span class="round_teeth tooth_31">31</span>
+                <span class="round_teeth tooth_32">32</span>
+                <span class="round_teeth tooth_33">33</span>
+                <span class="round_teeth tooth_34">34</span>
+                <span class="round_teeth tooth_35">35</span>
+                <span class="round_teeth tooth_36">36</span>
+                <span class="round_teeth tooth_37">37</span>
+                <span class="round_teeth tooth_38">38</span>
+
+                <span class="round_teeth tooth_41">41</span>
+                <span class="round_teeth tooth_42">42</span>
+                <span class="round_teeth tooth_43">43</span>
+                <span class="round_teeth tooth_44">44</span>
+                <span class="round_teeth tooth_45">45</span>
+                <span class="round_teeth tooth_46">46</span>
+                <span class="round_teeth tooth_47">47</span>
+                <span class="round_teeth tooth_48">48</span>
+            </div>
+
+          </div>
+      </div>
+      <div class="new-creatbut-box">
+        <input type="button" class="but butgray" value="取 消" id="close-dialog">
+        <input type="button" class="but butblue" value="确 定" id="confirm-but">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">请选则检查模板<span class="close-dialog"></span></h4>
+        <div class="tip_box_select">
+          <select name="" id="">
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+          </select>
+          <select name="" id="">
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+          </select>
+          <select name="" id="">
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+            <option value="">说大不大方回</option>
+          </select>
+        </div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>您确定要删除该治疗类目信息吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+<script>
+  $('.userContain').height( $(window).height()-220 )
+    window.onresize=function(){
+        $('.userContain').height( $(window).height()-220 )
+    }
+</script>

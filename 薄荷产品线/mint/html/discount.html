@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-折扣管理</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/account.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="shortcut icon" href="../images/logo.png"/>
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/js.js"></script>
+  <script src="../js/discount.js"></script>
+
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+  <div class="header">
+    <!-- <div class="logo">
+      <img src="../images/logo2.png" alt="">
+      <span>雨点后台</span>
+    </div>
+    <div class="exit">
+      <a href="javascript:void(0)" class="exit-but">退出</a>
+      <p>欢迎您！<span>admin</span></p>
+    </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li><a href="../index.html">用户管理</a></li>
+        <li class="cur"><a href="javascript:void(0)">角色管理</a></li>
+        <li><a href="power.html">权限管理</a></li>
+        <li><a href="projectSort.html">项目分类</a></li>
+        <li><a href="pool/projectPool.html">项目池</a></li>
+        <li><a href="article/article.html">文章管理</a></li>
+        <li><a href="comment.html">评论管理</a></li>
+        <li><a href="jigou/jigou.html">投资机构</a></li> -->
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop2">
+            <div class="but-box">
+              <p>
+                <a href="javascript:void(0)" class="add-but" id="add-but">新建</a>
+                <a href="javascript:void(0)" class="edit-but" id="edit-but">修改</a>
+                <a href="javascript:void(0)" class="delete-but" id="delete-but">删除</a>
+              </p>
+            </div>
+
+            <div class="top-input-box">
+              <p>折扣额度：<input type="text" id="discount"></p>
+              <p>
+                <a href="javascript:void(0)" class="search-but" id="search">搜索</a>
+                <a href="javascript:void(0)" class='reset-but' id="reset">重置</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="table-box">
+          <table class="table table-bordered table-hover table-height3 mtop100 Mbtom50">
+            <thead>
+                <tr>
+                    <th width="60px">选择</th>
+                    <th>折扣额度</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                </tr>
+            </thead>
+            <tbody id="discountTable">
+
+            </tbody>
+          </table>
+        </div>
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+</div>
+<!-- 新建弹出层 -->
+<div class="new-create-opcity" id="role-dialog" style="display:none">
+  <div class="new-create-bj sortipbj" style="margin-top:-166px;">
+    <div class="new-create-box">
+      <h4 class="toph4"><b>新建</b><span class="close-dialog"></span></h4>
+      <div class="new-input">
+          <div class="new-input-box h50"> 
+              <span><em class="emx">折扣额度：</em></span>
+              <input type="text" class="text-input" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" id="discountVal" placeholder="建议输入1～100的正整数" maxLength="2"><b style="font-size:14px;padding-left:3px;"> %</b>
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-input-box h50"> 
+              <span>排序：</span>
+              <input type="text" class="text-input" value="500" id="sort">
+              <label class="tip_sort">数字越小，排列越靠前</label>
+          </div>
+          <div class="new-input-box"> 
+              <span>&nbsp;</span>
+              <div class="radio-box" id="is_use">
+                  <span style="padding-right:50px;">
+                    <input type="radio" class="radio1" name="radio2" id="checkbox8" value="1" checked="">
+                    <label for="checkbox8" style="width:90px;line-height:20px;padding-left:22px;">启用</label>
+                  </span>
+                  <span>
+                    <input type="radio" class="radio1" name="radio2" id="checkbox9" value="2">
+                    <label for="checkbox9" style="width:90px;line-height:18px;padding-left:22px;">未启用</label>
+                  </span>
+              </div>
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-creatbut-box">
+            <input type="button" class="but butgray" value="取 消" id="close-dialog">
+            <input type="button" class="but butblue" value="确 定" id="confirm-but">
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>您确定要删除该折扣吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<div class="opacity-tip" style="display:none"><p>请先选择列表中的某一折扣</p></div>
+
+</body>
+</html>

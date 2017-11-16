@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>预约表-信息查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../jedate/skin/jquery-weui.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jedate/jquery-weui.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/orderlistSee.js?time=2"></script>
+
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="back">返回</a>
+                <a href="javascript:void(0)" class="edit-but" id="edit-but">编辑</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container" style="min-height:500px;">
+            <div class="add-h3 add-main-box1 mtop45">
+              <h3 class="box5-h3">基本信息<span></span></h3>
+                <div class="main-input">
+                    <div class="input-box h30 gray-span"> 
+                        <span>就诊人姓名：</span>
+                        <div class="see-main" id="patient_name"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>预约人姓名：</span>
+                        <div class="see-main" id="appointment_name"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>联系方式：</span>
+                        <div class="see-main" id="contact_tel"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>是否本人：</span>
+                        <div class="see-main" id="is_self"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>所属公司：</span>
+                        <div class="see-main" id="company_name"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>服务项目：</span>
+                        <div class="see-main" id="project_name"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>预约日期：</span>
+                        <div class="see-main" id="visit_time"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>项目所需时长：</span>
+                        <div class="see-main" id="time_long"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>医生：</span>
+                        <div class="see-main"><label id="DovVal"></label><a href="javascript:;" class="checktimea">查看医生的出诊时间</a></div>
+
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>诊所：</span>
+                        <div class="see-main" id="ClinkVal"></div>
+                    </div>
+                    
+                    
+                    <div class="input-box h30 gray-span"> 
+                        <span>备注：</span>
+                        <div class="see-main" id="remark"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- add-box-container -->
+      </div><!-- container-right-main -->
+    </div><!-- container-right -->
+
+  </div>
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="opacity-timetipbox" style="display:none">
+  <div class="calendarboxmain" style="margin-top:-205px"> 
+    <h4 class="toph4" style="margin:0"><b>查看医生的坐诊时间</b><span class="close_dialog"></span></h4>
+      <div id="inline-calendar"></div>
+      <div class="timeboxmain-select">
+        <div class="timechoose" id="timechoose"></div>
+      </div>
+      <div class="doc_clinic_address" style="border-top:1px #e5e5e5 solid;margin-top:-1px">
+        <span class="W25pcent">间隔时间段：</span>
+        <select class="W65pcent" id="time_span" disabled>
+          <option value=""></option>
+          <option value="15">15分钟</option>
+          <option value="30">30分钟</option>
+          <option value="45">45分钟</option>
+          <option value="60">60分钟</option>
+          <option value="90">90分钟</option>
+          <option value="120">120分钟</option>
+        </select>
+      </div>
+      <input id="date" type="text" style="opacity:0">
+  </div>
+  
+</div>
+</body>
+</html>

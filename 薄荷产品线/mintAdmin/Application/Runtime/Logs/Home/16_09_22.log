@@ -1,0 +1,13 @@
+[ 2016-09-22T12:54:07+08:00 ] 172.16.13.107 /mintAdmin/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009738s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0307s ]
+SQL: SELECT * FROM `mint_user` WHERE `account` = '18610212470' LIMIT 1   [ RunTime:0.0301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001622s ]
+

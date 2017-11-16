@@ -1,0 +1,372 @@
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: #5a5a5a;
+}
+
+.table {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: normal;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+  /* background: #3a91d4; */
+  color: #555;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #00f;
+}
+
+.table-condensed th,
+.table-condensed td {
+  padding: 4px 5px;
+}
+
+.table-bordered {
+  border: #ddd solid 1px ;
+  /* border-collapse: separate;
+  *border-collapse: collapse; */
+  border-top: none;
+  border-radius:0;
+}
+.table thead tr{
+  border: #ddd solid 1px ;
+  /* border-top: #3a91d4 solid 1px ; */
+}
+.table-box{
+  width:100%;
+  padding-bottom: 60px;
+ /*  margin-left: 10px; */
+}
+
+.table thead tr{
+  width:100%;
+}
+.table tbody{
+  margin-top: 40px;
+}
+.table-hover tbody tr:hover > td,
+.table-hover tbody tr:hover > th {
+  background-color: #e4fbff;
+}
+
+
+.table thead th{
+  height:35px;
+  line-height: 35px;
+  background: #f8f8f8;
+  color: #5a5a5a;
+}
+.table-height tbody tr td{
+  height:65px;
+  vertical-align: middle;
+}
+
+.table-height3 tbody tr{
+  height:40px;
+  line-height: 40px;
+}
+.table-height3 tr td{
+  text-align: center;
+  height:40px;
+  line-height:40px;
+}
+.table-height3 tr th{
+  text-align: center;
+}
+.table-height4 tbody tr td{
+  height:40px;
+}
+.table tbody tr td span{
+  margin:0;
+}
+/* .table tbody tr:nth-child(even){
+  background: #f8f8f8;
+} */
+table.jigouTable tbody tr td span{
+  margin:0;
+}
+.rowp-span{
+  display: block;
+  overflow: hidden;
+}
+.radio-span{
+  display: block;
+}
+.account-span{
+  width:90px;
+  display: block;
+}
+.sex-span{
+  width:30px;
+  display: block;
+}
+/* .address-span{
+  width:30px;
+  display: block;
+} */
+.phone-span{
+  width:90px;
+  display: block;
+}
+/* .invite-span{
+  width:40px;
+  display: block;
+} */
+.renzheng-span{
+  width:55px;
+  display: block;
+}
+.user-pic{
+  width:50px;
+  display: block;
+}
+.user-pic img{
+  width:50px;
+  height:50px;
+}
+.identity-span{
+  width: 130px;
+  display: block;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden; 
+  text-align: left;
+}
+.desc-span{
+  width: 200px;
+  max-height:40px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp:2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  line-height: 20px;
+  text-align: left;
+}
+
+.table tbody tr td span.radio-span{
+  width:19px;
+  height:19px;
+  position: relative;
+  margin:0 auto;
+}
+.user-desc-span{
+  width:550px;
+  display: block;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden; 
+}
+.pool-investors{
+  width:100px;
+  display: block;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden; 
+}
+.pool-address{
+  width:80px;
+  display: block;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden; 
+}
+.project-dingwei-span{
+  max-width:280px;
+  max-height:40px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp:2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  line-height: 20px; 
+  text-align: left;
+}
+.project-name-span,.caozuo-span{
+  color: #3a91d4;
+  cursor: pointer;
+  text-align: left;
+}
+.project-name-span:hover,.caozuo-span:hover{
+  color: red;
+  cursor: pointer;
+}
+.article-title-span,.article-desc-span{
+  width:200px;
+  max-height:40px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp:2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  line-height: 20px;
+  text-align: left;
+}
+.comment-main-span,.suoshu-article-span{
+  width:230px;
+  display: block;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden; 
+}
+.hangye-dingwei-span{
+  width:120px;
+  max-height:40px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp:2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  line-height: 20px;
+  text-align: left;
+}
+.jianjie-span,.person-span{
+  width:130px;
+  max-height:40px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp:2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  line-height: 20px; 
+  text-align: left;
+}
+.touzi-fangxiang-span,.touzi-jieduan-span{
+  width:100px;
+  display: block;
+  white-space:nowrap; 
+  text-overflow:ellipsis; 
+  -o-text-overflow:ellipsis; 
+  overflow: hidden;
+}
+.radio{
+  opacity: 0;
+}
+.radio +label{
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  width: 19px;
+  height: 19px;
+  background: url(../images/radiog.png) no-repeat;
+  left:1px;
+  top:0;
+}
+
+.radio2 +label{
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  width: 19px;
+  height: 19px;
+  background: url(../images/radiog.png) no-repeat;
+  left:0px;
+  top:10px;
+}
+
+.radio:checked+label{
+ background: url(../images/radiob.png) no-repeat;
+}
+.mtop135{
+  margin-top: 135px;
+}
+.mtop100{
+  margin-top: 100px;
+}
+.mtop60{
+  margin-top: 60px;
+}
+.mtop45{
+  margin-top: 45px;
+}
+.mtop10{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.child_tr {
+background: #fbfbfb;
+}
+.table{
+  margin-bottom: 50px;
+}
+
+.table td,.table th{
+  text-align: left;
+  margin:0;
+}
+.table tr td:nth-child(1),.table tr th:nth-child(1){
+  text-align: center;
+  margin:0 auto;
+}
+/* .table tr td:nth-child(2){
+  text-indent: 15px;
+} */
+.table.table-height3 tr td{
+  text-indent: 0;
+}
+.serveProjtable tr td span.user-pic{
+  background: #ccc;
+}
+
+#priceTable td {
+  line-height: 20px;
+}
+#priceTable td span{
+  line-height: 20px;
+}

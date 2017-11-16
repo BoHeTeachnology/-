@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userAdd_past.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                                <li><a href="javascript:;" data-href="add_info.html#User" id='info'>基础信息</a></li>
+                                <li><a class="active" href="javascript:;" data-href="add_past.html#User" id='past'>既往史</a></li>
+                                <li><a href="javascript:;" data-href="add_mouths.html#User" id='mouth'>口腔情况</a></li>
+                                <li><a href="javascript:;" data-href="add_tooth.html#User" id='pics'>牙位图</a></li>
+                                <li><a href="javascript:;" data-href="add_family.html#User" id='family'>关系成员</a></li>
+                                <!-- <li><a href="javascript:;" data-href="add_photo.html#User" id='photo'>影像资料</a></li> -->
+                            </ul>
+
+                        </div>
+                        <div class="time">
+                            <div class="z_time_btn">
+                                <a href="javascript:;" class="default_inputbtn z_save_btn" id="save-but" style="display:none">保存</a>
+                                <a href="javascript:;" class="default_inputbtn z_edit_btn" id="edit_but_see" style="display:none">编辑</a>
+                            </div>
+                        </div>
+                        <div class="userContain" id="change">
+                            <div class="z_userContainMain">
+                                <!-- 既往史 -->
+                                <div class="containb_right" id="pastbox_see" style="display:none">
+                                    <div class="z_jws_main" id="page_haveData">
+                                        <h2 class="no_border"><i class="row_1"></i><span>全身情况</span></h2>
+                                        <div class="z_checkbox_main see_hide">
+                                            <div class="z_past_desc" id="body_condition_desc_see">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_2"></i><span>家族史</span></h2>
+                                        <div class="z_checkbox_main see_hide">
+                                            <div class="z_past_desc" id="family_history_desc_see"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_3"></i><span>用药史</span></h2>
+                                        <div class="z_checkbox_main see_hide">
+                                            <div class="z_past_desc" id="medicine_desc_see"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_4"></i><span>手术史</span></h2>
+                                        <div class="z_checkbox_main see_hide">
+                                           <div class="z_past_desc" id="surgery_desc_see"></div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <h2><i class="row_5"></i><span>过敏情况</span></h2>
+                                        <div class="z_checkbox_main see_hide">
+                                            <div class="z_past_desc" id="allergy_desc_see"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_6"></i><span>传染病</span></h2>
+                                        <div class="z_checkbox_main see_hide pbtom30">
+                                            <div class="z_past_desc" id="infection_desc_see"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div><!-- 既往史结束 -->
+                                <!-- 既往史 -->
+                                <div class="containb_right" id="pastbox_add" style="display:none">
+                                    <div class="z_jws_main">
+                                        <h2 class="no_border" style="border-top:none"><i class="row_1"></i><span>全身情况</span></h2>
+                                        <div class="z_checkbox_main" id="body_condition">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone" id="">
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_0" value="心脏病史">
+                                                        <label for="checkboxa_0"><i>心脏病史</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_1" value="高血压病史">
+                                                        <label for="checkboxa_1"><i>高血压病史</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_2" value="糖尿病史">
+                                                        <label for="checkboxa_2"><i>糖尿病史</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_3" value="风湿病">
+                                                        <label for="checkboxa_3"><i>风湿病</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_4" value="癫痫病">
+                                                        <label for="checkboxa_4"><i>癫痫病</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_5" value="在妊娠期">
+                                                        <label for="checkboxa_5"><i>在妊娠期</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_6" value="在哺乳期">
+                                                        <label for="checkboxa_6"><i>在哺乳期</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_7" value="近期体检">
+                                                        <label for="checkboxa_7"><i>近期体检</i> </label>
+                                                        <b>最近一次体检日期： </b><input type="text" class="layicon" id="time1" readonly>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_8" value="近期洗牙">
+                                                        <label for="checkboxa_8"><i>近期洗牙</i></label>
+                                                        <b>最近一次洗牙日期： </b><input type="text" class="layicon" id="time2" readonly>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_2"></i><span>家族史</span></h2>
+                                        <div class="z_checkbox_main" id="family_history">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone">
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_11" value="牙周病">
+                                                        <label for="checkboxa_11"><i>牙周病</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_12" value="牙列不齐">
+                                                        <label for="checkboxa_12"><i>牙列不齐</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_13" value="颌骨发育异常">
+                                                        <label for="checkboxa_13"><i>颌骨发育异常</i></label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_3"></i><span>用药史</span></h2>
+                                        <div class="z_checkbox_main" id="medicine">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone clear_checkbox" id="">
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_21" value="在服用抗凝药（阿司匹林/华法林等）">
+                                                        <label for="checkboxa_21"><i>是否在服用抗凝药（阿司匹林/华法林等）</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_22" value="在服用免疫抑制剂（如环磷酰胺，他克莫司等）">
+                                                        <label for="checkboxa_22"><i> 是否在服用免疫抑制剂（如环磷酰胺，他克莫司等）</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_23" value="在服用骨质疏松类治疗药物（如福善美）">
+                                                        <label for="checkboxa_23"><i>是否在服用骨质疏松类治疗药物（如福善美）</i></label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_24" value="近期在服用消炎止痛药">
+                                                        <label for="checkboxa_24"><i>近期是否在服用消炎止痛药</i></label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_4"></i><span>手术史</span></h2>
+                                        <div class="z_checkbox_main" id="surgery">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone clear_checkbox" id="">
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_31" value="近期做过手术" data="text">
+                                                        <label for="checkboxa_31"><i>近期是否做过手术</i></label>
+                                                        <b>&nbsp;</b><input class="Wid480" type="text">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <h2><i class="row_5"></i><span>过敏情况</span></h2>
+                                        <div class="z_checkbox_main" id="allergy">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone" id="">
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_41" value="青霉素类">
+                                                        <label for="checkboxa_41"><i>青霉素类</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_42" value="磺胺类">
+                                                        <label for="checkboxa_42"><i>磺胺类</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_43" value="局麻药">
+                                                        <label for="checkboxa_43"><i>局麻药</i></label>
+                                                    </span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_44" value="酒精">
+                                                        <label for="checkboxa_44"><i>酒精</i></label>
+                                                    </span> <br>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_45" value="其他过敏情况" data="text">
+                                                        <label for="checkboxa_45"><i>其他过敏情况</i></label>
+                                                        <b>&nbsp;</b><input class="Wid480" type="text">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_6"></i><span>传染病</span></h2>
+                                        <div class="z_checkbox_main pbtom30" id="infection">
+                                            <div class="checkbox-box">
+                                                <div class="checkBone" id="">
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_51" value="肝炎">
+                                                        <label for="checkboxa_51"><i>肝炎</i></label></span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_52" value="结核">
+                                                        <label for="checkboxa_52"><i>结核</i></label></span>
+                                                    <span class="W120">
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_53" value="艾滋病">
+                                                        <label for="checkboxa_53"><i>艾滋病</i></label></span><br>
+                                                    <span>
+                                                        <input type="checkbox" class="checkbox" id="checkboxa_54" value="其他传染病" data="text">
+                                                        <label for="checkboxa_54"><i>其他传染病</i></label>
+                                                        <b>&nbsp;</b><input class="Wid480" type="text">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div><!-- 既往史结束 -->
+                            </div> 
+                            <div class="clear"></div>
+                        </div>
+                            
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+            
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save">
+          <input type="button" class="but butblue" value="保存" id="save_btn">
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

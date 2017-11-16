@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>搜索</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/jquery-weui.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/doctorBillsearch.js"></script>
+</head>
+<body>
+
+<div id="myCaselist">
+  <div class="muCasemainbox" >
+        <div class="weui_search_bar weui_search_focusing" id="search_bar">
+          <form class="weui_search_outer">
+            <div class="weui_search_inner">
+              <i class="weui_icon_search"></i>
+              <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required/>
+              <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
+            </div>
+            <label for="search_input" class="weui_search_text" id="search_text">
+              <i class="weui_icon_search"></i>
+              <span>搜索</span>
+            </label>
+          </form>
+          <a href="doctorBill.html" class="weui_search_cancel" id="search_cancel">取消</a>
+          <a href="javascript:;" class="weui_search_cancel" id="search_But" style="display:none">搜索</a>
+        </div>
+  </div> 
+  <div class="myCaseList doctorList" style="margin-top:0;" id="myCaseListbox">
+      <!-- <div class="weui_cells weui_cells_access">
+          <a class="weui_cell" href="#">
+              <div class="weui_cell_hd">
+                  <p>姓名</p>
+                  <span id="name"></span>
+              </div>
+              <span class="weui_cell_ft"></span>
+          </a>
+      </div> -->
+      
+  </div>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+<div class="nodata" style="height:50px;line-height:50px;text-align:center;font-size:14px;display:none">没有更多数据了</div>
+<div class="weui-infinite-scroll" id="loading" style="display:none">
+  <div class="infinite-preloader"></div>
+  正在加载
+</div>
+</body>
+</html>

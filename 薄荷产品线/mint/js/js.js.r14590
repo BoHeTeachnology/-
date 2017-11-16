@@ -1,0 +1,369 @@
+$(function(){
+	
+	$('.container-left h3').click(function(){
+		$(this).toggleClass('H3L')
+		$('.container-left').toggleClass('wid60');
+		$('.container-right').toggleClass('ML60');
+		$('.rtop>div').toggleClass('PL60')
+		$('.topNavpostionPL').toggleClass('PL60');
+		$('.timeboxarea').toggleClass('PL70');
+		$('.container-left ul li b').toggleClass('bHide')
+		$('.Copyright').toggleClass('CopyrightHide');
+		localStorage.setItem('className',$(this).attr('class'))
+		$('.z_time_btn,.z_userContainMain').toggleClass('ML75');
+		
+	})
+	if( localStorage.getItem('className') == 'H3L' ){
+		$('.container-left h3').addClass('H3L')
+		$('.container-left').addClass('wid60');
+		$('.container-right').addClass('ML60');
+		$('.rtop>div').addClass('PL60')
+		$('.topNavpostionPL').addClass('PL60');
+		$('.container-left ul li b').addClass('bHide')
+		$('.Copyright').addClass('CopyrightHide');
+		$('.timeboxarea').addClass('PL70');
+		$('.z_time_btn,.z_userContainMain').addClass('ML75');
+		
+	}else{
+		$('.container-left h3').removeClass('H3L')
+		$('.container-left').removeClass('wid60');
+		$('.container-right').removeClass('ML60');
+		$('.rtop>div').removeClass('PL60')
+		$('.topNavpostionPL').removeClass('PL60');
+		$('.container-left ul li b').removeClass('bHide')
+		$('.Copyright').removeClass('CopyrightHide');
+		$('.timeboxarea').removeClass('PL70');
+		$('.z_time_btn,.z_userContainMain').removeClass('ML75')
+	} 
+	var tooltab='<div class="tooltips"><i></i><b></b></div>';
+	$('body').append(tooltab);
+	if(localStorage.getItem('username')){
+		var header='<div class="logo">\
+                  <img src="http://'+location.host+'/mint/images/logo2.png" alt="">\
+                  <span>薄荷口腔</span>\
+                </div>\
+			    <div class="exit">\
+			      <a href="#" class="exit-but">退出</a>\
+			      <p>欢迎您！<span>'+localStorage.getItem('username')+'</span></p>\
+			    </div>'
+		$('.header').html(header)
+	}else{
+		var header='<div class="logo">\
+                  <img src="http://'+location.host+'/mint/images/logo2.png" alt="">\
+                  <span>薄荷口腔</span>\
+                </div>\
+			    <div class="exit">\
+			      <a href="#" class="exit-but">退出</a>\
+			      <p>欢迎您！<span></span></p>\
+			    </div>'
+		$('.header').html(header)
+	}
+	
+	/*获取用户信息*/
+	AjaxObj.loginGetUserInfo(function(result){
+		if(result.Data.code == 1){
+			if(result.Data.data.name == '' || result.Data.data.name == null){
+				$('.exit p span').html(result.Data.data.account)
+				localStorage.setItem('username',result.Data.data.account)
+			}else{
+				$('.exit p span').html(result.Data.data.name)
+				localStorage.setItem('username',result.Data.data.name)
+			}
+			
+		}else{
+			location.href="/mint/login.html"
+		}
+	})
+	if(localStorage.getItem('num') == 0){
+		var resultList =JSON.parse(localStorage.getItem('resultList'));
+		var html = '';
+		if(resultList== null){
+			localStorage.removeItem('num');
+		}
+		for(var i=0;i<resultList.length;i++){
+			var app_uri = resultList[i].app_uri == '' ? 'Firstli': resultList[i].app_uri;
+			var app_url = resultList[i].app_url == null || resultList[i].app_url == '' ? '': 'href="'+resultList[i].app_url+'"';
+			//console.log(resultList[i].children.length)
+			if(getarg(location.href) == resultList[i].app_uri){
+				html+='<li class="has-children">'
+				html+='<input type="checkbox" name ="group-'+i+'" id="group-'+i+'">'
+				if(resultList[i].children.length == 0){
+					html+='<label tooltipval="'+resultList[i].app_name+'" class="cur" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'"><b>'+resultList[i].app_name+'</b></a></label>'
+				}else{
+					html+='<label tooltipval="'+resultList[i].app_name+'" class="cur" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'"><b>'+resultList[i].app_name+'</b></a><i></i></label>'
+				}
+				
+				html+='<ul class="secondChild">'
+				for(var m=0; m<resultList[i].children.length;m++){
+					if(getarg(location.href) == resultList[i].children[m].app_uri){
+						html+='<li class="cur"><a href="'+resultList[i].children[m].app_url+'"><b>'+resultList[i].children[m].app_name+'</b></a></li>'
+					}else{
+						html+='<li><a href="'+resultList[i].children[m].app_url+'"><b>'+resultList[i].children[m].app_name+'</b></a></li>'
+					}
+				}
+				html+='</ul>'
+				html+='</li>'
+			}else{
+				html+='<li class="has-children">'
+				html+='<input type="checkbox" name ="group-'+i+'" id="group-'+i+'">'
+				if(resultList[i].children.length == 0){
+					html+='<label tooltipval="'+resultList[i].app_name+'" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'><b>'+resultList[i].app_name+'</b></a></label>'
+				}else{
+
+					html+='<label tooltipval="'+resultList[i].app_name+'" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'><b>'+resultList[i].app_name+'</b></a><i></i></label>'
+				}
+				
+				html+='<ul class="secondChild">'
+				for(var m=0; m<resultList[i].children.length;m++){
+					if(getarg(location.href) == resultList[i].children[m].app_uri){
+						html+='<li class="cur"><a href="'+resultList[i].children[m].app_url+'"><b>'+resultList[i].children[m].app_name+'</b></a></li>'
+					}else{
+						html+='<li><a href="'+resultList[i].children[m].app_url+'"><b>'+resultList[i].children[m].app_name+'</b></a></li>'
+					}
+				}
+				html+='</ul>'
+				html+='</li>'
+			}
+			
+		}
+		$('#left-list').html(html)
+		if( localStorage.getItem('className') == 'H3L' ){
+			$('.container-left ul li b').addClass('bHide')
+		}else if(localStorage.getItem('className') == ''){
+			$('.container-left ul li b').removeClass('bHide')
+		}else{
+			$('.container-left ul li b').removeClass('bHide')
+		}
+
+		$('#left-list>li.has-children').click(function(){
+			sessionStorage.setItem('lisnum','1')
+			if($(this).find('li').length>0){
+				localStorage.removeItem('className')
+			}
+		})
+		$('#left-list .secondChild> li').click(function(event){
+			var lisnum =  $(this).parent().siblings('input').attr('name');
+			//console.log(lisnum)
+			sessionStorage.setItem('lisnum',lisnum)
+			event.stopPropagation();
+			localStorage.removeItem('className')
+		})
+		$('#left-list>li label').mouseover(function(){
+			if( localStorage.getItem('className') == 'H3L' ){
+				$('.tooltips').css({'top':$(this).parents('li').offset().top,'display':'block'})
+				$('.tooltips b').html($(this).attr('tooltipval'));
+			}
+			
+		})
+		$('#left-list>li label').mouseout(function(){
+			$('.tooltips').css({'top':0,'display':'none'})
+		})
+	}else{
+		AjaxObj.loginGetUserInfo(function(result){
+			if(result.Data.code == 1){
+				$('.exit p span').html(result.Data.data.account)
+				var html='';
+				localStorage.setItem('resultList',JSON.stringify(result.Data.app))
+				localStorage.setItem('num','0')
+				for(var i=0;i<result.Data.app.length;i++){
+					var app_uri = result.Data.app[i].app_uri == '' ? 'Firstli': result.Data.app[i].app_uri;
+					var app_url = result.Data.app[i].app_url == null || result.Data.app[i].app_url == '' ? '': 'href="'+result.Data.app[i].app_url+'"';
+					//console.log(result.Data.app[i].children.length)
+					if(getarg(location.href) == result.Data.app[i].app_uri){
+						html+='<li class="has-children">'
+						html+='<input type="checkbox" name ="group-'+i+'" id="group-'+i+'">'
+						if(result.Data.app[i].children.length == 0){
+							html+='<label tooltipval="'+result.Data.app[i].app_name+'" class="cur" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'"><b>'+result.Data.app[i].app_name+'</b></a></label>'
+						}else{
+							html+='<label tooltipval="'+result.Data.app[i].app_name+'" class="cur" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'"><b>'+result.Data.app[i].app_name+'</b></a><i></i></label>'
+						}
+						
+						html+='<ul class="secondChild">'
+						for(var m=0; m<result.Data.app[i].children.length;m++){
+							if(getarg(location.href) == result.Data.app[i].children[m].app_uri){
+								html+='<li class="cur"><a href="'+result.Data.app[i].children[m].app_url+'"><b>'+result.Data.app[i].children[m].app_name+'</b></a></li>'
+							}else{
+								html+='<li><a href="'+result.Data.app[i].children[m].app_url+'"><b>'+result.Data.app[i].children[m].app_name+'</b></a></li>'
+							}
+						}
+						html+='</ul>'
+						html+='</li>'
+					}else{
+						html+='<li class="has-children">'
+						html+='<input type="checkbox" name ="group-'+i+'" id="group-'+i+'">'
+						if(result.Data.app[i].children.length == '0'){
+							html+='<label tooltipval="'+result.Data.app[i].app_name+'" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'><b>'+result.Data.app[i].app_name+'</b></a></label>'
+						}else{
+							// if($(this).attr('name') != sessionStorage.getItem('lisnum')){
+							// 	html+='<label tooltipval="'+result.Data.app[i].app_name+'" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'><b>'+result.Data.app[i].app_name+'</b></a><i class="roate"></i></label>'
+							// }else{
+								html+='<label tooltipval="'+result.Data.app[i].app_name+'" for="group-'+i+'"><a class="'+app_uri+'" '+app_url+'><b>'+result.Data.app[i].app_name+'</b></a><i></i></label>'
+							// }
+							
+						}
+						
+						html+='<ul class="secondChild">'
+						for(var m=0; m<result.Data.app[i].children.length;m++){
+							if(getarg(location.href) == result.Data.app[i].children[m].app_uri){
+								html+='<li class="cur"><a href="'+result.Data.app[i].children[m].app_url+'"><b>'+result.Data.app[i].children[m].app_name+'</b></a></li>'
+							}else{
+								html+='<li><a href="'+result.Data.app[i].children[m].app_url+'"><b>'+result.Data.app[i].children[m].app_name+'</b></a></li>'
+							}
+						}
+						html+='</ul>'
+						html+='</li>'
+					}
+					
+				}
+				$('#left-list').html(html)
+				if( localStorage.getItem('className') == 'H3L' ){
+					$('.container-left ul li b').addClass('bHide')
+				}else if(localStorage.getItem('className') == ''){
+					$('.container-left ul li b').removeClass('bHide')
+				}else{
+					$('.container-left ul li b').removeClass('bHide')
+				}
+
+			}else{
+				location.href="/mint/login.html"
+			}
+		})
+	}
+
+	$('#left-list').click(function(){
+		sessionStorage.clear();
+
+	})
+	/*退出登陆系统*/
+	$('.exit-but').click(function(){
+		localStorage.removeItem('resultList')
+		localStorage.removeItem('num')
+		AjaxObj.logout(function(result){
+			if(result.Data.code==1){
+				location.href="/mint/login.html"
+			}else{
+				console.log(result.Data.msg)
+			}
+		})
+	})
+	/*关闭弹出层*/
+	$('.close-dialog,#close-dialog').click(function(){
+		$('.new-create-opcity,.mingxitipBox').hide();
+		$('input[type="text"],input[type="password"],textarea').val('');
+		$('input[type="text"],input[type="password"],textarea').css({'border':'#ccc 1px solid'});
+		$('input[name="number"]').css({'border':'none'});
+		$('.errorTip').html('');
+		$(".new-create-opcity input[type='radio']:checked").attr('checked',false);
+		$(".new-create-opcity input[type='checkbox']:checked").attr('checked',false);
+		$('.toupic img').attr('src','/mint/images/user.png');
+		$('.delete-tipbox').hide();
+		$('select').css({'border':'#ccc 1px solid'});
+		$(".fileBoxUl").html('')
+		$('#track_type option:first').prop("selected", true);
+		$('#info_id').html('<option value="">请选择</option>').attr('disabled',true).css({'cursor':'not-allowed'})
+	})
+
+	$('input[type="text"],input[type="password"],select,textarea').focus(function(){
+		$(this).css({'border':'#ccc 1px solid'});
+		$(this).siblings('p').html('');
+		$('#confirm-but').attr('disabled',false)
+	})
+
+
+	/*重置*/
+	$('#reset').click(function(){
+		location.reload()
+	})
+	/*展开闭合功能*/
+	$('.add-h3 h3').click(function(){
+		$(this).siblings().slideToggle();
+		$(this).children('span').toggleClass('cur')
+	})
+	$('.numPage').focus(function(){
+		$('input[name="page"]').css({'border':'none'})
+		$('#jump-btn,#jump-btn2').addClass('cur')
+		$('#go-page,#go-page2').addClass('cur')
+
+	})
+	$('.numPage').blur(function(){
+		$('#jump-btn,#jump-btn2').removeClass('cur')
+		$('#go-page,#go-page2').removeClass('cur')
+	})
+
+	$('#back').click(function(){
+	  window.history.go(-1); 
+	})
+
+	$('.opacity-tip').click(function(){
+		$(this).hide();
+	})
+
+	$('.container-left').append('<div class="Copyright">©Copyright Reserved</div>')
+	if( localStorage.getItem('className') == 'H3L' ){
+		$('.Copyright').addClass('CopyrightHide');
+	}else if(localStorage.getItem('className') == ''){
+		$('.Copyright').removeClass('CopyrightHide');
+	}else{
+		$('.Copyright').removeClass('CopyrightHide');
+	}
+})
+function getarg(url){
+	arg=url.split("#");
+	return arg[1];
+} 
+
+
+jQuery(document).ready(function(){
+	var accordionsMenu = $('#left-list li');
+	if( accordionsMenu.length > 0 ) {
+		accordionsMenu.each(function(){
+			var accordion = $(this);
+			//detect change in the input[type="checkbox"] value
+			accordion.on('change', 'input[type="checkbox"]', function(){
+				accordion.find('i').toggleClass('roate')
+				var checkbox = $(this);
+				console.log(checkbox.prop('checked'));
+				( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+				if( checkbox.prop('checked') ){
+					$('.container-left h3').removeClass('H3L')
+					$('.container-left').removeClass('wid60');
+					$('.container-right').removeClass('ML60');
+					$('.rtop .but-box,.rtop .top-input-box').removeClass('PL60')
+					$('.topNavpostion').removeClass('LL60');
+					$('.container-left ul li a b').removeClass('bHide')
+					$('.Copyright').removeClass('CopyrightHide');
+					localStorage.removeItem('className')
+					$('.tooltips').css({'top':0,'display':'none'})
+					$('.timeboxarea').removeClass('PL70');
+					$('.z_time_btn,.z_userContainMain').removeClass('ML75');
+				}else{
+					$('.container-left h3').removeClass('H3L')
+					$('.container-left').removeClass('wid60');
+					$('.container-right').removeClass('ML60');
+					$('.rtop .but-box,.rtop .top-input-box').removeClass('PL60')
+					$('.topNavpostion').removeClass('LL60');
+					$('.container-left ul li a b').removeClass('bHide')
+					$('.Copyright').removeClass('CopyrightHide');
+					localStorage.removeItem('className')
+					$('.tooltips').css({'top':0,'display':'none'})
+					$('.timeboxarea').removeClass('PL70');
+					$('.userContain').css({'left':0})
+					$('.z_time_btn,.z_userContainMain').removeClass('ML75');
+				}
+			});
+		});
+	}
+	$('#left-list li input').each(function(){
+		if(sessionStorage.getItem('lisnum') == '1'){/*
+			$(this).siblings().find('i').addClass('roate')*/
+			$('#left-list>li input').attr('checked',false)
+		}else if($(this).attr('name') != sessionStorage.getItem('lisnum')){
+			// $(this).siblings().find('i').addClass('roate')
+			$('#left-list li input[name="'+$(this).attr('name')+'"]').attr('checked',false)
+		}else if(sessionStorage.getItem('lisnum') == $(this).attr('name')){
+			$(this).siblings().find('i').addClass('roate')
+			$('#left-list li input[name="'+sessionStorage.getItem('lisnum')+'"]').attr('checked',true)
+		}
+	})
+	
+});

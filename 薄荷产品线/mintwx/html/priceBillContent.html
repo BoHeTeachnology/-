@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>账单详情</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/priceBillContent.js?time=2"></script>
+</head>
+<body >
+<div class="myOrderdescbox">
+    <div class="myOrdermainbox">
+      <div class="weui_cells weui_cells_access" style="border-top:#e5e5e5 1px solid">
+          <a class="weui_cell" href="#">
+              <div class="weui_cell_hd">
+                  <p><span>就诊人：&nbsp;&nbsp;&nbsp;&nbsp; <font id="patient_name"></font></span></p>
+                  <div class="clear"></div>
+                  <p><span>账单号：&nbsp;&nbsp;&nbsp;&nbsp; <font id="reserve_number"></font></span></p>
+                  <!-- <em class="nozhifu">未支付</em> -->
+              </div>
+          </a>
+      </div>
+    </div>
+</div> 
+<div class="orderDescContain makebillboxmain" style="margin-top:10px;border-top:solid 1px #e5e5e5;padding-top:0">
+  <h4 class="h4_title_desc">预约信息</h4>
+  <p><b>治疗时间：</b><span id="visit_time"></span><em class="clear"></em></p>
+  <p id="clinicDiv"><b>治疗诊所：</b><span id="clinic_name"></span><em class="clear"></em></p>
+  <p id="clinicDiv2"><b>诊所地址：</b><span id="clinic_address"></span><em class="clear"></em></p>
+  <p><b>预约医生：</b><span id="doctor_name"></span><em class="clear"></em></p>
+</div>
+<div class="billDescDetail" style="margin-top:10px;margin-bottom:80px;padding-top:0">
+  <h4 class="h4_title_desc">账单明细</h4>
+  <div class="billDescList" style="padding:0;">
+    <ul id="Billmingxi">
+      <!-- <li>
+        <p><b>色卡本话就是打发</b><span>数量：1</span></p>
+        <label>￥ 500</label>
+      </li>
+      <li>
+        <p><b>色卡本话就是打发</b><span>数量：1</span></p>
+        <label>￥ 500</label>
+      </li>
+      <li>
+        <p><b>色卡本话就是打发</b><span>数量：1</span></p>
+        <label>￥ 500</label>
+      </li> -->
+    </ul>
+    <div class="Allhejibox">
+      <p class="normal_boxp">合计：<b class="Alltotal_brfore" id="Alltotal_brfore">￥<i></i></b></p>
+      <p class="actural_boxp">
+        <label id="total_vip_boxMain" style="float:left;display:none"> 
+            <span>整单打折：</span>
+            <select name="" id="total_VIP_select">
+              <!-- <option value="1">请选择</option>
+              <option value="0.95">9.5折</option>
+              <option value="0.9">9折</option>
+              <option value="0.85">8.5折</option>
+              <option value="0.8">8折</option> -->
+            </select>
+        </label>
+            
+        <label id="actural_label" style="display:none">实际金额：&nbsp;&nbsp;<b id="Alltotal_after">￥<i></i></b></label>
+      </p>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+<div class="footButposition" style="display:none"><input type="button" value="发送给就诊人确认" class="price_confirm" id="confirmBut" style="margin-bottom:20px;"></div>
+<div class="opcitybox" style="display:none"><span></span></div>
+<div id="toast" style="display:none">
+  <div class="weui_mask_transparent"></div>
+  <div class="weui_toast">
+      <i class="weui_icon_toast"></i>
+      <p class="weui_toast_content">发送成功</p>
+  </div>
+</div>
+</body>
+</html>

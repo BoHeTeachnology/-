@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/H_user1.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+
+
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src='vue1.js'></script>
+  <script type="text/javascript" src="../../js/tooth.js"></script>
+</head>
+<body class="bodycolor" id='app'>
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top" >
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                              <li><a href="javascript:;" id='a1' v-on:click='changeUrl("add_info.html#User")'>基础信息</a></li>
+                              <li><a href="javascript:;" id='a2' v-on:click='changeUrl("add_past.html#User")'>既往史</a></li>
+                              <li><a href="javascript:;" id='a3' v-on:click='changeUrl("add_mouths.html#User")'>口腔情况</a></li>
+                              <li><a class="active" href="javascript:;" id='a4'>牙位图</a></li>
+                              <li><a href="javascript:;" id='a6' v-on:click='changeUrl("add_family.html#User")'>关系成员</a></li>
+                              <!-- <li><a href="javascript:;" id='a7' v-on:click='changeUrl("add_photo.html#User")'>影像资料</a></li> -->
+                              <input type="button" class="reports-btn graybj" id="reports-btn" value="生成初筛报告单" disabled style="display:none">
+                              <a href="javascript:;" class="default_inputbtn see-but2 float_r" id="report-but-see" style="display:none">查看初筛报告单</a>
+                            </ul>
+
+                        </div>
+                        <div class="time">
+                          <div class="z_time_btn" id="addhead_page" style="display:none">
+                            <label for="">
+                                <span class="default_inputbtn z_save_btn" id="save-but" v-on:click='save'>保存</span>
+                                <a href="javascript:;" class="default_inputbtn z_edit_btn" id="edit-but" style="display:none">编辑</a>
+                            </label>
+                          </div>
+
+                          <div class="z_time_btn" style='border:none; display:none;' id="seehead_page">
+                              <p style="display:none;"> <b>更新记录：</b>
+                                  <select name="" id="creat_time">
+
+                                  </select>
+                                  <!-- 上一次更新时间：<span id="recent_time"></span> -->
+                              </p>
+                              <label for="">
+
+                                  <span class="default_inputbtn z_edit_btn" id="edit-buts" style="display:block;">编辑</span>
+                              </label>
+                          </div>
+                        </div>
+                        <div class="userContain" id="change">
+                          <div class="z_userContainMain" id='addtooth_page' style="display:none;">
+                                <div class="containb_right" style="padding-bottom:50px;">
+                                  <div class="H_teeth_position">
+
+                                    <div class="H_teeth_position_left" id="add_toptab">
+                                      <span class="man mana active" id="mantab1">成人牙位图</span>
+                                      <span class="child childa" id="childtab1">幼儿牙位图</span>
+                                    </div>
+                                    <div class="addBigboxMain">
+                                      <div  id="adultBox" class="tab_cheangebox" style="display:none">
+                                        <div class="H_teeth_position_pic H_man_add"  id="H_man">
+                                          <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_arr'
+                                          v-on:click='click_ya(teeth,1)' v-cloak>
+                                            {{teeth.name}}
+                                          </div>
+                                        </div>
+                                        <div class="H_teeth_position_list" style="pointer-events:none;">
+                                            <div class="H_teeth_position_list_title" >
+                                              <span id='tishi'  style='font-size: 18px;'>请选择左图的牙齿，进行添加</span>&nbsp;&nbsp;<span id='H_teeth_xu_hao' style='font-size: 18px'></span>
+                                            </div>
+                                            <div class="H_teeth_position_list_item" id='H_man2' >
+                                                <div class="wrap" v-for='item in data_son.ache_list'  v-cloak>
+                                                  <input type="checkbox"  id={{item.id}}  checked={{item.bool}} v-model='item.bool'>
+                                                  <label for={{item.id}} v-on:click='click_ache(item,1)'><i>&nbsp;{{item.name}}</i></label>
+                                                </div>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div id="childBigbox" class="tab_cheangebox" style="display:none;clear:both;">
+                                        <div class="H_teeth_position_pic H_teeth_position_pic_son H_child_add" id="H_child">
+                                          <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_child_arr'
+                                          v-on:click='click_ya(teeth,2)' v-cloak>
+                                            {{teeth.name}}
+                                          </div>
+                                        </div>
+                                        <div class="H_teeth_position_list" style="pointer-events:none;">
+                                          <div class="H_teeth_position_list_title"  >
+                                            <span id='tishi'  style='font-size: 18px;'>请选择左图的牙齿，进行添加</span>&nbsp;&nbsp;<span id='H_teeth_xu_hao' style='font-size: 18px'></span>
+                                          </div>
+                                          <div class="H_teeth_position_list_item" id='H_child2'>
+                                              <div class="wrap" v-for='item in data_son.ache_list_child'  v-cloak>
+                                                <input type="checkbox"  id={{item.id}}  checked={{item.bool}} v-model='item.bool' >
+                                                <label for={{item.id}} v-on:click='click_ache(item,2)'><i>&nbsp;{{item.name}}</i></label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                      
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="z_userContainMain" id='seetooth_page' style="display:none;">
+                                <div class="containb_right" style="padding-bottom:50px;" id='content_hide'>
+                                  <div class="H_teeth_position">
+                                    <div class="H_teeth_position_left">
+                                      <span class="man active" id="mantab">成人牙位图</span><span class="child" id="childtab">幼儿牙位图</span>
+                                     </div>
+                                    <div id="adults_box_see" style="display:none">
+                                      <div class="H_teeth_position_pic" id="H_man">
+                                        <div class="H_teeth_position_pic_same {{teeth.id}} {{teeth.type==0?'white':teeth.type==1?'blue':'red'}}"  v-for='teeth in data_son.teeth_arr'
+                                        v-cloak track-by="$index">{{teeth.name}}
+                                        </div>
+                                      </div>
+                                      <div class="H_teeth_position_list" id="bingbox">
+                                          <div v-for='item in data_brother' class="H_teeth_position_list_margin_bottom" track-by="$index">
+                                            <label v-cloak>牙齿{{item.name}}:</label>
+                                            <p><span v-for='itemson in item.content' class='H_teeth_position_list_margin' v-cloak>{{itemson}}<span></p>
+                                            <div class="clear"></div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                    <div id="child_box_see"  style="clear:both;display:none">
+                                      <div class="H_teeth_position_pic H_teeth_position_pic_son" id="H_child">
+                                        <div class="H_teeth_position_pic_same {{teeths.id}} {{teeths.type==0?'white':teeths.type==1?'blue':'red'}}"  v-for='teeths in data_son.teeth_child_arr'
+                                        v-cloak track-by="$index">{{teeths.name}}
+                                        </div>
+                                      </div>
+                                      <div class="H_teeth_position_list" id="bingbox">
+                                          <div v-for='item in data_brother' class="H_teeth_position_list_margin_bottom" track-by="$index">
+                                            <label v-cloak>牙齿{{item.name}}:</label>
+                                            <p><span v-for='itemson in item.content' class='H_teeth_position_list_margin' v-cloak>{{itemson}}<span></p>
+                                            <div class="clear"></div>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save">
+          <input type="button" class="but butblue" value="保存" id="save_btn" v-on:click='teshu_save(1)'>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="delete-tipbox" id="warmTipbox2" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_x"></span></h4>
+        <div class="wartip"><span style="font-size:15px;">页面即将跳转，是否保存当前页面数据？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="不保存" id="no_save2">
+          <input type="button" class="but butblue" value="保存" id="save_btn2" v-on:click='teshu_save(2)'>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>

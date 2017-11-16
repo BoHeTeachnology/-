@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>诊所管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" type="text/css" href="../../diyUpload/css/diyUpload.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script type="text/javascript" src="../../diyUpload/js/webuploader.html5only.min.js"></script>
+  <script type="text/javascript" src="../../diyUpload/js/diyUpload.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/caseAdd.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="back">返回</a>
+                <a href="javascript:void(0)" class="save-but" id="save-but">保存</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="add-h3 add-main-box1 mtop45">
+                <h3 class="box5-h3">基本信息<span></span></h3>
+                <div class="main-input">
+                    <div class="input-box h30"> 
+                        <span>是否显示：</span>
+                        <div class="radio-box" id="is_show">
+                            <span><input type="radio" class="radio1" name="radiov" id="checkboxvv" value="1" checked><label for="checkboxvv"></label>是</span>
+                            <span><input type="radio" class="radio1" name="radiov" id="checkboxww" value="2"><label for="checkboxww"></label>否</span>
+                        </div>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">诊所品牌：</em></span>
+                        <input type="text" class="text-input" placeholder="欢乐口腔 / 瑞尔口腔 / 瑞泰口腔" id="clinic_brand">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">诊所名称：</em></span>
+                        <input type="text" class="text-input" placeholder="" id="clinic_name">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">诊所地址：</em></span>
+                        <input type="text" class="text-input" placeholder="" id="clinic_address">
+                        <p></p>
+                    </div>
+                    <div class="input-box h65"> 
+                        <span>乘车路线：</span>
+                        <textarea name="" class="text-input" placeholder="" id="bus_line"></textarea>
+                        <p></p>
+                    </div>
+                    <div class="input-box h65"> 
+                        <span>嘱咐说明：</span>
+                        <textarea name="" class="text-input" placeholder="" id="told_word"></textarea>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">牙椅数量：</em></span>
+                        <input type="text" class="text-input" id="chair_nums" placeholder="只能输入数字" onKeyUp="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>诊所负责人：</span>
+                        <input type="text" class="text-input" id="clinic_head_name">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>负责人电话：</span>
+                        <input type="text" class="text-input" id="clinic_head_phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>薄荷对接人：</span>
+                        <input type="text" class="text-input" id="mint_head_name">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>对接人电话：</span>
+                        <input type="text" class="text-input" id="mint_head_phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">成立时间：</em></span>
+                        <input type="text" class="text-input layicon" id="set_date" readonly>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">员工人数：</em></span>
+                        <input type="text" class="text-input" id="staff_nums" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">诊所账号：</em></span>
+                        <input type="text" class="text-input" placeholder="请输如您的手机号" id="account" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">密码：</em></span>
+                        <input type="password" class="text-input" placeholder="请输入您的密码（6-20）位" id="password">
+                        <p></p>
+                    </div>
+                    <div class="input-box" style="position:relative;margin-top:20px;"> 
+                        <span><em class="emx">诊所资质：</em></span>
+                        <div class="file-main-box pic_file_pic" id="clinic_pic">
+                            <!-- <input type="button" value="上传文件" class="but-input"> -->
+                            <div class="upfile-box">
+                                <div id="picUpfile1"></div>
+                                <div class="parentFileBox">                         
+                                    <ul class="fileBoxUl">
+                                    </ul>                  
+                                </div>
+                            </div>
+                        </div>
+                        <label class="tip_wrong">图片建议尺寸：3:2</label>
+                        <p class="wrongfiletip wrongfiletip1"></p>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="input-box" style="position:relative;margin-top:20px;"> 
+                        <span><em class="emx">环评资质：</em></span>
+                        <div class="file-main-box pic_file_pic" id="around_pic">
+                            <!-- <input type="button" value="上传文件" class="but-input"> -->
+                            <div class="upfile-box">
+                                <div id="picUpfile2"></div>
+                                <div class="parentFileBox">                         
+                                    <ul class="fileBoxUl">
+                                    </ul>                  
+                                </div>
+                            </div>
+                        </div>
+                        <label class="tip_wrong">图片建议尺寸：3:2</label>
+                        <p class="wrongfiletip wrongfiletip2"></p>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>排序：</span>
+                        <input type="text" class="text-input" id="sort" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                        <label style="color:#666;padding-left:10px;">数字越小，排列越靠前</label>
+                    </div>
+                    <!-- <div class="input-box h30"> 
+                        <span>备注：</span>
+                        <textarea class="textarea" style="max-width: 245px; border: 1px solid rgb(204, 204, 204);" id="remark"></textarea>
+                        <p></p>
+                    </div> -->
+
+                </div>
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>
+
+<script>
+
+</script>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/style.css?time=2">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/mine.js?time=3"></script>
+</head>
+<body>
+
+
+<header class="p_top huanzhebg">
+  <dl>
+    <dt id="userImg"></dt>
+    <dd id="userName"><a href="personmsg.html" >完善个人信息</a></dd>
+  </dl>
+  <a href="set.html" class="anniu">
+    <img class="shezhi" src="../images/shezhi.png" alt="" />
+  </a>
+</header>
+
+<a class="chuzhen" href="#" id="IwantOrdertab">
+  <div class="chuzhenson">
+    <img src="../images/huanzhe1.png" alt="" />
+    <div class="rtop_r">
+      <h6 class="spantitle">我要预约</h6>
+      <span class="spancon"></span>
+    </div>
+    <div class="clear"></div>
+  </div>
+</a>
+
+<div class="block">
+  <a href="myOrder.html" class="a1">
+    <div class="blockson">
+      <img src="../images/huanzhe2.png" alt="" />
+      <span>我的预约</span>
+    </div>
+  </a>
+  <a href="myCase.html" class="a2" id="myCasebtn">
+    <div class="blockson">
+      <img src="../images/huanzhe3.png" alt="" />
+      <span>我的病历</span>
+    </div>
+  </a>
+  <a href="myBillList.html" class="a1">
+    <div class="blockson">
+      <img src="../images/huanzhe4.png" alt="" />
+      <span>我的账单</span><i class="points" id="points"></i>
+    </div>
+  </a>
+  <a href="personmsg.html" class="a2">
+    <div class="blockson">
+      <img src="../images/huanzhe5.png" alt="" />
+      <span>个人信息</span>
+    </div>
+  </a>
+</div>
+
+<div class="fotIcon">
+    <img src="../images/logo.png" alt="">
+    <p>轻快预约&nbsp;&nbsp;&nbsp;从“齿”简单</p>
+</div>
+<!--
+<div class="weui_panel">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="personmsg.html">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon2.png">
+                        <p>个人信息</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_panel" id="IwantOrdertab">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="javascript:;">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon15.png">
+                        <p>我要预约</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_panel" id="tipmsg1">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="myOrder.html">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon5.png">
+                        <p>我的预约</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="myCase.html">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon4.png">
+                        <p>我的病历</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="myBillList.html">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon_02.png">
+                        <p>我的账单</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_panel">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="set.html">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon16.png">
+                        <p>设置</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+             <div class="weui_cells weui_cells_access">
+               <a class="weui_cell" href="suggestion.html">
+                   <div class="weui_cell_hd">
+                       <img src="../images/icon6.png">
+                       <p>意见反馈</p>
+                   </div>
+                   <span class="weui_cell_ft"></span>
+               </a>
+                       </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="aboutUs.html" id="about_us">
+                    <div class="weui_cell_hd">
+                        <img src="../images/icon3.png">
+                        <p>关于我们</p>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="opcitybox" style="display:none"><span></span></div>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-角色管理</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/account.css?time=1">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="shortcut icon" href="../images/logo.png"/>
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/js.js"></script>
+  <script src="../js/role.js?time=2"></script>
+
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+  <div class="header">
+    <!-- <div class="logo">
+      <img src="../images/logo2.png" alt="">
+      <span>雨点后台</span>
+    </div>
+    <div class="exit">
+      <a href="javascript:void(0)" class="exit-but">退出</a>
+      <p>欢迎您！<span>admin</span></p>
+    </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li><a href="../index.html">用户管理</a></li>
+        <li class="cur"><a href="javascript:void(0)">角色管理</a></li>
+        <li><a href="power.html">权限管理</a></li>
+        <li><a href="projectSort.html">项目分类</a></li>
+        <li><a href="pool/projectPool.html">项目池</a></li>
+        <li><a href="article/article.html">文章管理</a></li>
+        <li><a href="comment.html">评论管理</a></li>
+        <li><a href="jigou/jigou.html">投资机构</a></li> -->
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop2">
+            <div class="but-box">
+              <p>
+                <a href="javascript:void(0)" class="add-but" id="add-but">新建</a>
+                <a href="javascript:void(0)" class="edit-but" id="edit-but">修改</a>
+                <a href="javascript:void(0)" class="delete-but" id="delete-but">删除</a>
+              </p>
+            </div>
+
+            <div class="top-input-box">
+              <p>角色名称：<input type="text" id="role-name"></p>
+              <p>
+                <a href="javascript:void(0)" class="search-but" id="search">搜索</a>
+                <a href="javascript:void(0)" class='reset-but' id="reset">重置</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="table-box">
+          <table class="table table-bordered table-hover table-height3 mtop100 Mbtom50">
+            <thead>
+                <tr>
+                    <th width="60px">选择</th>
+                    <th width="60px">角色ID</th>
+                    <th width="20%">角色名称</th>
+                    <th>角色说明</th>
+                </tr>
+            </thead>
+            <tbody id="roleTable">
+                <!-- <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio radio2" name="radio" id="radioInput1"><label for="radioInput1"></label></span></td>
+                    <td><span>Selina</span></td>
+                    <td><span class="user-desc-span">聚美优品创始人兼CEO聚美优品聚美优品创始人兼</span></td>
+                </tr>
+                <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio radio2" name="radio" id="radioInput2"><label for="radioInput2"></label></span></td>
+                    <td><span>Selina</span></td>
+                    <td><span class="user-desc-span">聚美优品创始人兼CEO聚美优品聚美优品创始人兼</span></td>
+                </tr>
+                <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio radio2" name="radio" id="radioInput3"><label for="radioInput3"></label></span></td>
+                    <td><span>Selina</span></td>
+                    <td><span class="user-desc-span">聚美优品创始人兼CEO聚美优品聚美优品创始人兼</span></td>
+                </tr> -->
+              </tbody>
+          </table>
+        </div>
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+</div>
+<!-- 新建弹出层 -->
+<div class="new-create-opcity role-dialog" id="role-dialog" style="display:none">
+  <div class="new-create-bj roltipbj">
+    <div class="new-create-box">
+      <h4 class="toph4 pos_tip_titletab" style="margin-bottom:20px"><b>新建</b><span class="close-dialog"></span></h4>
+      <div class="new-input">
+          <div class="new-input-box h50"> 
+              <span><em class="emx">角色名称：</em></span>
+              <input type="text" class="text-input" id="role_name">
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-input-box h50"> 
+              <span>角色说明：</span>
+              <input type="text" class="text-input" id="remark">
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-input-box checkbox_style_edit"> 
+              <span>分配权限：</span>
+              <div class="checkbox-box checkbox-box3" id="app_id">
+                <!-- <div class="checkboxPre">
+                    <span class="parentCB" type="a"><input type="checkbox" class="checkbox" id="checkAll"><label for="checkAll"></label>用户管理4</span>
+                </div>
+                <div class="checkboxPre">
+                    <span class="parentCB" type="a"><input type="checkbox" class="checkbox" id="checkAll"><label for="checkAll"></label>用户管理4</span>
+                </div>
+                <div class="checkboxPre">
+                    <div class="clear"></div>
+                    <span class="parentCB" type="a"><input type="checkbox" class="checkbox" id="checkAll"><label for="checkAll"></label>用户管理4</span>
+                    <div class="clear"></div>
+                    <div class="child_radio PL15">
+                       <span><input type="checkbox" class="checkbox" id="checkboxa"><label for="checkboxa"></label>用户管理2</span>
+                       <span><input type="checkbox" class="checkbox" id="checkboxb"><label for="checkboxb"></label>用户管理2</span>
+                       <span><input type="checkbox" class="checkbox" id="checkboxc"><label for="checkboxc"></label>用户管理3</span>
+                       <span><input type="checkbox" class="checkbox" id="checkboxd"><label for="checkboxd"></label>用户4</span>
+                       <span><input type="checkbox" class="checkbox" id="checkboxe"><label for="checkboxe"></label>用户管理理</span>
+                       <span><input type="checkbox" class="checkbox" id="checkboxf"><label for="checkboxf"></label>用户管理4</span>
+                       <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="checkboxPre">
+                    <span class="parentCB" type="a"><input type="checkbox" class="checkbox" id="checkAll"><label for="checkAll"></label>用户管理4</span>
+                </div> -->
+              </div>
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-creatbut-box" style="margin:0 auto">
+            <input type="button" class="but butgray" value="取 消" id="close-dialog">
+            <input type="button" class="but butblue" value="确 定" id="confirm-but">
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>确定要删除吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<div class="opacity-tip" style="display:none"><p>请先选择列表中的某一角色</p></div>
+
+</body>
+</html>
+<script>
+  
+/*$('.checkboxPre span.parentCB input').change(function(){
+
+})*/
+/*if( $('#app_id .checkboxPre div.child_radio input').length > 0 ) {
+  var checkBoxA = $('#app_id .checkboxPre div.child_radio input');
+    checkBoxA.each(function(){
+      checkBoxA.on('change', function(){
+        if(checkBoxA.is(':checked')){
+          $(this).parents('.checkboxPre').find('.parentCB input').attr('checked',true)
+        }else{
+          $(this).parents('.checkboxPre').find('.parentCB input').attr('checked',false)
+        }
+      });
+    });
+  }*/
+</script>

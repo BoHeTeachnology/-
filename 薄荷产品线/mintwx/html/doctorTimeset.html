@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>出诊安排</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css?time=1">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/jquery-weui.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/doctorTimeset.js"></script>
+</head>
+<body>
+<div class="doctortimebox" id="">
+    <div class="weui_cells" style="border-bottom:1px #d9d9d9 solid;">
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="height:25px;">
+                <p>出诊地址：</p>
+                <div class="clincSelect" >
+                    <select name="" id="clinic" disabled>
+                        <!-- <option value="">请选择</option>
+                        <option value="">朝阳区</option>
+                        <option value="">北京</option> -->
+                    </select>
+                    <label for=""></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="doctortimebox" id="">
+    <div class="weui_cells" >
+        <div class="weui_cell">
+            <div class="weui_cell_hd" style="height:25px;">
+                <p>出诊时间：</p>
+                <span id="chuTime"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+  <div id="inline-calendar"></div>
+  <input id="date" type="text" style="opacity:0;width:100%;height:0px;display:none">
+</div>
+<div class="timechooseMain">
+    <div class="timechoose"  id="timechoose">
+        <!-- <div class="timeDatapre">
+            <h3>
+                <span>初诊：</span>
+                <p>
+                    <select name="" id="">
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">16:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                    </select>
+                </p>
+
+            </h3>
+            <h3>
+                <span>终诊：</span>
+                <p>
+                    <select name="" id="">
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">16:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30" selected>17:30</option>
+                    </select>
+                </p>
+            </h3>
+
+        </div> -->
+    </div>
+</div>
+<div class="clear"></div>
+<div class="tipwarmbtom">
+    <h4>温馨提示：</h4>
+    <p><span>●</span>请您每个月底25号之前，设置您下个月的出诊时间和地址。谢谢您的理解与支持。</p>
+    <p><span>●</span>如需修改出诊时间，请与客服人员联系：185-1385-0241</p>
+</div>
+<div class="footButposition" style="display:none" id="confirmbtnbox"><input type="button" value="确定" class="price_confirm" id="confirmbtn" style="margin-bottom:20px;"></div>
+<div class="opcitybox" style="display:none"><span></span></div>
+<div id="toast" style="display:none">
+  <div class="weui_mask_transparent" ></div>
+  <div class="weui_toast">
+      <i class="weui_icon_toast"></i>
+      <p class="weui_toast_content">添加成功</p>
+  </div>
+</div>
+</body>
+</html>

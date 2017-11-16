@@ -1,0 +1,403 @@
+[ 2016-09-30T11:45:59+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000897s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0287s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001167s ]
+
+[ 2016-09-30T11:46:02+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0283s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2016-09-30T11:46:03+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-08
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0287s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-08%' AND a.doctor_id = '181'  [ RunTime:0.0287s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002254s ]
+
+[ 2016-09-30T11:46:04+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-06
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0299s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-06%' AND a.doctor_id = '181'  [ RunTime:0.0298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2016-09-30T11:46:05+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-08
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0325s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-08%' AND a.doctor_id = '181'  [ RunTime:0.0317s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001728s ]
+
+[ 2016-09-30T11:46:05+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001596s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0299s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000814s ]
+
+[ 2016-09-30T11:46:06+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0321s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000847s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000939s ]
+
+[ 2016-09-30T11:46:08+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000649s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0345s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0354s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001085s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001240s ]
+
+[ 2016-09-30T11:46:09+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0281s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-11%' AND a.doctor_id = '181'  [ RunTime:0.0278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2016-09-30T11:46:11+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001087s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0298s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2016-09-30T11:54:29+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002755s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0298s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001214s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001306s ]
+
+[ 2016-09-30T11:54:34+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10-13
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0278s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10-13%' AND a.doctor_id = '181'  [ RunTime:0.0279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2016-09-30T11:54:34+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10-14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0299s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10-14%' AND a.doctor_id = '181'  [ RunTime:0.0296s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2016-09-30T11:54:36+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0297s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000943s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001078s ]
+
+[ 2016-09-30T11:56:17+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0324s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001718s ]
+
+[ 2016-09-30T11:56:18+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0308s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000913s ]
+
+[ 2016-09-30T11:59:14+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001154s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001286s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0316s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001089s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001196s ]
+
+[ 2016-09-30T11:59:33+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0363s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0349s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001510s ]
+
+[ 2016-09-30T11:59:34+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0299s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2016-09-30T11:59:46+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002953s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0300s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0297s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001110s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001225s ]
+
+[ 2016-09-30T11:59:47+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002148s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002265s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0307s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-11%' AND a.doctor_id = '181'  [ RunTime:0.0293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002121s ]
+
+[ 2016-09-30T11:59:49+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0316s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0305s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+
+[ 2016-09-30T12:00:19+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10-15
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001060s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0312s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10-15%' AND a.doctor_id = '181'  [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000968s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001065s ]
+
+[ 2016-09-30T12:00:19+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10-16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0301s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10-16%' AND a.doctor_id = '181'  [ RunTime:0.0298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000741s ]
+
+[ 2016-09-30T15:31:50+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10-08
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0291s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10-08%' AND a.doctor_id = '181'  [ RunTime:0.0292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001430s ]
+
+[ 2016-09-30T15:31:59+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001096s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0286s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0283s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002131s ]
+
+[ 2016-09-30T15:32:04+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001088s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0309s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-09-30T15:32:13+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001004s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0313s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000861s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-09-30T15:34:54+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000102s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0290s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2016-09-30T15:35:00+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-09
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000213s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001375s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0296s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-09%' AND a.doctor_id = '181'  [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001119s ]
+
+[ 2016-09-30T15:35:04+08:00 ] ::1 /mintAdmin/index.php/Home/Doctor/visitDateQuery?visit_date=2016-10
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `mint_dttime` [ RunTime:0.0306s ]
+SQL: SELECT a.*,b.clinic_name FROM mint_dttime a left join mint_clinic as b on a.clinic_id=b.id  WHERE a.visit_date LIKE '%2016-10%' AND a.doctor_id = '181'  [ RunTime:0.0300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000597s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000664s ]
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>为他人预约</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../../css/weui.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../jsdate/css/mobiscroll_002.css">
+  <link rel="stylesheet" href="../../jsdate/css/mobiscroll_003.css">
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../jsdate/js/mobiscroll.js"></script>
+  <script src="../../jsdate/js/mobiscrollmsg.js"></script>
+  <script src="../../jsdate/js/jsdate.js"></script>
+  <script src="../../js/chooseOther.js"></script>
+</head>
+<body>
+<div class="forother-wrap">
+  <div class="weui_cells_form chooseprojOrderinput" id="forOther">
+      <div class="weui_cell_bj" style="border-top:none;margin-top:1px">
+          <span>就诊人姓名</span>
+          <input type="text" id="otherName"  maxLength="20" placeholder="请输入就诊人姓名">
+          <div class="clear_num"></div>
+      </div>
+      <div class="weui_cell_bj Mtop0">
+          <span>与您的关系</span>
+          <input type="text" id="guanxi" maxLength="10"  placeholder="请输入与您的关系">
+          <div class="clear_num"></div>
+      </div>
+      <div class="weui_cell_bj Mtop0">
+          <span>出生日期</span>
+          <input type="text" id="birth"  placeholder="就诊人的出生日期" readonly>
+      </div>
+      <div class="weui_cell_bj Mtop0" style="border-bottom:none">
+          <span>联系方式</span>
+          <input type="text" id="userphone"  placeholder="请输入与您的联系方式" maxLength="11">
+          <div class="clear_num"></div>
+      </div>
+  </div>
+</div>
+<div class="other-btom-show" id="otherShow" style='display:none'>
+  <h3>关系成员<span>(为他人预约过的成员)</span></h3>
+  <ul class="othersli" id="get_relation">
+    <!-- <li><span>王子文</span><i></i></li>
+    <li class="activeli"><span>王子文</span><i></i></li>
+    <li><span>王子文(独立账户，不能编辑)</span><i></i></li> -->
+  </ul>
+</div>
+  
+<div class="demos-content-padded btnbox">
+  <a href="javascript:;" class="price_confirm" id="confirm" style="margin-top:20px;">确定</a>
+  <a href="javascript:;" class="price_confirm weui_btn_gray" id="calcel" style="margin-top:20px;">取消</a>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+<div class="opacityTipbox" style="display:none">
+  <h3>
+    <label>您确定要删除该关系成员？</label>
+    <p class="fuzhentip"><span class="reOrderCancel" id="quxiao">取消</span><span class="wantReorder" id="queren">确认</span></p>
+  </h3>
+</div>
+</body>
+</html>

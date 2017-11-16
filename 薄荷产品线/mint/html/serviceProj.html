@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-项目分类</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/account.css">
+  <link rel="stylesheet" href="../css/table.css">
+  <link rel="shortcut icon" href="../images/logo.png"/>
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/upPic.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/js.js"></script>
+  <script src="../js/Serve.js"></script>
+
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+  <div class="header">
+    <!-- <div class="logo">
+      <img src="../images/logo2.png" alt="">
+      <span>雨点后台</span>
+    </div>
+    <div class="exit">
+      <a href="javascript:void(0)" class="exit-but">退出</a>
+      <p>欢迎您！<span>admin</span></p>
+    </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li><a href="../index.html">用户管理</a></li>
+        <li class="cur"><a href="javascript:void(0)">角色管理</a></li>
+        <li><a href="power.html">权限管理</a></li>
+        <li><a href="projectSort.html">项目分类</a></li>
+        <li><a href="pool/projectPool.html">项目池</a></li>
+        <li><a href="article/article.html">文章管理</a></li>
+        <li><a href="comment.html">评论管理</a></li>
+        <li><a href="jigou/jigou.html">投资机构</a></li> -->
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop2">
+            <div class="but-box">
+              <p>
+                <a href="javascript:void(0)" class="add-but" id="add-but">新建</a>
+                <a href="javascript:void(0)" class="edit-but" id="edit-but">修改</a>
+                <a href="javascript:void(0)" class="delete-but" id="delete-but">删除</a>
+              </p>
+            </div>
+
+            <div class="top-input-box">
+              <p>分类名称：<input type="text" id="sort-name"></p>
+              <p>
+                <a href="javascript:void(0)" class="search-but" id="search">搜索</a>
+                <a href="javascript:void(0)" class='reset-but' id="reset">重置</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="table-box">
+          <table class="table table-bordered table-hover table-height3 mtop100 Mbtom50 doctortable serveProjtable">
+            <thead>
+                <tr>
+                    <th width="60px">选择</th>
+                    <th>分类名称</th>
+                    <th width="50px">图片</th>
+                    <th>创建时间</th>
+                </tr>
+            </thead>
+            <tbody id="sortTable">
+                <!-- <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio radio2" name="radio" id="radioInput1"><label for="radioInput1"></label></span></td>
+                    <td><span>Selina</span></td>
+                    <td><span class="user-desc-span">聚美优品创始人兼CEO聚美优品聚美优品创始人兼</span></td>
+                </tr>
+                <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio radio2" name="radio" id="radioInput2"><label for="radioInput2"></label></span></td>
+                    <td><span>Selina</span></td>
+                    <td><span class="user-desc-span">聚美优品创始人兼CEO聚美优品聚美优品创始人兼</span></td>
+                </tr>
+                <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio radio2" name="radio" id="radioInput3"><label for="radioInput3"></label></span></td>
+                    <td><span>Selina</span></td>
+                    <td><span class="user-desc-span">聚美优品创始人兼CEO聚美优品聚美优品创始人兼</span></td>
+                </tr> -->
+              </tbody>
+          </table>
+        </div>
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+</div>
+<!-- 新建弹出层 -->
+<div class="new-create-opcity" id="role-dialog" style="display:none">
+  <div class="new-create-bj sortipbj" style="margin-top:-210px;">
+    <div class="new-create-box">
+      <h4 class="toph4"><b>新建</b><span class="close-dialog"></span></h4>
+      <div class="new-input">
+          <div class="new-input-box h50"> 
+              <span><em class="emx">项目名称：</em></span>
+              <input type="text" class="text-input" id="service_name" placeholder="建议4个字之内" maxLength="4">
+              <p class="errorTip"></p>
+          </div>
+          <div class="clear"></div>
+          <div class="input-box h75"> 
+              <span style="width:100px;"><em class="emx">上传图片：</em></span>
+              <div class="touxiang" id="logo"><img src="../images/nonepic.png" alt=""></div>
+              <div class="but-input uppic-input"><input type="file" value="上传头像" id="file2" class="but-input upfile-butt">上传图片</div>
+              <p class="logoUrlTip">图片建议1:1比例，png格式。</p>
+              <div class="logowrongTip" id="logowrongTip"></div>
+          </div>
+          <div class="new-input-box h50"> 
+              <span>排序：</span>
+              <input type="text" class="text-input" id="sort" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="16" maxLength="16" value="500">
+              <label class="tip_sort">数字越小，排列越靠前</label>
+          </div>
+          <div class="new-input-box"> 
+              <span>&nbsp;</span>
+              <div class="radio-box" id="is_use">
+                  <span style="padding-right:50px;">
+                    <input type="radio" class="radio1" name="radio2" id="checkbox8" value="1" checked>
+                    <label for="checkbox8" style="width:90px;line-height:20px;padding-left:22px;">启用</label>
+                  </span>
+                  <span>
+                    <input type="radio" class="radio1" name="radio2" id="checkbox9" value="2">
+                    <label for="checkbox9" style="width:90px;line-height:18px;padding-left:22px;">未启用</label>
+                  </span>
+              </div>
+              <p class="errorTip"></p>
+          </div>
+          <div class="new-creatbut-box">
+            <input type="button" class="but butgray" value="取 消" id="close-dialog">
+            <input type="button" class="but butblue" value="确 定" id="confirm-but">
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="new-create-opcity" id="upPictipbox" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传图片<span class="close-dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div> 
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传图片</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>确定要删除吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+<div class="opacity-tip" style="display:none"><p>请先选择列表中的某一角色</p></div>
+
+</body>
+</html>

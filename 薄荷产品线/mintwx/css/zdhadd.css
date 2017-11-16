@@ -1,0 +1,41 @@
+.meng{
+	width:100%;
+	height: 100%;
+	position: absolute;
+	z-index: 99;
+	background-color: rgba(0,0,0,0.7);
+}
+.gender{
+	display: block;
+	z-index: 99;
+	position: absolute;
+	width: 80%;
+	height: 20%;
+	top: 40%;
+	left: 10%;
+	background-color: #fff;
+	border-radius: 5px;
+}
+.gender .man,.gender .women{
+	width: 100%;
+	height: 50%;
+	text-align: left;
+	text-indent: 20px;
+	font-size: 20px;
+	position: relative;
+}
+.gender .man{
+	border-bottom: 1px solid #ccc;
+}
+#toast{
+	z-index: 999;
+}
+.man img,.women img{
+	display: block;
+	border-radius: 100%;
+	position: absolute;
+	height: 40%;
+	right: 20px;
+	top: 30%;
+	display: block;
+}

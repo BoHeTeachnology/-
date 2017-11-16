@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>病历列表</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Expires" CONTENT="0"> 
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css?time=1">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/jquery-weui.min.js"></script>
+  <script src="../js/Ajax.js?time=1"></script>
+  <script src="../js/myCase.js?time=1"></script>
+</head>
+<body style="padding-top:10px;">
+<div class="myorderNodatabox" id="noDatabox" style="display:none">
+    <dl>
+      <dt><img src="../images/icon13.png" alt=""></dt>
+      <dd>您的病历将会放到这里<br>方便日后查询</dd>
+    </dl>
+    <img src="../images/logo.png" alt="" class="logobtom">
+</div>
+<div class="myOrdermainbox caseListbox" id="caselist" style="display:none">
+    <!-- <div class="weui_cells weui_cells_access">
+        <a class="weui_cell" href="#">
+            <div class="weui_cell_hd">
+                <p>
+                  <b>牙周炎</b>
+                  <label>2016-21-12</label>
+                </p>
+                <i class="tipsign">复诊</i>
+            </div>
+            <span class="weui_cell_ft"></span>
+        </a>
+    </div> -->
+</div>
+<div class="myOrdermainbox caseListbox">
+  <div class="weui_cells weui_cells_access" id="record_count2" style="display:none">
+      <a class="weui_cell" href="myCaseContent.html?type=2">
+          <div class="weui_cell_hd">
+              <p>
+                <b style="height:45px;line-height:45px;">门诊病历</b>
+               <!--  <label>&nbsp;</label> -->
+              </p>
+              <i class="tipsign">查看</i>
+          </div>
+          <span class="weui_cell_ft"></span>
+      </a>
+  </div>
+  <div class="weui_cells weui_cells_access" id="record_count1" style="display:none">
+      <a class="weui_cell" href="myCaseContent.html?type=1">
+          <div class="weui_cell_hd">
+              <p>
+                <b style="height:45px;line-height:45px;">初筛报告</b>
+               <!--  <label>&nbsp;</label> -->
+              </p>
+              <i class="tipsign">查看</i>
+          </div>
+          <span class="weui_cell_ft"></span>
+      </a>
+  </div>
+</div>
+<div class="nodata" style="height:50px;line-height:50px;text-align:center;font-size:14px;display:none">没有更多数据了</div>
+<div class="weui-infinite-scroll" id="loading" style="display:none">
+  <div class="infinite-preloader"></div>
+  正在加载
+</div>
+</body>
+</html>
+<script>
+  
+</script>

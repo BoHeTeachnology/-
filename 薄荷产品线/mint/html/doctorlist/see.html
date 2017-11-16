@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>医生管理-信息查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../jedate/skin/jquery-weui.css">
+  <link rel="stylesheet" href="../../css/account.css?time=3">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+   <script src="../../jedate/jquery-weui.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../diyUpload/js/jquery.zclip.min.js"></script>
+  <script src="../../js/calendar.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/doctorSee.js?time=2"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="back">返回</a>
+                <a href="javascript:void(0)" class="edit-but" id="edit-but">编辑</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="add-h3 add-main-box1 mtop45">
+                <h3 class="box5-h3">基本信息<span></span></h3>
+                <div class="main-input">
+                    <!-- <div class="containMainbox">
+                       左边盒子
+                        <div class="containMainleft">
+                        </div>
+                        <div class="containMainright">
+                        </div>
+                    </div> -->
+                    <div class="input-box h30 gray-span"> 
+                        <span>微信端显示：</span>
+                        <div class="see-main" id="is_show"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>账号：</span>
+                        <div class="see-main" id="account"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>医生姓名：</span>
+                        <div class="see-main" id="name"></div>
+                    </div>
+                    <div class="input-box h65 gray-span"> 
+                        <span>医生头像：</span>
+                        <div class="touxiang" id="logo"><img src="" alt=""></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>性别：</span>
+                        <div class="see-main" id="sex"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>出生年月：</span>
+                        <div class="see-main" id="J-xl"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>年龄：</span>
+                        <div class="see-main" id="age"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>职称：</span>
+                        <div class="see-main" id="position"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>所在医院：</span>
+                        <div class="see-main" id="hospital"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>服务项目：</span>
+                        <div class="see-main" id="service_name_arr"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>擅长领域：</span>
+                        <div class="see-main" id="field"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>执业年限：</span>
+                        <div class="see-main" id="job_age"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>背景：</span>
+                        <div class="see-main" id="context"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>出诊时间：</span>
+                        <a href="javascript:;" class="timesethover">查看坐诊详情</a>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>手机：</span>
+                        <div class="see-main" id="phone"></div>
+                    </div>
+                    <!-- <div class="input-box h30 gray-span"> 
+                        <span>密码：</span>
+                        <div class="see-main" id="name"></div>
+                    </div> -->
+                    <div class="input-box h30 gray-span"> 
+                        <span>标签：</span>
+                        <div class="see-main" id="label"></div>
+                    </div>
+                    <div class="input-box H86 gray-span" id="tow_codebox" style="display:none"> 
+                        <span>二维码：</span>
+                        <div class="touxiang doc_ma" id="tow_codeImg"></div>
+                        <div class="downloadbox">
+                          <a href="javascript:;" id="downLoad">下载到本地</a>&nbsp; &nbsp;<a id="copyLink" href="javascript:;" style="display:none">复制链接</a>
+                          <span>下载后可用于分享功能或制作印刷品等</span>
+                        </div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>客户助理：</span>
+                        <div class="see-main" id="assistant"></div>
+                    </div>
+                    <div class="input-box h30 gray-span"> 
+                        <span>助理链接：</span>
+                        <div class="see-main" id="meiqia"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="opacity-timetipbox" id="timeTipbox" style="display:none">
+  <div class="calendarboxmain width630" style="margin-top:-240px">
+      <h4 class="toph4" style="margin:0"><b>查看坐诊详情</b><span class="close-dialog"></span></h4>
+      <div class="calendarboxmainIn">
+          <div class="canadar_main_box">
+              <div class="doc_time_tips">
+                <label><i class="blue_tip"></i>薄荷出诊时间</label><label><i class="orange_tip"></i>公立出诊时间</label>
+              </div>
+              <div class="clear"></div>
+              <div class="doc_clinic_address">
+                <span>出诊诊所：</span>
+                <select id="clinicList" disabled>
+                  <!-- <option value=""></option> -->
+                </select>
+              </div>
+              <div id="inline-calendar" style="border-bottom:1px #ccc solid;"></div>
+
+              <div class="timeboxmain-select">
+                <div class="timechoose" id="timechoose"></div>
+              </div>
+              <div class="doc_clinic_address">
+                <span class="W25pcent">间隔时间段：</span>
+                <select class="W65pcent" id="selectedTime" disabled>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+                  <option value="60">60</option>
+                  <option value="90">90</option>
+                  <option value="120">120</option>
+                </select>
+              </div>
+              <input id="date" type="text" style="opacity:0">
+          </div>
+          <div class="docto_desc_main">
+              <ul>
+                <!-- <li>
+                  <p><b>张思</b><span>37岁</span><span>男</span></p>
+                  <p>项目：<span>补牙</span></p>
+                  <p>就诊时间：<span>2016-12-21</span></p>
+                  <p>联系方式：<span>15101538595</span></p>
+                </li> -->
+              </ul>
+          </div>
+          <div class="clear"></div>
+      </div>
+          
+      
+  </div>
+  
+  
+</div>
+</body>
+</html>
+<script>
+//var link='http://182.254.213.207/mintAdmin/up/qr_code_img/4cc1d7dae653ac5880a7a34f5fd94d18.png';
+$('#downLoad').click(function(){
+  var link = 'http://'+location.host+$('#tow_codeImg img').attr('src');
+  var filename=$('#name').html()+(new Date()).valueOf(); 
+  Download(link,filename)
+})
+
+function Download(data,filename){
+        var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href=data;
+        save_link.download=filename;
+        var event=document.createEvent('MouseEvents');
+        event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+        save_link.dispatchEvent(event);
+};
+</script>

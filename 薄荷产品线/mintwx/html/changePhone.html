@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>更换手机号</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+<div class="myCaseList changePhonebox">
+    <div class="weui_cells weui_cells_access">
+        <a class="weui_cell" href="sendMa.html">
+            <div class="weui_cell_hd">
+                <p><b class="phone_icon1">原手机号可以接收验证码</b></p>
+            </div>
+            <span class="weui_cell_ft"></span>
+        </a>
+    </div>
+</div>
+<div class="myCaseList changePhonebox">
+    <div class="weui_cells weui_cells_access">
+        <a class="weui_cell" href="sendPwd.html">
+            <div class="weui_cell_hd">
+                <p><b class="phone_icon2">原手机号不能接收验证码</b></p>
+            </div>
+            <span class="weui_cell_ft"></span>
+        </a>
+    </div>
+    <div class="phone-tip">如无法自助修改，请拨打人工客服，由客服协助修改。客服电话：<a href="tel:131 4629 1005">131 4629 1005</a></div>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+</body>
+</html>
+<script>
+  $(function(){
+    sessionStorage.removeItem('verifyCode');
+    sessionStorage.removeItem('pwdCode');
+  })
+</script>

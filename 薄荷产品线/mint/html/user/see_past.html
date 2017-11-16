@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userSee_past.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop_edit">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="../../index.html#User" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                    <div class="userInfobox">
+                        <script src="../../js/header.js"></script> 
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu user_topmenu_edit">
+                            <ul id='routeUl'>
+                                <li><a href="see_info.html#User" id='info'>基础信息</a></li>
+                                <li><a class="active" href="see_past.html#User" id='past'>既往史</a></li>
+                                <li><a href="see_mouths.html#User" id='mouth'>口腔情况</a></li>
+                                <li><a href="see_tooth.html#User" id='pics'>牙位图</a></li>
+                                <li><a href="see_family.html#User" id='family'>关系成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time z_time_edit">
+                            <div class="z_time_btn nobord_btom" >
+                                <p> <b class="update_his" style="display:none">更新记录：</b>
+                                    <select name="" id="creat_time" style="display:none">
+                                    </select><!-- 
+                                    <em class="see_update_timebox" style="display:none;opacity:0" >上一次更新时间：<span id="recent_time"></span></em> -->
+                                </p>
+                                <label for="" id="btnsbox" style="display:none">
+                                    <a href="javascript:;" class="default_inputbtn z_add_btn" id="add-but">添加</a>
+                                    <a href="javascript:;" class="default_inputbtn z_edit_btn" id="edit-but">编辑</a>
+                                </label>
+                                
+                            </div>
+                        </div>
+                        <div class="userContain z_userContain_edit z_userContain_see" id="change">
+                            
+                            <div class="z_userContainMain">
+                                <!-- 既往史 -->
+                                <div class="containb_right">
+                                    <div class="z_no_past_data" id="page_noData" style="display:none">
+                                        <p>
+                                            <img src="../../images/nodata.png" alt="">
+                                            <span>此项目暂无数据</span>
+                                            <a href="javascript:;" class="default_inputbtn z_add_btn2" id="add_btns">添加</a>
+                                        </p>
+                                    </div>
+                                    <div class="z_jws_main" id="page_haveData" style="display:none">
+                                        <h2 class="no_border"><i class="row_1"></i><span>全身情况</span></h2>
+                                        <div class="z_checkbox_main see_hide" id="body_condition">
+                                            <div class="z_past_desc" id="body_condition_desc">
+
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_2"></i><span>家族史</span></h2>
+                                        <div class="z_checkbox_main see_hide" id="family_history">
+                                            <div class="z_past_desc" id="family_history_desc"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_3"></i><span>用药史</span></h2>
+                                        <div class="z_checkbox_main see_hide" id="medicine">
+                                            <div class="z_past_desc" id="medicine_desc"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_4"></i><span>手术史</span></h2>
+                                        <div class="z_checkbox_main see_hide" id="surgery">
+                                           <div class="z_past_desc" id="surgery_desc"></div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <h2><i class="row_5"></i><span>过敏情况</span></h2>
+                                        <div class="z_checkbox_main see_hide" id="allergy">
+                                            <div class="z_past_desc" id="allergy_desc"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <h2><i class="row_6"></i><span>传染病</span></h2>
+                                        <div class="z_checkbox_main see_hide pbtom30" id="infection">
+                                            <div class="z_past_desc" id="infection_desc"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div><!-- 既往史结束 -->
+                            </div> 
+                            <div class="clear"></div>
+                        </div>
+
+                            
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+            
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+</html>

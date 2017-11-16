@@ -1,0 +1,1182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-新建</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/H_user.css">
+
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/userAdd.js"></script>
+  <script src="vue.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop4">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="../illLibrary/index.html#Record" class="back-but" id="back">返回</a>
+                      </p>
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top">
+                        <div class="user_topmenu">
+                            <ul id='routeUl'>
+                                <li><a href="#page1" id='a1'>基础信息</a></li>
+                                <li><a href="#page2" id='a2'>既往史</a></li>
+                                <li><a href="#page3" id='a3'>口腔情况</a></li>
+                                <li><a href="#page4" id='a4'>牙位图</a></li>
+                                <li><a href="#page5" id='a5'>牙片</a></li>
+                                <li><a href="#page6" id='a6'>家庭成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time">
+                            <input type="text" name="" id="time">
+                            <input type="button" name="" value="" id='btn'>
+                        </div>
+                        <div class="userContain" id="change">
+                                <div class="containb_right">11111</div>
+                                <div class="containb_right">22222</div>
+                                <div class="containb_right">
+                                    <div class="H_content">
+                                      <div class="H_content_title">
+                                        <span class="H_title_span">牙体</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box" id='H_teeth'>
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_1'>
+                                            <label for="H_content_list_item_1"><i>&nbsp;楔状缺损</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_2'>
+                                            <label for="H_content_list_item_2"><i>&nbsp;形态异常</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_3'>
+                                            <label for="H_content_list_item_3"><i>&nbsp;龋齿</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_4'>
+                                            <label for="H_content_list_item_4"><i>&nbsp;缺失牙</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_5'>
+                                            <label for="H_content_list_item_5"><i>&nbsp;萌生异常</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_6'>
+                                            <label for="H_content_list_item_6"><i>&nbsp;多生牙</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_7'>
+                                            <label for="H_content_list_item_7"><i>&nbsp;牙体发育异常</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item">
+                                            <input type="checkbox" value="" id='H_content_list_item_8'>
+                                            <label for="H_content_list_item_8"><i>&nbsp;牙齿表面缺损</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                          <span class="H_content_list_item H_margin_bottom_none">
+                                            <input type="checkbox" value="" id='H_content_list_item_9'>
+                                            <label for="H_content_list_item_9"><i>&nbsp;隐裂</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value="3">
+                                          </span>
+
+                                        </div>
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color2">牙周</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='teeth_around'>
+                                        <div class="H_small_box H_margin_bottom20">
+
+                                          <span class="H_content_radio_title">牙石：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t10' class="radio radio2" name='H_teeth_roundt1'>
+                                            <label for="H_content_list_item_t10"><i>&nbsp;Ⅰ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t11' class="radio radio2" name='H_teeth_roundt1'>
+                                            <label for="H_content_list_item_t11"><i>&nbsp;Ⅱ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t12' class="radio radio2" name='H_teeth_roundt1'>
+                                            <label for="H_content_list_item_t12"><i>&nbsp;Ⅲ</i></label>
+                                          </span>
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">松动：</span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t14' class="radio radio2" name='H_teeth_roundt2'>
+                                            <label for="H_content_list_item_t14"><i>&nbsp;Ⅰ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t15' class="radio radio2" name='H_teeth_roundt2'>
+                                            <label for="H_content_list_item_t15"><i>&nbsp;Ⅱ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t16' class="radio radio2" name='H_teeth_roundt2'>
+                                            <label for="H_content_list_item_t16"><i>&nbsp;Ⅲ</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20 H_margin_bottom_none">
+                                          <span class="H_content_radio_title">出血：</span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t18' class="radio radio2" name='H_teeth_roundt3'>
+                                            <label for="H_content_list_item_t18"><i>&nbsp;Ⅰ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t19' class="radio radio2" name='H_teeth_roundt3'>
+                                            <label for="H_content_list_item_t19"><i>&nbsp;Ⅱ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t20' class="radio radio2" name='H_teeth_roundt3'>
+                                            <label for="H_content_list_item_t20"><i>&nbsp;Ⅲ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t21' class="radio radio2" name='H_teeth_roundt3'>
+                                            <label for="H_content_list_item_t21"><i>&nbsp;Ⅳ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_t22' class="radio radio2" name='H_teeth_roundt3'>
+                                            <label for="H_content_list_item_t22"><i>&nbsp;Ⅴ</i></label>
+                                          </span>
+
+                                        </div>
+
+
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color3">粘膜</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box" id='H_mucosa'>
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right">
+                                            <input type="checkbox" value="" id='H_content_list_item_19'>
+                                            <label for="H_content_list_item_19"><i>&nbsp;正常</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right">
+                                            <input type="checkbox" value="" id='H_content_list_item_20'>
+                                            <label for="H_content_list_item_20"><i>&nbsp;白色斑块</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right">
+                                            <input type="checkbox" value="" id='H_content_list_item_21'>
+                                            <label for="H_content_list_item_21"><i>&nbsp;红色斑块</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right">
+                                            <input type="checkbox" value="" id='H_content_list_item_22'>
+                                            <label for="H_content_list_item_22"><i>&nbsp;扁平苔藓</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right">
+                                            <input type="checkbox" value="" id='H_content_list_item_23'>
+                                            <label for="H_content_list_item_23"><i>&nbsp;溃疡</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right">
+                                            <input type="checkbox" value="" id='H_content_list_item_24'>
+                                            <label for="H_content_list_item_24"><i>&nbsp;其他</i></label>
+                                          </span>
+                                        </div>
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color4">外科</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">开口度：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_25' class="radio radio2" name='H_teeth_round4'>
+                                            <label for="H_content_list_item_25"><i>&nbsp;三指宽度</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_26' class="radio radio2" name='H_teeth_round4'>
+                                            <label for="H_content_list_item_26"><i>&nbsp;两指宽度</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio H_width_big">
+                                            <input type="radio" value="" id='H_content_list_item_27' class="radio radio2" name='H_teeth_round4'>
+                                            <label for="H_content_list_item_27"><i>&nbsp;一直宽度，甚至更小</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">开口型：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_28' class="radio radio2" name='H_teeth_round5'>
+                                            <label for="H_content_list_item_28"><i>&nbsp;直线</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_29' class="radio radio2" name='H_teeth_round5'>
+                                            <label for="H_content_list_item_29"><i>&nbsp;左偏</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio H_width_big">
+                                            <input type="radio" value="" id='H_content_list_item_30' class="radio radio2" name='H_teeth_round5'>
+                                            <label for="H_content_list_item_30"><i>&nbsp;右偏</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">面型：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_31' class="radio radio2" name='H_teeth_round6'>
+                                            <label for="H_content_list_item_31"><i>&nbsp;大致对称</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_311' class="radio radio2" name='H_teeth_round6'>
+                                            <label for="H_content_list_item_311"><i>&nbsp;不对称</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title"></span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_322' class="radio radio2" name='H_teeth_round7'>
+                                            <label for="H_content_list_item_322"><i>&nbsp;直面型</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_32' class="radio radio2" name='H_teeth_round7'>
+                                            <label for="H_content_list_item_32"><i>&nbsp;凹面型</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_33' class="radio radio2" name='H_teeth_round7'>
+                                            <label for="H_content_list_item_33"><i>&nbsp;凸面型</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">牙列：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_34' class="radio radio2" name='H_teeth_round8'>
+                                            <label for="H_content_list_item_34"><i>&nbsp;拥挤</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_35' class="radio radio2" name='H_teeth_round8'>
+                                            <label for="H_content_list_item_35"><i>&nbsp;间隙</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">磨牙关系：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_36' class="radio radio2" name='H_teeth_round9'>
+                                            <label for="H_content_list_item_36"><i>&nbsp;Ⅰ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_37' class="radio radio2" name='H_teeth_round9'>
+                                            <label for="H_content_list_item_37"><i>&nbsp;Ⅱ</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_37' class="radio radio2" name='H_teeth_round9'>
+                                            <label for="H_content_list_item_37"><i>&nbsp;Ⅲ</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">前牙关系：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_38' class="radio radio2" name='H_teeth_round10'>
+                                            <label for="H_content_list_item_38"><i>&nbsp;反合</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_39' class="radio radio2" name='H_teeth_round10'>
+                                            <label for="H_content_list_item_39"><i>&nbsp;开合</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_40' class="radio radio2" name='H_teeth_round10'>
+                                            <label for="H_content_list_item_40"><i>&nbsp;深覆盖</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_41' class="radio radio2" name='H_teeth_round10'>
+                                            <label for="H_content_list_item_41"><i>&nbsp;深覆合</i></label>
+                                          </span>
+
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">上中线：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_42' class="radio radio2" name='H_teeth_round11'>
+                                            <label for="H_content_list_item_42"><i>&nbsp;偏左</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_43' class="radio radio2" name='H_teeth_round11'>
+                                            <label for="H_content_list_item_43"><i>&nbsp;偏右</i></label>
+                                          </span>
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">下中线：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_44' class="radio radio2" name='H_teeth_round12'>
+                                            <label for="H_content_list_item_44"><i>&nbsp;偏左</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_45' class="radio radio2" name='H_teeth_round12'>
+                                            <label for="H_content_list_item_45"><i>&nbsp;偏右</i></label>
+                                          </span>
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20">
+                                          <span class="H_content_radio_title">系带：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_46' class="radio radio2" name='H_teeth_round13'>
+                                            <label for="H_content_list_item_46"><i>&nbsp;唇系带过高</i></label>
+                                          </span>
+
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_47' class="radio radio2" name='H_teeth_round13'>
+                                            <label for="H_content_list_item_47"><i>&nbsp;唇系带过低</i></label>
+                                          </span>
+                                        </div>
+
+                                        <div class="H_small_box H_margin_bottom20 H_margin_bottom_none">
+                                          <span class="H_content_radio_title">其他：</span>
+                                          <span class="H_content_list_item H_content_list_item_radio">
+                                            <input type="radio" value="" id='H_content_list_item_48' class="radio radio2" name='H_teeth_round14'>
+                                            <label for="H_content_list_item_48"><i>&nbsp;关节弹响</i></label>
+                                          </span>
+
+                                        </div>
+
+
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color5">牙病治疗及修复史</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box">
+                                          <span class="H_content_list_item H_margin_bottom_none">
+                                            治疗及修复史
+                                            <input type="text" name="" value="">
+                                          </span>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                </div>
+                                <div class="containb_right">
+
+                                  <div class="H_teeth_position">
+
+                                    <div class="H_teeth_position_pic H_teeth_position_pic_son" style='display:none' id="H_child">
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_51">
+                                        51
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_61">
+                                        61
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_52">
+                                        52
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_62">
+                                        62
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_53">
+                                        53
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_63">
+                                        63
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_54">
+                                        54
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_64">
+                                        64
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_55">
+                                        55
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_65">
+                                        65
+                                      </div>
+
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_81">
+                                        81
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_71">
+                                        71
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_82">
+                                        82
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_72">
+                                        72
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_83">
+                                        83
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_73">
+                                        73
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_84">
+                                        84
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_74">
+                                        74
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_85">
+                                        85
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_75">
+                                        75
+                                      </div>
+
+
+                                    </div>
+
+                                    <div class="H_teeth_position_pic" style='display:block' id="H_man">
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_11">
+                                        11
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_21">
+                                        21
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_12">
+                                        12
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_22">
+                                        22
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_13">
+                                        13
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_23">
+                                        23
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_14">
+                                        14
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_24">
+                                        24
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_15">
+                                        15
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_25">
+                                        25
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_16">
+                                        16
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_26">
+                                        26
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_17">
+                                        17
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_27">
+                                        27
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_18">
+                                        18
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_28">
+                                        28
+                                      </div>
+
+
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_41">
+                                        41
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_31">
+                                        31
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_42">
+                                        42
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_32">
+                                        32
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_43">
+                                        43
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_33">
+                                        33
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_44">
+                                        44
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_34">
+                                        34
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_45">
+                                        45
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_35">
+                                        35
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_46">
+                                        46
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_36">
+                                        36
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_47">
+                                        47
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_37">
+                                        37
+                                      </div>
+
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_48">
+                                        48
+                                      </div>
+                                      <div class="H_teeth_position_pic_same H_teeth_position_pic_38">
+                                        38
+                                      </div>
+                                    </div>
+
+                                    <div class="H_teeth_position_left">
+                                      <div class="man active">
+                                        成人牙位图
+                                      </div>
+                                      <div class="child">
+                                        幼儿牙位图
+                                      </div>
+                                    </div>
+
+                                    <div class="H_teeth_position_list">
+                                      <div class="H_teeth_position_list_title">
+                                        牙齿:&nbsp;&nbsp;<span id='H_teeth_xu_hao'></span>
+                                      </div>
+
+                                      <div class="H_teeth_position_list_item" id='H_child2' style='display:none;'>
+                                        <div class="H_teeth_position_list_item_left">
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child1'>
+                                            <label for="H_content_list_item_left_child1"><i>&nbsp;C:龋坏</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child2'>
+                                            <label for="H_content_list_item_left_child2"><i>&nbsp;M:缺失</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child3'>
+                                            <label for="H_content_list_item_left_child3"><i>&nbsp;PFS:窝沟封闭</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child4'>
+                                            <label for="H_content_list_item_left_child4"><i>&nbsp;CF:全冠</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child5'>
+                                            <label for="H_content_list_item_left_child5"><i>&nbsp;U:未见萌出</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child5'>
+                                            <label for="H_content_list_item_left_child5"><i>&nbsp;F:填充物</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child5'>
+                                            <label for="H_content_list_item_left_child5"><i>&nbsp;RT:根管治疗后</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_child5'>
+                                            <label for="H_content_list_item_left_child5"><i>&nbsp;SR:间隙保持器</i></label>
+                                          </div>
+
+                                        </div>
+                                      </div>
+
+
+                                      <div class="H_teeth_position_list_item" id='H_man2'>
+                                        <div class="H_teeth_position_list_item_left">
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_1'>
+                                            <label for="H_content_list_item_left_1"><i>&nbsp;C:龋坏</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_2'>
+                                            <label for="H_content_list_item_left_2"><i>&nbsp;M:缺失</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_3'>
+                                            <label for="H_content_list_item_left_3"><i>&nbsp;F:填充物</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_4'>
+                                            <label for="H_content_list_item_left_4"><i>&nbsp;R:扭转牙</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_5'>
+                                            <label for="H_content_list_item_left_5"><i>&nbsp;U:未见萌出</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_6'>
+                                            <label for="H_content_list_item_left_6"><i>&nbsp;IT:种植牙</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_7'>
+                                            <label for="H_content_list_item_left_7"><i>&nbsp;IM:阻生牙</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_8'>
+                                            <label for="H_content_list_item_left_8"><i>&nbsp;CF:全冠</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_left_9'>
+                                            <label for="H_content_list_item_left_9"><i>&nbsp;CP:部分冠</i></label>
+                                          </div>
+
+                                        </div>
+
+                                        <div class="H_teeth_position_list_item_right">
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_1'>
+                                            <label for="H_content_list_item_right_1"><i>&nbsp;GI:金合金嵌体</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_2'>
+                                            <label for="H_content_list_item_right_2"><i>&nbsp;GO:金合金高嵌体</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_3'>
+                                            <label for="H_content_list_item_right_3"><i>&nbsp;CV:瓷贴面</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_4'>
+                                            <label for="H_content_list_item_right_4"><i>&nbsp;RV:树脂贴面</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_5'>
+                                            <label for="H_content_list_item_right_5"><i>&nbsp;FP:固定桥</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_6'>
+                                            <label for="H_content_list_item_right_6"><i>&nbsp;RP:可摘局部义齿</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_7'>
+                                            <label for="H_content_list_item_right_7"><i>&nbsp;DCP:畸形中央尖</i></label>
+                                          </div>
+
+                                          <div class="wrap">
+                                            <input type="checkbox" value="" id='H_content_list_item_right_8'>
+                                            <label for="H_content_list_item_right_8"><i>&nbsp;TC:牙隐裂</i></label>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+
+
+                                </div>
+                                <div class="containb_right">55555</div>
+                                <div class="containb_right">666666</div>
+
+                            <!-- <div class="containb_right" >
+                                <div class="containb_main_left">
+                                    <div class="input-box h30">
+                                        <span><em class="emx">账号：</em></span>
+                                        <input type="text" class="text-input" id="account" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" placeholder="只能输入手机号">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>客户姓名：</span>
+                                        <input type="text" class="text-input" id="name">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>真实姓名：</span>
+                                        <input type="text" class="text-input" id="real_name">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h65">
+                                        <span>客户头像：</span>
+                                        <div class="touxiang" id="logo"><img src="../../images/user.png" alt=""></div>
+                                        <div class="but-input uppic-input"><input type="file" value="上传头像" id="file2" class="but-input upfile-butt">上传头像</div>
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>性别：</span>
+                                        <div class="radio-box" id="sex">
+                                            <span><input type="radio" class="radio1" name="radio2" id="checkbox10" value="1" checked=""><label for="checkbox10"></label>男</span>
+                                            <span><input type="radio" class="radio1" name="radio2" id="checkbox11" value="2"><label for="checkbox11"></label>女</span>
+                                        </div>
+                                        <p class="errorTip"></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>出生年月：</span>
+                                        <input type="text" class="text-input layicon" id="J-xl" readonly="readonly">
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="containb_main_right">
+                                    <div class="input-box h30">
+                                        <span>年龄：</span>
+                                        <input type="text" class="text-input" readonly="readonly" id="age">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>身份证：</span>
+                                        <input type="text" class="text-input" id="card_id">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>Email：</span>
+                                        <input type="text" class="text-input" id="email">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span><em class="emx">手机：</em></span>
+                                        <input type="text" class="text-input" id="phone" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span><em class="emx">密码：</em></span>
+                                        <input type="password" class="text-input" id="password" placeholder="6～20个字符">
+                                        <p></p>
+                                    </div>
+                                    <div class="input-box h30">
+                                        <span>所在公司：</span>
+                                        <input type="text" class="text-input" id="company_name">
+                                        <p></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="kong">1231321332132322</div>
+                            <div class="kong2">fasfassafsafsfssafas</div>
+                            -->
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!--
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+    (function () {
+      $('.userContain').height( $(window).height()-190 )
+      window.onresize=function(){
+          $('.userContain').height( $(window).height()-190 )
+      }
+        $('#routeUl li a').click(function(){
+            //$(this).children().attr('class','active').parent().siblings().children().attr('class','');
+            $(this).addClass('active').parent().siblings().children().removeClass('active');
+        })
+        $('#routeUl li').eq(0).find('a').addClass('active');
+        $('#change div.containb_right').eq(0).show();
+        function Router () {} Router.prototype.route = function ( path, callback ) { var url = location.hash.slice(1) || '/';
+        // 刷新时的处理
+        window.addEventListener('load', function () { if ( url == path ) { callback&&callback(); } }, false);
+        // hash变化时的处理
+        window.addEventListener('hashchange', function () { url = location.hash.slice(1) || '/'; if ( url == path ) { callback&&callback(); } }, false); }; window.Router = new Router(); })();
+
+     var content = document.getElementById('change');
+        Router.route('page1', function () {
+            $('#a1').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2016');
+            $('#change div.containb_right').eq(0).show().siblings().hide();
+        });
+        Router.route('page2', function () {
+            $('#a2').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-2222222');
+            $('#change div.containb_right').eq(1).show().siblings().hide();
+            });
+
+
+        Router.route('page3', function () {
+            $('#a3').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-3333333');
+            $('#change div.containb_right').eq(2).show().siblings().hide();
+            $('#btn').click(function(){
+
+              for(var j = 0;j<$('.H_content .H_content_title').length;j++){
+                console.log($('.H_content .H_content_title').children().eq(i).prevObject[j].innerHTML);
+              }
+
+              var str = '';
+              var len_teeth = $('#H_teeth').children().length;
+              var H_obj = {};
+              var arr_teeth = [];
+              var arr_teeth_around = [];
+              var arr_mucosa = [];
+
+              for(var i =0;i<len_teeth;i++){
+                var H_obj_son = {};
+                H_obj_son.bool = $('#H_teeth').children().eq(i).children()[0].checked;
+                H_obj_son.project = $('#H_teeth').children().eq(i).children()[1].innerText.substring(1);
+                H_obj_son.sum = $('#H_teeth').children().eq(i).children()[3].value;
+                arr_teeth.push(H_obj_son);
+              }
+              H_obj.teeth = arr_teeth;
+
+
+
+              var len_teeth_around = $('#teeth_around .H_small_box').length;
+              for(var j =0;j<len_teeth_around;j++){
+                var H_obj_son = {};
+                H_obj_son.project = $('#teeth_around .H_small_box')[j].innerText.substring(0,2);
+                $('#teeth_around .H_small_box').eq(j).children('.H_content_list_item_radio').children('input[type="radio"]').each(function(index,ele){
+                  if($(this).is(':checked')){
+                    H_obj_son.bool = index;
+                    return false;
+                  }else {
+                    H_obj_son.bool = '';
+                  }
+                })
+                arr_teeth_around.push(H_obj_son);
+
+              }
+
+
+              H_obj.teeth_around = arr_teeth_around;
+              console.log(H_obj);
+
+
+              var len_mucosa = $('#H_mucosa').children().length;
+              for(var q =0;q<len_mucosa;q++){
+                var H_obj_son = {};
+                H_obj_son.bool = $('#H_mucosa').children().eq(q).children()[0].checked;
+                H_obj_son.project = $('#H_mucosa').children().eq(q).children()[1].innerText.substring(1);
+                arr_mucosa.push(H_obj_son);
+              }
+              H_obj.mucosa = arr_mucosa;
+
+
+
+
+            })
+
+
+
+        });
+
+        Router.route('page4', function () {
+            $('#a4').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-444444444444');
+            $('#change div.containb_right').eq(3).show().siblings().hide();
+
+            var H_obj = {};
+            var H_obj_arr = [];
+            $('.H_teeth_position_pic_same').click(function(){
+
+              $('#H_man2 input').each(function(){
+                $(this)[0].checked = false;
+              })
+              $(this).attr('style','background-color:#c1d5f2');
+              $('#H_teeth_xu_hao').html($(this)[0].innerText);
+              //开始数组为空 先建立一个对象 把点击的牙齿序号赋值 并建立空数组 准备插入疾病类型
+              var H_obj_son = {
+                account : $(this)[0].innerText,
+                teeth_ache_item : []
+              };
+              // //创建子对象 包括疾病名称和对应的复选框id
+              // var H_obj_son = {
+              //   account : $(this)[0].innerText,
+              //   teeth_ache_item : []
+              // };
+              //保存点击这颗牙齿的this
+              var father_self = $(this);
+              $('#H_man2 input').off('click');
+              //点击右侧疾病 将病名称和对应的复选框id
+              $('#H_man2 input').on('click',function(){
+                //点击选中时
+                if($(this)[0].checked){
+
+                  var H_obj_son_son = {
+                    name : $(this).next()[0].innerText,
+                    id : $(this)[0].id
+                  }
+
+                  H_obj_son.teeth_ache_item.push(H_obj_son_son);
+
+                  father_self.attr('style','background-color:rgb(230,97,99)');
+                }else{//点击取消时
+                  //遍历已添加的数据，找到并删除
+                  for(var i =0;i<H_obj_son.teeth_ache_item.length;i++){
+                    if(H_obj_son.teeth_ache_item[i].id == $(this)[0].id){
+                      H_obj_son.teeth_ache_item.splice(i,1);
+                      i--;
+                      }
+                  }
+                  //取消之后还有数据 要渲染红色
+                  if(H_obj_son.teeth_ache_item.length!=0){
+                    father_self.attr('style','background-color:rgb(230,97,99)');
+                  }else{//没有数据 渲染白色 但是对象并没有删除
+                    //H_obj_arr.pop(H_obj_son);
+                    father_self.attr('style','background-color:#fafcff');
+                  }
+                }
+              })
+              //把数据传给数组
+              H_obj_arr.push(H_obj_son);
+
+              //循环遍历所有牙齿，看是否这个序号的牙齿已经有对应的对象了
+              for(var i =0;i<H_obj_arr.length;i++){
+                //点到已经有数据的牙齿
+                if($(this)[0].innerText == H_obj_arr[i].account){
+                  //这颗牙齿有疾病数据
+                  if(H_obj_arr[i].teeth_ache_item.length!=0){
+                    //变红
+                    $(this).attr('style','background-color:rgb(230,97,99)');
+                    //遍历这颗牙齿的疾病 渲染到右侧
+                    for(var z=0;z<H_obj_arr[i].teeth_ache_item.length;z++){
+
+                      $('#H_man2 input').each(function(){
+                        if( $(this)[0].id == H_obj_arr[i].teeth_ache_item[z].id){
+                          $(this)[0].checked = true;
+                        }
+                      })
+                      // for(var q =0;q<$('#H_man2 input').length;q++){
+                      //   if( $('#H_man2 input')[q] == H_obj_arr[i].teeth_ache_item[z].id){
+                      //     // $('#H_man2 input').attr('id',H_obj_arr[i].teeth_ache_item[z].id)
+                      //     console.log(11111);
+                      //   }
+                      //   console.log(22222);
+                      // }
+                    }
+                  }else{//这颗牙没有疾病
+                    //$(this).attr('style','background-color:#fafcff')
+                  }
+
+                }else{
+
+                }
+                // if(H_obj_arr[i].teeth_ache_item.length == 0){
+                //   $('#H_man .H_teeth_position_pic_same').each(function(index,ele){
+                //     // if( $('#H_teeth_position_pic_same').eq(index).html() == H_obj_arr[i].account ){
+                //     //   $('#H_teeth_position_pic_same').attr('style','#fafcff');
+                //     // }
+                //     if($('#H_man .H_teeth_position_pic_same').eq(index)[0].innerText == H_obj_arr[i].account){
+                //       $('#H_man .H_teeth_position_pic_same').eq(index).css('background-color','#fafcff');
+                //       H_obj_arr
+                //     }
+                //
+                //   })
+                //   console.log(00000);
+                // }
+
+              }
+
+
+
+            })
+
+
+            $('#btn').click(function(){
+              for(var i =0;i<H_obj_arr.length;i++){
+                if(H_obj_arr[i].teeth_ache_item.length == 0){
+                  H_obj_arr.splice(i,1);
+                  i--;
+                }
+              }
+              H_obj = H_obj_arr;
+              console.log(H_obj);
+
+            })
+
+            $('.man').click(function(){
+              $('#H_man').show();
+              $('#H_child').hide();
+              $('#H_child2').hide();
+              $('#H_man2').show();
+              $(this).attr('class','man active');
+              $('.child').attr('class','child');
+
+            })
+
+            $('.child').click(function(){
+              $('#H_man').hide();
+              $('#H_child').show();
+              $('#H_man2').hide();
+              $('#H_child2').show();
+              $(this).attr('class','child active');
+              $('.man').attr('class','man');
+            })
+
+
+        });
+
+        Router.route('page5', function () {
+            $('#a5').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-555555555555');
+            $('#change div.containb_right').eq(4).show().siblings().hide();
+        });
+
+        Router.route('page6', function () {
+            $('#a6').addClass('active').parent().siblings().children().removeClass('active');
+            $('#time').val('2018-666666666');
+            $('#change div.containb_right').eq(5).show().siblings().hide();
+        });
+
+</script>
+</html>

@@ -1,0 +1,14 @@
+/*改动css样式，张德慧覆盖*/
+.containLeft{
+  background: #fff;
+}
+.current-month-value,.current-year-value{
+  font-size: 14px;
+  color: #00aec0;
+}
+#EquipmentTipbox .inputboxdiv .uppic-input input{
+	cursor: pointer;
+}
+#MaterialTipbox .inputboxdiv .uppic-input input{
+	cursor: pointer;
+}

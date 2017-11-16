@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>薄荷口腔-账单管理</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/pagination.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../js/jquery.pagination.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/TableSorter.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/bill.js"></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+  <div class="header">
+    <!-- <div class="logo">
+      <img src="images/logo.png" alt="">
+      <span>薄荷口腔</span>
+    </div>
+    <div class="exit">
+      <a href="#" class="exit-but">退出</a>
+      <p>欢迎您！<span></span></p>
+    </div> -->
+  </div>
+
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul class="cd-accordion-menu" id="left-list">
+        <!-- <li class="User cur"><a href="#">合作诊所</a></li>
+        <li class="Role"><a href="#">合作企业</a></li>
+        <li class="App"><a href="#">医生列表</a></li>
+        <li class="App"><a href="#">医生列表</a></li>
+        <li class="App"><a href="#">医生列表</a></li>
+        <li class="App"><a href="#">医生列表</a></li> -->
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop3">
+           <!--  <div class="but-box">
+             <p>
+               <a href="add.html#Record" class="add-but" id="add">新建</a>
+               <a href="javascript:void(0)" class="edit-but" id="edit">修改</a>
+               <a href="javascript:void(0)" class="delete-but" id="delete">删除</a>
+             </p>
+           </div> -->
+
+            <div class="top-input-box">
+              <p>客户姓名：<input type="text" id="user_name"></p>
+              <p>联系方式：<input type="text" id="patient_account"></p>
+              <div class="orderDoctor"> 
+                  <span class="doctorspan">医生：</span>
+                  <div class="col-sm-9" id="DocInputbox">
+                      <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                        <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                        <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                          <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                          <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                          <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                            <label class="sr-only" for="input-bts-ex-5"></label>
+                            <div class="search-box">
+                              <div class="input-group">
+                                <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search form-control3" aria-describedby="search-icon5" tabindex="1" />
+                              </div>
+                            </div>
+                            <div class="list-to-filter">
+                                  <ul class="list-unstyled" id="doctor_id">
+                                      <!-- <li class="filter-item items" data-filter="整整" data-value="1">整整</li>
+                                      <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                      <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                      <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                      <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                      <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                      <li class="filter-item items" data-filter="22222" data-value="5">22222</li> -->
+                                  </ul>
+                              <div class="no-search-results">
+                                <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="bts-ex-5" value="">
+                      </div>
+                  </div>
+                  <p></p>
+              </div>
+              <div class="orderDoctor"> 
+                  <span class="doctorspan">诊所：</span>
+                  <div class="col-sm-9" id="ClinkBox">
+                      <div id="bts-ex-5" class="selectpicker" data-clear="true" data-live="true">
+                        <!-- <a href="#" class="clear"><span class="fa fa-times"></span><span class="sr-only">Cancel the selection</span></a> -->
+                        <button data-id="prov" type="button" class="btn btn-lg btn-block btn-default dropdown-toggle">
+                          <span class="placeholder" id="DovVal" data-val="">请选择</span>
+                          <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                          <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
+                            <label class="sr-only" for="input-bts-ex-5"></label>
+                            <div class="search-box">
+                              <div class="input-group">
+                                <input type="text" placeholder="请输入搜索内容" id="input-bts-ex-5" class="form-control live-search form-control3" aria-describedby="search-icon5" tabindex="1" />
+                              </div>
+                            </div>
+                            <div class="list-to-filter">
+                                  <ul class="list-unstyled" id="clinic_id">
+                                      <!-- <li class="filter-item items" data-filter="整整" data-value="1">整整（15101538595）</li>
+                                      <li class="filter-item items" data-filter="selina" data-value="2">selina</li>
+                                      <li class="filter-item items" data-filter="aaaa" data-value="3">aaaa</li>
+                                      <li class="filter-item items" data-filter="春晓说" data-value="4">春晓说</li>
+                                      <li class="filter-item items" data-filter="夏天" data-value="5">夏天</li>
+                                      <li class="filter-item items" data-filter="秋天" data-value="5">秋天</li>
+                                      <li class="filter-item items" data-filter="22222" data-value="5">22222</li> -->
+                                  </ul>
+                              <div class="no-search-results">
+                                <div class="alert alert-warning" role="alert"><i class="fa fa-warning margin-right-sm"></i>没有找到 <strong>'<span></span>'</strong>相关数据</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" name="bts-ex-5" value="">
+                      </div>
+                  </div>
+                  <p></p>
+              </div>
+              <div class="moresel moreTop_check">
+                <span class="moreButspan"><b>更多</b><i></i></span>
+                <div class="moreboxhide">
+                    <p>就诊时间：<input type="text" id="visit_time" readonly class="riliicon"></p>
+                    <p>项目：<input type="text" id="project_name"></p>
+                    <p>支付状态：
+                      <select class="is_send_select" id="status">
+                        <option value="">请选择</option>
+                        <option value="1">已支付</option>
+                        <option value="0">未支付</option>
+                      </select>
+                    </p>
+                    <p>支付方式：
+                      <select class="is_send_select" id="pay_method">
+                        <option value="">请选择</option>
+                        <option value="微信支付">微信支付</option>
+                        <option value="线下支付">线下支付</option>
+                      </select>
+                    </p>
+                    <p>优惠情况：
+                      <select class="is_send_select" id="bill_discount_search">
+                        <option value="">请选择</option>
+                        <option value="2">有折扣</option>
+                        <option value="1">无折扣</option>
+                      </select>
+                    </p>
+                </div>
+              </div>
+              <!-- 
+               -->
+              
+
+              <p>
+                <a href="javascript:void(0)" class="search-but" id="search">搜索</a>
+                <a href="javascript:void(0)" class='reset-but' id="reset">重置</a>
+              </p>
+              <button class="excelBtn" id="excelBtn">导出为excel</button>
+            </div>
+
+        </div><!-- rtop -->
+        <div class="table-box">
+        <table class="table table-bordered table-hover table-height table-height4 mtop60 Mbtom50 poolTable" id="BillTableMain">
+            <thead>
+                <tr>
+                    <th width="60px">选择</th>
+                    <th>账单号</th>
+                    <th>客户姓名</th>
+                    <th>联系方式</th>
+                    <th>就诊时间</th>
+                    <th>就诊医生</th>
+                    <th>诊断项目</th>
+                    <th>诊所</th>
+                    <th>原价</th>
+                    <th>实际金额</th>
+
+                    <!-- <th>本人</th>
+                    <th>所属公司</th>
+                    <th>用户确认</th> -->
+                    <th>支付状态</th>
+                    <th>支付方式</th>
+                    <th style="padding-right:10px">账单明细</th>
+                </tr>
+            </thead>
+            <tbody id="BillTable">
+                <!-- <tr>
+                    <td><span>1</span></td>
+                    <td><span class="radio-span"><input type="radio" class="radio" name="radio" id="radioInput1"><label for="radioInput1"></label></span></td>
+                    <td><span>15101538595</span></td>
+                    <td><span>selina</span></td>
+                    <td><span>女</span></td>
+                    <td><span>ddd</span></td>
+                </tr> -->
+              </tbody>
+        </table>
+        <div id="Pagination-box" style="display:none">
+              <div class="pountAll">共有<span id="pcountNum"></span>条，每页显示：10条</div>
+              <div id="Pagination">
+              </div>
+              <div id="go-nextBox">
+                <!-- <label>共<span class="pageNum"></span>页</label> -->
+                <span class="jumppage go-page" id="go-page">
+                  <input id="jump-to" class="jump-to numPage" value="" name="page" type="text" style="border:none">
+                  <a href="javascript:;" title="立即跳转" id="jump-btn" class="jump-btn go">Go</a>
+                </span>
+              </div>
+        </div>
+        
+        </div>
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+</div>
+
+<!-- 删除弹出层 -->
+<div class="delete-tipbox" style="display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">删除<span class="close-dialog"></span></h4>
+        <div class="wartip"><span>确定要删除吗？</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butgray" value="取 消" id="close-dialog">
+          <input type="button" class="but butblue" value="确 定" id="deletetipBox">
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="mingxitipBox" style="display:none">
+  <div class="new-create-bj billtipbj" id="billTipMargin" style="margin-left:-300px">
+    <div class="new-create-box">
+      <h4 class="toph4"><b>账单明细</b><span class="close-dialog"></span></h4>
+      <div class="mingxiContain">
+        <p class="bollboxnum">用户名：<b id="BilName"></b> 账单号：<b id="BilNumber"></b></p>
+        <table class="billUlboxTable">
+          <thead>
+            <th width="20%">项目名称</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>金额</th>
+            <th width="75px">折扣</th>
+            <th>实际金额</th>
+          </thead>
+          <tbody id="billtablebox">
+            <!-- <tr>
+              <td><span class="proj">充填（补牙邻面成型）</span></td>
+              <td>4000.00</td>
+              <td>1</td>
+              <td>4000.00</td>
+              <td>
+                <select id="">
+                  <option value="1">请选择</option>
+                  <option value="0.95">9.5</option>
+                  <option value="0.9">9</option>
+                  <option value="0.85">8.5</option>
+                  <option value="0.8">8</option>
+                </select>
+              </td>
+              <td>4000.00</td>
+            </tr> -->
+          </tbody>
+        </table>
+        <!-- <p class="bilUlp"><b>项目</b><span>价格</span><label>数量</label></p>
+        <ul id="billUlbox">
+        </ul> -->
+        <div class="billheji">
+          <p>
+            <label>实际金额：<span class="font-orange">￥<b id="payMoney2"></b></span></label>
+            <label>合计：<span id="payMoney">￥<b></b></span></label>
+          </p><br>
+          <p style="float:right;width:100%" id="billdiscount_btom">
+            <label class="allDiscount_select">
+              整单折扣：
+              <input type="text" id="bill_discount">
+              <select id="discount_select">
+                <option value="">请选择</option>
+                <option value="9.5">9.5折</option>
+                <option value="9">9折</option>
+                <option value="8.5">8.5折</option>
+                <option value="8">8折</option>
+              </select>
+            </label>
+          </p>
+            
+        </div>
+        <div class="clear"></div>
+        <div class="new-creatbut-box" id="btnbox" style="padding-bottom:0;display:none">
+          <input type="button" class="but butblue" value="保 存" id="saveBill" style="float:left">
+          <input type="button" class="but butblue" value="确认支付" id="trueBtn">
+        </div>
+      </div>
+
+    </div>
+  </div>
+ 
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+</body>
+</html>
+<script>
+  
+</script>

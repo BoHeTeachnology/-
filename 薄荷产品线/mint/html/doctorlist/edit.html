@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+  <META HTTP-EQUIV="expires" CONTENT="0">
+  <meta charset="UTF-8">
+  <title>医生管理-编辑</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../jedate/skin/jquery-weui.css">
+  <link rel="stylesheet" href="../../css/account.css?time=2">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+   <script src="../../jedate/jquery-weui.js"></script>
+  <script src="../../js/Ajax.js?time=2"></script>
+  <script src="../../js/upPic.js"></script>
+  <script src="../../jedate/jedate.js"></script>
+  <script src="../../diyUpload/js/jquery.zclip.min.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src="../../js/doctorEdit.js?time=6"></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+        <!-- <div class="logo">
+          <img src="images/logo2.png" alt="">
+          <span>雨点后台</span>
+        </div>
+        <div class="exit">
+          <a href="#" class="exit-but">退出</a>
+          <p>欢迎您！<span></span></p>
+        </div> -->
+  </div>
+  <div class="container-wrapper">
+    <div class="container-left">
+      <h3></h3>
+      <ul id="left-list">
+        <!-- <li class="cur"><a href="/ydadmin/user.html">用户管理</a></li>
+        <li><a href="/ydadmin/html/role.html">角色管理</a></li>
+        <li><a href="/ydadmin/html/power.html">权限管理</a></li>
+        <li><a href="/ydadmin/html/projectSort.html">项目分类</a></li>
+        <li><a href="/ydadmin/html/pool/projectPool.html">项目池</a></li>
+        <li><a href="/ydadmin/html/article/article.html">文章管理</a></li>
+        <li><a href="/ydadmin/html/comment.html">评论管理</a></li>
+        <li><a href="/ydadmin/html/jigou/jigou.html">投资机构</a></li> -->
+
+      </ul>
+    </div>
+    <div class="container-right">
+      <div class="container-right-main">
+        <div class="rtop rtop4">
+            <div class="but-box bj-none">
+              <p>
+                <a href="javascript:void(0)" class="back-but" id="back">返回</a>
+                <a href="javascript:void(0)" class="save-but" id="save-but">保存</a>
+              </p>
+            </div>
+        </div><!-- rtop -->
+        <div class="add-box-container">
+            <div class="add-h3 add-main-box1 mtop45">
+                <h3 class="box5-h3">基本信息<span></span></h3>
+                <div class="main-input">
+                    <!-- <div class="containMainbox">
+                       左边盒子
+                        <div class="containMainleft">
+                        </div>
+                        <div class="containMainright">
+                        </div>
+                    </div> -->
+                    <div class="input-box h30"> 
+                        <span>微信端显示：</span>
+                        <div class="radio-box" id="is_show">
+                            <span><input type="radio" class="radio1" name="radiov" id="checkboxvv" value="1" checked><label for="checkboxvv"></label>是</span>
+                            <span><input type="radio" class="radio1" name="radiov" id="checkboxww" value="2"><label for="checkboxww"></label>否</span>
+                        </div>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">账号：</em></span>
+                        <input type="text" class="text-input" id="account" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" placeholder="只能输入手机号">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">医生姓名：</em></span>
+                        <input type="text" class="text-input" id="name">
+                        <p></p>
+                    </div>
+                    <div class="input-box h65"> 
+                        <span>医生头像：</span>
+                        <div class="touxiang" id="logo"><img src="../../images/user.png" alt=""></div>
+                        <div class="but-input uppic-input"><input type="file" value="上传头像" id="file2" class="but-input upfile-butt">上传头像</div>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>性别：</span>
+                        <div class="radio-box" id="sex">
+                            <span><input type="radio" class="radio1" name="radio2" id="checkbox10" value="1" checked=""><label for="checkbox10"></label>男</span>
+                            <span><input type="radio" class="radio1" name="radio2" id="checkbox11" value="2"><label for="checkbox11"></label>女</span>
+                        </div>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>出生年月：</span>
+                        <input type="text" class="text-input layicon" id="J-xl" readonly="readonly">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>年龄：</span>
+                        <input type="text" class="text-input" readonly="readonly" id="age">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">职称：</em></span>
+                        <input type="text" class="text-input" id="position">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">所在医院：</em></span>
+                        <input type="text" class="text-input" id="hospital">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">服务项目：</em></span>
+                        <div class="checkbox-box" style="max-width:900px;margin-bottom:10px;">
+                          <div class="checkBone" id="service_ids">
+                              <!-- <span><input type="checkbox" class="checkbox" id="checkbox_n1" value="1"><label for="checkbox_n1"></label>周一</span> -->
+                          </div>
+                        </div>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">擅长领域：</em></span>
+                        <input type="text" class="text-input" id="field">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>执业年限：</span>
+                        <input type="text" class="text-input" id="job_age">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">背景：</em></span>
+                        <textarea class="textarea" style="max-width: 245px; border: 1px solid rgb(204, 204, 204);" id="context"></textarea>
+                        <!-- <input type="text" class="text-input"> -->
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">出诊时间：</em></span>
+                        <a href="javascript:;" class="timesethover" id="timesetbut">坐诊时间安排</a>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span><em class="emx">手机：</em></span>
+                        <input type="text" class="text-input" id="phone" placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" >
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>密码：</span>
+                        <input type="password" class="text-input" id="password" placeholder="6～20个字符">
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>标签：</span>
+                        <div class="checkbox-box" style="width:900px;margin-bottom:10px;">
+                          <div class="checkBone" id="tag_name">
+                              <!-- <span><input type="checkbox" class="checkbox" id="checkbox1"><label for="checkbox1"></label>B2B</span>
+                              <span><input type="checkbox" class="checkbox" id="checkbox2"><label for="checkbox2"></label>互联网金融</span>
+                              <span><input type="checkbox" class="checkbox" id="checkbox3"><label for="checkbox3"></label>在线教育</span>
+                              <span><input type="checkbox" class="checkbox" id="checkbox1"><label for="checkbox1"></label>B2B</span> -->
+                          </div>
+                            <div class="countryInput">
+                              <input type="button" value="添加" class="addCbut">
+                              <em class="Countryhide">
+                                <input type="text" class="cuontryval">
+                                <input type="button" value="完成" class="addCountry">
+                              </em>
+                            </div>
+                        </div>
+                        <p class="errorTip"></p>
+                    </div>
+                    <div class="input-box H86" id="tow_codebox" style="display:none"> 
+                        <span>二维码：</span>
+                        <div class="touxiang doc_ma" id="tow_codeImg"></div>
+                        <div class="downloadbox">
+                          <a href="javascript:;" id="downLoad">下载到本地</a>&nbsp; &nbsp;<a id="copyLink" href="javascript:;" style="display:none">复制链接</a>
+                          <span>下载后可用于分享功能或制作印刷品等</span>
+                        </div>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>客户助理：</span>
+                        <select class="select-div" id="assistant_id">
+                          <option value="1">的话</option>
+                        </select>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30"> 
+                        <span>助理链接：</span>
+                        <textarea class="textarea" style="max-width: 245px; border: 1px solid rgb(204, 204, 204);" id="meiqia"></textarea>
+                        <p></p>
+                    </div>
+                    <div class="input-box h30">
+                        <span>邀请码：</span>
+                        <input type="text" class="text-input" id="invite_code" readonly="" value="" disabled="" style="cursor:not-allowed;text-align:center;padding:0">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- add-box-container -->
+    </div><!-- container-right-main -->
+  </div><!-- container-right -->
+
+</div>
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+            
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!-- 
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+<div class="opacity-timetipbox" id="timeTipbox" style="display:none">
+  <div class="calendarboxmain" style="margin-top:-260px">
+      <h4 class="toph4" style="margin:0"><b>坐诊时间设置</b><span class="close_dialog"></span></h4>
+      <div class="input-box h30 timeRadio"> 
+          <div class="radio-box">
+            <div class="checkBone" id="clinc_types">
+                <span><input type="radio" class="radio1" name="radio_s" id="radios_1" value="1" checked=""><label for="radios_1">薄荷出诊时间</label></span>
+                <span><input type="radio" class="radio1" name="radio_s" id="radios_2" value="2"><label for="radios_2">公立出诊时间</label></span>
+            </div>
+            <div class="clear"></div>
+            <p class="error"></p>
+          </div>
+      </div>
+      <div class="doc_clinic_address" style="border-top: 1px #ccc solid;">
+        <span>出诊诊所：</span>
+        <select id="clinicList">
+          <!-- <option value=""></option> -->
+        </select>
+      </div>
+      <div id="inline-calendar" style="border-bottom:1px #ccc solid"></div>
+      <div class="timeboxmain-select">
+        <div class="timechoose" id="timechoose"></div>
+      </div>
+      <div class="doc_clinic_address">
+        <span class="W25pcent">间隔时间段：</span>
+        <select class="W65pcent" id="selectedTime">
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+          <option value="90">90</option>
+          <option value="120">120</option>
+        </select>
+      </div>
+      <div class="timeset_btom_btn">
+        <div class="new-creatbut-box">
+            <a href="javascript:;" class="but butgray" id="quxiao_btn">取 消</a>
+            <a href="javascript:;" class="but butblue confirm-add" id="confirm-but">确 定</a>
+        </div>
+      </div>
+      <div class="clinic_nodatabox" id="clinic_nodatabox" style="display:none"></div>  
+      <input id="date" type="text" style="opacity:0">
+  </div>
+  
+</div>
+
+<div class="delete-tipbox delete_tipbox_btom" style="z-index:999999;display:none">
+  <div class="new-create-bj new-create-bj2">
+    <div class="new-create-box creat2">
+      <h4 class="toph4 mb30">温馨提示<span class="close_know_dialog"></span></h4>
+        <div class="wartip"><span>再次点击将取消本日原有时间设置</span></div>
+        <div class="new-creatbut-box">
+          <input type="button" class="but butblue" value="我知道了" id="close_know_dialog" style="margin-right:50px;">
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+$('#downLoad').click(function(){
+  var link = 'http://'+location.host+$('#tow_codeImg img').attr('src');
+  var filename=$('#name').val()+(new Date()).valueOf(); 
+  Download(link,filename)
+})
+
+function Download(data,filename){
+
+        var imgdata=d.toDataURL(type);
+        var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href=data;
+        save_link.download=filename;
+        var event=document.createEvent('MouseEvents');
+        event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+        save_link.dispatchEvent(event);
+};
+</script>

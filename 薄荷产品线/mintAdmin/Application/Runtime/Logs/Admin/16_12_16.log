@@ -1,0 +1,496 @@
+[ 2016-12-16T15:44:05+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.041255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014389s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0319s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0319s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0305s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0318s ]
+
+[ 2016-12-16T15:44:06+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.041255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014379s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0333s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0302s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0492s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0304s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0325s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001082s ]
+
+[ 2016-12-16T16:21:51+08:00 ] ::1 /mintAdmin/index.php/Admin/User/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002822s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0319s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0333s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE ( id=789 ) LIMIT 1   [ RunTime:0.0312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.025272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.025403s ]
+
+[ 2016-12-16T16:21:51+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0309s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0306s ]
+
+[ 2016-12-16T16:21:53+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0330s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0303s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0306s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '789' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000956s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001087s ]
+
+[ 2016-12-16T16:21:54+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002823s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001124s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0325s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0313s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0325s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0310s ]
+
+[ 2016-12-16T16:21:56+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0317s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0356s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '789' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001184s ]
+
+[ 2016-12-16T16:21:56+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0322s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0307s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0319s ]
+
+[ 2016-12-16T16:21:59+08:00 ] ::1 /mintAdmin/index.php/Admin/User/editArchives
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0331s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0302s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0329s ]
+SQL: SELECT * FROM `mint_archives` WHERE `user_id` = '789' AND `create_time` = 1481817600 AND `type` = '2' LIMIT 1   [ RunTime:0.0306s ]
+SQL: INSERT INTO `mint_archives` (`user_id`,`content`,`type`,`create_time`) VALUES ('789','{&quot;teeth&quot;:[{&quot;name&quot;:&quot;牙体&quot;,&quot;content&quot;:[{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;楔状缺损&quot;,&quot;id&quot;:&quot;H_content_list_item_1&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;形态异常&quot;,&quot;id&quot;:&quot;H_content_list_item_2&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;龋齿&quot;,&quot;id&quot;:&quot;H_content_list_item_3&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;缺失牙&quot;,&quot;id&quot;:&quot;H_content_list_item_4&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;萌生异常&quot;,&quot;id&quot;:&quot;H_content_list_item_5&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;多生牙&quot;,&quot;id&quot;:&quot;H_content_list_item_6&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;牙体发育异常&quot;,&quot;id&quot;:&quot;H_content_list_item_7&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;牙齿表面缺损&quot;,&quot;id&quot;:&quot;H_content_list_item_8&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;隐裂&quot;,&quot;id&quot;:&quot;H_content_list_item_9&quot;}]}],&quot;teeth_around&quot;:[{&quot;name&quot;:&quot;牙石&quot;,&quot;id&quot;:&quot;H_teeth_roundt1&quot;,&quot;bool&quot;:&quot;1&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t10&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t11&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t12&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;松动&quot;,&quot;id&quot;:&quot;H_teeth_roundt2&quot;,&quot;bool&quot;:&quot;1&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t13&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t14&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t15&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;出血&quot;,&quot;id&quot;:&quot;H_teeth_roundt3&quot;,&quot;bool&quot;:&quot;1&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t16&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t17&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t18&quot;,&quot;count&quot;:3},{&quot;name&quot;:&quot;IV&quot;,&quot;id&quot;:&quot;H_content_list_item_t19&quot;,&quot;count&quot;:4},{&quot;name&quot;:&quot;V&quot;,&quot;id&quot;:&quot;H_content_list_item_t20&quot;,&quot;count&quot;:5}]}],&quot;mucosa&quot;:[{&quot;name&quot;:&quot;正常&quot;,&quot;bool&quot;:false,&quot;id&quot;:&quot;H_content_list_item_21&quot;,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;白色斑块&quot;,&quot;bool&quot;:false,&quot;id&quot;:&quot;H_content_list_item_22&quot;,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;红色斑块&quot;,&quot;id&quot;:&quot;H_content_list_item_23&quot;,&quot;bool&quot;:false,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;扁平苔藓&quot;,&quot;id&quot;:&quot;H_content_list_item_24&quot;,&quot;bool&quot;:false,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;溃疡&quot;,&quot;id&quot;:&quot;H_content_list_item_25&quot;,&quot;bool&quot;:false,&quot;content&quot;:&quot;&quot;},{&quot;id&quot;:&quot;H_content_list_item_26&quot;,&quot;name&quot;:&quot;其他&quot;,&quot;bool&quot;:false,&quot;content&quot;:&quot;&quot;,&quot;teshu&quot;:&quot;1&quot;}],&quot;surgery&quot;:[{&quot;name&quot;:&quot;开口度&quot;,&quot;id&quot;:&quot;H_teeth_roundt4&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;三指宽度&quot;,&quot;id&quot;:&quot;H_content_list_item_t27&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;两指宽度&quot;,&quot;id&quot;:&quot;H_content_list_item_t28&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;一指宽度，甚至更小&quot;,&quot;id&quot;:&quot;H_content_list_item_t29&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;开口型&quot;,&quot;id&quot;:&quot;H_teeth_roundt5&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;直线&quot;,&quot;id&quot;:&quot;H_content_list_item_t30&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;左偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t31&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;右偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t32&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;面型&quot;,&quot;id&quot;:&quot;H_teeth_roundt6&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;大致对称&quot;,&quot;id&quot;:&quot;H_content_list_item_t33&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;中线左偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t34&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;中线右偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t3400&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;&quot;,&quot;id&quot;:&quot;H_teeth_roundt7&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;直面型&quot;,&quot;id&quot;:&quot;H_content_list_item_t35&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;凹面型&quot;,&quot;id&quot;:&quot;H_content_list_item_t36&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;凸面型&quot;,&quot;id&quot;:&quot;H_content_list_item_t37&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;牙列&quot;,&quot;id&quot;:&quot;H_teeth_roundt8&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;正常&quot;,&quot;id&quot;:&quot;H_content_list_item_t3800&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;拥挤&quot;,&quot;id&quot;:&quot;H_content_list_item_t38&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;间隙&quot;,&quot;id&quot;:&quot;H_content_list_item_t39&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;磨牙关系&quot;,&quot;id&quot;:&quot;H_teeth_roundt9&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t40&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t41&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t42&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;前牙关系&quot;,&quot;id&quot;:&quot;H_teeth_roundt10&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;正常&quot;,&quot;id&quot;:&quot;H_content_list_item_t4300&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;反合&quot;,&quot;id&quot;:&quot;H_content_list_item_t43&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;开合&quot;,&quot;id&quot;:&quot;H_content_list_item_t44&quot;,&quot;count&quot;:3},{&quot;name&quot;:&quot;对刃&quot;,&quot;id&quot;:&quot;H_content_list_item_t45&quot;,&quot;count&quot;:4}]}],&quot;newadd&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;content&quot;:[{&quot;name&quot;:&quot;深覆盖&quot;,&quot;id&quot;:&quot;H_content_list_item_t5100&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;深覆合&quot;,&quot;id&quot;:&quot;H_content_list_item_t5200&quot;,&quot;bool&quot;:false}]},{&quot;name&quot;:&quot;系带&quot;,&quot;content&quot;:[{&quot;name&quot;:&quot;唇系带过低&quot;,&quot;id&quot;:&quot;H_content_list_item_t51&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;舌系带过短&quot;,&quot;id&quot;:&quot;H_content_list_item_t52&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;正常&quot;,&quot;id&quot;:&quot;H_content_list_item_t5300&quot;,&quot;bool&quot;:false}]},{&quot;name&quot;:&quot;TMG&quot;,&quot;content&quot;:[{&quot;name&quot;:&quot;关节弹响&quot;,&quot;id&quot;:&quot;H_content_list_item_t53&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;关节压痛&quot;,&quot;id&quot;:&quot;H_content_list_item_t54&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;关节脱位&quot;,&quot;id&quot;:&quot;H_content_list_item_t55&quot;,&quot;bool&quot;:false}]}],&quot;teeth_repair&quot;:&quot;&quot;,&quot;surgeryNO&quot;:&quot;外科情况正常&quot;,&quot;mucosaNO&quot;:&quot;粘膜正常&quot;}','2','1481817600') [ RunTime:0.0768s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2016-12-16T16:21:59+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0364s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0329s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0307s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '789' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001193s ]
+
+[ 2016-12-16T16:21:59+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0324s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0313s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '789' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0305s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001222s ]
+
+[ 2016-12-16T16:22:00+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001270s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0323s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0315s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0330s ]
+
+[ 2016-12-16T16:22:00+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltArchives
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001194s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0340s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0310s ]
+SQL: SELECT * FROM `mint_archives` WHERE `user_id` = '789' AND `create_time` = 1481817600 AND `type` = '2' LIMIT 1   [ RunTime:0.0645s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000619s ]
+
+[ 2016-12-16T16:22:08+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0319s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0307s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '789' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001110s ]
+
+[ 2016-12-16T16:22:08+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0334s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0309s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0307s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0329s ]
+
+[ 2016-12-16T16:22:09+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltArchives
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0335s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0356s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0304s ]
+SQL: SELECT * FROM `mint_archives` WHERE `user_id` = '789' AND `create_time` = 1481817600 AND `type` = '2' LIMIT 1   [ RunTime:0.0319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-12-16T16:22:14+08:00 ] ::1 /mintAdmin/index.php/Admin/User/editArchives2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0320s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0311s ]
+SQL: UPDATE `mint_archives` SET `content`='{&quot;teeth&quot;:[{&quot;name&quot;:&quot;牙体&quot;,&quot;content&quot;:[{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;楔状缺损&quot;,&quot;id&quot;:&quot;H_content_list_item_1&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;形态异常&quot;,&quot;id&quot;:&quot;H_content_list_item_2&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;龋齿&quot;,&quot;id&quot;:&quot;H_content_list_item_3&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;缺失牙&quot;,&quot;id&quot;:&quot;H_content_list_item_4&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;萌生异常&quot;,&quot;id&quot;:&quot;H_content_list_item_5&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;多生牙&quot;,&quot;id&quot;:&quot;H_content_list_item_6&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;牙体发育异常&quot;,&quot;id&quot;:&quot;H_content_list_item_7&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;牙齿表面缺损&quot;,&quot;id&quot;:&quot;H_content_list_item_8&quot;},{&quot;bool&quot;:false,&quot;sum&quot;:&quot;&quot;,&quot;name&quot;:&quot;隐裂&quot;,&quot;id&quot;:&quot;H_content_list_item_9&quot;}]}],&quot;teeth_around&quot;:[{&quot;name&quot;:&quot;牙石&quot;,&quot;id&quot;:&quot;H_teeth_roundt1&quot;,&quot;bool&quot;:&quot;1&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t10&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t11&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t12&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;松动&quot;,&quot;id&quot;:&quot;H_teeth_roundt2&quot;,&quot;bool&quot;:&quot;1&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t13&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t14&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t15&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;出血&quot;,&quot;id&quot;:&quot;H_teeth_roundt3&quot;,&quot;bool&quot;:&quot;1&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t16&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t17&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t18&quot;,&quot;count&quot;:3},{&quot;name&quot;:&quot;IV&quot;,&quot;id&quot;:&quot;H_content_list_item_t19&quot;,&quot;count&quot;:4},{&quot;name&quot;:&quot;V&quot;,&quot;id&quot;:&quot;H_content_list_item_t20&quot;,&quot;count&quot;:5}]}],&quot;mucosa&quot;:[{&quot;name&quot;:&quot;正常&quot;,&quot;bool&quot;:false,&quot;id&quot;:&quot;H_content_list_item_21&quot;,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;白色斑块&quot;,&quot;bool&quot;:true,&quot;id&quot;:&quot;H_content_list_item_22&quot;,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;红色斑块&quot;,&quot;id&quot;:&quot;H_content_list_item_23&quot;,&quot;bool&quot;:true,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;扁平苔藓&quot;,&quot;id&quot;:&quot;H_content_list_item_24&quot;,&quot;bool&quot;:true,&quot;content&quot;:&quot;&quot;},{&quot;name&quot;:&quot;溃疡&quot;,&quot;id&quot;:&quot;H_content_list_item_25&quot;,&quot;bool&quot;:false,&quot;content&quot;:&quot;&quot;},{&quot;id&quot;:&quot;H_content_list_item_26&quot;,&quot;name&quot;:&quot;其他&quot;,&quot;bool&quot;:false,&quot;content&quot;:&quot;&quot;,&quot;teshu&quot;:&quot;1&quot;}],&quot;surgery&quot;:[{&quot;name&quot;:&quot;开口度&quot;,&quot;id&quot;:&quot;H_teeth_roundt4&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;三指宽度&quot;,&quot;id&quot;:&quot;H_content_list_item_t27&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;两指宽度&quot;,&quot;id&quot;:&quot;H_content_list_item_t28&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;一指宽度，甚至更小&quot;,&quot;id&quot;:&quot;H_content_list_item_t29&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;开口型&quot;,&quot;id&quot;:&quot;H_teeth_roundt5&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;直线&quot;,&quot;id&quot;:&quot;H_content_list_item_t30&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;左偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t31&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;右偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t32&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;面型&quot;,&quot;id&quot;:&quot;H_teeth_roundt6&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;大致对称&quot;,&quot;id&quot;:&quot;H_content_list_item_t33&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;中线左偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t34&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;中线右偏&quot;,&quot;id&quot;:&quot;H_content_list_item_t3400&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;&quot;,&quot;id&quot;:&quot;H_teeth_roundt7&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;直面型&quot;,&quot;id&quot;:&quot;H_content_list_item_t35&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;凹面型&quot;,&quot;id&quot;:&quot;H_content_list_item_t36&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;凸面型&quot;,&quot;id&quot;:&quot;H_content_list_item_t37&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;牙列&quot;,&quot;id&quot;:&quot;H_teeth_roundt8&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;正常&quot;,&quot;id&quot;:&quot;H_content_list_item_t3800&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;拥挤&quot;,&quot;id&quot;:&quot;H_content_list_item_t38&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;间隙&quot;,&quot;id&quot;:&quot;H_content_list_item_t39&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;磨牙关系&quot;,&quot;id&quot;:&quot;H_teeth_roundt9&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;Ⅰ&quot;,&quot;id&quot;:&quot;H_content_list_item_t40&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;Ⅱ&quot;,&quot;id&quot;:&quot;H_content_list_item_t41&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;Ⅲ&quot;,&quot;id&quot;:&quot;H_content_list_item_t42&quot;,&quot;count&quot;:3}]},{&quot;name&quot;:&quot;前牙关系&quot;,&quot;id&quot;:&quot;H_teeth_roundt10&quot;,&quot;bool&quot;:&quot;&quot;,&quot;choose&quot;:[{&quot;name&quot;:&quot;正常&quot;,&quot;id&quot;:&quot;H_content_list_item_t4300&quot;,&quot;count&quot;:1},{&quot;name&quot;:&quot;反合&quot;,&quot;id&quot;:&quot;H_content_list_item_t43&quot;,&quot;count&quot;:2},{&quot;name&quot;:&quot;开合&quot;,&quot;id&quot;:&quot;H_content_list_item_t44&quot;,&quot;count&quot;:3},{&quot;name&quot;:&quot;对刃&quot;,&quot;id&quot;:&quot;H_content_list_item_t45&quot;,&quot;count&quot;:4}]}],&quot;newadd&quot;:[{&quot;name&quot;:&quot;&quot;,&quot;content&quot;:[{&quot;name&quot;:&quot;深覆盖&quot;,&quot;id&quot;:&quot;H_content_list_item_t5100&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;深覆合&quot;,&quot;id&quot;:&quot;H_content_list_item_t5200&quot;,&quot;bool&quot;:false}]},{&quot;name&quot;:&quot;系带&quot;,&quot;content&quot;:[{&quot;name&quot;:&quot;唇系带过低&quot;,&quot;id&quot;:&quot;H_content_list_item_t51&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;舌系带过短&quot;,&quot;id&quot;:&quot;H_content_list_item_t52&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;正常&quot;,&quot;id&quot;:&quot;H_content_list_item_t5300&quot;,&quot;bool&quot;:false}]},{&quot;name&quot;:&quot;TMG&quot;,&quot;content&quot;:[{&quot;name&quot;:&quot;关节弹响&quot;,&quot;id&quot;:&quot;H_content_list_item_t53&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;关节压痛&quot;,&quot;id&quot;:&quot;H_content_list_item_t54&quot;,&quot;bool&quot;:false},{&quot;name&quot;:&quot;关节脱位&quot;,&quot;id&quot;:&quot;H_content_list_item_t55&quot;,&quot;bool&quot;:false}]}],&quot;teeth_repair&quot;:&quot;&quot;,&quot;surgeryNO&quot;:&quot;外科情况正常&quot;,&quot;mucosaNO&quot;:&quot;粘膜正常&quot;}' WHERE `user_id` = '789' AND `create_time` = 1481817600 AND `type` = '2' [ RunTime:0.0742s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000567s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2016-12-16T16:22:14+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0360s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0308s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0412s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '789' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000732s ]
+
+[ 2016-12-16T16:22:14+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001086s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001298s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0365s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0336s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0321s ]
+
+[ 2016-12-16T16:22:15+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltArchives
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000076s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002156s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002286s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0312s ]
+SQL: SELECT * FROM `mint_archives` WHERE `user_id` = '789' AND `create_time` = 1481817600 AND `type` = '2' LIMIT 1   [ RunTime:0.0343s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2016-12-16T16:22:21+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001090s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001121s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0336s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0311s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0310s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0307s ]
+
+[ 2016-12-16T16:22:21+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001455s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0302s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0314s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0305s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000863s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2016-12-16T16:22:24+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0341s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0305s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0325s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0325s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 20,10   [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000977s ]
+
+[ 2016-12-16T16:22:25+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0302s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0321s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0362s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 30,10   [ RunTime:0.0316s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-12-16T16:22:26+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000938s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0316s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0302s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0321s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0302s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 40,10   [ RunTime:0.0314s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0307s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2016-12-16T16:22:26+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0317s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0308s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0356s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0401s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 50,10   [ RunTime:0.0329s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2016-12-16T16:22:27+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0332s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0312s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0306s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 60,10   [ RunTime:0.0311s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000621s ]
+
+[ 2016-12-16T16:22:30+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0318s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0308s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0304s ]
+
+[ 2016-12-16T16:22:30+08:00 ] ::1 /mintAdmin/index.php/Admin/User/getOne
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000965s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0302s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0331s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE ( id=721 ) LIMIT 1   [ RunTime:0.0309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000675s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2016-12-16T16:22:31+08:00 ] ::1 /mintAdmin/index.php/Admin/User/sltDateRecords
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001029s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0322s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0375s ]
+SQL: SHOW COLUMNS FROM `mint_archives` [ RunTime:0.0330s ]
+SQL: SELECT `create_time` FROM `mint_archives` WHERE `user_id` = '721' AND `type` = '2' GROUP BY create_time ORDER BY create_time desc,id desc  [ RunTime:0.0318s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2016-12-16T16:22:31+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002928s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0332s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0307s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0313s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0345s ]
+
+[ 2016-12-16T16:22:34+08:00 ] ::1 /mintAdmin/index.php/Admin/Index/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001093s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0333s ]
+SQL: SELECT * FROM `mint_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0309s ]
+SQL: SHOW COLUMNS FROM `mint_app` [ RunTime:0.0316s ]
+SQL: SELECT `id`,`app_name`,`app_uri`,`app_url`,`parent_id` FROM `mint_app` ORDER BY sort  [ RunTime:0.0316s ]
+
+[ 2016-12-16T16:22:34+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001076s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0324s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0308s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0321s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0305s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 0,10   [ RunTime:0.0321s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000674s ]
+
+[ 2016-12-16T16:22:37+08:00 ] ::1 /mintAdmin/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000790s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0330s ]
+SQL: SELECT c.app_uri as uri FROM mint_user a INNER JOIN mint_role_app b on a.role_id=b.role_id INNER JOIN mint_app c on b.app_id=c.id  WHERE a.id = '1'  [ RunTime:0.0314s ]
+SQL: SHOW COLUMNS FROM `mint_user` [ RunTime:0.0315s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` WHERE `identity_id` = '1' LIMIT 1   [ RunTime:0.0306s ]
+SQL: SELECT `id`,`account`,`photo`,`name`,`nickname`,`real_name`,`card_type`,`card_id`,`birthyear`,`birthmonth`,`birthday`,`age`,`sex`,`phone`,`email`,`country`,`province`,`city`,`county`,`race`,`job`,`company_name`,`married`,`have_child`,`post_address`,`society_number`,`position`,`hospital`,`context`,`field`,`label_id`,`label`,`job_age`,`clinic_id`,`work_time`,`invite_code`,`company_code`,`role_id`,`identity_id`,`is_use`,`is_show`,`remark`,`create_time`,`mint_name`,`is_own`,`up_time` FROM `mint_user` WHERE `identity_id` = '1' ORDER BY id desc LIMIT 660,10   [ RunTime:0.0331s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mint_user` LIMIT 1   [ RunTime:0.0308s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000961s ]
+

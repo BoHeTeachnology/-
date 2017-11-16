@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>预约成功</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../../css/weui.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+</head>
+<body>
+
+<div class="boxmainTips" id="noDatabox">
+    <dl>
+      <dt><img src="../../images/pro10.png" alt=""></dt>
+      <dd>
+        <h3>您的预约成功！</h3>
+        <h6 style="display:none" id="shiyueTime">您失约已有两次，希望本次预约能够履行。<br>超过3次，则三个月内不能进行预约。</h6>
+        <p>如您需取消预约，请提前24小时，<br>在“<span>我的预约</span>”里进行取消操作！</p>
+      </dd>
+    </dl>
+</div>
+<a href="../myOrder.html" class="seeMyorderbtn">查看我的预约</a>
+<div class="fotIcon">
+    <img src="../../images/logo2.png" alt="">
+    <p>轻快预约&nbsp;&nbsp;&nbsp;从“齿”简单</p>
+</div>
+</body>
+</html>
+<script>
+$(function(){
+  sessionStorage.clear();//清除所有缓存
+  Ajax.shiyueCount(function(result){
+    if(result.Data.code ==1){
+      if(result.Data.count == 2){
+        $('#shiyueTime').show();
+      }else{
+        $('#shiyueTime').hide();
+      }
+    }else{
+      console.log(result.Data.msg)
+    }
+  })
+})
+  
+</script>

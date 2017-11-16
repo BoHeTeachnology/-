@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>个人信息</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../jsdate/css/mobiscroll_002.css">
+  <link rel="stylesheet" href="../jsdate/css/mobiscroll_003.css">
+  <link rel="stylesheet" href="../css/zdhadd.css">
+
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../jsdate/js/mobiscroll.js"></script>
+  <script src="../jsdate/js/mobiscrollmsg.js"></script>
+  <script src="../jsdate/js/jsdate.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/doctorInfo.js"></script>
+</head>
+<body>
+<div class="meng" style="display:none;">
+    <div class="gender">
+      <div class="man" id="man"><span>男</span><img src=""></div>
+      <div class="women" id="women"><span>女</span><img src=""></div>
+    </div>
+  </div>
+
+  <div class="headerTipbox">
+    便于预约服务，请填写以下真实有效的信息
+  </div>
+<!-- <header class="p_top">
+  <dl>
+    <dt id="userImg"></dt>
+    <dd id="userName"></dd>
+  </dl>
+</header> -->
+<div class="weui_panel border_top">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="doctorUpimg.html">
+                    <div class="weui_cell_hd">
+                        <p>医生头像</p>
+                        <span class="z_doctorPic" id="doctorPic"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_panel border_top">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editname.html?type=doctor">
+                    <div class="weui_cell_hd">
+                        <p>姓名</p>
+                        <span id="name"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="javascript:;">
+                    <div class="weui_cell_hd">
+                        <p>出生日期</p>
+                        <span id="birth"></span>
+                        <!-- <input class="weui_input date" id="date" type="text" value="" readonly=""> -->
+                        <input value="" class="weui_input date" readonly="readonly" name="appDate" id="appDate" type="text" style="height:40px;">
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="javascript:;">
+                    <div class="weui_cell_hd" id="gender">
+                        <p>性别</p>
+                        <span id="sex"></span>
+                        <!-- <select id="sexSelect">
+                            <option value="1" selected>男</option>
+                            <option value="2">女</option>
+                        </select> -->
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <!-- <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="javascript:;">
+                    <div class="weui_cell_hd">
+                        <p>邀请码</p>
+                        <span id="">3434344</span>
+                    </div>
+                </a>
+            </div> -->
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="phone.html?type=doctor">
+                    <div class="weui_cell_hd">
+                        <p>联系电话</p>
+                        <span id="phone"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- <select name="" id=""><option value="">男</option><option value="">女</option></select> -->
+</div>
+<div class="weui_panel border_top">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editCreer.html">
+                    <div class="weui_cell_hd">
+                        <p>职称</p>
+                        <span id="position"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editProj.html">
+                    <div class="weui_cell_hd">
+                        <p>服务项目</p>
+                        <span id="service_name"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editArea.html">
+                    <div class="weui_cell_hd">
+                        <p>擅长领域</p>
+                        <span id="field"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editBackground.html">
+                    <div class="weui_cell_hd">
+                        <p>背景介绍</p>
+                        <span id="context"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editTab.html">
+                    <div class="weui_cell_hd">
+                        <p>标签</p>
+                        <span id="label"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editYear.html">
+                    <div class="weui_cell_hd">
+                        <p>执业年限</p>
+                        <span id="job_age"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="editHospital.html">
+                    <div class="weui_cell_hd">
+                        <p>所在医院</p>
+                        <span id="hospital"></span>
+                    </div>
+                    <span class="weui_cell_ft"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_panel border_top" style="margin-bottom:30px;">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a class="weui_cell" href="javascript:;">
+                    <div class="weui_cell_hd">
+                        <p>邀请码</p>
+                        <span id="invite_code"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>修改薄荷名</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+</head>
+<body>
+<div class="bohename-tip">薄荷名可用做登录，修改过后，请牢记！</div>
+<div class="weui_cells weui_cells_form">
+    <div class="weui_cell_bj bohe_edit_name" style="margin:0">
+        <span>薄荷名</span>
+        <input type="text" id="boheName" placeholder="请输入薄荷名,4～20位" maxLength="20" >
+        <div class="clear_num"></div>
+    </div>
+</div>
+<div class="demos-content-padded">
+  <a href="javascript:;" class="price_confirm" id="save" style="margin-top:20px;">完成</a>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+<div id="toast" style="display:none">
+  <div class="weui_mask_transparent"></div>
+  <div class="weui_toast">
+      <i class="weui_icon_toast"></i>
+      <p class="weui_toast_content">修改成功</p>
+  </div>
+</div>
+</body>
+</html>
+<script>
+$(function(){
+  $('#boheName').val(sessionStorage.getItem('mint_name'))
+  $('#save').click(function(){
+    var boheName = $('#boheName').val();
+    var name_reg=/^[a-zA-Z0-9_]{1,}$/;
+    if(boheName==''){
+      opCityTip('请输入薄荷名')
+    }else if(boheName != '' && !name_reg.test(boheName)){
+      opCityTip('薄荷名为数字、字母加下划线组合')
+    }else if(sessionStorage.getItem('mint_name') == boheName){
+        $('#toast').fadeIn(500).delay(1000).fadeOut();
+        setTimeout(function(){
+            window.history.go(-1);
+        },1000)
+    }else{
+      Ajax.modifyMintName(function(result){
+        if(result.Data.code == 1 ){
+          $('#toast').fadeIn(500).delay(1000).fadeOut();
+          sessionStorage.setItem('mint_name',$('#boheName').val())
+          setTimeout(function(){
+              window.history.go(-1);
+          },1000)
+        }else{
+          opCityTip(result.Data.msg)
+        }
+      },boheName)
+    }
+  })
+  /*一键删除按钮*/
+  $('#boheName').keyup(function(){
+    if( $(this).val() == '' ){
+      $('.clear_num').hide();
+    }else{
+      $('.clear_num').show();
+    }
+  })
+  $('.clear_num').click(function(){
+    $('#boheName').val('');
+    $(this).hide();
+  })
+  $('#boheName').focus(function(){
+    if( $(this).val() == '' ){
+      $('.clear_num').hide();
+    }else{
+      $('.clear_num').show();
+    }
+  })
+  $('#boheName').blur(function(){
+    setTimeout(function(){
+      $('.clear_num').hide();
+    },100)
+  })
+function opCityTip(tipText){
+    $('.opcitybox').fadeIn(500).delay(2000).fadeOut()
+    $('.opcitybox span').html(tipText).css({'margin-left':-( ($('.opcitybox span').width()+40)/2),'top':'0','margin-top':'150px'})
+}
+
+})
+
+</script>

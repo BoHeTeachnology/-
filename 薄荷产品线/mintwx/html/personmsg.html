@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>个人信息</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css?time=2">
+  <link rel="stylesheet" href="../jsdate/css/mobiscroll_002.css">
+  <link rel="stylesheet" href="../jsdate/css/mobiscroll_003.css">
+  <link rel="stylesheet" href="../css/zdhadd.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../jsdate/js/mobiscroll.js"></script>
+  <script src="../jsdate/js/mobiscrollmsg.js"></script>
+  <script src="../jsdate/js/jsdate.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/personmsg.js?time=2"></script>
+</head>
+<body>
+
+  <div class="meng" style="display:none;">
+    <div class="gender">
+      <div class="man" id="man"><span>男</span><img src=""></div>
+      <div class="women" id="women"><span>女</span><img src=""></div>
+    </div>
+  </div>
+  
+
+
+
+   
+ 
+  <div class="headerTipbox">
+    便于预约服务，请填写以下真实有效的信息
+  </div>
+
+  <div class="weui_panel myinputPad">
+      <div class="weui_panel_bd">
+          <div class="weui_media_box weui_media_small_appmsg">
+              <div class="weui_cells weui_cells_access">
+                  <a class="weui_cell" href="myUpimg.html">
+                      <div class="weui_cell_hd">
+                          <p>头像</p>
+                          <span class="z_doctorPic spanMargr15" id="doctorPic"></span>
+                      </div>
+                      <span class="weui_cell_ft"></span>
+                  </a>
+              </div>
+              <div class="weui_cells weui_cells_access">
+                  <a class="weui_cell" href="javascript:;">
+                      <div class="weui_cell_hd">
+                          <p>姓名</p>
+                          <input type="text" name="text" id="name" placeholder="请输入您的真实姓名">
+                      </div>
+                      <div class="clear_num"></div>
+                      <!-- <span class="weui_cell_ft"></span> -->
+                  </a>
+              </div>
+              <div class="weui_cells weui_cells_access">
+                  <a class="weui_cell" href="javascript:;">
+                      <div class="weui_cell_hd">
+                          <p>出生日期</p>
+                          <span class="spanMargr15" id="birth"></span>
+                          <!-- <input class="weui_input date" id="date" type="text" value="" readonly=""> -->
+                          <input value="" class="weui_input date" readonly="readonly" name="appDate" id="appDate" type="text" style="height:40px;">
+                      </div>
+                      <span class="weui_cell_ft"></span>
+                  </a>
+              </div>
+              <div class="clear"></div>
+              <div class="weui_cells weui_cells_access">
+                  <a class="weui_cell" href="javascript:;">
+                      <div class="weui_cell_hd" id="gender">
+                          <p>性别</p>
+                          <span class="spanMargr15" id="sex"></span>
+                          <!-- <select id="sexSelect">
+                              <option value="1" selected>男</option>
+                              <option value="2">女</option>
+                          </select> -->
+                      </div>
+                      <span class="weui_cell_ft"></span>
+                  </a>
+              </div>
+              <div class="weui_cells weui_cells_access">
+                  <a class="weui_cell" href="javascript:;">
+                      <div class="weui_cell_hd">
+                          <p>邀请码</p>
+                          <input type="tel" name="text" id="invite_code" placeholder="选填">
+                          <!-- <span id="phone"></span> -->
+                      </div>
+                      <div class="clear_num"></div>
+                  </a>
+              </div>
+              <div class="weui_cells weui_cells_access">
+                  <a class="weui_cell" href="javascript:;">
+                      <div class="weui_cell_hd">
+                          <p>联系电话</p>
+                          <input type="tel" name="text" id="phone" maxLength="11" placeholder="请输入您的联系电话">
+                          <!-- <span id="phone"></span> -->
+                      </div>
+                      <div class="clear_num"></div>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <!-- <select name="" id=""><option value="">男</option><option value="">女</option></select> -->
+  </div>
+  <p class="yinsiP"><a href="private.html" class="weui_cel yinsi">隐私保护协议</a></p>
+  <div class="demos-content-padded" id="save_btn_box" style="display:block">
+    <input type="button" class="price_confirm savebtn_pri addgray" id="saveBtn" disabled value="保存">
+  </div>
+
+  <div class="demos-content-padded" id="btnbox" style="display:none">
+    <a href="javascript:'" class="price_confirm weui_btn_gray" id="calselbtn" style="margin-top:10px;">取消</a>
+  </div>
+  <div class="opcitybox" style="display:none"><span></span></div>
+  <div id="toast" style="display:none">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">修改成功</p>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

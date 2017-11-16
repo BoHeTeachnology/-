@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>客户管理-查看</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/table.css">
+  <link rel="stylesheet" href="../../css/user.css">
+  <link rel="stylesheet" href="../../css/H_user1.css">
+  <link rel="stylesheet" href="../../css/z_user.css">
+
+
+  <link rel="stylesheet" href="../../jedate/skin/jedate.css">
+  <link rel="shortcut icon" href="../../images/logo.png"/>
+  <script src="../../js/jquery-1.8.0.min.js"></script>
+  <script src="../../js/Ajax.js"></script>
+  <script src="../../js/js.js"></script>
+  <script src='vue1.js'></script>
+</head>
+<body class="bodycolor">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="container_user_wrapper">
+        <div class="container-left">
+          <h3></h3>
+          <ul id="left-list"></ul>
+        </div>
+        <div class="container-right">
+            <div class="container-right-main">
+                <div class="rtop rtop_edit">
+                    <div class="but-box bj-none">
+                      <p>
+                        <a href="javascript:;" class="back-but" id="backs">返回</a>
+                      </p>
+                    </div>
+                    <div class="userInfobox">
+                        <script src="../../js/header.js"></script> 
+                    </div>
+                </div><!-- rtop -->
+                <div class="add-box-container">
+                    <div class="user_main_top" id='app'>
+                        <div class="user_topmenu user_topmenu_edit">
+                            <ul id='routeUl'>
+                                <li><a href="see_info.html#User" id='a1'>基础信息</a></li>
+                                <li><a href="see_past.html#User" id='a2'>既往史</a></li>
+                                <li><a class="active" href="see_mouths.html#User" id='a3'>口腔情况</a></li>
+                                <li><a href="see_tooth.html#User" id='a4'>牙位图</a></li>
+                                <li><a href="see_family.html#User" id='a6'>关系成员</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="time z_time_edit">
+                          <div class="z_time_btn" style='border-bottom:none; border-right:none;'>
+                            <p> <b style="display:none;">更新记录：</b>
+                                <select name="" id="creat_time" style="display:none;">
+
+                                </select>
+                                <!-- 上一次更新时间：<span id="recent_time"></span> -->
+                            </p>
+                            <label for="">
+
+                                <span  class="default_inputbtn z_edit_btn" id="edit-but" style="display:none">编辑</span>
+                                <span  class="default_inputbtn z_add_btn" id="save-but" style="display:none">添加</span>
+                            </label>
+
+                          </div>
+                        </div>
+                        <div class="userContain z_userContain_edit" id="change">
+                          <div class="z_userContainMain">
+
+                                <div class="containb_right">
+                                  <div class="z_no_past_data" id="page_noData" style="display:none">
+                                      <p>
+                                          <img src="../../images/nodata.png" alt="">
+                                          <span>此项目暂无数据</span>
+                                          <a href="javascript:;" class="default_inputbtn z_add_btn2" id="add_btns">添加</a>
+                                      </p>
+                                  </div>
+                                    <div class="H_content" id='content_hide' style="display:none">
+                                      <!-- <div class="H_content_title">
+                                        <span class="H_title_span" v-cloak>牙体</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box" id='H_teeth'>
+
+                                          <span class="H_content_list_item" v-for='list in data_son.teeth[0].content'>
+                                            <input type="checkbox" value="" id={{list.id}} checked={{list.bool}} v-model='list.bool' disabled>
+                                            <label for={{list.id}}><i v-cloak>&nbsp;{{list.name}}</i></label>
+
+                                            <span class="H_content_list_item_space">个数</span>
+                                            <input type="text" value={{list.bool?list.sum:''}} v-model='list.sum' v-cloak disabled>
+                                          </span>
+
+                                          <div class="H_small_box" v-show='!data_son.teeth||data_son.teeth[0].content.length==0?true:false'>待产品确定好用词 smile</div>
+                                        </div>
+                                      </div> -->
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color2">牙周</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='teeth_around' v-cloak>
+                                        <div class="H_small_box {{$index!=data_son.teeth_around.length-1?'H_margin_bottom20':''}}" v-for='items in data_son.teeth_around'>
+                                          <span class="H_content_radio_title" v-cloak >{{items.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son in items.choose' style="line-height:19px;">
+                                            <!-- <input type="radio" id={{item_son.id}} value={{item_son.count}} class="radio radio2" name={{items.id}} checked={{items.bool==item_son.count?true:false}} v-model='items.bool' disabled>
+                                            <label for={{item_son.id}} ><i v-cloak>&nbsp;{{item_son.name}}</i></label> -->
+                                            <span v-cloak>{{item_son.name}}</span>
+                                          </span>
+                                          <span class="H_content_radio_title" v-cloak v-show='items.bool?false:true'>{{items.bool==''?'无'+items.name:''}}</span>
+                                        </div>
+                                      </div>
+
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color3">粘膜</span>
+                                      </div>
+
+                                      <div class="H_content_list">
+                                        <div class="H_small_box" id='H_mucosa'>
+                                          <span class="H_content_list_item H_margin_bottom_none H_margin_right" v-for='i in data_son.mucosa'>
+                                            <!-- <input type="checkbox" disabled value="" id={{i.id}} checked={{i.bool}} v-model='i.bool'>
+                                            <label for={{i.id}}><i v-cloak>&nbsp;{{i.name}}</i></label> -->
+                                            <span v-cloak>{{i.name}}</span>
+                                            <span style='position:absolute; left:58px;' v-show='i.content?true:false' v-cloak>{{i.content}}</span>
+
+
+                                          </span>
+
+                                        </div>
+                                        <div class="H_small_box" style="display:none" v-cloak v-show='!data_son.mucosa||data_son.mucosa.length==0?true:false'>{{data_son.mucosaNO}}</div>
+                                      </div>
+
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color4">外科</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='surgery' v-cloak>
+                                        <div v-cloak class="H_small_box {{$index!=data_son.surgery.length?'H_margin_bottom20':''}}" v-for='items2 in data_son.surgery' >
+                                          <span class="H_content_radio_title">{{items2.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son in items2.choose' style="line-height:19px;">
+                                            <!-- <input disabled type="radio" id={{item_son.id}} value={{item_son.count}} class="radio radio2" name={{items2.id}} checked={{items2.bool==item_son.count?true:false}} v-model='items2.bool'>
+                                            <label for={{item_son.id}} ><i v-cloak>&nbsp;{{item_son.name}}</i></label> -->
+                                            <span >{{item_son.name}}</span>
+                                          </span>
+                                        </div>
+
+                                        <div v-cloak class="H_small_box {{$index!=data_son.newadd.length-1?'H_margin_bottom20':''}}" v-for='itemadd in data_son.newadd'>
+                                          <span class="H_content_radio_title" >{{itemadd.name}}</span>
+                                          <span class="H_content_list_item H_content_list_item_radio" v-for='item_son_add in itemadd.content' style="line-height:19px;">
+                                            <!-- <input type="checkbox" id={{item_son_add.id}} checked={{item_son_add.bool}} v-model='item_son_add.bool'>
+                                            <label for={{item_son_add.id}} ><i v-cloak>&nbsp;{{item_son_add.name}}</i></label> -->
+                                            <span>{{item_son_add.name}}</span>
+                                          </span>
+                                        </div>
+                                        <div class="H_small_box" v-cloak v-show='data_son.surgery.length==0&&data_son.newadd.length==0?true:false'>{{data_son.surgeryNO}}</div>
+
+                                      </div>
+
+                                      <div class="H_content_title">
+                                        <span class="H_title_span H_title_color5">牙病治疗及修复史</span>
+                                      </div>
+
+                                      <div class="H_content_list" id='surveyhide' style="display:none;">
+                                        <div class="H_small_box">
+                                          <span class="H_content_list_item H_margin_bottom_none padding_left0">
+                                            治疗及修复史
+
+                                            <textarea disabled class="teeth_repair_textarea" v-model='data_son.teeth_repair' v-cloak>{{data_son.teeth_repair}}</textarea>
+                                          </span>
+                                        </div>
+                                        <div class="H_small_box H_small_box_show" style="display:none;">无</div>
+                                      </div>
+
+                                    </div>
+                                </div>
+
+                          </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div><!-- add-box-container -->
+            </div><!-- container-right-main -->
+        </div><!-- container-right -->
+    </div>
+</div>
+
+
+<div class="opacity-tip" style="display:none"><p></p></div>
+<div class="new-create-opcity" style="display:none">
+    <div class="new-uppic-bj">
+        <div class="new-uppic-box">
+            <h4 class="toph4 nomargin">上传Logo<span class="close_dialog"></span></h4>
+            <div class="imageBox">
+                <div class="thumbBox"></div>
+                <div class="spinner" style="display: none">Loading...</div>
+            </div>
+
+            <div class="action">
+                <div class="filebut"><input type="file" id="file" class="choose-file"> 上传Logo</div>
+                <div class="zoom-box">
+                    <span id="btnZoomOut" class="btnZoomOut"></span>
+                    <span id="btnZoomIn" class="btnZoomIn"></span>
+                </div>
+                <input type="button" id="btnCrop" value="确认上传" class="btnCrop">
+            </div><!--
+            <div class="cropped"></div> -->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+
+            
+            $('.userContain').height( $(window).height()-260 )
+            window.onresize=function(){
+              $('.userContain').height( $(window).height()-260 )
+            }
+            $('#a3').addClass('active').parent().siblings().children().removeClass('active');
+            $('#change div.containb_right').eq(2).show().siblings().hide();
+
+            var user_id = sessionStorage.getItem('user_id');
+            var userObj = JSON.parse(sessionStorage.getItem('getOneobj'));
+            if(!userObj){
+              AjaxObj.UsergetOne(function(result){
+                console.log(result.Data);
+                userObj = {
+                  "user_name":result.Data.data.real_name==null?'':result.Data.data.real_name,
+                  "user_age":result.Data.data.age==null?'':result.Data.data.age,
+                  "user_photo":result.Data.data.photo||'../../images/userPic.png',
+                  "user_phone":result.Data.data.phone
+                }
+                $('#user_name').html(userObj.user_name);
+                $('#user_age').html(userObj.user_age);
+                $('#user_phone').html(userObj.user_phone);
+                $('#user_photo img').attr('src',userObj.user_photo);
+
+              },user_id);
+            }else{
+              $('#user_name').html(userObj.user_name);
+              $('#user_age').html(userObj.user_age);
+              $('#user_phone').html(userObj.user_phone);
+              $('#user_photo img').attr('src',userObj.user_photo);
+            }
+            $('#backs').click(function(){
+              window.location.href = '../../index.html#User';
+            })
+            //创建默认数据 显示出来
+            var v1 = new Vue({
+              el: '#app',
+              data: {
+                data_son:{
+
+                }
+              }
+            });
+            //判断此id 以前有没有口腔情况数据
+            AjaxObj.UsersltDateRecords(function(model){
+
+              //如果有数据
+              if(model.Data.data.length !=0){
+
+                $('#recent_time').html(model.Data.data[0].create_time);
+                for(var h=0;h<model.Data.data.length;h++){
+
+                  $('#creat_time').append('<option value="'+model.Data.data[h].create_time+'">'+model.Data.data[h].create_time+'</option>');
+                  $("#creat_time").change(function(){
+                    var create_time = $(this).find("option:selected").text();
+                    sessionStorage.setItem('create_time',create_time);
+                    AjaxObj.UsersltArchives(function(model){
+                      reduce(model);
+                    },user_id,create_time,2)
+
+                  });
+                }
+
+                if(sessionStorage.getItem('create_time')){
+                  var time = sessionStorage.getItem('create_time');
+                  console.log(time)
+                  $('#creat_time option[value="'+time+'"]').attr('selected','true');
+                }else{
+                  var time = model.Data.data[0].create_time;
+                }
+                AjaxObj.UsersltArchives(function(model){
+                  $('#creat_time option[value="'+time+'"]').attr('selected','true');
+                  reduce(model);
+                },user_id,time,2)
+
+                $('#creat_time').siblings('b').show();
+                $('#creat_time').show();
+                $('#edit-but').show();
+                $('#content_hide').show();
+                $('#save-but').show();
+                $('.z_time_btn').attr('style','border-bottom:1px solid #dbdbdb; border-right:1px solid #dbdbdb;');
+              }else{
+
+                $('#content_hide').hide();
+                $('#edit-but').hide();
+                $('#page_noData').show();
+                $('#page_noData').height($('#change').height()-1);
+                console.log(model.Data)
+
+              }
+
+          },user_id,2)
+
+          function reduce(model){
+            var rnd = model.Data.teeth_around;
+            var moc = model.Data.mucosa;
+            var sur = model.Data.surgery;
+            var newadd = model.Data.newadd;
+            for(var i=0;i<newadd.length;i++){
+              for(var j=0;j<newadd[i].content.length;j++){
+                if(newadd[i].content[j].bool == false){
+                  newadd[i].content.splice(j,1);
+                  --j;
+                }
+              }
+              if(newadd[i].content.length == 0){
+                newadd.splice(i,1);
+                --i;
+              }
+            }
+            for(var i=0;i<rnd.length;i++){
+
+
+              for(var j =0;j<rnd[i].choose.length;j++){
+
+                if(rnd[i].choose[j].count!=rnd[i].bool){
+                  rnd[i].choose.splice(j,1);
+                  --j;
+                }
+              }
+            }
+
+            for(var i=0;i<moc.length;i++){
+              if(moc[i].bool == false){
+                moc.splice(i,1);
+                --i;
+              }
+            }
+            for(var i=0;i<sur.length;i++){
+              if(sur[i].bool == ''){
+                sur.splice(i,1);
+                --i;
+              }else{
+                for(var j =0;j<sur[i].choose.length;j++){
+                  if(sur[i].choose[j].count!=sur[i].bool){
+                    console.log(22222);
+                    sur[i].choose.splice(j,1);
+                    --j;
+                  }
+                }
+              }
+            }
+            if(!model.Data.teeth_repair||model.Data.teeth_repair == ''){
+              $('#surveyhide').show();
+              $('#surveyhide .H_small_box').hide();
+              $('#surveyhide .H_small_box_show').show();
+            }else{
+              $('#surveyhide').show();
+            }
+            v1.data_son = model.Data;
+          }
+
+          $('#change input').attr('readonly','true');
+
+          $('#edit-but').click(function(){
+            var create_time = $('#creat_time').find("option:selected").text();
+            sessionStorage.setItem('create_time',create_time);
+            sessionStorage.setItem('fromwhere','see_mouths');
+            window.location.href = './edit_mouths.html';
+          })
+          $('#save-but,#add_btns').click(function(){
+            sessionStorage.setItem('create_time_mouth','nodata');
+            sessionStorage.setItem('fromwhere','see_mouths');
+            window.location.href = './edit_mouths.html';
+          })
+
+</script>
+</html>

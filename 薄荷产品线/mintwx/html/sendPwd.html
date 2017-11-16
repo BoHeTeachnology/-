@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>验证身份</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/Ajax.js"></script>
+</head>
+<body>
+<div class="sendMatip">请输入登录密码，用于身份验证。</div>
+<div class="weui_cells weui_cells_form editPwdbox">
+    <div class="weui_cell_bj bohe_edit_name" style="margin:0">
+        <span style="width:90px">登录密码</span>
+        <input type="password" id="pwd" placeholder="请输入登录密码" maxLength="20">
+        <div class="clear_num"></div>
+    </div>
+</div>
+
+<div class="demos-content-padded">
+  <a href="javascript:;" class="price_confirm" id="next" style="margin-top:20px;">完成</a>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+
+</body>
+</html>
+<script>
+  $(function(){
+    clearNumFun('pwd')
+    $('#next').click(function(){
+      var pwd = $('#pwd').val();
+      if(pwd==''){
+        opCityTip('请输入登录密码')
+      }else{
+        Ajax.checkPwd(function(result){
+          if(result.Data.code==1){
+            sessionStorage.setItem('pwdCode',pwd)
+            location.href="/mintwx/html/editnewPhone.html";
+          }else{
+            opCityTip(result.Data.msg)
+          }
+        },pwd)
+      }
+      
+    })
+    function opCityTip(tipText){
+        $('.opcitybox').fadeIn(500).delay(2000).fadeOut()
+        $('.opcitybox span').html(tipText).css({'margin-left':-( ($('.opcitybox span').width()+40)/2),'top':'0','margin-top':'150px'})
+    }
+    function clearNumFun(inputName){
+      /*一键删除按钮*/
+      $('#'+inputName).keyup(function(){
+        if( $(this).val() == '' ){
+          $('.clear_num').hide();
+        }else{
+          $('.clear_num').show();
+        }
+      })
+      $('.clear_num').click(function(){
+        $('#'+inputName).val('');
+        $(this).hide();
+      })
+      $('#'+inputName).focus(function(){
+        if( $(this).val() == '' ){
+          $('.clear_num').hide();
+        }else{
+          $('.clear_num').show();
+        }
+      })
+      $('#'+inputName).blur(function(){
+        setTimeout(function(){
+          $('.clear_num').hide();
+        },100)
+      })
+    }
+  })
+</script>

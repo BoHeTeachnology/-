@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>病历详情</title>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+  	<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+  	<META HTTP-EQUIV="Expires" CONTENT="0"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../css/weui.min.css">
+	<link rel="stylesheet" href="../css/jquery-weui.css">
+	<link rel="stylesheet" href="../css/record.css">
+	<script src="../js/jquery-1.8.0.min.js"></script>
+	<script src="../js/Ajax.js"></script>
+	<script src="../js/casedesc.js"></script>
+</head>
+<body>
+
+<div class="record-wrap" id="app">
+	<header>
+		<div class="header">
+			<h3 id="patient_name">selina</h3>
+			<p>病历类型：<span id="record_type"></span></p>
+			<p>就诊时间：<span id="record_time"></span></p>
+			<p>就诊医生：<span id="record_doctor"></span></p>
+			<p id="clinicDiv" style="display:none">诊&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 所：<span id="record_clinic"></span></p>
+			<div class="relation" id="relation"></div>
+		</div>
+	</header>
+	<div class="" id="docbox" style="display:none">
+		<div  class="centermain">
+			<h3 class="title">
+				<span style="line-height:40px;">主诉</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd" id="zhusuMain">
+
+			           </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain">
+			<h3 class="title">
+				<span style="line-height:40px;">现病史</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd" id="currentill">
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain" id="pastillbox" style="display:none">
+			<h3 class="title">
+				<span style="line-height:40px;">既往史</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd" id="jiwangshi">
+			            
+			           </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		
+	</div>
+	<div class="men_case" id="userbox" style="display:none">
+		<div  class="centermain">
+			<h3 class="title">
+				<span style="line-height:40px;">检查</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd" id="checkMain">
+			            <!-- <p class="weui_media_descs case_desc_pl" id=""><i class="blue_pots">·</i>反机啊地方还近阿发人人</p> -->
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain" style="display:none">
+			<h3 class="title">
+				<span>影像<br>资料</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd photos_showbox">
+			            <img src="../images/swiper-1.jpg" alt="">
+			            <h6><span class="pages_total">共<i>50</i>张</span><span class="see_allpho">查看全部</span></h6>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain">
+			<h3 class="title">
+				<span>诊断<br>结果</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd" id="diagnoseMain">
+			            <!-- <p class="weui_media_descs case_desc_pl" id=""><i class="blue_pots">·</i>哈哈就是单反机啊地</p> -->
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+			<div class="bottom-line"></div>
+		</div>
+		<div  class="centermain">
+			<h3 class="title">
+				<span style="line-height:40px;">治疗</span>
+				<i class="bottom"></i>
+			</h3>
+			<div class="tooth_roundbox">
+				<div class="weui_panel">
+			      <div class="weui_panel_bd">
+			        <div class="weui_media_box weui_media_appmsg">
+			          <div class="weui_media_bd" id="cureMain">
+			            <!-- <p class="weui_media_descs case_desc_pl" id=""><i class="blue_pots">·</i>哈哈就是单反机啊地</p> -->
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="suggestion_box">
+		<div class="suggestion_main">
+			<h3 id="chuzhi" style="width:60px;">医嘱</h3>
+			<div class="suggestion" id="suggestion">
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

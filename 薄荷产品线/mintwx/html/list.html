@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>医生团队</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="../css/weui.min.css">
+  <link rel="stylesheet" href="../css/jquery-weui.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jquery-1.8.0.min.js"></script>
+  <script src="../js/jquery-weui.min.js"></script>
+  <script src="../js/yxMobileSlider.js"></script>
+  <script src="../js/Ajax.js"></script>
+  <script src="../js/list.js?time=1"></script>
+  <script>
+    $(function(){ 
+      $(".slider").yxMobileSlider({width:320,height:140,during:3000})
+    })
+  </script>
+</head>
+<body class="listbody">
+<div class="slider" id="slider">
+    <ul>
+      <li><a href="#"><img src="../images/banner.jpg"></a></li><!-- 
+      <li><a href="#"><img src="../images/2.png"></a></li>
+      <li><a href="#"><img src="../images/3.png"></a></li>
+      <li><a href="#"><img src="../images/2.png"></a></li> -->
+    </ul>
+</div>
+<div class="weui_panel weui_panel_access" style="margin:0">
+    <div class="weui_panel_bd" id="doctorList">
+        <!-- <a href="/mintwx/html/desc.html" class="weui_media_box weui_media_appmsg">
+            <div class="weui_media_hd">
+                <img src="../images/swiper-1.jpg" alt="">
+            </div>
+            <div class="weui_media_bd">
+                <h4 class="weui_media_title"><b>唐敏欣</b> <span>北大口腔医院主治医生</span></h4>
+                <p class="weui_media_desc"><span>主治医生</span><span>医学博士</span><span>硕士回国</span></p>
+            </div>
+            <span class="weui_cell_ft"></span>
+        </a>
+        <a href="/mintwx/html/desc.html" class="weui_media_box weui_media_appmsg">
+            <div class="weui_media_hd">
+                <img src="../images/swiper-1.jpg" alt="">
+            </div>
+            <div class="weui_media_bd">
+                <h4 class="weui_media_title"><b>财险</b> <span>北大口腔医院主治医生</span></h4>
+                <p class="weui_media_desc"><span>主治医生</span><span>医学博士</span><span>硕士回国</span></p>
+            </div>
+            <span class="weui_cell_ft"></span>
+        </a> -->
+    </div>
+    <div class="nodata" style="height:50px;line-height:50px;text-align:center;font-size:14px;display:none">没有更多数据了</div>
+    <div class="weui-infinite-scroll" id="loading">
+      <div class="infinite-preloader"></div>
+      正在加载
+    </div>
+</div>
+<div class="opcitybox" style="display:none"><span></span></div>
+</body>
+</html>

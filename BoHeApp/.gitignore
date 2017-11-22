@@ -1,0 +1,7 @@
+/node_modules/*
+/build_backend/*
+/build/*
+/coverage/*
+/build_doctortool/*
+/__tests__/__snapshots__/*
+.DS_Store

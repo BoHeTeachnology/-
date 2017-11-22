@@ -1,0 +1,14 @@
+.pagination {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 60px;
+}
+.pagination li {
+    display: inline-block;
+    height: 50px;
+    width: 60px;
+}
+.pagination .break a {
+    cursor: default;
+}

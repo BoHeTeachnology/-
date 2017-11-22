@@ -1,0 +1,89 @@
+.withdrawsuccesswrap .am-result .am-result-pic {
+  text-align: center;
+}
+
+
+.withdrawsuccesswrap .am-result .am-result-title {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.withdrawsuccesswrap .am-result .am-result-message {
+  text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 0.2rem;
+}
+.withdrawsuccesswrap .validate_wrap .ant-input-group .ant-input {
+  width: 8.5rem !important;
+}
+
+.ant-tree li span.ant-tree-switcher.ant-tree-switcher_close:after {
+    -webkit-filter: none;
+    filter: none;
+    font-size: 12px;
+}
+
+.ant-tree li span.ant-tree-switcher.ant-tree-switcher_close:after {
+    font-size: 12px;
+    font-size: 7px\9;
+    -webkit-transform: scale(.58333333) rotate(270deg);
+    -ms-transform: scale(.58333333) rotate(270deg);
+    transform: scale(.58333333) rotate(270deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+    zoom: 1;
+    display: inline-block;
+    font-family: anticon;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\E606";
+    font-weight: 700;
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+}
+
+.ant-tree li span.ant-tree-switcher.ant-tree-switcher_close:after {
+    -webkit-transform: rotate(270deg) scale(.59);
+    -ms-transform: rotate(270deg) scale(.59);
+    transform: rotate(270deg) scale(.59);
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.ant-tree li span.ant-tree-switcher.ant-tree-switcher_open:after {
+    -webkit-filter: none;
+    filter: none;
+    font-size: 12px;
+}
+
+.ant-tree li span.ant-tree-switcher.ant-tree-switcher_open:after {
+  font-size: 12px;
+  font-size: 7px\9;
+  -webkit-transform: scale(.58333333) rotate(0deg);
+  -ms-transform: scale(.58333333) rotate(0deg);
+  transform: scale(.58333333) rotate(0deg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+  zoom: 1;
+  display: inline-block;
+  font-family: anticon;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E606";
+  font-weight: 700;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s,-webkit-transform .3s;
+}
+
+.ant-tree li span.ant-tree-iconEle, .ant-tree li span.ant-tree-switcher {
+
+  height: 0.66rem !important;
+  line-height: 0.66rem !important;
+}

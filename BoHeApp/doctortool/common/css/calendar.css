@@ -1,0 +1,62 @@
+.rc-calendar{
+  width: 100%;
+  font-size: 22px;
+}
+.rc-calendar-date-public,.rc-calendar-date-private{
+  position: relative;
+}
+.rc-calendar-disabled-cell .rc-calendar-date:hover{
+  background-color: #fff;
+}
+.rc-calendar-today .rc-calendar-date {
+    border: 1px solid #00c5cc;
+}
+.rc-calendar-body{
+  height: auto;
+}
+.rc-calendar-date-public::after{
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: -6px;
+  left:26px;
+  background-color: #00c5cc;
+  border-radius: 100%;
+}
+.rc-calendar-date-private::after{
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: -6px;
+  left:26px;
+  background-color: #00c5cc;
+  border-radius: 100%;
+}
+.rc-calendar-disabled-cell .rc-calendar-date{
+  background: #fff;
+}
+.rc-calendar-selected-date .rc-calendar-date{
+  width: 100%;
+  background-color: #00c5cc;
+  font-size: 22px;
+}
+.rc-calendar-today .rc-calendar-date {
+    border-radius: 50%;
+}
+.rc-calendar-date{
+  width: 100%;
+  margin-bottom: 5px;
+}
+.rc-calendar-selected-date .rc-calendar-date {
+    background: #00c5cc;
+    color: #fff;
+    border-radius: 50%;
+}
+.rc-calendar-selected-date .rc-calendar-date:hover {
+    background: #00c5cc;
+    border-radius: 50%;
+}

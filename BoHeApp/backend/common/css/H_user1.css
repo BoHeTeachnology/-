@@ -1,0 +1,640 @@
+
+.H_content{
+    width: 100%;
+    background-color: #f5f7f9;
+}
+.H_content .H_content_title{
+  width: 100%;
+  height: 28px;
+  background-color: #f5f7f9;
+  /*border:1px solid #ebebeb;*/
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+.H_content .H_content_title .H_title_span{
+    color: #5e90d1;
+    line-height: 28px;
+    font-size: 12px;
+    margin-left: 27px;
+    position: relative;
+    display: block;
+}
+.H_content .H_content_title .H_title_span::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 5px solid #5e90d1;
+  border-bottom: 5px solid #5e90d1;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  top: 8px;
+  left: -17px;
+}
+.H_content .H_content_list{
+  width: 100%;
+  padding: 24px 0px;
+  background: #fff;
+  /*border: 1px solid #ebebeb;*/
+}
+.H_content .H_content_list .H_small_box{
+  width: 860px;
+  margin-left: 60px;
+}
+.H_content .H_content_list .H_content_list_item{
+  display: inline-block;
+  margin-right: 114px;
+  width: 280px;
+  height: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+.H_content .H_content_list .H_content_list_item label{
+    width: auto;
+    height: 16px;
+    display: block;
+    background: url(../images/check.png) no-repeat;
+    border-radius: 2px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+.H_content .H_content_list .H_content_list_item label i{
+  width: auto;
+  padding-left: 20px;
+  height: 25px;
+  font-style: normal;
+  float: left;
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-top: -4px;
+  cursor: pointer;
+}
+.H_content .H_content_list .H_content_list_item input[type=checkbox]:checked + label {
+    width: auto;;
+    height: 16px;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    background: url(../images/checked.png) no-repeat;
+}
+.H_content .H_content_list .H_content_list_item input[type=text]{
+  width: 93px;
+  height: 23px;
+  border: 1px solid #d1d1d1;
+  outline: none;
+  display: block;
+  text-indent: 8px;
+  border-radius: 4px;
+  color: #6b6b6b;
+  position: absolute;
+  left:60px;
+  top:0;
+
+}
+.H_content .H_content_list .H_content_list_item .H_content_list_item_space{
+  font-size: 12px;
+  margin-left: 123px;
+  margin-right: 7px;
+  color: #6b6b6b;
+
+}
+#change .z_userContainMain{
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  background: #fff;
+  height: 100%;
+}
+#change .z_userContainMain::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+#change .containb_right{
+  border-bottom: none;
+}
+.H_content .H_content_title .H_title_color2::before{
+  border-right: 5px solid #27caff;
+  border-bottom: 5px solid #27caff;
+}
+.H_content .H_content_title .H_title_color3::before{
+  border-right: 5px solid #84cc5a;
+  border-bottom: 5px solid #84cc5a;
+}
+.H_content .H_content_title .H_title_color4::before{
+  border-right: 5px solid #f5a52a;
+  border-bottom: 5px solid #f5a52a;
+}
+.H_content .H_content_title .H_title_color5::before{
+  border-right: 5px solid #bb66eb;
+  border-bottom: 5px solid #bb66eb;
+}
+
+.H_content_list .H_small_box .H_content_list_item_radio{
+    width: 105px;
+    height: 19px;
+    position: relative;
+    margin: 0 auto;
+}
+.H_content_list .H_small_box .H_content_list_item_radio .radio:checked+label {
+    background: url(../images/radiob.png) no-repeat;
+}
+.H_content_list .H_small_box .H_content_list_item_radio .radio2 +label{
+    position: absolute;
+    display: inline-block;
+    width: auto;
+    height: 19px;
+    background: url(../images/radiog.png) no-repeat;
+    left: 0px;
+    top: 0px;
+}
+.H_content .H_content_list.H_small_box .H_content_list_item_radio .radio +label{
+    position: absolute;
+    display: inline-block;
+    width: auto;
+    height: 19px;
+    background: url(../images/radiog.png) no-repeat;
+    left: 1px;
+    top: 0;
+}
+.H_content_list .H_small_box .H_content_list_item_radio label i{
+  margin-top: -2px;
+}
+.H_content_list .H_small_box .H_content_radio_title{
+  display: block;
+  width: 129px;
+  height: 19px;
+  font-size: 12px;
+  line-height: 19px;
+  float: left;
+  color: #6b6b6b;
+
+}
+.H_margin_bottom20{
+  margin-bottom: 15px;
+}
+.H_content .H_content_list .H_margin_bottom_none{
+  margin-bottom: 0px;
+}
+.H_content .H_content_list .H_margin_right{
+  width: 127px;
+  margin-right: 0px;
+  padding: 0px;
+}
+.H_content_list .H_small_box .H_width_big{
+  width: 300px;
+}
+.H_content .H_content_list .H_width_small{
+  width: 100px;
+  margin-right: 0px;
+}
+
+
+.H_teeth_position{
+  width: 100%;
+  min-width: 1000px;
+  background-color: #fff;
+  padding-top: 35px;
+}
+.H_teeth_position::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.H_teeth_position .H_teeth_position_left{
+  width: 228px;
+  height: 32px;
+  margin-left: 20px;
+  background-color: #fafcff;
+  position: absolute;
+  right: 0px;
+  margin-right: 30px;
+}
+.H_teeth_position .H_teeth_position_left::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.H_teeth_position .H_teeth_position_left .man{
+  border:1px solid #ceecf5;
+  width: 112px;
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 30px;
+  float: left;
+  display: block;
+}
+.H_teeth_position .H_teeth_position_left .child{
+  border:1px solid #ceecf5;
+  width: 112px;
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 30px;
+  float: left;
+}
+.H_teeth_position .H_teeth_position_left .active{
+  background-color: #ebf2fc;
+}
+.H_teeth_position .H_teeth_position_pic{
+  width: 300px;
+  height: 462px;
+  background: #ebf2fc;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  float: left;
+  margin-left: 150px;
+  position: relative;
+}
+.H_teeth_position_pic .H_teeth_position_pic_same{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fafcff;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #a3a5aa;
+    border-radius: 50%;
+}
+.H_teeth_position_pic .H_teeth_position_pic_11{
+  top: 7px;
+  left: 118px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_21{
+  top: 7px;
+  right: 118px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_12{
+  top: 17px;
+  left: 89px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_22{
+  top: 17px;
+  right: 89px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_13{
+  top: 35px;
+  left: 64px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_23{
+  top: 35px;
+  right: 64px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_14{
+  top: 59px;
+  left: 44px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_24{
+  top: 59px;
+  right: 44px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_15{
+  top: 85px;
+  left: 28px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_25{
+  top: 85px;
+  right: 28px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_16{
+  top: 114px;
+  left: 16px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_26{
+  top: 114px;
+  right: 16px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_17{
+  top: 144px;
+  left: 10px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_27{
+  top: 144px;
+  right: 10px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_18{
+  top: 175px;
+  left: 6px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_28{
+  top: 175px;
+  right: 6px;
+}
+
+
+
+.H_teeth_position_pic .H_teeth_position_pic_41{
+  bottom: 7px;
+  left: 118px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_31{
+  bottom: 7px;
+  right: 118px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_42{
+  bottom: 17px;
+  left: 89px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_32{
+  bottom: 17px;
+  right: 89px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_43{
+  bottom: 35px;
+  left: 64px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_33{
+  bottom: 35px;
+  right: 64px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_44{
+  bottom: 59px;
+  left: 44px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_34{
+  bottom: 59px;
+  right: 44px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_45{
+  bottom: 85px;
+  left: 28px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_35{
+  bottom: 85px;
+  right: 28px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_46{
+  bottom: 114px;
+  left: 16px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_36{
+  bottom: 114px;
+  right: 16px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_47{
+  bottom: 144px;
+  left: 10px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_37{
+  bottom: 144px;
+  right: 10px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_48{
+  bottom: 175px;
+  left: 6px;
+}
+.H_teeth_position_pic .H_teeth_position_pic_38{
+  bottom: 175px;
+  right: 6px;
+}
+
+
+.H_teeth_position_list{
+  width: 450px;
+  float: left;
+  margin-left: 100px;
+  margin-top: 112px;
+}
+.H_teeth_position_list_title{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+}
+.H_teeth_position_list_item{
+  width: 100%;
+}
+.H_teeth_position_list_item::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+/*.H_teeth_position_list_item_left{
+  width: 50%;
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+.H_teeth_position_list_item_right{
+  width: 50%;
+  float: right;
+}*/
+.wrap{
+  width: 50%;
+  float: left;
+  position: relative;
+  margin-bottom: 10px;
+}
+.H_teeth_position_list_item label{
+    width: 100%;
+    height: 16px;
+    display: block;
+    background: url(../images/check.png) no-repeat;
+    border-radius: 2px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+.H_teeth_position_list_item label i{
+  width: auto;
+  padding-left: 20px;
+  height: 25px;
+  font-style: normal;
+  float: left;
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-top: -4px;
+  cursor: pointer;
+  line-height: 25px;
+}
+.H_teeth_position_list_item input[type=checkbox]:checked + label {
+    width: auto;;
+    height: 16px;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    background: url(../images/checked.png) no-repeat;
+}
+.H_teeth_position_list_item input[type=checkbox]:checked + label {
+    width: auto;;
+    height: 16px;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    background: url(../images/checked.png) no-repeat;
+}
+
+.H_teeth_position .H_teeth_position_pic_son{
+  width: 280px;
+  height: 330px;
+  margin-top: 40px;
+  margin-left: 170px;
+}
+.H_teeth_position_pic_51{
+  top: 9px;
+  left: 107px;
+}
+.H_teeth_position_pic_61{
+  top: 9px;
+  right: 107px;
+}
+.H_teeth_position_pic_52{
+  top: 20px;
+  left: 77px;
+}
+.H_teeth_position_pic_62{
+  top: 20px;
+  right: 77px;
+}
+.H_teeth_position_pic_53{
+  top: 37px;
+  left: 51px;
+}
+.H_teeth_position_pic_63{
+  top: 37px;
+  right: 51px;
+}
+.H_teeth_position_pic_54{
+  top: 60px;
+  left: 30px;
+}
+.H_teeth_position_pic_64{
+  top: 60px;
+  right: 30px;
+}
+.H_teeth_position_pic_55{
+  top: 88px;
+  left: 17px;
+}
+.H_teeth_position_pic_65{
+  top: 88px;
+  right: 17px;
+}
+
+.H_teeth_position_pic_81{
+  bottom: 9px;
+  left: 107px;
+}
+.H_teeth_position_pic_71{
+  bottom: 9px;
+  right: 107px;
+}
+.H_teeth_position_pic_82{
+  bottom: 20px;
+  left: 77px;
+}
+.H_teeth_position_pic_72{
+  bottom: 20px;
+  right: 77px;
+}
+.H_teeth_position_pic_83{
+  bottom: 37px;
+  left: 51px;
+}
+.H_teeth_position_pic_73{
+  bottom: 37px;
+  right: 51px;
+}
+.H_teeth_position_pic_84{
+  bottom: 60px;
+  left: 30px;
+}
+.H_teeth_position_pic_74{
+  bottom: 60px;
+  right: 30px;
+}
+.H_teeth_position_pic_85{
+  bottom: 88px;
+  left: 17px;
+}
+.H_teeth_position_pic_75{
+  bottom: 88px;
+  right: 17px;
+}
+.H_teeth_position_pic .blue{
+  background-color: #c1d5f2;
+}
+.H_teeth_position_pic .red{
+  background-color: #cc6060;
+}
+.H_teeth_position_pic .white{
+  background-color: #fafcff;
+}
+#btn2{
+  width: 50px;
+}
+.H_teeth_position_list span{
+  font-size: 13px;
+  color:#666;
+}
+.H_teeth_position_list_margin{
+  margin-right:10px;
+}
+.H_teeth_position_list_margin_bottom{
+  margin-bottom: 10px;
+}
+[v-cloak] {
+  display: none;
+}
+.teeth_repair_textarea{
+  outline: none;
+  width: 300px;
+}
+.H_content_list .H_small_box .padding_left0{
+  padding-left: 0px;
+}
+.H_teeth_position_list .H_teeth_position_list_margin_bottom label{
+  float: left;
+  width: 15%;
+  font-size: 13px;
+  color: #000;
+}
+.H_teeth_position_list .H_teeth_position_list_margin_bottom p{
+  float: left;
+  width: 85%;
+  font-size: 12px;
+}
+.H_teeth_position_left .man,.child{
+  cursor:pointer;
+}
+.teeth_repair_textarea{
+  width: 394px;
+  height: 88px;
+  color: #6b6b6b;
+}
+.containb_right{
+  margin-left: 0px;
+}
+#teeth_around .H_small_box::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+#surgery .H_small_box::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+#change .z_userContainMain{
+  height: auto;
+}
+input[type='checkbox']{
+  width: 0px;
+  height: 0px;
+}

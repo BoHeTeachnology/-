@@ -1,0 +1,162 @@
+.container-left{
+    width:175px;
+    height:100%;
+    min-height: 700px;
+    background: #354052;
+    position: fixed;
+    left:0;
+    top:46px;
+    bottom:0;
+    z-index: 10;
+    overflow: auto;
+}
+.container-left li b{
+    font-weight: normal;
+}
+.container-left li b.bHide{
+    display: none
+}
+.container-left h3{
+    width:89%;
+    font-size: 14px;;
+    height:30px;
+    line-height: 30px;
+    padding-top: 10px;
+    color: #c8c8c8;
+    font-weight: normal;
+    background: url(../../../images/icon.png) no-repeat right center;
+    background-size: 20px 20px;
+    cursor: pointer;
+}
+.container-left h3.H3L{
+    background:url(../../../images/icon.png) no-repeat 19px center;
+    background-size: 20px 20px;
+}
+
+.list i{
+    width:10px;
+    height:10px;
+    background: url(../../../images/row4.png) no-repeat;
+    background-size: 10px 10px;
+    display: block;
+    position: absolute;
+    right:19px;
+    top:16px;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+}
+.list i.roate{
+    -o-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.System{
+    background: url(../../../images/1icon.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.User{
+    background: url(../../../images/icon_4.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Role{
+    background: url(../../../images/icon_2.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.App{
+    background: url(../../../images/icon_3.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Clinicmain{
+    background: url(../../../images/icon_6.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Record{
+    background: url(../../../images/icon_1.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Appointment{
+    background: url(../../../images/icon_5.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Company{
+    background: url(../../../images/icon_7.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.DoctorAdmin{
+    background: url(../../../images/icon_8.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Suggestion{
+    background: url(../../../images/icon_9.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Bill{
+    background: url(../../../images/icon_11.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Category{
+    background: url(../../../images/icon_12.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Project,.Priceform{
+    background: url(../../../images/icon_13.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+.Serve{
+    background: url(../../../images/icon14.png) no-repeat 20px center;
+    background-size: 18px 18px ;
+}
+
+
+
+.list{
+    width: 100%;
+    list-style: none;
+    color: #fff;
+}
+.list li{
+    width: 100%;
+    line-height: 40px;
+    position: relative;
+}
+.list label{
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+.list label a{
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+.list li a b{
+    margin-left: 50px;
+    color: #fff;
+}
+.list li i{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.list .cur{
+    background: #376892;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
